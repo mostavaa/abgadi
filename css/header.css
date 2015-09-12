@@ -1,0 +1,103 @@
+.mainHeader {
+    direction: rtl;
+}
+
+.logoWrapper {
+    float: right;
+}
+
+.logoo {
+    width: 100%;
+}
+
+.restWrapper {
+    float: right;
+    margin-top: 3%;
+}
+
+.loginWrapper {
+    position: relative;
+    width: 100%;
+}
+
+.login {
+    float: left;
+}
+
+.loginBtn {
+    margin: 1px;
+}
+.logOutBtn{
+    margin-left: 5px;
+}
+.loginName {
+    float:left;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    font-weight: 600;
+    text-shadow: 0 1px 0 #ffffff;
+    border: 1px solid #ECECEC;
+    -webkit-appearance: none;
+}
+
+.searchWrapper {
+    position: relative;
+    width: 100%;
+}
+
+.search {
+    position: relative;
+    float: left;
+    width: 50%;
+}
+
+.advSearchBtn {
+    margin: 1px;
+    float: left;
+}
+
+.searchBtn {
+    margin: 1px;
+    float: left;
+}
+
+.searchTxt {
+    font-family: 'Open Sans', sans-serif;
+    padding: 10px;
+    float: left;
+    height: 48px;
+    background: #ffffff;
+    outline: none;
+    color: #c0c0c0;
+    font-size: 0.8725em;
+    border: 1px solid #ECECEC;
+    -webkit-appearance: none;
+}
+
+.menuWrapper {
+    position: relative;
+    width: 100%;
+    margin-top: 3%;
+}
+
+.menuContent {
+    position: relative;
+    width: 100%;
+    margin-top: 3%;
+}
+
+.socialList {
+}
+
+    .socialList ul li {
+        float: left;
+        margin-left: 10px;
+    }
+
+        .socialList ul li:first-child {
+            margin-left: 0px;
+        }
+
+.socialImg {
+    width: 50px;
+}
