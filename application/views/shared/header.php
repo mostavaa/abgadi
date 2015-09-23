@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $username = isset($this->session->userdata["username"]) && !empty($this->session->userdata["username"])?$this->session->userdata["username"]:"";
 ?>
 <div class="header_bg">
@@ -51,6 +51,16 @@ $username = isset($this->session->userdata["username"]) && !empty($this->session
                                 <li><a class="btn" href="#">أحداث</a></li>
                                 <li><a class="btn" href="#">أبجدي</a></li>
                                 <li><a class="btn" href="#">إتصل بنا</a></li>
+                                <?php
+                                if ($username!=""){
+                                ?>
+                                      <li><a class="btn" href="<?php echo site_url("homecontroller/uploadpaperview")?>">اضافة محتوى</a></li>
+                            <li><a class="btn"href="<?php echo site_url("homecontroller/bulkaddpapers")?>" >اضافة قائمة ابحاث</a></li>
+                            <li><a class="btn" href="<?php echo site_url("homecontroller/displaydata")?>">عرض قاعدة البيانات</a></li>
+                        
+                                <?php
+                                }
+                                ?>
 
                             </ul>
                         </div>

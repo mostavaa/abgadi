@@ -85,12 +85,11 @@ class validation {
         return true;
     }
     /**
-     * support arabic and trim extra spaces
+     * trim extra spaces
      * @param mixed $text 
      * @return mixed
      */
     public function initialPrepare($text){
-        $text=iconv('cp1256', 'utf-8', $text);
         $text = trim ( $text );
         return $text;
     }

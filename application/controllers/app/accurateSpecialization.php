@@ -36,7 +36,22 @@ class accurateSpecialization
         }
         return $accurateSpecializations;
     }
-
+    public function findAccurateSpecByName($name , $mode=""){
+        if(!isset($name) || $name==null || empty($name)){
+            return null; 
+        }
+        $res = $this->findaccurateSpecialization(array("name"=>$name));
+        if($res && !empty($res)){
+            return $res[0];
+        }else{
+            if($mode=="create"){
+                $this->name  = $name;
+                $this->id = $this->insert();
+                return $this;
+            }
+        }
+        return null;
+    }
     public function insert(){
         
         $authaccurateSpecialization = 0;

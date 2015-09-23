@@ -36,6 +36,22 @@ class specialization
         return $specializations;
     }
 
+    public function findSpecByName($name , $mode=""){
+        if(!isset($name) || $name==null || empty($name)){
+            return null; 
+        }
+        $res = $this->findspecialization(array("name"=>$name));
+        if($res && !empty($res)){
+            return $res[0];
+        }else{
+            if($mode=="create"){
+                $this->name  = $name;
+                $this->id = $this->insert();
+                return $this;
+            }
+        }
+        return null;
+    }
     public function insert(){
         $obj= array(
             "name"=>$this->name

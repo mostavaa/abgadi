@@ -13,7 +13,7 @@ class research
     public $CI ;
     
     public $id ,  $englishHeadingName , $arabicHeadingName , $arabicDescription , $englishDescription , $keyWords , $researchNumber , $publishDate , 
-    $publishCountry , $researchType , $specialization , $accurateSpecialization , $pagesCount , $pagesFrom , $pagesTo , $researchFileName , $enterdTime ,$originalFileName,
+    $publishCountry , $researchType , $specialization , $accurateSpecialization , $pagesCount , $pagesFrom , $pagesTo , $researchFileName , $enterdTime , $lastModifiedDate,$originalFileName,
     
     $createdBy ,$publisher , $authorResearches;
     
@@ -42,6 +42,7 @@ class research
         $this->firstAuthor = $this->secondAuthor = $this->thirdAuthor = $this->fourthAuthor = $this->fifthAuthor
         = $this->sixthAuthor = $this->seventhAuthor = $this->eighthAuthor = $this->ninthAuthor = $this->tenthAuthor = null;
         $this->loadpublisher = $this->loadaccurateSpecialization = $this->loadspecialization = $this->loadresearchType = false;
+        $this->originalFileName = $this->researchFileName = "";
     }
     
     public function toArray(){
@@ -276,6 +277,7 @@ class research
         }
         
     }
+    
 
     
     
@@ -298,11 +300,7 @@ class research
             $valid = false;
         } 
         
-        if( $this->isEmpty($this->researchNumber)){
-            $this->errors["researchNumber"][] = "required";
-            $valid = false;
-            
-        }
+
         if( $this->isEmpty($this->keyWords)){
             $this->errors["keyword"][] = "required";
             $valid = false;
@@ -348,28 +346,35 @@ class research
         if (!$this->validateRequired()){
             $valid = false;
         }
+        
         if ($this->fileExists()){
             $valid = false;
         }
         return $valid;
     }
-    private function fileExists(){
+    public function fileExists(){
         $res = $this->findResearch(array("originalFileName"=>$this->originalFileName));
         if ($res && !empty($res)){
             $this->errors["file"][] = "you uploaded this file before";
-            return true;
+            return $res[0];
         }
         return false;
     }
-    public function uploadResearch(){
+    public function uploadResearch($bulk=false , $update=false){
 
-        $this->loadData();
-        if (!$this->isValid()){
-            
-            return false; 
+        if(!$bulk){
+            $this->loadData();
+            if (!$this->isValid()){
+                
+                return false; 
+            }
         }
-        
-        $this->insertPaper();
+        if(!$update){
+            $id =  $this->insertPaper();    
+            $this->id=$id;
+        }else{
+            $this->deleteResearchAuthors();
+        }
 
         $authorresearch = new authorresearch($this->CI);
         $authorresearch->research = $this;
@@ -464,12 +469,32 @@ class research
             $authorresearch->insert();
 
         }
-        $this->writeToFile();
+        if(!$update){
+            if($this->originalFileName!="")
+                $this->writeToFile();
+        }
         return true;
         //$this->pub = $this->CI->input->post("publisherInstitute");
         
         
     }
+          
+public function deleteResearchAuthors(){
+    
+    $authorresearch = new authorresearch($this->CI);
+    $authorresearch->research = $this;
+    $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>0));            
+    $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>1));            
+    $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>2));            
+    $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>3));            
+    $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>4));            
+    $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>5));            
+    $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>6));            
+    $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>7));            
+    $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>8));            
+    $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>9));            
+    $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>10));    
+}
     private function writeToFile(){
         
         
@@ -491,16 +516,10 @@ class research
         file_put_contents('sitemap2.xml', $xml->asXML());
         
     }
-    private function insertPaper(){
-        
-        
-        $createdBy = (
-                    isset($this->createdBy->username)
-                    && $this->createdBy->username!="" 
-                    && $this->createdBy->username!=null 
-                    && !empty($this->createdBy->username)
-                    ) ?0:$this->createdBy->id;
-        
+    public function updataResearch(){
+            $res = $this->findResearch(array("originalFileName"=>$this->originalFileName));
+        $auth = $res[0];
+        $this->id =$auth->id;
         $specialization = 0;
         if ($this->specialization && !empty($this->specialization)){
             $specialization = $this->specialization->id;
@@ -516,6 +535,63 @@ class research
             $researchType = $this->researchType->id;
         }
         
+        $publisher = 0;
+        if ($this->publisher && !empty($this->publisher)){
+            $publisher = $this->publisher->id;
+        }
+        
+        $paper = array(
+            "englishHeadingName"=>$this->englishHeadingName,
+            "arabicHeadingName"=>$this->arabicHeadingName,
+            "arabicDescription"=>$this->arabicDescription,
+            "englishDescription"=>$this->englishDescription,
+            "keyWords"=>$this->keyWords,
+            "researchNumber"=>$this->researchNumber,
+            "publishDate"=>$this->publishDate,
+            "publishCountry"=>$this->publishCountry,
+            "researchType"=>$researchType,
+            "specialization"=>$specialization,
+            "accurateSpecialization"=>$accurateSpecialization,
+            "pagesCount"=>$this->pagesCount,
+            "pagesFrom"=>$this->pagesFrom,
+            "pagesTo"=>$this->pagesTo,
+            "researchFileName"=>$this->researchFileName,
+            
+            "publisherId"=>$publisher,
+            "lastModifiedDate"=>time()
+            );
+        
+        
+        $this->CI->researchmodel->updateResearchByName($paper ,$this->originalFileName);
+    }
+    public function insertPaper(){
+        
+        if(isset($this->createdBy) && $this->createdBy && !empty($this->createdBy)){
+            $createdBy = (
+                        isset($this->createdBy->username)
+                        && $this->createdBy->username!="" 
+                        && $this->createdBy->username!=null 
+                        && !empty($this->createdBy->username)
+                        ) ?0:$this->createdBy->id;
+        }else{
+            $createdBy = 0;
+        }
+        
+        $specialization = 0;
+        if ($this->specialization && !empty($this->specialization)){
+            $specialization = $this->specialization->id;
+        }
+        
+        $accurateSpecialization = 0;
+        if ($this->accurateSpecialization && !empty($this->accurateSpecialization)){
+            $accurateSpecialization = $this->accurateSpecialization->id;
+        }
+        
+        $researchType = 0;
+        if ($this->researchType && !empty($this->researchType)){
+            $researchType = $this->researchType->id;
+        }
+        $this->enterdTime = time();
         $paper = array(
             "englishHeadingName"=>$this->englishHeadingName,
             "arabicHeadingName"=>$this->arabicHeadingName,
@@ -538,7 +614,7 @@ class research
             "publisherId"=>$this->publisher->id
             );
         
-        $this->id =  $this->CI->researchmodel->insertResearch($paper);
+        return $this->id =  $this->CI->researchmodel->insertResearch($paper);
     }
     
 

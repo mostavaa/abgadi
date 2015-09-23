@@ -15,5 +15,6 @@ require_once("app/researchtype.php");
 require_once("app/scientificdegree.php");
 require_once("app/specialization.php");
 require_once("app/permissions.php");
+require_once("app/FileUpload.php");
 
 ?>

@@ -6,7 +6,11 @@ class authorresearchmodel extends CI_Model{
 		$this->load->database();
 		
 	}
-
+    public function delete($authResearch){
+        $this->db->where($authResearch); 
+        $this->db->delete('authorReseach'); 
+    }
+    
     public function insert( $object ){
         $this->db->insert("authorReseach", $object);
     }
@@ -43,10 +47,6 @@ class authorresearchmodel extends CI_Model{
 		return FALSE;
     }
 
-    public function delete( $newId ){
-        $this->db->where('id', $newId);
-        $this->db->delete('news'); 
-    }
  
 
    

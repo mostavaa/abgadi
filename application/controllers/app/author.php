@@ -85,6 +85,25 @@ class author
         }
         return $authors;
     }
+    
+    public function findAuthorByName($name , $mode=""){
+        if(!isset($name) || $name==null || empty($name)){
+            return null; 
+        }
+        $res = $this->findauthor(array("name"=>$name));
+        if($res && !empty($res)){
+            return $res[0];
+        }else{
+            if($mode=="create"){
+                $this->name  = $name;
+                
+                $this->id = $this->insert();
+                return $this;
+            }
+        }
+        
+        return null;
+    }
 
     public function insert(){
         $authjob = 0;
@@ -126,7 +145,8 @@ class author
             "instituteId"=>$authinstitute,
             
             );
-        
+
         return $this->CI->authormodel->insert($obj);
+        
     }
 }

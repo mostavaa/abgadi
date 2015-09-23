@@ -35,6 +35,23 @@ class researchtype
         }
         return $researchtypes;
     }
+    
+    public function findResearchTypeByName($name , $mode=""){
+        if(!isset($name) || $name==null || empty($name)){
+            return null; 
+        }
+        $res = $this->findresearchtype(array("name"=>$name));
+        if($res && !empty($res)){
+            return $res[0];
+        }else{
+            if($mode=="create"){
+                $this->name = $name;
+                $this->id = $this->insert();
+                return $this;
+            }
+        }
+        return null;
+    }
 
     public function insert(){
         $obj= array(

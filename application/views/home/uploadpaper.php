@@ -258,115 +258,18 @@ if ($language=="english"){
     
 }
 else if ($language=="arabic"){
-    /*
-    $others= "اخرى");
-    $formLabels = array(
-    "file"=>"اختر البحث*"),
-    "arabicHeading"=>"عنوان البحث باللغة العربية*"),
-    "englishHeading"=>"عنوان البحث باللغة الانجليزية"),
-    "arabicDescription"=>"ملخص البحث باللغة العربية"),
-    "englishDescription"=>"ملخص البحث باللغة الانجليزية"),
-    "keyword"=>"الكلمات المفتاحية*"),
-    "researchNumber"=>"العدد المنشور به البحث*"),
-    "publishDate"=>"سنة النشر*"),
-    "publishCountry"=>"بلد النشر*"),
-    "researchType"=>"نوع البحث*"),
-    "specialization"=>"التخصص"),
-    "accurateSpecialization"=>"التخصص الدقيق"),
-
-
-    "pagesCount"=>"عدد الصفحات*"),
-    "pagesFrom"=>"الصفحات من"),
-    "pagesTo"=>"الصفحات الى"),
-    
-    "publisherInstitute"=>"الهيئة التابع لها البحث*"),
-    "publisher"=>"الناشر*"),
-    
-    "mainAuthorName"=>"اسم الباحث الرئيسي*"),
-    "AuthorscientificDegree"=>"الدرجة العلمية للباحث الرئيسي*"),
-    "AuthorInstitute"=>"الهيئة التابع لها الباحث الرئيسي*"),
-    "AuthorJob"=>"وظيفة الباحث الرئيسي*"),
-    
-    "AuthorSpecialization"=>"تخصص الباحث الرئيسي"),
-    "AuthorAccurateSpecialization"=>"التخصص الدقيق للباحث الرئيسي"),
-    "AuthorJobAddress"=>"عنوان وظيفة الباحث الرئيسي"),
-    "AuthorJobPhone"=>"رقم هاتف وظيفة الباحث الرئيسي"),
-    "AuthorMobileNumber"=>"الهاتف الشخصي للباحث الرئيسي"),
-    "AuthorMail"=>"البريد الالكتروني للباحث الرئيسي"),
-    
-
-    
-    "firstAuthorName"=>"اسم الباحث الاول"),
-    "firstAuthorscientificDegree"=>"الدرجة العلمية للباحث الاول"),
-    "firstAuthorInstitute"=>"الهيئة التابع لها الباحث الاول"),
-    "firstAuthorJob"=>"وظيفة الباحث الاول"),
-    
-    "secondAuthorName"=>"اسم الباحث الثاني"),
-    "secondAuthorscientificDegree"=>"الدرجة العلمية للباحث الثاني"),
-    "secondAuthorInstitute"=>"الهيئة التابع لها الباحث الثاني"),
-    "secondAuthorJob"=>"وظيفة الباحث الثاني"),
-    
-    
-    "thirdAuthorName"=>"اسم الباحث الثالث"),
-    "thirdAuthorscientificDegree"=>"الدرجة العلمية للباحث الثالث"),
-    "thirdAuthorInstitute"=>"الهيئة التابع لها الباحث الثالث"),
-    "thirdAuthorJob"=>"وظيفة الباحث الثالث"),
-    
-    
-    "fourthAuthorName"=>"اسم الباحث الرابع"),
-    "fourthAuthorscientificDegree"=>"الدرجة العلمية للباحث الرابع"),
-    "fourthAuthorInstitute"=>"الهيئة التابع لها الباحث الرابع"),
-    "fourthAuthorJob"=>"وظيفة الباحث الرابع"),
-    
-    
-    "fifthAuthorName"=>"اسم الباحث الخامس"),
-    "fifthAuthorscientificDegree"=>"الدرجة العلمية للباحث الخامس"),
-    "fifthAuthorInstitute"=>"الهيئة التابع لها الباحث الخامس"),
-    "fifthAuthorJob"=>"وظيفة الباحث الخامس"),
-    
-    
-    "sixthAuthorName"=>"اسم الباحث السادس"),
-    "sixthAuthorscientificDegree"=>"الدرجة العلمية للباحث السادس"),
-    "sixthAuthorInstitute"=>"الهيئة التابع لها الباحث السادس"),
-    "sixthAuthorJob"=>"وظيفة الباحث السادس"),
-    
-    "seventhAuthorName"=>"اسم الباحث السابع"),
-    "seventhAuthorscientificDegree"=>"الدرجة العلمية للباحث السابع"),
-    "seventhAuthorInstitute"=>"الهيئة التابع لها الباحث السابع"),
-    "seventhAuthorJob"=>"وظيفة الباحث السابع"),
-    
-    "eighthAuthorName"=>"اسم الباحث الثامن"),
-    "eighthAuthorscientificDegree"=>"الدرجة العلمية للباحث الثامن"),
-    "eighthAuthorInstitute"=>"الهيئة التابع لها الباحث الثامن"),
-    "eighthAuthorJob"=>"وظيفة الباحث الثامن"),
-    
-    
-    "ninthAuthorName"=>"اسم الباحث التاسع"),
-    "ninthAuthorscientificDegree"=>"الدرجة العلمية للباحث التاسع"),
-    "ninthAuthorInstitute"=>"الهيئة التابع لها الباحث التاسع"),
-    "ninthAuthorJob"=>"وظيفة الباحث التاسع"),
-    
-    
-    
-    "tenthAuthorName"=>"اسم الباحث العاشر"),
-    "tenthAuthorscientificDegree"=>"الدرجة العلمية للباحث العاشر"),
-    "tenthAuthorInstitute"=>"الهيئة التابع لها الباحث العاشر"),
-    "tenthAuthorJob"=>"وظيفة الباحث العاشر"),
-    "submit"=>"ادخال"),
-    );
-     */
     $others= "اخرى";
     $formLabels = array(
-        "file"=>"اختر البحث*",
+        "file"=>"اختر البحث",
         "arabicHeading"=>"عنوان البحث باللغة العربية*",
         "englishHeading"=>"عنوان البحث باللغة الانجليزية",
         "arabicDescription"=>"ملخص البحث باللغة العربية",
         "englishDescription"=>"ملخص البحث باللغة الانجليزية",
-        "keyword"=>"الكلمات المفتاحية*",
-        "researchNumber"=>"العدد المنشور به البحث*",
+        "keyword"=>"الكلمات المفتاحية*(كل كلمة في سطر)",
+        "researchNumber"=>"العدد المنشور به البحث",
             "publishDate"=>"سنة النشر*",
         "publishCountry"=>"بلد النشر*",
-        "researchType"=>"نوع البحث*",
+        "researchType"=>"نوع  الورقة البحثية*",
         "specialization"=>"التخصص",
         "accurateSpecialization"=>"التخصص الدقيق",
 
@@ -378,7 +281,7 @@ else if ($language=="arabic"){
         "publisherInstitute"=>"الهيئة التابع لها البحث*",
         "publisher"=>"الناشر*",
         
-        "mainAuthorName"=>"اسم الباحث الرئيسي*",
+        "mainAuthorName"=>"الباحث الرئيسي*",
         "AuthorscientificDegree"=>"الدرجة العلمية للباحث الرئيسي*",
         "AuthorInstitute"=>"الهيئة التابع لها الباحث الرئيسي*",
         "AuthorJob"=>"وظيفة الباحث الرئيسي*",
@@ -392,59 +295,59 @@ else if ($language=="arabic"){
                
 
         
-        "firstAuthorName"=>"اسم الباحث الاول",
+        "firstAuthorName"=>"الباحث الاول",
         "firstAuthorscientificDegree"=>"الدرجة العلمية للباحث الاول",
         "firstAuthorInstitute"=>"الهيئة التابع لها الباحث الاول",
         "firstAuthorJob"=>"وظيفة الباحث الاول",
         
-        "secondAuthorName"=>"اسم الباحث الثاني",
+        "secondAuthorName"=>"الباحث الثاني",
         "secondAuthorscientificDegree"=>"الدرجة العلمية للباحث الثاني",
         "secondAuthorInstitute"=>"الهيئة التابع لها الباحث الثاني",
         "secondAuthorJob"=>"وظيفة الباحث الثاني",
        
         
-        "thirdAuthorName"=>"اسم الباحث الثالث",
+        "thirdAuthorName"=>"الباحث الثالث",
         "thirdAuthorscientificDegree"=>"الدرجة العلمية للباحث الثالث",
         "thirdAuthorInstitute"=>"الهيئة التابع لها الباحث الثالث",
         "thirdAuthorJob"=>"وظيفة الباحث الثالث",
           
         
-        "fourthAuthorName"=>"اسم الباحث الرابع",
+        "fourthAuthorName"=>"الباحث الرابع",
         "fourthAuthorscientificDegree"=>"الدرجة العلمية للباحث الرابع",
         "fourthAuthorInstitute"=>"الهيئة التابع لها الباحث الرابع",
         "fourthAuthorJob"=>"وظيفة الباحث الرابع",
        
         
-        "fifthAuthorName"=>"اسم الباحث الخامس",
+        "fifthAuthorName"=>"الباحث الخامس",
         "fifthAuthorscientificDegree"=>"الدرجة العلمية للباحث الخامس",
         "fifthAuthorInstitute"=>"الهيئة التابع لها الباحث الخامس",
         "fifthAuthorJob"=>"وظيفة الباحث الخامس",
             
      
-        "sixthAuthorName"=>"اسم الباحث السادس",
+        "sixthAuthorName"=>"الباحث السادس",
         "sixthAuthorscientificDegree"=>"الدرجة العلمية للباحث السادس",
         "sixthAuthorInstitute"=>"الهيئة التابع لها الباحث السادس",
         "sixthAuthorJob"=>"وظيفة الباحث السادس",
             
-        "seventhAuthorName"=>"اسم الباحث السابع",
+        "seventhAuthorName"=>"الباحث السابع",
         "seventhAuthorscientificDegree"=>"الدرجة العلمية للباحث السابع",
         "seventhAuthorInstitute"=>"الهيئة التابع لها الباحث السابع",
         "seventhAuthorJob"=>"وظيفة الباحث السابع",
              
-        "eighthAuthorName"=>"اسم الباحث الثامن",
+        "eighthAuthorName"=>"الباحث الثامن",
         "eighthAuthorscientificDegree"=>"الدرجة العلمية للباحث الثامن",
         "eighthAuthorInstitute"=>"الهيئة التابع لها الباحث الثامن",
         "eighthAuthorJob"=>"وظيفة الباحث الثامن",
               
         
-        "ninthAuthorName"=>"اسم الباحث التاسع",
+        "ninthAuthorName"=>"الباحث التاسع",
         "ninthAuthorscientificDegree"=>"الدرجة العلمية للباحث التاسع",
         "ninthAuthorInstitute"=>"الهيئة التابع لها الباحث التاسع",
         "ninthAuthorJob"=>"وظيفة الباحث التاسع",
                
                 
         
-          "tenthAuthorName"=>"اسم الباحث العاشر",
+          "tenthAuthorName"=>"الباحث العاشر",
         "tenthAuthorscientificDegree"=>"الدرجة العلمية للباحث العاشر",
         "tenthAuthorInstitute"=>"الهيئة التابع لها الباحث العاشر",
         "tenthAuthorJob"=>"وظيفة الباحث العاشر",
@@ -585,14 +488,9 @@ $englishDescriptionErrors =
 $arabicDescriptionErrors= 
 $englishHeadingErrors = 
 $arabicHeadingErrors  = 
+$keywordErrors=
 $fileErrors = array();
 
-if($language == "arabic"){
-    $keywordErrors = array("كل كلمة في سطر");   
-}
-else if ($language=="english"){
-    $keywordErrors = array("Line in Each");            
-}
 
 
 if (isset($errors) && !empty($errors)){
@@ -990,8 +888,18 @@ Hide the label if placeholder is supported
 
                                 
                                 <?php
+                                $pub = array();
+                                if (isset($publishers) && !empty($publishers)){
+                                    foreach($publishers as $publisherr){
+                                        $pub[$publisherr->id] = $publisherr->publisherName;
+                                    }
+                                }
                                 
-                                renderInput($formLabels["researchNumber"] ,$researchNumber , "researchNumber" , $researchNumberErrors ,"number" , true );
+                                
+                                //renderTextAreaOther($formLabels["publisherInstitute"] ,$others , $publisherInstitute, "publisherInstitute" ,$publisherInstituteErrors  , true);
+                                renderSelect($formLabels["publisher"] , $publisher ,"publisher" , $publisherErrors , true ,$pub  );
+                                
+                                renderInput($formLabels["researchNumber"] ,$researchNumber , "researchNumber" , $researchNumberErrors ,"number" , false );
                                 renderInput($formLabels["publishDate"] ,$publishDate , "publishDate" , $publishDateErrors ,"number" , true );
                                 renderInput($formLabels["publishCountry"] ,$publishCountry , "publishCountry" , $publishCountryErrors ,"text" , true );
                              
@@ -1049,7 +957,6 @@ Hide the label if placeholder is supported
                                                 $auth[$authorr->id] = $authorr->name;
                                             }
                                         }
-                                        renderSelect($formLabels["fifthAuthorName"]  , $fifthAuthorName, "fifthAuthorName" ,$fifthAuthorNameErrors ,false,$auth  );
                                         renderSelect($formLabels["sixthAuthorName"]  , $sixthAuthorName, "sixthAuthorName" ,$sixthAuthorNameErrors  ,false,$auth );
                                         renderSelect($formLabels["seventhAuthorName"]  , $seventhAuthorName, "seventhAuthorName" ,$seventhAuthorNameErrors,false,$auth   );
                                         renderSelect($formLabels["eighthAuthorName"]  , $eighthAuthorName, "eighthAuthorName" ,$eighthAuthorNameErrors ,false ,$auth );
@@ -1066,21 +973,12 @@ Hide the label if placeholder is supported
                                     </div>
                                     <div class="col-md-6">
                                         <?php 
-                                        $pub = array();
-                                        if (isset($publishers) && !empty($publishers)){
-                                            foreach($publishers as $publisherr){
-                                                $pub[$publisherr->id] = $publisherr->publisherName;
-                                            }
-                                        }
-                                 
-                                        
-                                        //renderTextAreaOther($formLabels["publisherInstitute"] ,$others , $publisherInstitute, "publisherInstitute" ,$publisherInstituteErrors  , true);
-                                        renderSelect($formLabels["publisher"] , $publisher ,"publisher" , $publisherErrors , true ,$pub  );
                                         renderSelect($formLabels["mainAuthorName"]  , $mainAuthorName, "mainAuthorName" ,$mainAuthorNameErrors , true ,$auth );
                                         renderSelect($formLabels["firstAuthorName"]  , $firstAuthorName, "firstAuthorName" ,$firstAuthorNameErrors  ,false ,$auth);            
                                         renderSelect($formLabels["secondAuthorName"]  , $secondAuthorName, "secondAuthorName" ,$secondAuthorNameErrors ,false,$auth  );
                                         renderSelect($formLabels["thirdAuthorName"]  , $thirdAuthorName, "thirdAuthorName" ,$thirdAuthorNameErrors ,false,$auth  );
                                         renderSelect($formLabels["fourthAuthorName"]  , $fourthAuthorName, "fourthAuthorName" ,$fourthAuthorNameErrors ,false  ,$auth);
+                                        renderSelect($formLabels["fifthAuthorName"]  , $fifthAuthorName, "fifthAuthorName" ,$fifthAuthorNameErrors ,false,$auth  );
                                         
                                         ?>
                                     </div>
@@ -1286,6 +1184,7 @@ Hide the label if placeholder is supported
             $(".modal-body").html("تمت الاضافة بنجاح");
 
             $("#myModal").modal();
+            window.location.href = "<?php echo site_url("homecontroller/displaydata") ?>"
         <?php
             }
         ?>
@@ -1293,7 +1192,7 @@ Hide the label if placeholder is supported
             requiredFields =
             [
     "arabicHeading",
-    "researchNumber",
+   // "researchNumber",
         "keyword",
     "publishDate",
         "publishCountry",

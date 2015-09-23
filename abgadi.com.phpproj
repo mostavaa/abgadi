@@ -29,6 +29,7 @@
     <Compile Include="application\config\routes.php" />
     <Compile Include="application\config\smileys.php" />
     <Compile Include="application\config\user_agents.php" />
+    <Compile Include="application\controllers\app\FileUpload.php" />
     <Compile Include="application\controllers\app\specialization.php" />
     <Compile Include="application\controllers\app\researchtype.php" />
     <Compile Include="application\controllers\app\scientificdegree.php" />
@@ -234,6 +235,9 @@
     <Folder Include="images\" />
     <Folder Include="images\.settings\" />
     <Folder Include="js\" />
+    <Folder Include="csvs\" />
+    <Folder Include="systemFiles\" />
+    <Folder Include="tmp\" />
     <Folder Include="pdfs\" />
     <Folder Include="system\" />
     <Folder Include="system\core\" />
@@ -315,6 +319,7 @@
     <Content Include="js\script.js" />
     <Content Include="js\siteScript.js" />
     <Content Include="sitemap.xml" />
+    <Content Include="systemFiles\tmpuploadfiles.txt" />
     <Content Include="system\.htaccess" />
     <Content Include="system\core\index.html" />
     <Content Include="system\database\drivers\cubrid\index.html" />

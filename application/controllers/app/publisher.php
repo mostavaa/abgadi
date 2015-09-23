@@ -47,6 +47,23 @@ class publisher
         return $publishers;
     }
     
+    public function findPublisherByName( $name, $mode=""){
+        if(!isset($name) || $name==null || empty($name)){
+            return null; 
+        }
+        $res = $this->findPublisher(array("publisherName"=>$name));
+        if($res && !empty($res)){
+            return $res[0];
+        }else{
+            if($mode=="create"){
+                $this->publisherName = $name;
+                $this->id= $this->insert();
+                return $this;
+            }
+        }
+        return null;
+    }
+    
     public function insert(){
         
         $institute = 0;

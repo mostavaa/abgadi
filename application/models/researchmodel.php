@@ -6,6 +6,14 @@ class researchmodel extends CI_Model{
 		$this->load->database();
 		
 	}
+    
+    public function updateResearchByName( $data, $name){
+
+        $this->db->where('originalFileName', $name);
+        $this->db->update('research', $data);
+        
+        
+    }
 
     public function getCountofResearchs(){
         return $this->db->count_all_results('research');
@@ -78,6 +86,7 @@ class researchmodel extends CI_Model{
     
 
     public function findResearch($research = array()){
+        
         $query_string = "select *
 			from research";
         if (!empty($research)){

@@ -9,7 +9,7 @@ if(empty($a))
 
 // Keep in mind when working with sessions that it is generally
 // inadvisable to store DB-related objects in sessions
-class Session {
+class SessionClass {
 	private $exist ;
 	// public $user_id;
 	private $session_name;

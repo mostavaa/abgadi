@@ -399,8 +399,7 @@ class CI_Session {
 
 			$this->CI->db->query($this->CI->db->update_string($this->sess_table_name, array('last_activity' => $this->now, 'session_id' => $new_sessid), array('session_id' => $old_sessid)));
 		}
-
-		// Write the cookie
+        // Write the cookie
 		$this->_set_cookie($cookie_data);
 	}
 
@@ -660,6 +659,7 @@ class CI_Session {
 	 */
 	function _set_cookie($cookie_data = NULL)
 	{
+        
 		if (is_null($cookie_data))
 		{
 			$cookie_data = $this->userdata;
@@ -676,7 +676,6 @@ class CI_Session {
 		$cookie_data .= hash_hmac('sha1', $cookie_data, $this->encryption_key);
 
 		$expire = ($this->sess_expire_on_close === TRUE) ? 0 : $this->sess_expiration + time();
-
 		// Set the cookie
 		setcookie(
 			$this->sess_cookie_name,

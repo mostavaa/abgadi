@@ -63,6 +63,9 @@ class authorresearch
         return $authorresearchs;
     }
     
+    public function delete($authResearch){
+        $this->CI->authorresearchmodel->delete($authResearch);
+    }
     public function insert(){
         
         $auth = 0;
@@ -115,4 +118,5 @@ class authorresearch
             );
         $this->CI->authorresearchmodel->insert($authorResearch);
     }
+    
 }
