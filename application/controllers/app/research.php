@@ -281,10 +281,10 @@ class research
 
     
     
-    private function isEmpty($var){
+    private function isEmpty($var){        
         if (isset($var)){
             if(!empty($var)){
-                if($var != "-2222" )
+                if($var != "-2222" && $var!=null && $var!="")
                     return false;
             }
         }
@@ -310,6 +310,8 @@ class research
             $this->errors["publishDate"][] = "required";
             $valid = false;
         }
+
+        
         if( $this->isEmpty($this->publishCountry)){
             
             $this->errors["publishCountry"][] = "required";
@@ -326,12 +328,12 @@ class research
             $this->errors["pagesCount"][] = "required";
             $valid = false;
         }
-        if( $this->isEmpty($this->publisher->id)){
+        if( $this->isEmpty($this->publisher)){
             
             $this->errors["publisher"][] = "required";
             $valid = false;
         }
-        if( $this->isEmpty($this->mainAuthor->id)){
+        if( $this->isEmpty($this->mainAuthor)){
             
             $this->errors["mainAuthorName"][] = "required";
             $valid = false;
@@ -342,14 +344,18 @@ class research
         return $valid;
     }
     private function isValid(){
+        
         $valid = true;
         if (!$this->validateRequired()){
             $valid = false;
         }
         
-        if ($this->fileExists()){
-            $valid = false;
+        if($this->mode=="insert"){
+            if ($this->fileExists()){
+                $valid = false;
+            }        
         }
+
         return $valid;
     }
     public function fileExists(){
@@ -360,21 +366,210 @@ class research
         }
         return false;
     }
-    public function uploadResearch($bulk=false , $update=false){
+    
+    #region setter
+    
+    public function setResearchData($row , &$report){
+        $researchFileName = $row[0];
+        $this->setOriginalFileName($researchFileName,$report);
+        
+        
 
-        if(!$bulk){
-            $this->loadData();
-            if (!$this->isValid()){
-                
-                return false; 
+        $this->arabicHeadingName = $row[1];
+        $this->englishHeadingName = $row[2];
+        $this->arabicDescription = $row[3];
+        $this->englishDescription = $row[4];
+        $this->keyWords = $row[5];
+        
+        
+        $specialization=  $row[6];
+        $this->setSpecialization($specialization,$report);
+
+        $accurateSpecialization=  $row[7];
+        $this->setAccurateSpecialization($accurateSpecialization,$report);
+
+        $this->pagesCount = $row[8];
+        $this->pagesFrom = $row[9];
+        $this->pagesTo = $row[10];
+        $this->researchNumber = $row[11];
+        $this->publishDate = $row[12];
+        $this->publishCountry = $row[13];
+        
+        $researchType=  $row[14];
+        $this->setResearchType($researchType,$report);
+        
+        
+        $publishername=  $row[15];
+        $this->setPublisher($publishername,$report);
+        
+        
+        $mainAuthorname=  $row[16];
+        $this->mainAuthor =  $this->setAuthor($mainAuthorname,$report);
+        $author1=  $row[17];
+        $this->firstAuthor =  $this->setAuthor($author1,$report); 
+        $author2=  $row[18];
+        $this->secondAuthor =  $this->setAuthor($author2,$report); 
+        $author3=  $row[19];                    
+        $this->thirdAuthor =  $this->setAuthor($author3,$report);
+        $author4=  $row[20];                    
+        $this->fourthAuthor =  $this->setAuthor($author4,$report);   
+        $author5=  $row[21];
+        $this->fifthAuthor =  $this->setAuthor($author5,$report);   
+        $author6=  $row[22];
+        $this->sixthAuthor =  $this->setAuthor($author6,$report);  
+        $author7=  $row[23];
+        $this->seventhAuthor =  $this->setAuthor($author7,$report);  
+        $author8=  $row[24];
+        $this->eighthAuthor =  $this->setAuthor($author8,$report); 
+        $author9=  $row[25];
+        $this->ninthAuthor =  $this->setAuthor($author9,$report);  
+        $author10=  $row[26];
+        $this->tenthAuthor =  $this->setAuthor($author10,$report);
+        
+        
+        if(!$this->isValid()){
+            return false;
+        }
+        return true;
+    }
+    public $isNew; 
+    public function setOriginalFileName($researchFileName , &$report){
+        if(!empty($researchFileName) && $researchFileName!="" && $researchFileName!=null){
+            $researchFileName = $this->validation->initialPrepare($researchFileName);
+            $this->originalFileName = $researchFileName;
+
+            if(!in_array($researchFileName , $report->newFiles) && !in_array($researchFileName , $report->oldFiles)){
+                $res = $this->fileExists();
+                if($res){
+                    $this->mode="update";
+                    unset($this->errors['file']);
+                    $this->researchFileName = $res->researchFileName;
+                    $this->isNew = false;
+                    $report->numberOfOldFiles++;
+                    $report->oldFiles[] = $researchFileName;
+                }else{
+                    $this->isNew = true;
+                    $report->numberOfNewFiles++;
+                    $report->newFiles[]=$researchFileName;
+                }   
+            }
+            
+        }
+    }
+    
+    public function setSpecialization($specialization , &$report){
+        
+        $specialization = $this->validation->initialPrepare($specialization);
+        if(!empty($specialization) && $specialization!="" && $specialization!=null){
+            $this->specialization = $specialization;
+            if(!in_array($specialization , $report->newSpecializations) && !in_array($specialization , $report->oldSpecializations)){
+                $spec = new specialization($this->CI);
+                $specs = $spec->findspecialization(array("name"=>$specialization));
+                if($specs && !empty($specs) && count($specs)>0){
+                    $report->numberOfOldSpecializations++;
+                    $report->oldSpecializations[]=$specialization;
+                }else{
+                    $report->numberOfNewSpecializations++;
+                    $report->newSpecializations[]=$specialization;
+                }
+            }               
+        }
+    }
+    public function setAccurateSpecialization($accurateSpecialization , &$report){
+        $accurateSpecialization = $this->validation->initialPrepare($accurateSpecialization);
+        if(!empty($accurateSpecialization) && $accurateSpecialization!="" && $accurateSpecialization!=null){
+            $this->accurateSpecialization = $accurateSpecialization;
+            if(!in_array($accurateSpecialization , $report->oldAccurateSpecializations) && !in_array($accurateSpecialization , $report->newAccurateSpecializations)){
+                $accSpec = new accurateSpecialization($this->CI);
+                $accSpecs =  $accSpec->findaccurateSpecialization(array("name"=>$accurateSpecialization));
+                if($accSpecs && !empty($accSpecs) && count($accSpecs)>0){
+                    $report->numberOfOldAccurateSpecializations++;
+                    $report->oldAccurateSpecializations[]=$accurateSpecialization;
+                }else{
+                    $report->numberOfNewAccurateSpecializations++;
+                    $report->newAccurateSpecializations[]=$accurateSpecialization;
+                }
+            }           
+
+        }
+    }
+    
+    public function setResearchType($researchType , &$report){
+        $researchType = $this->validation->initialPrepare($researchType);
+        if(!empty($researchType) && $researchType!="" && $researchType!=null){
+            $this->researchType = $researchType;
+            if(!in_array($researchType , $report->newResearchTypes) && !in_array($researchType , $report->oldResearchTypes)){
+                $resType = new researchtype($this->CI);
+                $resTypes =  $resType->findresearchtype(array("name"=>$researchType));
+                if($resTypes && !empty($resTypes) && count($resTypes)>0){
+                    $report->numberOfOldResearchTypes++;
+                    $report->oldResearchTypes[]=$researchType;
+                }else{
+                    $report->numberOfNewResearchTypes++;
+                    $report->newResearchTypes[]=$researchType;
+                }            
+            }           
+        }
+    }
+    
+    
+    public function setPublisher($Publisher , &$report){
+        $Publisher = $this->validation->initialPrepare($Publisher);
+        if(!empty($Publisher) && $Publisher!="" && $Publisher!=null){
+            $this->publisher = $Publisher;
+
+            if(!in_array($Publisher , $report->newPublishers) && !in_array($Publisher , $report->oldPublishers)){
+                $pub = new publisher($this->CI);
+                $pubs =  $pub->findPublisher(array("publisherName"=>$Publisher));
+                if($pubs && !empty($pubs) && count($pubs)>0){
+                    $report->numberOfOldPublishers++;
+                    $report->oldPublishers[]=$Publisher;
+                }else{
+                    $report->numberOfNewPublishers++;
+                    $report->newPublishers[]=$Publisher;
+                }          
+            }           
+        }
+    }
+    
+    public function setAuthor($author , &$report){
+        $author = $this->validation->initialPrepare($author);
+        if(!empty($author) && $author!="" && $author!=null){
+            if(!in_array($author , $report->newAuthors) && !in_array($author , $report->oldAuthors)){
+                $obj = new author($this->CI);
+                $objs =  $obj->findauthor(array("name"=>$author));
+                if($objs && !empty($objs) && count($objs)>0){
+                    $report->numberOfOldAuthors++;
+                    $report->oldAuthors[]=$author;   
+                }else{
+                    $report->numberOfNewAuthors++;
+                    $report->newAuthors[]=$author;
+                }
             }
         }
-        if(!$update){
-            $id =  $this->insertPaper();    
-            $this->id=$id;
-        }else{
-            $this->deleteResearchAuthors();
+        return $author;
+    }
+    #endregion
+    
+    public $mode = "insert";
+    public function uploadResearch($bulk=false ){
+
+        if (!$this->isValid()){
+            
+            return false; 
         }
+        
+        if(!$bulk){
+            $this->loadData();
+        }
+        if($this->mode=="insert"){
+            $id =  $this->insertPaper();    
+            $this->id=$id;            
+        }else if ($this->mode=="update"){
+            $this->updataResearch();
+            $this->deleteResearchAuthors();   
+        }
+
 
         $authorresearch = new authorresearch($this->CI);
         $authorresearch->research = $this;
@@ -469,7 +664,8 @@ class research
             $authorresearch->insert();
 
         }
-        if(!$update){
+        
+        if($this->mode=="insert"){
             if($this->originalFileName!="")
                 $this->writeToFile();
         }

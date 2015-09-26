@@ -3143,3 +3143,1788 @@ DEBUG - 2015-09-23 02:56:38 --> File loaded: application/views/shared/scripts.ph
 DEBUG - 2015-09-23 02:56:38 --> File loaded: application/views/home/bulkaddpapers.php
 DEBUG - 2015-09-23 02:56:38 --> Final output sent to browser
 DEBUG - 2015-09-23 02:56:38 --> Total execution time: 1.7712
+DEBUG - 2015-09-23 03:34:46 --> Config Class Initialized
+DEBUG - 2015-09-23 03:34:46 --> Hooks Class Initialized
+DEBUG - 2015-09-23 03:34:46 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 03:34:46 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 03:34:46 --> URI Class Initialized
+DEBUG - 2015-09-23 03:34:46 --> Router Class Initialized
+DEBUG - 2015-09-23 03:34:46 --> No URI present. Default controller set.
+DEBUG - 2015-09-23 03:34:46 --> Output Class Initialized
+DEBUG - 2015-09-23 03:34:46 --> Security Class Initialized
+DEBUG - 2015-09-23 03:34:46 --> Input Class Initialized
+DEBUG - 2015-09-23 03:34:46 --> XSS Filtering completed
+DEBUG - 2015-09-23 03:34:46 --> XSS Filtering completed
+DEBUG - 2015-09-23 03:34:46 --> XSS Filtering completed
+DEBUG - 2015-09-23 03:34:46 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 03:34:46 --> Language Class Initialized
+DEBUG - 2015-09-23 03:34:46 --> Loader Class Initialized
+DEBUG - 2015-09-23 03:34:46 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 03:34:46 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 03:34:46 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 03:34:46 --> Session Class Initialized
+DEBUG - 2015-09-23 03:34:46 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 03:34:47 --> Database Driver Class Initialized
+ERROR - 2015-09-23 03:34:47 --> Severity: Warning  --> mysql_pconnect(): MySQL server has gone away E:\fcis\web\www\abgadi\abgadi.com\abgadi.com\system\database\drivers\mysql\mysql_driver.php 91
+DEBUG - 2015-09-23 03:34:48 --> Session routines successfully run
+DEBUG - 2015-09-23 03:34:48 --> Upload Class Initialized
+DEBUG - 2015-09-23 03:34:48 --> Model Class Initialized
+DEBUG - 2015-09-23 03:34:48 --> Model Class Initialized
+DEBUG - 2015-09-23 03:34:48 --> Model Class Initialized
+DEBUG - 2015-09-23 03:34:48 --> Model Class Initialized
+DEBUG - 2015-09-23 03:34:48 --> Model Class Initialized
+DEBUG - 2015-09-23 03:34:48 --> Model Class Initialized
+DEBUG - 2015-09-23 03:34:48 --> Model Class Initialized
+DEBUG - 2015-09-23 03:34:48 --> Model Class Initialized
+DEBUG - 2015-09-23 03:34:48 --> Model Class Initialized
+DEBUG - 2015-09-23 03:34:48 --> Model Class Initialized
+DEBUG - 2015-09-23 03:34:48 --> Model Class Initialized
+DEBUG - 2015-09-23 03:34:48 --> Model Class Initialized
+DEBUG - 2015-09-23 03:34:48 --> Model Class Initialized
+DEBUG - 2015-09-23 03:34:48 --> Controller Class Initialized
+DEBUG - 2015-09-23 03:34:48 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 03:34:48 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 03:34:48 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 03:34:48 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 03:34:48 --> File loaded: application/views/home/index.php
+DEBUG - 2015-09-23 03:34:48 --> Final output sent to browser
+DEBUG - 2015-09-23 03:34:48 --> Total execution time: 2.1684
+DEBUG - 2015-09-23 03:34:55 --> Config Class Initialized
+DEBUG - 2015-09-23 03:34:55 --> Hooks Class Initialized
+DEBUG - 2015-09-23 03:34:55 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 03:34:55 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 03:34:55 --> URI Class Initialized
+DEBUG - 2015-09-23 03:34:55 --> Router Class Initialized
+DEBUG - 2015-09-23 03:34:55 --> Output Class Initialized
+DEBUG - 2015-09-23 03:34:55 --> Security Class Initialized
+DEBUG - 2015-09-23 03:34:55 --> Input Class Initialized
+DEBUG - 2015-09-23 03:34:55 --> XSS Filtering completed
+DEBUG - 2015-09-23 03:34:55 --> XSS Filtering completed
+DEBUG - 2015-09-23 03:34:55 --> XSS Filtering completed
+DEBUG - 2015-09-23 03:34:55 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 03:34:55 --> Language Class Initialized
+DEBUG - 2015-09-23 03:34:55 --> Loader Class Initialized
+DEBUG - 2015-09-23 03:34:55 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 03:34:55 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 03:34:55 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 03:34:55 --> Session Class Initialized
+DEBUG - 2015-09-23 03:34:55 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 03:34:55 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 03:34:55 --> Session routines successfully run
+DEBUG - 2015-09-23 03:34:56 --> Upload Class Initialized
+DEBUG - 2015-09-23 03:34:56 --> Model Class Initialized
+DEBUG - 2015-09-23 03:34:56 --> Model Class Initialized
+DEBUG - 2015-09-23 03:34:56 --> Model Class Initialized
+DEBUG - 2015-09-23 03:34:56 --> Model Class Initialized
+DEBUG - 2015-09-23 03:34:56 --> Model Class Initialized
+DEBUG - 2015-09-23 03:34:56 --> Model Class Initialized
+DEBUG - 2015-09-23 03:34:56 --> Model Class Initialized
+DEBUG - 2015-09-23 03:34:56 --> Model Class Initialized
+DEBUG - 2015-09-23 03:34:56 --> Model Class Initialized
+DEBUG - 2015-09-23 03:34:56 --> Model Class Initialized
+DEBUG - 2015-09-23 03:34:56 --> Model Class Initialized
+DEBUG - 2015-09-23 03:34:56 --> Model Class Initialized
+DEBUG - 2015-09-23 03:34:56 --> Model Class Initialized
+DEBUG - 2015-09-23 03:34:56 --> Controller Class Initialized
+DEBUG - 2015-09-23 03:34:56 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 03:34:56 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 03:34:56 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 03:34:56 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 03:34:56 --> File loaded: application/views/home/bulkaddpapers.php
+DEBUG - 2015-09-23 03:34:56 --> Final output sent to browser
+DEBUG - 2015-09-23 03:34:56 --> Total execution time: 1.5549
+DEBUG - 2015-09-23 17:31:31 --> Config Class Initialized
+DEBUG - 2015-09-23 17:31:32 --> Hooks Class Initialized
+DEBUG - 2015-09-23 17:31:32 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 17:31:32 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 17:31:32 --> URI Class Initialized
+DEBUG - 2015-09-23 17:31:32 --> Router Class Initialized
+DEBUG - 2015-09-23 17:31:32 --> No URI present. Default controller set.
+DEBUG - 2015-09-23 17:31:32 --> Output Class Initialized
+DEBUG - 2015-09-23 17:31:32 --> Security Class Initialized
+DEBUG - 2015-09-23 17:31:32 --> Input Class Initialized
+DEBUG - 2015-09-23 17:31:32 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:31:33 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:31:33 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 17:31:33 --> Language Class Initialized
+DEBUG - 2015-09-23 17:31:34 --> Loader Class Initialized
+DEBUG - 2015-09-23 17:31:34 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 17:31:35 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 17:31:35 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 17:31:35 --> Session Class Initialized
+DEBUG - 2015-09-23 17:31:35 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 17:31:35 --> Database Driver Class Initialized
+ERROR - 2015-09-23 17:31:35 --> Severity: Notice  --> mysql_pconnect(): send of 5 bytes failed with errno=10053 An established connection was aborted by the software in your host machine.
+ E:\fcis\web\www\abgadi\abgadi.com\abgadi.com\system\database\drivers\mysql\mysql_driver.php 91
+DEBUG - 2015-09-23 17:31:36 --> A session cookie was not found.
+DEBUG - 2015-09-23 17:31:36 --> Session routines successfully run
+DEBUG - 2015-09-23 17:31:36 --> Upload Class Initialized
+DEBUG - 2015-09-23 17:31:36 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:36 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:36 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:36 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:36 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:36 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:36 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:36 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:37 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:37 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:37 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:37 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:37 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:37 --> Controller Class Initialized
+DEBUG - 2015-09-23 17:31:37 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 17:31:37 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 17:31:37 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 17:31:37 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 17:31:37 --> File loaded: application/views/home/index.php
+DEBUG - 2015-09-23 17:31:37 --> Final output sent to browser
+DEBUG - 2015-09-23 17:31:37 --> Total execution time: 5.9420
+DEBUG - 2015-09-23 17:31:41 --> Config Class Initialized
+DEBUG - 2015-09-23 17:31:41 --> Hooks Class Initialized
+DEBUG - 2015-09-23 17:31:41 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 17:31:41 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 17:31:41 --> URI Class Initialized
+DEBUG - 2015-09-23 17:31:41 --> Router Class Initialized
+DEBUG - 2015-09-23 17:31:41 --> Output Class Initialized
+DEBUG - 2015-09-23 17:31:41 --> Security Class Initialized
+DEBUG - 2015-09-23 17:31:41 --> Input Class Initialized
+DEBUG - 2015-09-23 17:31:41 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:31:41 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:31:42 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:31:42 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 17:31:42 --> Language Class Initialized
+DEBUG - 2015-09-23 17:31:42 --> Loader Class Initialized
+DEBUG - 2015-09-23 17:31:42 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 17:31:42 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 17:31:42 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 17:31:42 --> Session Class Initialized
+DEBUG - 2015-09-23 17:31:42 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 17:31:42 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 17:31:42 --> Session routines successfully run
+DEBUG - 2015-09-23 17:31:42 --> Upload Class Initialized
+DEBUG - 2015-09-23 17:31:42 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:42 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:42 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:42 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:42 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:43 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:43 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:43 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:43 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:43 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:43 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:43 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:43 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:43 --> Controller Class Initialized
+DEBUG - 2015-09-23 17:31:43 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 17:31:43 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 17:31:43 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 17:31:43 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 17:31:43 --> File loaded: application/views/user/login.php
+DEBUG - 2015-09-23 17:31:43 --> Final output sent to browser
+DEBUG - 2015-09-23 17:31:43 --> Total execution time: 1.5188
+DEBUG - 2015-09-23 17:31:44 --> Config Class Initialized
+DEBUG - 2015-09-23 17:31:44 --> Hooks Class Initialized
+DEBUG - 2015-09-23 17:31:44 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 17:31:44 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 17:31:45 --> URI Class Initialized
+DEBUG - 2015-09-23 17:31:45 --> Router Class Initialized
+DEBUG - 2015-09-23 17:31:45 --> Output Class Initialized
+DEBUG - 2015-09-23 17:31:45 --> Security Class Initialized
+DEBUG - 2015-09-23 17:31:45 --> Input Class Initialized
+DEBUG - 2015-09-23 17:31:45 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:31:45 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:31:45 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:31:45 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:31:45 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:31:45 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 17:31:45 --> Language Class Initialized
+DEBUG - 2015-09-23 17:31:45 --> Loader Class Initialized
+DEBUG - 2015-09-23 17:31:45 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 17:31:45 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 17:31:45 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 17:31:45 --> Session Class Initialized
+DEBUG - 2015-09-23 17:31:45 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 17:31:45 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 17:31:45 --> Session routines successfully run
+DEBUG - 2015-09-23 17:31:45 --> Upload Class Initialized
+DEBUG - 2015-09-23 17:31:45 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:45 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:45 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:46 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:46 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:46 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:46 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:46 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:46 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:46 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:46 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:46 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:46 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:46 --> Controller Class Initialized
+DEBUG - 2015-09-23 17:31:46 --> Config Class Initialized
+DEBUG - 2015-09-23 17:31:46 --> Hooks Class Initialized
+DEBUG - 2015-09-23 17:31:46 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 17:31:46 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 17:31:46 --> URI Class Initialized
+DEBUG - 2015-09-23 17:31:46 --> Router Class Initialized
+DEBUG - 2015-09-23 17:31:46 --> Output Class Initialized
+DEBUG - 2015-09-23 17:31:46 --> Security Class Initialized
+DEBUG - 2015-09-23 17:31:46 --> Input Class Initialized
+DEBUG - 2015-09-23 17:31:46 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:31:46 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:31:46 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:31:46 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 17:31:46 --> Language Class Initialized
+DEBUG - 2015-09-23 17:31:46 --> Loader Class Initialized
+DEBUG - 2015-09-23 17:31:46 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 17:31:46 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 17:31:46 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 17:31:46 --> Session Class Initialized
+DEBUG - 2015-09-23 17:31:46 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 17:31:46 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 17:31:47 --> Session routines successfully run
+DEBUG - 2015-09-23 17:31:47 --> Upload Class Initialized
+DEBUG - 2015-09-23 17:31:47 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:47 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:47 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:47 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:47 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:47 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:47 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:47 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:47 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:47 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:47 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:47 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:47 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:47 --> Controller Class Initialized
+DEBUG - 2015-09-23 17:31:47 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 17:31:47 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 17:31:47 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 17:31:47 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 17:31:47 --> File loaded: application/views/home/content.php
+DEBUG - 2015-09-23 17:31:47 --> Final output sent to browser
+DEBUG - 2015-09-23 17:31:47 --> Total execution time: 1.4010
+DEBUG - 2015-09-23 17:31:49 --> Config Class Initialized
+DEBUG - 2015-09-23 17:31:49 --> Hooks Class Initialized
+DEBUG - 2015-09-23 17:31:49 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 17:31:49 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 17:31:49 --> URI Class Initialized
+DEBUG - 2015-09-23 17:31:49 --> Router Class Initialized
+DEBUG - 2015-09-23 17:31:49 --> Output Class Initialized
+DEBUG - 2015-09-23 17:31:49 --> Security Class Initialized
+DEBUG - 2015-09-23 17:31:49 --> Input Class Initialized
+DEBUG - 2015-09-23 17:31:49 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:31:49 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:31:49 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:31:49 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 17:31:49 --> Language Class Initialized
+DEBUG - 2015-09-23 17:31:49 --> Loader Class Initialized
+DEBUG - 2015-09-23 17:31:50 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 17:31:50 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 17:31:50 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 17:31:50 --> Session Class Initialized
+DEBUG - 2015-09-23 17:31:50 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 17:31:50 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 17:31:50 --> Session routines successfully run
+DEBUG - 2015-09-23 17:31:50 --> Upload Class Initialized
+DEBUG - 2015-09-23 17:31:50 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:50 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:50 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:50 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:50 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:50 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:50 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:50 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:50 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:50 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:50 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:50 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:50 --> Model Class Initialized
+DEBUG - 2015-09-23 17:31:50 --> Controller Class Initialized
+DEBUG - 2015-09-23 17:31:51 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 17:31:51 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 17:31:51 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 17:31:51 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 17:31:51 --> File loaded: application/views/home/bulkaddpapers.php
+DEBUG - 2015-09-23 17:31:51 --> Final output sent to browser
+DEBUG - 2015-09-23 17:31:51 --> Total execution time: 2.0443
+DEBUG - 2015-09-23 17:44:22 --> Config Class Initialized
+DEBUG - 2015-09-23 17:44:22 --> Hooks Class Initialized
+DEBUG - 2015-09-23 17:44:22 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 17:44:22 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 17:44:22 --> URI Class Initialized
+DEBUG - 2015-09-23 17:44:22 --> Router Class Initialized
+DEBUG - 2015-09-23 17:44:22 --> Output Class Initialized
+DEBUG - 2015-09-23 17:44:22 --> Security Class Initialized
+DEBUG - 2015-09-23 17:44:22 --> Input Class Initialized
+DEBUG - 2015-09-23 17:44:22 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:44:22 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:44:22 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:44:22 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 17:44:22 --> Language Class Initialized
+DEBUG - 2015-09-23 17:44:22 --> Loader Class Initialized
+DEBUG - 2015-09-23 17:44:22 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 17:44:22 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 17:44:22 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 17:44:22 --> Session Class Initialized
+DEBUG - 2015-09-23 17:44:22 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 17:44:22 --> Database Driver Class Initialized
+ERROR - 2015-09-23 17:44:22 --> Severity: Warning  --> mysql_pconnect(): MySQL server has gone away E:\fcis\web\www\abgadi\abgadi.com\abgadi.com\system\database\drivers\mysql\mysql_driver.php 91
+DEBUG - 2015-09-23 17:44:24 --> Session routines successfully run
+DEBUG - 2015-09-23 17:44:24 --> Upload Class Initialized
+DEBUG - 2015-09-23 17:44:24 --> Model Class Initialized
+DEBUG - 2015-09-23 17:44:24 --> Model Class Initialized
+DEBUG - 2015-09-23 17:44:24 --> Model Class Initialized
+DEBUG - 2015-09-23 17:44:24 --> Model Class Initialized
+DEBUG - 2015-09-23 17:44:24 --> Model Class Initialized
+DEBUG - 2015-09-23 17:44:24 --> Model Class Initialized
+DEBUG - 2015-09-23 17:44:24 --> Model Class Initialized
+DEBUG - 2015-09-23 17:44:24 --> Model Class Initialized
+DEBUG - 2015-09-23 17:44:24 --> Model Class Initialized
+DEBUG - 2015-09-23 17:44:24 --> Model Class Initialized
+DEBUG - 2015-09-23 17:44:25 --> Model Class Initialized
+DEBUG - 2015-09-23 17:44:25 --> Model Class Initialized
+DEBUG - 2015-09-23 17:44:25 --> Model Class Initialized
+DEBUG - 2015-09-23 17:44:25 --> Controller Class Initialized
+DEBUG - 2015-09-23 17:44:25 --> Config Class Initialized
+DEBUG - 2015-09-23 17:44:25 --> Hooks Class Initialized
+DEBUG - 2015-09-23 17:44:25 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 17:44:25 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 17:44:25 --> URI Class Initialized
+DEBUG - 2015-09-23 17:44:25 --> Router Class Initialized
+DEBUG - 2015-09-23 17:44:25 --> Output Class Initialized
+DEBUG - 2015-09-23 17:44:25 --> Security Class Initialized
+DEBUG - 2015-09-23 17:44:25 --> Input Class Initialized
+DEBUG - 2015-09-23 17:44:25 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:44:25 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:44:25 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:44:25 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 17:44:25 --> Language Class Initialized
+DEBUG - 2015-09-23 17:44:25 --> Loader Class Initialized
+DEBUG - 2015-09-23 17:44:25 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 17:44:25 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 17:44:25 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 17:44:26 --> Session Class Initialized
+DEBUG - 2015-09-23 17:44:26 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 17:44:26 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 17:44:26 --> Session routines successfully run
+DEBUG - 2015-09-23 17:44:27 --> Upload Class Initialized
+DEBUG - 2015-09-23 17:44:27 --> Model Class Initialized
+DEBUG - 2015-09-23 17:44:27 --> Model Class Initialized
+DEBUG - 2015-09-23 17:44:27 --> Model Class Initialized
+DEBUG - 2015-09-23 17:44:27 --> Model Class Initialized
+DEBUG - 2015-09-23 17:44:27 --> Model Class Initialized
+DEBUG - 2015-09-23 17:44:27 --> Model Class Initialized
+DEBUG - 2015-09-23 17:44:27 --> Model Class Initialized
+DEBUG - 2015-09-23 17:44:27 --> Model Class Initialized
+DEBUG - 2015-09-23 17:44:27 --> Model Class Initialized
+DEBUG - 2015-09-23 17:44:27 --> Model Class Initialized
+DEBUG - 2015-09-23 17:44:27 --> Model Class Initialized
+DEBUG - 2015-09-23 17:44:27 --> Model Class Initialized
+DEBUG - 2015-09-23 17:44:27 --> Model Class Initialized
+DEBUG - 2015-09-23 17:44:27 --> Controller Class Initialized
+DEBUG - 2015-09-23 17:44:27 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 17:44:27 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 17:44:27 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 17:44:27 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 17:44:27 --> File loaded: application/views/home/bulkaddpapers.php
+DEBUG - 2015-09-23 17:44:27 --> Final output sent to browser
+DEBUG - 2015-09-23 17:44:27 --> Total execution time: 2.0431
+DEBUG - 2015-09-23 17:48:40 --> Config Class Initialized
+DEBUG - 2015-09-23 17:48:40 --> Hooks Class Initialized
+DEBUG - 2015-09-23 17:48:40 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 17:48:40 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 17:48:40 --> URI Class Initialized
+DEBUG - 2015-09-23 17:48:41 --> Router Class Initialized
+DEBUG - 2015-09-23 17:48:41 --> Output Class Initialized
+DEBUG - 2015-09-23 17:48:41 --> Security Class Initialized
+DEBUG - 2015-09-23 17:48:41 --> Input Class Initialized
+DEBUG - 2015-09-23 17:48:41 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:48:41 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:48:41 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:48:41 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 17:48:41 --> Language Class Initialized
+DEBUG - 2015-09-23 17:48:41 --> Loader Class Initialized
+DEBUG - 2015-09-23 17:48:41 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 17:48:41 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 17:48:41 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 17:48:41 --> Session Class Initialized
+DEBUG - 2015-09-23 17:48:41 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 17:48:41 --> Database Driver Class Initialized
+ERROR - 2015-09-23 17:48:41 --> Severity: Warning  --> mysql_pconnect(): MySQL server has gone away E:\fcis\web\www\abgadi\abgadi.com\abgadi.com\system\database\drivers\mysql\mysql_driver.php 91
+DEBUG - 2015-09-23 17:48:42 --> Session routines successfully run
+DEBUG - 2015-09-23 17:48:42 --> Upload Class Initialized
+DEBUG - 2015-09-23 17:48:42 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:42 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:42 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:42 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:42 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:42 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:42 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:42 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:42 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:42 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:42 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:42 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:42 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:42 --> Controller Class Initialized
+DEBUG - 2015-09-23 17:48:42 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 17:48:42 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 17:48:42 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 17:48:42 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 17:48:42 --> File loaded: application/views/home/bulkaddpapers.php
+DEBUG - 2015-09-23 17:48:42 --> Final output sent to browser
+DEBUG - 2015-09-23 17:48:42 --> Total execution time: 2.0020
+DEBUG - 2015-09-23 17:48:47 --> Config Class Initialized
+DEBUG - 2015-09-23 17:48:47 --> Hooks Class Initialized
+DEBUG - 2015-09-23 17:48:47 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 17:48:47 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 17:48:47 --> URI Class Initialized
+DEBUG - 2015-09-23 17:48:47 --> Router Class Initialized
+DEBUG - 2015-09-23 17:48:47 --> Output Class Initialized
+DEBUG - 2015-09-23 17:48:47 --> Security Class Initialized
+DEBUG - 2015-09-23 17:48:47 --> Input Class Initialized
+DEBUG - 2015-09-23 17:48:47 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:48:47 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:48:47 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:48:47 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 17:48:48 --> Language Class Initialized
+DEBUG - 2015-09-23 17:48:48 --> Loader Class Initialized
+DEBUG - 2015-09-23 17:48:48 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 17:48:48 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 17:48:48 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 17:48:48 --> Session Class Initialized
+DEBUG - 2015-09-23 17:48:48 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 17:48:48 --> Database Driver Class Initialized
+ERROR - 2015-09-23 17:48:48 --> Severity: Notice  --> mysql_pconnect(): send of 5 bytes failed with errno=10053 An established connection was aborted by the software in your host machine.
+ E:\fcis\web\www\abgadi\abgadi.com\abgadi.com\system\database\drivers\mysql\mysql_driver.php 91
+DEBUG - 2015-09-23 17:48:49 --> Session routines successfully run
+DEBUG - 2015-09-23 17:48:49 --> Upload Class Initialized
+DEBUG - 2015-09-23 17:48:49 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:49 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:49 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:49 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:49 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:49 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:49 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:49 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:49 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:49 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:49 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:49 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:49 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:49 --> Controller Class Initialized
+DEBUG - 2015-09-23 17:48:49 --> Config Class Initialized
+DEBUG - 2015-09-23 17:48:49 --> Hooks Class Initialized
+DEBUG - 2015-09-23 17:48:49 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 17:48:49 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 17:48:49 --> URI Class Initialized
+DEBUG - 2015-09-23 17:48:50 --> Router Class Initialized
+DEBUG - 2015-09-23 17:48:50 --> Output Class Initialized
+DEBUG - 2015-09-23 17:48:50 --> Security Class Initialized
+DEBUG - 2015-09-23 17:48:50 --> Input Class Initialized
+DEBUG - 2015-09-23 17:48:50 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:48:50 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:48:50 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:48:50 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 17:48:50 --> Language Class Initialized
+DEBUG - 2015-09-23 17:48:50 --> Loader Class Initialized
+DEBUG - 2015-09-23 17:48:50 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 17:48:50 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 17:48:50 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 17:48:50 --> Session Class Initialized
+DEBUG - 2015-09-23 17:48:50 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 17:48:50 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 17:48:51 --> Session routines successfully run
+DEBUG - 2015-09-23 17:48:51 --> Upload Class Initialized
+DEBUG - 2015-09-23 17:48:51 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:51 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:51 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:51 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:51 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:51 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:51 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:51 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:51 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:51 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:51 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:51 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:51 --> Model Class Initialized
+DEBUG - 2015-09-23 17:48:51 --> Controller Class Initialized
+DEBUG - 2015-09-23 17:48:51 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 17:48:51 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 17:48:51 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 17:48:51 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 17:48:51 --> File loaded: application/views/home/bulkaddpapers.php
+DEBUG - 2015-09-23 17:48:51 --> Final output sent to browser
+DEBUG - 2015-09-23 17:48:52 --> Total execution time: 2.1525
+DEBUG - 2015-09-23 17:49:15 --> Config Class Initialized
+DEBUG - 2015-09-23 17:49:15 --> Hooks Class Initialized
+DEBUG - 2015-09-23 17:49:15 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 17:49:15 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 17:49:15 --> URI Class Initialized
+DEBUG - 2015-09-23 17:49:15 --> Router Class Initialized
+DEBUG - 2015-09-23 17:49:15 --> Output Class Initialized
+DEBUG - 2015-09-23 17:49:15 --> Security Class Initialized
+DEBUG - 2015-09-23 17:49:15 --> Input Class Initialized
+DEBUG - 2015-09-23 17:49:15 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:49:15 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:49:15 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:49:15 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 17:49:15 --> Language Class Initialized
+DEBUG - 2015-09-23 17:49:15 --> Loader Class Initialized
+DEBUG - 2015-09-23 17:49:15 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 17:49:15 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 17:49:15 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 17:49:15 --> Session Class Initialized
+DEBUG - 2015-09-23 17:49:15 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 17:49:15 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 17:49:16 --> Session routines successfully run
+DEBUG - 2015-09-23 17:49:16 --> Upload Class Initialized
+DEBUG - 2015-09-23 17:49:16 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:16 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:16 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:16 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:16 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:16 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:16 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:16 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:16 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:16 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:16 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:16 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:16 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:16 --> Controller Class Initialized
+DEBUG - 2015-09-23 17:49:16 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 17:49:16 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 17:49:16 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 17:49:16 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 17:49:16 --> File loaded: application/views/home/bulkaddpapers.php
+DEBUG - 2015-09-23 17:49:16 --> Final output sent to browser
+DEBUG - 2015-09-23 17:49:16 --> Total execution time: 1.7326
+DEBUG - 2015-09-23 17:49:21 --> Config Class Initialized
+DEBUG - 2015-09-23 17:49:21 --> Hooks Class Initialized
+DEBUG - 2015-09-23 17:49:21 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 17:49:21 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 17:49:21 --> URI Class Initialized
+DEBUG - 2015-09-23 17:49:21 --> Router Class Initialized
+DEBUG - 2015-09-23 17:49:21 --> Output Class Initialized
+DEBUG - 2015-09-23 17:49:21 --> Security Class Initialized
+DEBUG - 2015-09-23 17:49:21 --> Input Class Initialized
+DEBUG - 2015-09-23 17:49:21 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:49:21 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:49:21 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:49:21 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 17:49:21 --> Language Class Initialized
+DEBUG - 2015-09-23 17:49:22 --> Loader Class Initialized
+DEBUG - 2015-09-23 17:49:22 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 17:49:22 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 17:49:22 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 17:49:22 --> Session Class Initialized
+DEBUG - 2015-09-23 17:49:22 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 17:49:22 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 17:49:22 --> Session routines successfully run
+DEBUG - 2015-09-23 17:49:22 --> Upload Class Initialized
+DEBUG - 2015-09-23 17:49:22 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:22 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:22 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:22 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:22 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:22 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:22 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:22 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:22 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:22 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:22 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:22 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:22 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:22 --> Controller Class Initialized
+DEBUG - 2015-09-23 17:49:23 --> Config Class Initialized
+DEBUG - 2015-09-23 17:49:23 --> Hooks Class Initialized
+DEBUG - 2015-09-23 17:49:23 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 17:49:23 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 17:49:23 --> URI Class Initialized
+DEBUG - 2015-09-23 17:49:23 --> Router Class Initialized
+DEBUG - 2015-09-23 17:49:23 --> Output Class Initialized
+DEBUG - 2015-09-23 17:49:23 --> Security Class Initialized
+DEBUG - 2015-09-23 17:49:23 --> Input Class Initialized
+DEBUG - 2015-09-23 17:49:23 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:49:23 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:49:23 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:49:23 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 17:49:23 --> Language Class Initialized
+DEBUG - 2015-09-23 17:49:23 --> Loader Class Initialized
+DEBUG - 2015-09-23 17:49:23 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 17:49:23 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 17:49:23 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 17:49:23 --> Session Class Initialized
+DEBUG - 2015-09-23 17:49:23 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 17:49:23 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 17:49:24 --> Session routines successfully run
+DEBUG - 2015-09-23 17:49:24 --> Upload Class Initialized
+DEBUG - 2015-09-23 17:49:24 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:24 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:24 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:24 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:24 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:24 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:24 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:24 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:24 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:24 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:24 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:24 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:24 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:24 --> Controller Class Initialized
+DEBUG - 2015-09-23 17:49:24 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 17:49:24 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 17:49:24 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 17:49:24 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 17:49:24 --> File loaded: application/views/home/bulkaddpapers.php
+DEBUG - 2015-09-23 17:49:24 --> Final output sent to browser
+DEBUG - 2015-09-23 17:49:24 --> Total execution time: 1.7120
+DEBUG - 2015-09-23 17:49:45 --> Config Class Initialized
+DEBUG - 2015-09-23 17:49:45 --> Hooks Class Initialized
+DEBUG - 2015-09-23 17:49:45 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 17:49:45 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 17:49:45 --> URI Class Initialized
+DEBUG - 2015-09-23 17:49:45 --> Router Class Initialized
+DEBUG - 2015-09-23 17:49:45 --> Output Class Initialized
+DEBUG - 2015-09-23 17:49:45 --> Security Class Initialized
+DEBUG - 2015-09-23 17:49:45 --> Input Class Initialized
+DEBUG - 2015-09-23 17:49:45 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:49:45 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:49:45 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:49:45 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 17:49:45 --> Language Class Initialized
+DEBUG - 2015-09-23 17:49:45 --> Loader Class Initialized
+DEBUG - 2015-09-23 17:49:45 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 17:49:45 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 17:49:45 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 17:49:45 --> Session Class Initialized
+DEBUG - 2015-09-23 17:49:45 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 17:49:45 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 17:49:46 --> Session routines successfully run
+DEBUG - 2015-09-23 17:49:46 --> Upload Class Initialized
+DEBUG - 2015-09-23 17:49:46 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:46 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:46 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:46 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:46 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:46 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:46 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:46 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:46 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:46 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:46 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:46 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:47 --> Model Class Initialized
+DEBUG - 2015-09-23 17:49:47 --> Controller Class Initialized
+DEBUG - 2015-09-23 17:49:47 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 17:49:47 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 17:49:47 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 17:49:47 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 17:49:47 --> File loaded: application/views/home/bulkaddpapers.php
+DEBUG - 2015-09-23 17:49:47 --> Final output sent to browser
+DEBUG - 2015-09-23 17:49:47 --> Total execution time: 1.9278
+DEBUG - 2015-09-23 17:50:33 --> Config Class Initialized
+DEBUG - 2015-09-23 17:50:33 --> Hooks Class Initialized
+DEBUG - 2015-09-23 17:50:33 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 17:50:33 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 17:50:33 --> URI Class Initialized
+DEBUG - 2015-09-23 17:50:33 --> Router Class Initialized
+DEBUG - 2015-09-23 17:50:33 --> Output Class Initialized
+DEBUG - 2015-09-23 17:50:33 --> Security Class Initialized
+DEBUG - 2015-09-23 17:50:33 --> Input Class Initialized
+DEBUG - 2015-09-23 17:50:33 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:50:33 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:50:33 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:50:33 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 17:50:33 --> Language Class Initialized
+DEBUG - 2015-09-23 17:50:34 --> Loader Class Initialized
+DEBUG - 2015-09-23 17:50:34 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 17:50:34 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 17:50:34 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 17:50:34 --> Session Class Initialized
+DEBUG - 2015-09-23 17:50:34 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 17:50:34 --> Database Driver Class Initialized
+ERROR - 2015-09-23 17:50:34 --> Severity: Notice  --> mysql_pconnect(): send of 5 bytes failed with errno=10053 An established connection was aborted by the software in your host machine.
+ E:\fcis\web\www\abgadi\abgadi.com\abgadi.com\system\database\drivers\mysql\mysql_driver.php 91
+DEBUG - 2015-09-23 17:50:35 --> Session garbage collection performed.
+DEBUG - 2015-09-23 17:50:36 --> Session routines successfully run
+DEBUG - 2015-09-23 17:50:36 --> Upload Class Initialized
+DEBUG - 2015-09-23 17:50:36 --> Model Class Initialized
+DEBUG - 2015-09-23 17:50:36 --> Model Class Initialized
+DEBUG - 2015-09-23 17:50:36 --> Model Class Initialized
+DEBUG - 2015-09-23 17:50:36 --> Model Class Initialized
+DEBUG - 2015-09-23 17:50:36 --> Model Class Initialized
+DEBUG - 2015-09-23 17:50:36 --> Model Class Initialized
+DEBUG - 2015-09-23 17:50:36 --> Model Class Initialized
+DEBUG - 2015-09-23 17:50:36 --> Model Class Initialized
+DEBUG - 2015-09-23 17:50:36 --> Model Class Initialized
+DEBUG - 2015-09-23 17:50:36 --> Model Class Initialized
+DEBUG - 2015-09-23 17:50:36 --> Model Class Initialized
+DEBUG - 2015-09-23 17:50:36 --> Model Class Initialized
+DEBUG - 2015-09-23 17:50:36 --> Model Class Initialized
+DEBUG - 2015-09-23 17:50:36 --> Controller Class Initialized
+DEBUG - 2015-09-23 17:50:36 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 17:50:36 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 17:50:36 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 17:50:36 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 17:50:36 --> File loaded: application/views/home/bulkaddpapers.php
+DEBUG - 2015-09-23 17:50:36 --> Final output sent to browser
+DEBUG - 2015-09-23 17:50:36 --> Total execution time: 2.9249
+DEBUG - 2015-09-23 17:50:42 --> Config Class Initialized
+DEBUG - 2015-09-23 17:50:42 --> Hooks Class Initialized
+DEBUG - 2015-09-23 17:50:42 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 17:50:42 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 17:50:42 --> URI Class Initialized
+DEBUG - 2015-09-23 17:50:42 --> Router Class Initialized
+DEBUG - 2015-09-23 17:50:42 --> Output Class Initialized
+DEBUG - 2015-09-23 17:50:42 --> Security Class Initialized
+DEBUG - 2015-09-23 17:50:42 --> Input Class Initialized
+DEBUG - 2015-09-23 17:50:42 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:50:42 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:50:42 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:50:42 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 17:50:42 --> Language Class Initialized
+DEBUG - 2015-09-23 17:50:42 --> Loader Class Initialized
+DEBUG - 2015-09-23 17:50:42 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 17:50:42 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 17:50:42 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 17:50:42 --> Session Class Initialized
+DEBUG - 2015-09-23 17:50:42 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 17:50:42 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 17:51:13 --> Session routines successfully run
+DEBUG - 2015-09-23 17:51:13 --> Upload Class Initialized
+DEBUG - 2015-09-23 17:51:13 --> Model Class Initialized
+DEBUG - 2015-09-23 17:51:13 --> Model Class Initialized
+DEBUG - 2015-09-23 17:51:13 --> Model Class Initialized
+DEBUG - 2015-09-23 17:51:13 --> Model Class Initialized
+DEBUG - 2015-09-23 17:51:13 --> Model Class Initialized
+DEBUG - 2015-09-23 17:51:13 --> Model Class Initialized
+DEBUG - 2015-09-23 17:51:13 --> Model Class Initialized
+DEBUG - 2015-09-23 17:51:13 --> Model Class Initialized
+DEBUG - 2015-09-23 17:51:13 --> Model Class Initialized
+DEBUG - 2015-09-23 17:51:13 --> Model Class Initialized
+DEBUG - 2015-09-23 17:51:13 --> Model Class Initialized
+DEBUG - 2015-09-23 17:51:13 --> Model Class Initialized
+DEBUG - 2015-09-23 17:51:13 --> Model Class Initialized
+DEBUG - 2015-09-23 17:51:13 --> Controller Class Initialized
+DEBUG - 2015-09-23 17:51:13 --> Config Class Initialized
+DEBUG - 2015-09-23 17:51:13 --> Hooks Class Initialized
+DEBUG - 2015-09-23 17:51:13 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 17:51:13 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 17:51:13 --> URI Class Initialized
+DEBUG - 2015-09-23 17:51:13 --> Router Class Initialized
+DEBUG - 2015-09-23 17:51:14 --> Output Class Initialized
+DEBUG - 2015-09-23 17:51:14 --> Security Class Initialized
+DEBUG - 2015-09-23 17:51:14 --> Input Class Initialized
+DEBUG - 2015-09-23 17:51:14 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:51:14 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:51:14 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:51:14 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 17:51:14 --> Language Class Initialized
+DEBUG - 2015-09-23 17:51:14 --> Loader Class Initialized
+DEBUG - 2015-09-23 17:51:14 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 17:51:14 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 17:51:14 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 17:51:14 --> Session Class Initialized
+DEBUG - 2015-09-23 17:51:14 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 17:51:14 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 17:51:15 --> Session routines successfully run
+DEBUG - 2015-09-23 17:51:15 --> Upload Class Initialized
+DEBUG - 2015-09-23 17:51:15 --> Model Class Initialized
+DEBUG - 2015-09-23 17:51:15 --> Model Class Initialized
+DEBUG - 2015-09-23 17:51:15 --> Model Class Initialized
+DEBUG - 2015-09-23 17:51:15 --> Model Class Initialized
+DEBUG - 2015-09-23 17:51:15 --> Model Class Initialized
+DEBUG - 2015-09-23 17:51:15 --> Model Class Initialized
+DEBUG - 2015-09-23 17:51:15 --> Model Class Initialized
+DEBUG - 2015-09-23 17:51:15 --> Model Class Initialized
+DEBUG - 2015-09-23 17:51:15 --> Model Class Initialized
+DEBUG - 2015-09-23 17:51:15 --> Model Class Initialized
+DEBUG - 2015-09-23 17:51:15 --> Model Class Initialized
+DEBUG - 2015-09-23 17:51:15 --> Model Class Initialized
+DEBUG - 2015-09-23 17:51:15 --> Model Class Initialized
+DEBUG - 2015-09-23 17:51:15 --> Controller Class Initialized
+DEBUG - 2015-09-23 17:51:16 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 17:51:16 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 17:51:16 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 17:51:16 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 17:51:16 --> File loaded: application/views/home/bulkaddpapers.php
+DEBUG - 2015-09-23 17:51:16 --> Final output sent to browser
+DEBUG - 2015-09-23 17:51:16 --> Total execution time: 2.2927
+DEBUG - 2015-09-23 17:52:26 --> Config Class Initialized
+DEBUG - 2015-09-23 17:52:26 --> Hooks Class Initialized
+DEBUG - 2015-09-23 17:52:26 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 17:52:26 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 17:52:26 --> URI Class Initialized
+DEBUG - 2015-09-23 17:52:26 --> Router Class Initialized
+DEBUG - 2015-09-23 17:52:26 --> Output Class Initialized
+DEBUG - 2015-09-23 17:52:26 --> Security Class Initialized
+DEBUG - 2015-09-23 17:52:26 --> Input Class Initialized
+DEBUG - 2015-09-23 17:52:26 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:52:26 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:52:26 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:52:26 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 17:52:26 --> Language Class Initialized
+DEBUG - 2015-09-23 17:52:26 --> Loader Class Initialized
+DEBUG - 2015-09-23 17:52:26 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 17:52:26 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 17:52:26 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 17:52:26 --> Session Class Initialized
+DEBUG - 2015-09-23 17:52:26 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 17:52:26 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 17:52:29 --> Session routines successfully run
+DEBUG - 2015-09-23 17:52:29 --> Upload Class Initialized
+DEBUG - 2015-09-23 17:52:29 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:29 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:29 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:29 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:29 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:29 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:29 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:29 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:29 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:29 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:29 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:29 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:29 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:29 --> Controller Class Initialized
+DEBUG - 2015-09-23 17:52:30 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 17:52:30 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 17:52:30 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 17:52:30 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 17:52:30 --> File loaded: application/views/home/bulkaddpapers.php
+DEBUG - 2015-09-23 17:52:30 --> Final output sent to browser
+DEBUG - 2015-09-23 17:52:30 --> Total execution time: 4.2819
+DEBUG - 2015-09-23 17:52:49 --> Config Class Initialized
+DEBUG - 2015-09-23 17:52:49 --> Hooks Class Initialized
+DEBUG - 2015-09-23 17:52:49 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 17:52:49 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 17:52:49 --> URI Class Initialized
+DEBUG - 2015-09-23 17:52:49 --> Router Class Initialized
+DEBUG - 2015-09-23 17:52:49 --> Output Class Initialized
+DEBUG - 2015-09-23 17:52:49 --> Security Class Initialized
+DEBUG - 2015-09-23 17:52:49 --> Input Class Initialized
+DEBUG - 2015-09-23 17:52:49 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:52:49 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:52:49 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:52:49 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 17:52:49 --> Language Class Initialized
+DEBUG - 2015-09-23 17:52:49 --> Loader Class Initialized
+DEBUG - 2015-09-23 17:52:49 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 17:52:49 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 17:52:49 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 17:52:49 --> Session Class Initialized
+DEBUG - 2015-09-23 17:52:49 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 17:52:49 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 17:52:50 --> Session routines successfully run
+DEBUG - 2015-09-23 17:52:50 --> Upload Class Initialized
+DEBUG - 2015-09-23 17:52:50 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:50 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:50 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:50 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:50 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:50 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:50 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:50 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:50 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:50 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:50 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:50 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:50 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:50 --> Controller Class Initialized
+DEBUG - 2015-09-23 17:52:51 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 17:52:51 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 17:52:51 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 17:52:51 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 17:52:51 --> File loaded: application/views/home/bulkaddpapers.php
+DEBUG - 2015-09-23 17:52:51 --> Final output sent to browser
+DEBUG - 2015-09-23 17:52:51 --> Total execution time: 2.2454
+DEBUG - 2015-09-23 17:52:55 --> Config Class Initialized
+DEBUG - 2015-09-23 17:52:55 --> Hooks Class Initialized
+DEBUG - 2015-09-23 17:52:55 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 17:52:55 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 17:52:55 --> URI Class Initialized
+DEBUG - 2015-09-23 17:52:55 --> Router Class Initialized
+DEBUG - 2015-09-23 17:52:55 --> Output Class Initialized
+DEBUG - 2015-09-23 17:52:55 --> Security Class Initialized
+DEBUG - 2015-09-23 17:52:55 --> Input Class Initialized
+DEBUG - 2015-09-23 17:52:55 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:52:55 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:52:55 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:52:55 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 17:52:55 --> Language Class Initialized
+DEBUG - 2015-09-23 17:52:55 --> Loader Class Initialized
+DEBUG - 2015-09-23 17:52:55 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 17:52:55 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 17:52:55 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 17:52:55 --> Session Class Initialized
+DEBUG - 2015-09-23 17:52:56 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 17:52:56 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 17:52:56 --> Session routines successfully run
+DEBUG - 2015-09-23 17:52:56 --> Upload Class Initialized
+DEBUG - 2015-09-23 17:52:56 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:56 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:56 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:56 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:57 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:57 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:57 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:57 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:57 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:57 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:57 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:57 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:57 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:57 --> Controller Class Initialized
+DEBUG - 2015-09-23 17:52:57 --> Config Class Initialized
+DEBUG - 2015-09-23 17:52:57 --> Hooks Class Initialized
+DEBUG - 2015-09-23 17:52:57 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 17:52:57 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 17:52:57 --> URI Class Initialized
+DEBUG - 2015-09-23 17:52:57 --> Router Class Initialized
+DEBUG - 2015-09-23 17:52:57 --> Output Class Initialized
+DEBUG - 2015-09-23 17:52:57 --> Security Class Initialized
+DEBUG - 2015-09-23 17:52:57 --> Input Class Initialized
+DEBUG - 2015-09-23 17:52:57 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:52:57 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:52:57 --> XSS Filtering completed
+DEBUG - 2015-09-23 17:52:57 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 17:52:57 --> Language Class Initialized
+DEBUG - 2015-09-23 17:52:57 --> Loader Class Initialized
+DEBUG - 2015-09-23 17:52:57 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 17:52:57 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 17:52:57 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 17:52:57 --> Session Class Initialized
+DEBUG - 2015-09-23 17:52:57 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 17:52:57 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 17:52:59 --> Session routines successfully run
+DEBUG - 2015-09-23 17:52:59 --> Upload Class Initialized
+DEBUG - 2015-09-23 17:52:59 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:59 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:59 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:59 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:59 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:59 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:59 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:59 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:59 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:59 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:59 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:59 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:59 --> Model Class Initialized
+DEBUG - 2015-09-23 17:52:59 --> Controller Class Initialized
+DEBUG - 2015-09-23 17:52:59 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 17:53:00 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 17:53:00 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 17:53:00 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 17:53:00 --> File loaded: application/views/home/bulkaddpapers.php
+DEBUG - 2015-09-23 17:53:00 --> Final output sent to browser
+DEBUG - 2015-09-23 17:53:00 --> Total execution time: 2.6027
+DEBUG - 2015-09-23 18:29:07 --> Config Class Initialized
+DEBUG - 2015-09-23 18:29:07 --> Hooks Class Initialized
+DEBUG - 2015-09-23 18:29:07 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 18:29:07 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 18:29:07 --> URI Class Initialized
+DEBUG - 2015-09-23 18:29:07 --> Router Class Initialized
+DEBUG - 2015-09-23 18:29:07 --> No URI present. Default controller set.
+DEBUG - 2015-09-23 18:29:07 --> Output Class Initialized
+DEBUG - 2015-09-23 18:29:07 --> Security Class Initialized
+DEBUG - 2015-09-23 18:29:07 --> Input Class Initialized
+DEBUG - 2015-09-23 18:29:07 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:29:07 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:29:07 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:29:07 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 18:29:07 --> Language Class Initialized
+DEBUG - 2015-09-23 18:29:08 --> Loader Class Initialized
+DEBUG - 2015-09-23 18:29:08 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 18:29:08 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 18:29:08 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 18:29:08 --> Session Class Initialized
+DEBUG - 2015-09-23 18:29:08 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 18:29:08 --> Database Driver Class Initialized
+ERROR - 2015-09-23 18:29:08 --> Severity: Notice  --> mysql_pconnect(): send of 5 bytes failed with errno=10054 An existing connection was forcibly closed by the remote host.
+ E:\fcis\web\www\abgadi\abgadi.com\abgadi.com\system\database\drivers\mysql\mysql_driver.php 91
+DEBUG - 2015-09-23 18:29:14 --> Session routines successfully run
+DEBUG - 2015-09-23 18:29:14 --> Upload Class Initialized
+DEBUG - 2015-09-23 18:29:14 --> Model Class Initialized
+DEBUG - 2015-09-23 18:29:14 --> Model Class Initialized
+DEBUG - 2015-09-23 18:29:14 --> Model Class Initialized
+DEBUG - 2015-09-23 18:29:14 --> Model Class Initialized
+DEBUG - 2015-09-23 18:29:14 --> Model Class Initialized
+DEBUG - 2015-09-23 18:29:14 --> Model Class Initialized
+DEBUG - 2015-09-23 18:29:14 --> Model Class Initialized
+DEBUG - 2015-09-23 18:29:15 --> Model Class Initialized
+DEBUG - 2015-09-23 18:29:15 --> Model Class Initialized
+DEBUG - 2015-09-23 18:29:15 --> Model Class Initialized
+DEBUG - 2015-09-23 18:29:15 --> Model Class Initialized
+DEBUG - 2015-09-23 18:29:15 --> Model Class Initialized
+DEBUG - 2015-09-23 18:29:15 --> Model Class Initialized
+DEBUG - 2015-09-23 18:29:15 --> Controller Class Initialized
+DEBUG - 2015-09-23 18:29:15 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 18:29:15 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 18:29:15 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 18:29:15 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 18:29:15 --> File loaded: application/views/home/index.php
+DEBUG - 2015-09-23 18:29:15 --> Final output sent to browser
+DEBUG - 2015-09-23 18:29:15 --> Total execution time: 8.3517
+DEBUG - 2015-09-23 18:30:21 --> Config Class Initialized
+DEBUG - 2015-09-23 18:30:21 --> Hooks Class Initialized
+DEBUG - 2015-09-23 18:30:21 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 18:30:21 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 18:30:21 --> URI Class Initialized
+DEBUG - 2015-09-23 18:30:21 --> Router Class Initialized
+DEBUG - 2015-09-23 18:30:21 --> Output Class Initialized
+DEBUG - 2015-09-23 18:30:21 --> Security Class Initialized
+DEBUG - 2015-09-23 18:30:21 --> Input Class Initialized
+DEBUG - 2015-09-23 18:30:21 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:30:21 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:30:21 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:30:21 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 18:30:21 --> Language Class Initialized
+DEBUG - 2015-09-23 18:30:21 --> Loader Class Initialized
+DEBUG - 2015-09-23 18:30:21 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 18:30:21 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 18:30:21 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 18:30:21 --> Session Class Initialized
+DEBUG - 2015-09-23 18:30:21 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 18:30:21 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 18:30:23 --> Session routines successfully run
+DEBUG - 2015-09-23 18:30:23 --> Upload Class Initialized
+DEBUG - 2015-09-23 18:30:23 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:23 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:23 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:23 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:23 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:23 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:24 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:24 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:24 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:24 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:24 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:24 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:24 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:24 --> Controller Class Initialized
+DEBUG - 2015-09-23 18:30:24 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 18:30:24 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 18:30:24 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 18:30:24 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 18:30:24 --> File loaded: application/views/home/bulkaddpapers.php
+DEBUG - 2015-09-23 18:30:24 --> Final output sent to browser
+DEBUG - 2015-09-23 18:30:24 --> Total execution time: 3.1571
+DEBUG - 2015-09-23 18:30:30 --> Config Class Initialized
+DEBUG - 2015-09-23 18:30:30 --> Hooks Class Initialized
+DEBUG - 2015-09-23 18:30:30 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 18:30:30 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 18:30:30 --> URI Class Initialized
+DEBUG - 2015-09-23 18:30:30 --> Router Class Initialized
+DEBUG - 2015-09-23 18:30:30 --> Output Class Initialized
+DEBUG - 2015-09-23 18:30:30 --> Security Class Initialized
+DEBUG - 2015-09-23 18:30:30 --> Input Class Initialized
+DEBUG - 2015-09-23 18:30:30 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:30:30 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:30:30 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:30:30 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 18:30:30 --> Language Class Initialized
+DEBUG - 2015-09-23 18:30:30 --> Loader Class Initialized
+DEBUG - 2015-09-23 18:30:30 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 18:30:30 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 18:30:30 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 18:30:30 --> Session Class Initialized
+DEBUG - 2015-09-23 18:30:30 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 18:30:31 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 18:30:31 --> Session routines successfully run
+DEBUG - 2015-09-23 18:30:31 --> Upload Class Initialized
+DEBUG - 2015-09-23 18:30:31 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:31 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:31 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:31 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:31 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:31 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:31 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:31 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:31 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:31 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:31 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:31 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:31 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:31 --> Controller Class Initialized
+DEBUG - 2015-09-23 18:30:39 --> Config Class Initialized
+DEBUG - 2015-09-23 18:30:39 --> Hooks Class Initialized
+DEBUG - 2015-09-23 18:30:39 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 18:30:39 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 18:30:39 --> URI Class Initialized
+DEBUG - 2015-09-23 18:30:39 --> Router Class Initialized
+DEBUG - 2015-09-23 18:30:39 --> Output Class Initialized
+DEBUG - 2015-09-23 18:30:39 --> Security Class Initialized
+DEBUG - 2015-09-23 18:30:39 --> Input Class Initialized
+DEBUG - 2015-09-23 18:30:39 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:30:39 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:30:39 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:30:39 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 18:30:39 --> Language Class Initialized
+DEBUG - 2015-09-23 18:30:39 --> Loader Class Initialized
+DEBUG - 2015-09-23 18:30:39 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 18:30:39 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 18:30:39 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 18:30:39 --> Session Class Initialized
+DEBUG - 2015-09-23 18:30:39 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 18:30:39 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 18:30:40 --> Session routines successfully run
+DEBUG - 2015-09-23 18:30:40 --> Upload Class Initialized
+DEBUG - 2015-09-23 18:30:40 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:40 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:40 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:40 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:40 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:40 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:40 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:40 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:40 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:40 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:40 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:40 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:40 --> Model Class Initialized
+DEBUG - 2015-09-23 18:30:40 --> Controller Class Initialized
+DEBUG - 2015-09-23 18:30:41 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 18:30:41 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 18:30:41 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 18:30:41 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 18:30:41 --> File loaded: application/views/home/bulkaddpapers.php
+DEBUG - 2015-09-23 18:30:41 --> Final output sent to browser
+DEBUG - 2015-09-23 18:30:41 --> Total execution time: 2.0293
+DEBUG - 2015-09-23 18:31:29 --> Config Class Initialized
+DEBUG - 2015-09-23 18:31:30 --> Hooks Class Initialized
+DEBUG - 2015-09-23 18:31:30 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 18:31:30 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 18:31:30 --> URI Class Initialized
+DEBUG - 2015-09-23 18:31:30 --> Router Class Initialized
+DEBUG - 2015-09-23 18:31:30 --> Output Class Initialized
+DEBUG - 2015-09-23 18:31:30 --> Security Class Initialized
+DEBUG - 2015-09-23 18:31:30 --> Input Class Initialized
+DEBUG - 2015-09-23 18:31:30 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:31:30 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:31:30 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:31:30 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 18:31:30 --> Language Class Initialized
+DEBUG - 2015-09-23 18:31:30 --> Loader Class Initialized
+DEBUG - 2015-09-23 18:31:30 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 18:31:30 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 18:31:30 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 18:31:30 --> Session Class Initialized
+DEBUG - 2015-09-23 18:31:30 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 18:31:30 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 18:31:34 --> Session routines successfully run
+DEBUG - 2015-09-23 18:31:34 --> Upload Class Initialized
+DEBUG - 2015-09-23 18:31:34 --> Model Class Initialized
+DEBUG - 2015-09-23 18:31:34 --> Model Class Initialized
+DEBUG - 2015-09-23 18:31:34 --> Model Class Initialized
+DEBUG - 2015-09-23 18:31:34 --> Model Class Initialized
+DEBUG - 2015-09-23 18:31:34 --> Model Class Initialized
+DEBUG - 2015-09-23 18:31:34 --> Model Class Initialized
+DEBUG - 2015-09-23 18:31:34 --> Model Class Initialized
+DEBUG - 2015-09-23 18:31:34 --> Model Class Initialized
+DEBUG - 2015-09-23 18:31:34 --> Model Class Initialized
+DEBUG - 2015-09-23 18:31:34 --> Model Class Initialized
+DEBUG - 2015-09-23 18:31:34 --> Model Class Initialized
+DEBUG - 2015-09-23 18:31:34 --> Model Class Initialized
+DEBUG - 2015-09-23 18:31:34 --> Model Class Initialized
+DEBUG - 2015-09-23 18:31:34 --> Controller Class Initialized
+DEBUG - 2015-09-23 18:31:34 --> Upload class already loaded. Second attempt ignored.
+DEBUG - 2015-09-23 18:31:37 --> Config Class Initialized
+DEBUG - 2015-09-23 18:31:37 --> Hooks Class Initialized
+DEBUG - 2015-09-23 18:31:37 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 18:31:37 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 18:31:37 --> URI Class Initialized
+DEBUG - 2015-09-23 18:31:37 --> Router Class Initialized
+DEBUG - 2015-09-23 18:31:37 --> Output Class Initialized
+DEBUG - 2015-09-23 18:31:38 --> Security Class Initialized
+DEBUG - 2015-09-23 18:31:38 --> Input Class Initialized
+DEBUG - 2015-09-23 18:31:38 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:31:38 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:31:38 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:31:38 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 18:31:38 --> Language Class Initialized
+DEBUG - 2015-09-23 18:31:38 --> Loader Class Initialized
+DEBUG - 2015-09-23 18:31:38 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 18:31:38 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 18:31:38 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 18:31:38 --> Session Class Initialized
+DEBUG - 2015-09-23 18:31:38 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 18:31:38 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 18:31:41 --> Session routines successfully run
+DEBUG - 2015-09-23 18:31:41 --> Upload Class Initialized
+DEBUG - 2015-09-23 18:31:41 --> Model Class Initialized
+DEBUG - 2015-09-23 18:31:41 --> Model Class Initialized
+DEBUG - 2015-09-23 18:31:41 --> Model Class Initialized
+DEBUG - 2015-09-23 18:31:41 --> Model Class Initialized
+DEBUG - 2015-09-23 18:31:41 --> Model Class Initialized
+DEBUG - 2015-09-23 18:31:41 --> Model Class Initialized
+DEBUG - 2015-09-23 18:31:41 --> Model Class Initialized
+DEBUG - 2015-09-23 18:31:41 --> Model Class Initialized
+DEBUG - 2015-09-23 18:31:41 --> Model Class Initialized
+DEBUG - 2015-09-23 18:31:41 --> Model Class Initialized
+DEBUG - 2015-09-23 18:31:41 --> Model Class Initialized
+DEBUG - 2015-09-23 18:31:41 --> Model Class Initialized
+DEBUG - 2015-09-23 18:31:41 --> Model Class Initialized
+DEBUG - 2015-09-23 18:31:41 --> Controller Class Initialized
+DEBUG - 2015-09-23 18:31:41 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 18:31:41 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 18:31:41 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 18:31:41 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 18:31:41 --> File loaded: application/views/home/bulkaddpapers.php
+DEBUG - 2015-09-23 18:31:41 --> Final output sent to browser
+DEBUG - 2015-09-23 18:31:41 --> Total execution time: 3.9946
+DEBUG - 2015-09-23 18:47:59 --> Config Class Initialized
+DEBUG - 2015-09-23 18:47:59 --> Hooks Class Initialized
+DEBUG - 2015-09-23 18:47:59 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 18:47:59 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 18:47:59 --> URI Class Initialized
+DEBUG - 2015-09-23 18:47:59 --> Router Class Initialized
+DEBUG - 2015-09-23 18:47:59 --> Output Class Initialized
+DEBUG - 2015-09-23 18:47:59 --> Security Class Initialized
+DEBUG - 2015-09-23 18:47:59 --> Input Class Initialized
+DEBUG - 2015-09-23 18:47:59 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:47:59 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:47:59 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:47:59 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 18:47:59 --> Language Class Initialized
+DEBUG - 2015-09-23 18:47:59 --> Loader Class Initialized
+DEBUG - 2015-09-23 18:47:59 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 18:47:59 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 18:47:59 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 18:48:00 --> Session Class Initialized
+DEBUG - 2015-09-23 18:48:00 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 18:48:00 --> Database Driver Class Initialized
+ERROR - 2015-09-23 18:48:00 --> Severity: Warning  --> mysql_pconnect(): MySQL server has gone away E:\fcis\web\www\abgadi\abgadi.com\abgadi.com\system\database\drivers\mysql\mysql_driver.php 91
+DEBUG - 2015-09-23 18:48:01 --> Session routines successfully run
+DEBUG - 2015-09-23 18:48:01 --> Upload Class Initialized
+DEBUG - 2015-09-23 18:48:01 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:01 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:01 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:01 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:01 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:01 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:01 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:01 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:01 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:01 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:01 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:01 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:01 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:01 --> Controller Class Initialized
+DEBUG - 2015-09-23 18:48:01 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 18:48:01 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 18:48:01 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 18:48:01 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 18:48:01 --> File loaded: application/views/home/bulkaddpapers.php
+DEBUG - 2015-09-23 18:48:01 --> Final output sent to browser
+DEBUG - 2015-09-23 18:48:02 --> Total execution time: 2.4078
+DEBUG - 2015-09-23 18:48:44 --> Config Class Initialized
+DEBUG - 2015-09-23 18:48:44 --> Hooks Class Initialized
+DEBUG - 2015-09-23 18:48:44 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 18:48:44 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 18:48:44 --> URI Class Initialized
+DEBUG - 2015-09-23 18:48:44 --> Router Class Initialized
+DEBUG - 2015-09-23 18:48:44 --> Output Class Initialized
+DEBUG - 2015-09-23 18:48:44 --> Security Class Initialized
+DEBUG - 2015-09-23 18:48:44 --> Input Class Initialized
+DEBUG - 2015-09-23 18:48:44 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:48:44 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:48:44 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:48:44 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 18:48:44 --> Language Class Initialized
+DEBUG - 2015-09-23 18:48:44 --> Loader Class Initialized
+DEBUG - 2015-09-23 18:48:44 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 18:48:44 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 18:48:44 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 18:48:44 --> Session Class Initialized
+DEBUG - 2015-09-23 18:48:44 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 18:48:45 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 18:48:45 --> Session routines successfully run
+DEBUG - 2015-09-23 18:48:45 --> Upload Class Initialized
+DEBUG - 2015-09-23 18:48:45 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:45 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:45 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:45 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:45 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:45 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:45 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:45 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:45 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:45 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:46 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:46 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:46 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:46 --> Controller Class Initialized
+DEBUG - 2015-09-23 18:48:46 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 18:48:46 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 18:48:46 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 18:48:46 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 18:48:46 --> File loaded: application/views/home/bulkaddpapers.php
+DEBUG - 2015-09-23 18:48:46 --> Final output sent to browser
+DEBUG - 2015-09-23 18:48:46 --> Total execution time: 1.7218
+DEBUG - 2015-09-23 18:48:53 --> Config Class Initialized
+DEBUG - 2015-09-23 18:48:53 --> Hooks Class Initialized
+DEBUG - 2015-09-23 18:48:53 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 18:48:53 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 18:48:53 --> URI Class Initialized
+DEBUG - 2015-09-23 18:48:53 --> Router Class Initialized
+DEBUG - 2015-09-23 18:48:53 --> Output Class Initialized
+DEBUG - 2015-09-23 18:48:53 --> Security Class Initialized
+DEBUG - 2015-09-23 18:48:53 --> Input Class Initialized
+DEBUG - 2015-09-23 18:48:53 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:48:53 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:48:53 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:48:53 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 18:48:53 --> Language Class Initialized
+DEBUG - 2015-09-23 18:48:53 --> Loader Class Initialized
+DEBUG - 2015-09-23 18:48:53 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 18:48:53 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 18:48:53 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 18:48:53 --> Session Class Initialized
+DEBUG - 2015-09-23 18:48:53 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 18:48:53 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 18:48:54 --> Session routines successfully run
+DEBUG - 2015-09-23 18:48:54 --> Upload Class Initialized
+DEBUG - 2015-09-23 18:48:54 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:54 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:54 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:54 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:54 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:54 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:54 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:54 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:54 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:54 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:54 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:54 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:54 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:54 --> Controller Class Initialized
+ERROR - 2015-09-23 18:48:54 --> 404 Page Not Found --> homecontroller/cancelcsv
+DEBUG - 2015-09-23 18:48:55 --> Config Class Initialized
+DEBUG - 2015-09-23 18:48:55 --> Hooks Class Initialized
+DEBUG - 2015-09-23 18:48:55 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 18:48:55 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 18:48:55 --> URI Class Initialized
+DEBUG - 2015-09-23 18:48:55 --> Router Class Initialized
+DEBUG - 2015-09-23 18:48:55 --> Output Class Initialized
+DEBUG - 2015-09-23 18:48:55 --> Security Class Initialized
+DEBUG - 2015-09-23 18:48:55 --> Input Class Initialized
+DEBUG - 2015-09-23 18:48:55 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:48:55 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:48:55 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:48:55 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 18:48:55 --> Language Class Initialized
+DEBUG - 2015-09-23 18:48:55 --> Loader Class Initialized
+DEBUG - 2015-09-23 18:48:55 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 18:48:55 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 18:48:55 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 18:48:56 --> Session Class Initialized
+DEBUG - 2015-09-23 18:48:56 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 18:48:56 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 18:48:56 --> Session routines successfully run
+DEBUG - 2015-09-23 18:48:56 --> Upload Class Initialized
+DEBUG - 2015-09-23 18:48:56 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:56 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:56 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:56 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:56 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:56 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:56 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:56 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:56 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:56 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:57 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:57 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:57 --> Model Class Initialized
+DEBUG - 2015-09-23 18:48:57 --> Controller Class Initialized
+DEBUG - 2015-09-23 18:48:57 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 18:48:57 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 18:48:57 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 18:48:57 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 18:48:57 --> File loaded: application/views/home/bulkaddpapers.php
+DEBUG - 2015-09-23 18:48:57 --> Final output sent to browser
+DEBUG - 2015-09-23 18:48:57 --> Total execution time: 1.6612
+DEBUG - 2015-09-23 18:50:48 --> Config Class Initialized
+DEBUG - 2015-09-23 18:50:48 --> Hooks Class Initialized
+DEBUG - 2015-09-23 18:50:48 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 18:50:48 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 18:50:48 --> URI Class Initialized
+DEBUG - 2015-09-23 18:50:48 --> Router Class Initialized
+DEBUG - 2015-09-23 18:50:48 --> Output Class Initialized
+DEBUG - 2015-09-23 18:50:48 --> Security Class Initialized
+DEBUG - 2015-09-23 18:50:48 --> Input Class Initialized
+DEBUG - 2015-09-23 18:50:48 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:50:48 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:50:48 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:50:48 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 18:50:48 --> Language Class Initialized
+DEBUG - 2015-09-23 18:50:48 --> Loader Class Initialized
+DEBUG - 2015-09-23 18:50:48 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 18:50:48 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 18:50:48 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 18:50:48 --> Session Class Initialized
+DEBUG - 2015-09-23 18:50:48 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 18:50:48 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 18:50:49 --> Session routines successfully run
+DEBUG - 2015-09-23 18:50:49 --> Upload Class Initialized
+DEBUG - 2015-09-23 18:50:49 --> Model Class Initialized
+DEBUG - 2015-09-23 18:50:49 --> Model Class Initialized
+DEBUG - 2015-09-23 18:50:49 --> Model Class Initialized
+DEBUG - 2015-09-23 18:50:49 --> Model Class Initialized
+DEBUG - 2015-09-23 18:50:49 --> Model Class Initialized
+DEBUG - 2015-09-23 18:50:49 --> Model Class Initialized
+DEBUG - 2015-09-23 18:50:49 --> Model Class Initialized
+DEBUG - 2015-09-23 18:50:49 --> Model Class Initialized
+DEBUG - 2015-09-23 18:50:49 --> Model Class Initialized
+DEBUG - 2015-09-23 18:50:49 --> Model Class Initialized
+DEBUG - 2015-09-23 18:50:50 --> Model Class Initialized
+DEBUG - 2015-09-23 18:50:50 --> Model Class Initialized
+DEBUG - 2015-09-23 18:50:50 --> Model Class Initialized
+DEBUG - 2015-09-23 18:50:50 --> Controller Class Initialized
+DEBUG - 2015-09-23 18:50:50 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 18:50:50 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 18:50:50 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 18:50:50 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 18:50:50 --> File loaded: application/views/home/bulkaddpapers.php
+DEBUG - 2015-09-23 18:50:50 --> Final output sent to browser
+DEBUG - 2015-09-23 18:50:50 --> Total execution time: 2.5105
+DEBUG - 2015-09-23 18:51:03 --> Config Class Initialized
+DEBUG - 2015-09-23 18:51:03 --> Hooks Class Initialized
+DEBUG - 2015-09-23 18:51:03 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 18:51:03 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 18:51:03 --> URI Class Initialized
+DEBUG - 2015-09-23 18:51:03 --> Router Class Initialized
+DEBUG - 2015-09-23 18:51:03 --> Output Class Initialized
+DEBUG - 2015-09-23 18:51:03 --> Security Class Initialized
+DEBUG - 2015-09-23 18:51:03 --> Input Class Initialized
+DEBUG - 2015-09-23 18:51:04 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:51:04 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:51:04 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:51:04 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 18:51:04 --> Language Class Initialized
+DEBUG - 2015-09-23 18:51:04 --> Loader Class Initialized
+DEBUG - 2015-09-23 18:51:04 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 18:51:04 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 18:51:04 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 18:51:04 --> Session Class Initialized
+DEBUG - 2015-09-23 18:51:04 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 18:51:04 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 18:51:05 --> Session routines successfully run
+DEBUG - 2015-09-23 18:51:05 --> Upload Class Initialized
+DEBUG - 2015-09-23 18:51:05 --> Model Class Initialized
+DEBUG - 2015-09-23 18:51:05 --> Model Class Initialized
+DEBUG - 2015-09-23 18:51:05 --> Model Class Initialized
+DEBUG - 2015-09-23 18:51:05 --> Model Class Initialized
+DEBUG - 2015-09-23 18:51:06 --> Model Class Initialized
+DEBUG - 2015-09-23 18:51:06 --> Model Class Initialized
+DEBUG - 2015-09-23 18:51:06 --> Model Class Initialized
+DEBUG - 2015-09-23 18:51:06 --> Model Class Initialized
+DEBUG - 2015-09-23 18:51:06 --> Model Class Initialized
+DEBUG - 2015-09-23 18:51:06 --> Model Class Initialized
+DEBUG - 2015-09-23 18:51:06 --> Model Class Initialized
+DEBUG - 2015-09-23 18:51:06 --> Model Class Initialized
+DEBUG - 2015-09-23 18:51:06 --> Model Class Initialized
+DEBUG - 2015-09-23 18:51:06 --> Controller Class Initialized
+DEBUG - 2015-09-23 18:51:06 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 18:51:06 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 18:51:06 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 18:51:06 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 18:51:06 --> File loaded: application/views/home/bulkaddpapers.php
+DEBUG - 2015-09-23 18:51:06 --> Final output sent to browser
+DEBUG - 2015-09-23 18:51:06 --> Total execution time: 2.6669
+DEBUG - 2015-09-23 18:56:43 --> Config Class Initialized
+DEBUG - 2015-09-23 18:56:43 --> Hooks Class Initialized
+DEBUG - 2015-09-23 18:56:43 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 18:56:43 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 18:56:43 --> URI Class Initialized
+DEBUG - 2015-09-23 18:56:43 --> Router Class Initialized
+DEBUG - 2015-09-23 18:56:43 --> Output Class Initialized
+DEBUG - 2015-09-23 18:56:43 --> Security Class Initialized
+DEBUG - 2015-09-23 18:56:43 --> Input Class Initialized
+DEBUG - 2015-09-23 18:56:44 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:56:44 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:56:44 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:56:44 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 18:56:44 --> Language Class Initialized
+DEBUG - 2015-09-23 18:56:44 --> Loader Class Initialized
+DEBUG - 2015-09-23 18:56:44 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 18:56:44 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 18:56:44 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 18:56:44 --> Session Class Initialized
+DEBUG - 2015-09-23 18:56:44 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 18:56:44 --> Database Driver Class Initialized
+ERROR - 2015-09-23 18:56:44 --> Severity: Warning  --> mysql_pconnect(): MySQL server has gone away E:\fcis\web\www\abgadi\abgadi.com\abgadi.com\system\database\drivers\mysql\mysql_driver.php 91
+DEBUG - 2015-09-23 18:56:45 --> Session routines successfully run
+DEBUG - 2015-09-23 18:56:45 --> Upload Class Initialized
+DEBUG - 2015-09-23 18:56:45 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:45 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:45 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:45 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:45 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:45 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:45 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:45 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:45 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:45 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:45 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:45 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:45 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:45 --> Controller Class Initialized
+DEBUG - 2015-09-23 18:56:45 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 18:56:45 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 18:56:45 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 18:56:45 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 18:56:45 --> File loaded: application/views/home/bulkaddpapers.php
+DEBUG - 2015-09-23 18:56:45 --> Final output sent to browser
+DEBUG - 2015-09-23 18:56:46 --> Total execution time: 2.1389
+DEBUG - 2015-09-23 18:56:48 --> Config Class Initialized
+DEBUG - 2015-09-23 18:56:48 --> Hooks Class Initialized
+DEBUG - 2015-09-23 18:56:48 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 18:56:48 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 18:56:48 --> URI Class Initialized
+DEBUG - 2015-09-23 18:56:48 --> Router Class Initialized
+DEBUG - 2015-09-23 18:56:48 --> Output Class Initialized
+DEBUG - 2015-09-23 18:56:48 --> Security Class Initialized
+DEBUG - 2015-09-23 18:56:48 --> Input Class Initialized
+DEBUG - 2015-09-23 18:56:48 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:56:48 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:56:48 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:56:48 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 18:56:48 --> Language Class Initialized
+DEBUG - 2015-09-23 18:56:48 --> Loader Class Initialized
+DEBUG - 2015-09-23 18:56:48 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 18:56:48 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 18:56:48 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 18:56:48 --> Session Class Initialized
+DEBUG - 2015-09-23 18:56:48 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 18:56:49 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 18:56:49 --> Session routines successfully run
+DEBUG - 2015-09-23 18:56:49 --> Upload Class Initialized
+DEBUG - 2015-09-23 18:56:49 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:49 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:49 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:49 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:49 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:49 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:49 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:49 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:49 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:50 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:50 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:50 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:50 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:50 --> Controller Class Initialized
+DEBUG - 2015-09-23 18:56:50 --> Config Class Initialized
+DEBUG - 2015-09-23 18:56:50 --> Hooks Class Initialized
+DEBUG - 2015-09-23 18:56:50 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 18:56:50 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 18:56:50 --> URI Class Initialized
+DEBUG - 2015-09-23 18:56:50 --> Router Class Initialized
+DEBUG - 2015-09-23 18:56:50 --> Output Class Initialized
+DEBUG - 2015-09-23 18:56:50 --> Security Class Initialized
+DEBUG - 2015-09-23 18:56:50 --> Input Class Initialized
+DEBUG - 2015-09-23 18:56:50 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:56:50 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:56:50 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:56:50 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 18:56:50 --> Language Class Initialized
+DEBUG - 2015-09-23 18:56:50 --> Loader Class Initialized
+DEBUG - 2015-09-23 18:56:50 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 18:56:50 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 18:56:50 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 18:56:50 --> Session Class Initialized
+DEBUG - 2015-09-23 18:56:50 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 18:56:50 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 18:56:51 --> Session routines successfully run
+DEBUG - 2015-09-23 18:56:51 --> Upload Class Initialized
+DEBUG - 2015-09-23 18:56:51 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:51 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:51 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:51 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:51 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:51 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:51 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:51 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:51 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:51 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:51 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:51 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:51 --> Model Class Initialized
+DEBUG - 2015-09-23 18:56:51 --> Controller Class Initialized
+DEBUG - 2015-09-23 18:56:51 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 18:56:51 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 18:56:51 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 18:56:51 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 18:56:51 --> File loaded: application/views/home/bulkaddpapers.php
+DEBUG - 2015-09-23 18:56:51 --> Final output sent to browser
+DEBUG - 2015-09-23 18:56:51 --> Total execution time: 1.4977
+DEBUG - 2015-09-23 18:58:35 --> Config Class Initialized
+DEBUG - 2015-09-23 18:58:35 --> Hooks Class Initialized
+DEBUG - 2015-09-23 18:58:35 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 18:58:36 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 18:58:36 --> URI Class Initialized
+DEBUG - 2015-09-23 18:58:36 --> Router Class Initialized
+DEBUG - 2015-09-23 18:58:36 --> Output Class Initialized
+DEBUG - 2015-09-23 18:58:36 --> Security Class Initialized
+DEBUG - 2015-09-23 18:58:36 --> Input Class Initialized
+DEBUG - 2015-09-23 18:58:36 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:58:36 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:58:36 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:58:36 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 18:58:36 --> Language Class Initialized
+DEBUG - 2015-09-23 18:58:36 --> Loader Class Initialized
+DEBUG - 2015-09-23 18:58:36 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 18:58:36 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 18:58:36 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 18:58:36 --> Session Class Initialized
+DEBUG - 2015-09-23 18:58:36 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 18:58:36 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 18:58:37 --> Session routines successfully run
+DEBUG - 2015-09-23 18:58:37 --> Upload Class Initialized
+DEBUG - 2015-09-23 18:58:37 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:37 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:37 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:37 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:37 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:37 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:37 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:37 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:37 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:37 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:37 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:37 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:37 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:37 --> Controller Class Initialized
+DEBUG - 2015-09-23 18:58:45 --> Config Class Initialized
+DEBUG - 2015-09-23 18:58:45 --> Hooks Class Initialized
+DEBUG - 2015-09-23 18:58:45 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 18:58:45 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 18:58:45 --> URI Class Initialized
+DEBUG - 2015-09-23 18:58:45 --> Router Class Initialized
+DEBUG - 2015-09-23 18:58:45 --> Output Class Initialized
+DEBUG - 2015-09-23 18:58:45 --> Security Class Initialized
+DEBUG - 2015-09-23 18:58:45 --> Input Class Initialized
+DEBUG - 2015-09-23 18:58:45 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:58:45 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:58:45 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:58:45 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 18:58:45 --> Language Class Initialized
+DEBUG - 2015-09-23 18:58:45 --> Loader Class Initialized
+DEBUG - 2015-09-23 18:58:45 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 18:58:45 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 18:58:45 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 18:58:45 --> Session Class Initialized
+DEBUG - 2015-09-23 18:58:45 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 18:58:45 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 18:58:47 --> Session routines successfully run
+DEBUG - 2015-09-23 18:58:47 --> Upload Class Initialized
+DEBUG - 2015-09-23 18:58:47 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:47 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:47 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:48 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:48 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:48 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:48 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:48 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:48 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:48 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:48 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:48 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:48 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:48 --> Controller Class Initialized
+DEBUG - 2015-09-23 18:58:48 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 18:58:48 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 18:58:48 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 18:58:48 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 18:58:48 --> File loaded: application/views/home/bulkaddpapers.php
+DEBUG - 2015-09-23 18:58:48 --> Final output sent to browser
+DEBUG - 2015-09-23 18:58:48 --> Total execution time: 3.1575
+DEBUG - 2015-09-23 18:58:54 --> Config Class Initialized
+DEBUG - 2015-09-23 18:58:54 --> Hooks Class Initialized
+DEBUG - 2015-09-23 18:58:55 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 18:58:55 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 18:58:55 --> URI Class Initialized
+DEBUG - 2015-09-23 18:58:55 --> Router Class Initialized
+DEBUG - 2015-09-23 18:58:55 --> Output Class Initialized
+DEBUG - 2015-09-23 18:58:55 --> Security Class Initialized
+DEBUG - 2015-09-23 18:58:55 --> Input Class Initialized
+DEBUG - 2015-09-23 18:58:55 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:58:55 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:58:55 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:58:55 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 18:58:55 --> Language Class Initialized
+DEBUG - 2015-09-23 18:58:55 --> Loader Class Initialized
+DEBUG - 2015-09-23 18:58:55 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 18:58:55 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 18:58:55 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 18:58:55 --> Session Class Initialized
+DEBUG - 2015-09-23 18:58:55 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 18:58:55 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 18:58:56 --> Session routines successfully run
+DEBUG - 2015-09-23 18:58:56 --> Upload Class Initialized
+DEBUG - 2015-09-23 18:58:56 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:56 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:56 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:56 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:56 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:56 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:56 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:56 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:56 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:56 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:56 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:56 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:56 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:56 --> Controller Class Initialized
+DEBUG - 2015-09-23 18:58:56 --> Config Class Initialized
+DEBUG - 2015-09-23 18:58:56 --> Hooks Class Initialized
+DEBUG - 2015-09-23 18:58:56 --> Utf8 Class Initialized
+DEBUG - 2015-09-23 18:58:56 --> UTF-8 Support Enabled
+DEBUG - 2015-09-23 18:58:56 --> URI Class Initialized
+DEBUG - 2015-09-23 18:58:56 --> Router Class Initialized
+DEBUG - 2015-09-23 18:58:56 --> Output Class Initialized
+DEBUG - 2015-09-23 18:58:56 --> Security Class Initialized
+DEBUG - 2015-09-23 18:58:56 --> Input Class Initialized
+DEBUG - 2015-09-23 18:58:56 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:58:56 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:58:56 --> XSS Filtering completed
+DEBUG - 2015-09-23 18:58:56 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-09-23 18:58:56 --> Language Class Initialized
+DEBUG - 2015-09-23 18:58:57 --> Loader Class Initialized
+DEBUG - 2015-09-23 18:58:57 --> Helper loaded: url_helper
+DEBUG - 2015-09-23 18:58:57 --> Helper loaded: file_helper
+DEBUG - 2015-09-23 18:58:57 --> Helper loaded: form_helper
+DEBUG - 2015-09-23 18:58:57 --> Session Class Initialized
+DEBUG - 2015-09-23 18:58:57 --> Helper loaded: string_helper
+DEBUG - 2015-09-23 18:58:57 --> Database Driver Class Initialized
+DEBUG - 2015-09-23 18:58:57 --> Session routines successfully run
+DEBUG - 2015-09-23 18:58:57 --> Upload Class Initialized
+DEBUG - 2015-09-23 18:58:57 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:57 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:57 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:57 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:57 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:57 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:57 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:57 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:57 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:57 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:57 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:57 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:57 --> Model Class Initialized
+DEBUG - 2015-09-23 18:58:57 --> Controller Class Initialized
+DEBUG - 2015-09-23 18:58:58 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-09-23 18:58:58 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-09-23 18:58:58 --> File loaded: application/views/shared/footer.php
+DEBUG - 2015-09-23 18:58:58 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-09-23 18:58:58 --> File loaded: application/views/home/bulkaddpapers.php
+DEBUG - 2015-09-23 18:58:58 --> Final output sent to browser
+DEBUG - 2015-09-23 18:58:58 --> Total execution time: 1.4923

@@ -85,6 +85,7 @@ if(isset($mycsv) && !empty($mycsv)){
                                 </form>
                                 <?php
                                     }
+                                    
                                 ?>
                             </div>
                             <div class="col-md-2">
@@ -100,8 +101,13 @@ if(isset($mycsv) && !empty($mycsv)){
                             </div>
                             <div class="col-md-3">
                                 <?php 
-                                    if( $onefile->status=="error"){
-                                        echo $onefile->error;
+                                    if( $onefile->status=="error" ){
+                                        if(!empty($onefile->error)){
+                                            echo $onefile->error."<br>";                                            
+                                        }
+                                    }
+                                    if( !$onefile->validationStatus){
+                                        echo "Some Fields Are Required !";
                                     }
                                 ?>
                             </div>
@@ -127,9 +133,18 @@ if(isset($mycsv) && !empty($mycsv)){
                     <?php
                                           
                                 }//foreach file
-                                if($mycsv->areAllNewFilesUploaded()){
+                                if($mycsv->areAllNewFilesUploadedOk()){
                                     echo "<a href='".site_url("homecontroller/dobulkupload")."' class='btn btn-default'>Proceed</a>";
+                                }else{
+                                    ?>
+                                    
+                    <div class="alert alert-dismissible alert-danger" style="text-align: center">
+                        <!--<button type="button" class="close" data-dismiss="alert">×</button>-->
+                        <strong>please fix these errors first</strong><br />you may need to fix it in your CSV and upload it again
+                    </div>
+                                    <?php
                                 }
+             
                             }//uploaded files
                             else{//uploaded csv
                     ?>
@@ -140,9 +155,10 @@ if(isset($mycsv) && !empty($mycsv)){
                         <strong>تم اضافة ملف قائمة الابحاث بنجاح</strong>
                     </div>
 
-
+                    
                     <?php
-                                /*
+                                
+                    /*
                                 foreach($mycsv->getAllNewFileNames() as $file){
                                 echo $file."<br>";
                                 }
@@ -162,6 +178,7 @@ if(isset($mycsv) && !empty($mycsv)){
                         <div class="clear"></div>
 
                     </form>
+                    
                     <br />
                     <div class="alert alert-dismissible alert-info" style="text-align: right">
                         <h1>اضغط على العدد للمزيد من المعلومات</h1>
@@ -237,13 +254,18 @@ if(isset($mycsv) && !empty($mycsv)){
                             </div>
                         </div>
                     </div>
+
                     <?php
                             }     
                         }//uploaded csv
                         else {// not upload csv
                             
                         }
-
+?>
+                                        <div class="block">
+                        <a href="<?php echo site_url("homecontroller/cancelcsv"); ?>" class='btn btn-default'>الغاء</a>
+                    </div>
+                    <?php
                         
                     }//end exist csv 
                     else{// form upload csv
@@ -270,10 +292,18 @@ if(isset($mycsv) && !empty($mycsv)){
                         <div class="clear"></div>
                         <input type="submit" class="btn btn-primary" value="ادخال" style="display: block; float: right;" />
                         <div class="clear"></div>
-                        <div style="display: block; float: right;">
+                        <div style="">
                             <?php 
                         if(isset($errors) && !empty($errors)){
-                            echo $errors;
+                            
+                            
+                            ?>
+                            <br />
+                            <div class="alert alert-dismissible alert-danger" style="text-align: center">
+                                <strong><?php  echo $errors ?></strong>
+                            </div>
+                            <br />
+                            <?php
                         }
                         
                         

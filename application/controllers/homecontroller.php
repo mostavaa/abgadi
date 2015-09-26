@@ -591,13 +591,15 @@ class homecontroller extends CI_Controller {
             $file->research->tenthAuthor  =   $auth->findAuthorByName($file->research->tenthAuthor , "create");            
 
             if($file->isNew){
-                  $file->research->uploadResearch(true);
+                  $valid  = $file->research->uploadResearch(true);
+                  //move file to main folder
                   rename("./tmp/".$file->research->researchFileName, './pdfs/'.$file->research->researchFileName);
             }else{
             //old file
-                $file->research->updataResearch();
-                $file->research->uploadResearch(true , true);
+                $file->research->mode = "update";
+                $valid=$file->research->uploadResearch(true);
             }
+
         }
         
         $this->session->set_userdata("mycsv" , array());
@@ -617,6 +619,23 @@ class homecontroller extends CI_Controller {
             return true;
         }
         return false;
+    }
+    public function cancelcsv(){
+             $this->deleteAllFilesinDir("./tmp/*");
+             $mycsv = $this->session->userdata('mycsv');
+             if(isset($mycsv) && !empty($mycsv)){
+                 $mycsv = unserialize($mycsv);
+                 unlink("./csvs/".$mycsv->csvName);
+                 $this->session->set_userdata("mycsv" , array());   
+             }
+             redirect(base_url("index.php/homecontroller/bulkaddpapers"));
+    }
+    private function deleteAllFilesinDir($path){
+        $files = glob($path); // get all file names
+        foreach($files as $file){ // iterate files
+            if(is_file($file))
+                unlink($file); // delete file
+        }
     }
     public function uploadcsv(){
 
@@ -667,7 +686,12 @@ class homecontroller extends CI_Controller {
                         continue;
                     }
                     $newresearch = new myFile();
-                    $newresearch->setResearchData($row , $report);
+                    $valid = $newresearch->research->setResearchData($row , $report);
+                    $newresearch->isNew = $newresearch->research->isNew;
+                    if(!$valid){
+                        $newresearch->status="error";
+                        $newresearch->validationStatus = false;                        
+                    }
                     $myCsv->files[] = $newresearch;
                 }               
             }
@@ -832,12 +856,14 @@ class myCSV {
         }
         return false;
     }
-    public function areAllNewFilesUploaded(){
+    public function areAllNewFilesUploadedOk(){
+
         foreach($this->files as $file){
+            
             if($file->isNew){
-                if($file->status!="ok"){
+                if($file->status!="ok" || $file->validationStatus==false){
                     return false;
-                }            
+                }
             }
         }
         return true;
