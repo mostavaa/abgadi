@@ -43,4 +43,13 @@ class institute
             "instituteName"=>$this->instituteName);
         return $this->CI->institutemodel->insert($inst);
     }
+    public function update(){
+        $obj= array(
+    "instituteName"=>$this->instituteName
+    );
+        $this->CI->institutemodel->update($obj , $this->id);
+    }
+    public function delete(){
+        $this->CI->institutemodel->delete($this->id);
+    }
 }

@@ -43,4 +43,13 @@ class scientificdegree
         
         return $this->CI->scientificdegreemodel->insert($obj);
     }
+    public function update(){
+        $obj= array(
+    "name"=>$this->name
+    );
+        $this->CI->scientificdegreemodel->update($obj , $this->id);
+    }
+    public function delete(){
+        $this->CI->scientificdegreemodel->delete($this->id);
+    }
 }

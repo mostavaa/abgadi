@@ -35,6 +35,7 @@
                             <li><a class="btn" href="<?php echo site_url("homecontroller/uploadpaperview")?>">اضافة محتوى</a></li>
                             <li><a class="btn"href="<?php echo site_url("homecontroller/bulkaddpapers")?>" >اضافة قائمة ابحاث</a></li>
                             <li><a class="btn" href="<?php echo site_url("homecontroller/displaydata")?>">عرض قاعدة البيانات</a></li>
+                            <li><a class="btn" href="<?php echo site_url("homecontroller/manipulateone")?>">تعديل البيانات</a></li>
                         </ul>
                     </div>
                     

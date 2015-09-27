@@ -55,7 +55,7 @@ class accurateSpecialization
     public function insert(){
         
         $authaccurateSpecialization = 0;
-        if ($this->accurateSpecialization && !empty($this->accurateSpecialization)){
+        if (isset($this->accurateSpecialization) && !empty($this->accurateSpecialization)){
             $authaccurateSpecialization = $this->accurateSpecialization->id;
         }
         $obj= array(
@@ -64,5 +64,14 @@ class accurateSpecialization
             );
         
         return $this->CI->accuratespecializationmodel->insert($obj);
+    }
+    public function update(){
+        $obj= array(
+    "name"=>$this->name
+    );
+        $this->CI->accuratespecializationmodel->update($obj , $this->id);
+    }
+    public function delete(){
+        $this->CI->accuratespecializationmodel->delete($this->id);
     }
 }

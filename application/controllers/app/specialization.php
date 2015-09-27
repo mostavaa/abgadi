@@ -59,4 +59,15 @@ class specialization
         
         return $this->CI->specializationmodel->insert($obj);
     }
+    
+    public function update(){
+        $obj= array(
+    "name"=>$this->name
+    );
+        $this->CI->specializationmodel->update($obj , $this->id);
+    }
+    
+    public function delete(){
+        $this->CI->specializationmodel->delete($this->id);
+    }
 }

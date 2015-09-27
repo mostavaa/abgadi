@@ -60,4 +60,13 @@ class researchtype
         
         return $this->CI->researchtypemodel->insert($obj);
     }
+    public function update(){
+        $obj= array(
+    "name"=>$this->name
+    );
+        $this->CI->researchtypemodel->update($obj , $this->id);
+    }
+    public function delete(){
+        $this->CI->researchtypemodel->delete($this->id);
+    }
 }

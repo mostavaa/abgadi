@@ -7,6 +7,17 @@ class specializationmodel extends CI_Model{
 		
 	}
 
+    public function delete( $id ){
+        $this->db->where('id', $id );
+        $this->db->delete('specialization'); 
+    }
+    public function update($obj , $id){
+
+        
+        $this->db->where('id', $id);
+        $this->db->update('specialization', $obj);
+        
+    }
     
     public function insert( $obj ){
         $this->db->insert("specialization", $obj);
@@ -45,10 +56,7 @@ class specializationmodel extends CI_Model{
 		return FALSE;
     }
 
-    public function delete( $newId ){
-        $this->db->where('id', $newId);
-        $this->db->delete('news'); 
-    }
+
  
 
    
@@ -62,16 +70,7 @@ class specializationmodel extends CI_Model{
         $this->db->update('applicant', $data);
         
     }
-    public function update($applicant_id){
-    	$data = array(
-			'mail_confirm' => 0
-	);
-        
-        $this->db->where('applicant_id', $applicant_id);
-        $this->db->update('applicant', $data);
-        
-        
-    }
+
  
   
    

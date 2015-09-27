@@ -72,6 +72,7 @@
     <Compile Include="application\views\home\notpermitted.php" />
     <Compile Include="application\views\home\uploadpaper.php" />
     <Compile Include="application\views\home\search.php" />
+    <Compile Include="application\views\manipulate\manipulateone.php" />
     <Compile Include="application\views\shared\css.php" />
     <Compile Include="application\views\shared\footer.php" />
     <Compile Include="application\views\shared\header.php" />
@@ -228,6 +229,7 @@
     <Folder Include="application\third_party\" />
     <Folder Include="application\views\" />
     <Folder Include="application\views\home\" />
+    <Folder Include="application\views\manipulate\" />
     <Folder Include="application\views\user\" />
     <Folder Include="application\views\shared\" />
     <Folder Include="css\" />

@@ -43,4 +43,13 @@ class job
         
         return $this->CI->jobmodel->insert($obj);
     }
+    public function update(){
+        $obj= array(
+    "name"=>$this->name
+    );
+        $this->CI->jobmodel->update($obj , $this->id);
+    }
+    public function delete(){
+        $this->CI->jobmodel->delete($this->id);
+    }
 }

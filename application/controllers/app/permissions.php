@@ -44,6 +44,7 @@ class permissions
             //"usercontroller/register",
             "usercontroller/isuserexist",
             //"usercontroller/loginview",
+            "homecontroller/manipulateone",
         )
         );
     
