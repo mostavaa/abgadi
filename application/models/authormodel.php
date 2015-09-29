@@ -7,10 +7,21 @@ class authormodel extends CI_Model{
 		
 	}
 
+    public function delete( $id ){
+        $this->db->where('id', $id );
+        $this->db->delete('author'); 
+    }
     
     public function insert( $obj ){
         $this->db->insert("author", $obj);
         return $this->db->insert_id();
+    }
+    public function update($obj , $id){
+
+        
+        $this->db->where('id', $id);
+        $this->db->update('author', $obj);
+        
     }
     
     public function findauthor($author = array()){
@@ -45,11 +56,7 @@ class authormodel extends CI_Model{
 		return FALSE;
     }
 
-    public function delete( $newId ){
-        $this->db->where('id', $newId);
-        $this->db->delete('news'); 
-    }
- 
+
 
    
 
@@ -62,17 +69,7 @@ class authormodel extends CI_Model{
         $this->db->update('applicant', $data);
         
     }
-    public function update($applicant_id){
-    	$data = array(
-			'mail_confirm' => 0
-	);
-        
-        $this->db->where('applicant_id', $applicant_id);
-        $this->db->update('applicant', $data);
-        
-        
-    }
- 
+
   
    
     

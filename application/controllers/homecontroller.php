@@ -796,15 +796,25 @@ class homecontroller extends CI_Controller {
         $data["institutes"] = $institute->findInstitute(array());
         $data["jobs"] = $job->findjob(array());
         
+        $author = new author($this);
+        $author->loadaccurateSpecialization = $author->loadcurrentScientificDegree
+        = $author->loadinstitute = $author->loadjob = $author->loadspecialization = true;
+        $data["authors"] = $author->findauthor(array());
+        
+        $publisher = new publisher($this);
+        $publisher->loadinstitute = true;
+        $data["publishers"] = $publisher->findPublisher(array());
+        
         $this->load->view("manipulate/manipulateone" , $data);
     }
     
-    private $tables = array("specialization", "accSpecialization", "scientificDegree", "researchType", "institute", "job");
+    private $tables = array("specialization", "accSpecialization", "scientificDegree", "researchType", "institute", "job" , "publisher" , "author");
     public function editonetable(){
         $table = $this->input->post("table");
         $inputId = $this->input->post("inputId");
         $inputId = intval($inputId);
-        $inputText = $this->input->post("inputText");        
+        $inputText = $this->input->post("inputText"); 
+        $instituteId = $this->input->post("instituteId");
         if(isset($table) && !empty($table) && $table!="" && in_array($table , $this->tables)){
             if (isset($inputId) && !empty($inputId) && $inputId!="" && is_int($inputId) ){
                 if (isset($inputText) && !empty($inputText) && $inputText!=""){
@@ -845,6 +855,75 @@ class homecontroller extends CI_Controller {
                         $job->name = $inputText;
                         $job->update();
                         echo "success";
+                    }else if ($table=="publisher"){
+                        $publisher = new publisher($this);
+                        $publisher->id = $inputId ; 
+                        $publisher->publisherName = $inputText;
+                        $publisher->instituteId = $instituteId;
+                        $publisher->update();
+                        echo "success";
+                    }else if ($table=="author"){
+                        $job = $this->input->post("job");
+                        $specification = $this->input->post("specialization") ;
+                        $accurateSpecification =$this->input->post("accurateSpecialization")  ;
+                        $scientificdegree =$this->input->post("currentScientificDegree") ;
+                        $institute=$this->input->post("instituteId");
+                        $jobAddress =$this->input->post("jobAddress") ;
+                        $jobPhone = $this->input->post("jobPhone");
+                        $mobile =$this->input->post("mobileNumber") ;
+                        $mail =$this->input->post("mail");
+                        
+                        
+                        $obj = new job($this);
+                        $jobs = $obj->findjob(array("id"=>$job));
+                        $job=0;
+                        if(isset($jobs) && !empty($jobs)){
+                            $job = $jobs[0];
+                        }
+                        
+                        $obj = new specialization($this);
+                        $specifications = $obj->findspecialization(array("id"=>$specification));
+                        $specification=0;
+                        if(isset($specifications) && !empty($specifications)){
+                            $specification = $specifications[0];
+                        }
+                        
+                        $obj = new accurateSpecialization($this);
+                        $accurateSpecifications = $obj->findaccurateSpecialization(array("id"=>$accurateSpecification));
+                        $accurateSpecification = 0;
+                        if(isset($accurateSpecifications) && !empty($accurateSpecifications)){
+                            $accurateSpecification = $accurateSpecifications[0];
+                        }
+                        
+                        $obj = new scientificdegree($this);
+                        $scientificdegrees = $obj->findscientificdegree(array("id"=>$scientificdegree));
+                        $scientificdegree=0;
+                        if(isset($scientificdegrees) && !empty($scientificdegrees)){
+                            $scientificdegree = $scientificdegrees[0];
+                        }
+
+                        $institute= intval($institute);
+                        
+                        $obj = new institute($this);
+                        $institutes = $obj->findInstitute(array("id"=>$institute));
+                        $institute=0;
+                        if(isset($institutes) && !empty($institutes)){
+                            $institute = $institutes[0];
+                        }
+                        $auth = new author($this);
+                        $auth->id = $inputId ;
+                        $auth->name = $inputText;
+                        $auth->job = $job;
+                        $auth->specialization = $specification ; 
+                        $auth->accurateSpecialization = $accurateSpecification;
+                        $auth->currentScientificDegree = $scientificdegree;
+                        $auth->jobAddress = $jobAddress;
+                        $auth->jobPhone = $jobPhone;
+                        $auth->mobileNumber = $mobile;
+                        $auth->mail = $mail;
+                        $auth->institute = $institute;
+                        $auth->update();
+                        echo "success";
                     }else{
                         echo "error";
                     }
@@ -862,48 +941,125 @@ class homecontroller extends CI_Controller {
     
     public function addonetable(){
         $table = $this->input->post("table");
-        $inputText = $this->input->post("inputText");        
+        $inputText = $this->input->post("inputText");       
+        $instituteId = $this->input->post("instituteId");
+
         if(isset($table) && !empty($table) && $table!="" && in_array($table , $this->tables)){
-                if (isset($inputText) && !empty($inputText) && $inputText!=""){
-                    // logic goes here
+            if (isset($inputText) && !empty($inputText) && $inputText!=""){
+                // logic goes here
+                
+                if($table=="specialization"){
+                    $specialization = new specialization($this);
+                    $specialization->name = $inputText;
+                    $specialization->insert();
+                    echo "success";
+                }else if ($table=="accSpecialization"){
+                    $accsSpecialization = new accurateSpecialization($this);
+                    $accsSpecialization->name = $inputText;
+                    $accsSpecialization->insert();
+                    echo "success";
+                }else if ($table=="scientificDegree"){
+                    $secientificDegree = new scientificdegree($this);
+                    $secientificDegree->name = $inputText;
+                    $secientificDegree->insert();
+                    echo "success";
+                }else if ($table=="researchType"){
+                    $reserchType = new researchtype($this);
+                    $reserchType->name = $inputText;
+                    $reserchType->insert();
+                    echo "success";
+                }else if ($table=="institute"){
+                    $institute = new institute($this);
+                    $institute->instituteName = $inputText;
+                    $institute->insert();
+                    echo "success";
+                }else if ($table=="job"){
+                    $job = new job($this);
+                    $job->name = $inputText;
+                    $job->insert();
+                    echo "success";
+                }else if ($table=="publisher"){
+                    $publisher = new publisher($this);
+                    $publisher->publisherName = $inputText;
                     
-                    if($table=="specialization"){
-                        $specialization = new specialization($this);
-                        $specialization->name = $inputText;
-                        $specialization->insert();
-                        echo "success";
-                    }else if ($table=="accSpecialization"){
-                        $accsSpecialization = new accurateSpecialization($this);
-                        $accsSpecialization->name = $inputText;
-                        $accsSpecialization->insert();
-                        echo "success";
-                    }else if ($table=="scientificDegree"){
-                        $secientificDegree = new scientificdegree($this);
-                        $secientificDegree->name = $inputText;
-                        $secientificDegree->insert();
-                        echo "success";
-                    }else if ($table=="researchType"){
-                        $reserchType = new researchtype($this);
-                        $reserchType->name = $inputText;
-                        $reserchType->insert();
-                        echo "success";
-                    }else if ($table=="institute"){
-                        $institute = new institute($this);
-                        $institute->instituteName = $inputText;
-                        $institute->insert();
-                        echo "success";
-                    }else if ($table=="job"){
-                        $job = new job($this);
-                        $job->name = $inputText;
-                        $job->insert();
-                        echo "success";
-                    }else{
-                        echo "error";
+                    $instituteId = intval($instituteId);
+                    $obj = new institute($this);
+                    $institutes = $obj->findInstitute(array("id"=>$instituteId));
+                    $institute=0;
+                    if(isset($institutes) && !empty($institutes)){
+                        $institute = $institutes[0];                        
                     }
+                    $publisher->institute =$institute;
+                    $publisher->insert();
+                    echo "success";
+                }else if ($table=="author"){
+                    $job = $this->input->post("job");
+                    $specification = $this->input->post("specialization") ;
+                    $accurateSpecification =$this->input->post("accurateSpecialization")  ;
+                    $scientificdegree =$this->input->post("currentScientificDegree") ;
+                    $institute=$this->input->post("instituteId");
+                    $jobAddress =$this->input->post("jobAddress") ;
+                    $jobPhone = $this->input->post("jobPhone");
+                    $mobile =$this->input->post("mobileNumber") ;
+                    $mail =$this->input->post("mail");
+                    
+                    
+                    $obj = new job($this);
+                    $jobs = $obj->findjob(array("id"=>$job));
+                    $job=0;
+                    if(isset($jobs) && !empty($jobs)){
+                        $job = $jobs[0];
+                    }
+                    
+                    $obj = new specialization($this);
+                    $specifications = $obj->findspecialization(array("id"=>$specification));
+                    $specification=0;
+                    if(isset($specifications) && !empty($specifications)){
+                        $specification = $specifications[0];
+                    }
+                    
+                    $obj = new accurateSpecialization($this);
+                    $accurateSpecifications = $obj->findaccurateSpecialization(array("id"=>$accurateSpecification));
+                    $accurateSpecification = 0;
+                    if(isset($accurateSpecifications) && !empty($accurateSpecifications)){
+                        $accurateSpecification = $accurateSpecifications[0];
+                    }
+                    
+                    $obj = new scientificdegree($this);
+                    $scientificdegrees = $obj->findscientificdegree(array("id"=>$scientificdegree));
+                    $scientificdegree=0;
+                    if(isset($scientificdegrees) && !empty($scientificdegrees)){
+                        $scientificdegree = $scientificdegrees[0];
+                    }
+
+                    $institute= intval($institute);
+                    
+                    $obj = new institute($this);
+                    $institutes = $obj->findInstitute(array("id"=>$institute));
+                    $institute=0;
+                    if(isset($institutes) && !empty($institutes)){
+                        $institute = $institutes[0];
+                    }
+                    $auth = new author($this);
+                    $auth->name = $inputText;
+                    $auth->job = $job;
+                    $auth->specialization = $specification ; 
+                    $auth->accurateSpecialization = $accurateSpecification;
+                    $auth->currentScientificDegree = $scientificdegree;
+                    $auth->jobAddress = $jobAddress;
+                    $auth->jobPhone = $jobPhone;
+                    $auth->mobileNumber = $mobile;
+                    $auth->mail = $mail;
+                    $auth->institute = $institute;
+                    $auth->insert();
+                    echo "success";
                 }else{
-                    echo "Please enter value";
+                    echo "error";
                 }
- 
+            }else{
+                echo "Please enter value";
+            }
+            
         }else{
             echo "error";
         }
@@ -945,6 +1101,16 @@ class homecontroller extends CI_Controller {
                     $job = new job($this);
                     $job->id = $inputId ; 
                     $job->delete();
+                    echo "success";
+                }else if ($table=="publisher"){
+                    $publisher= new publisher($this);
+                    $publisher->id = $inputId ; 
+                    $publisher->delete();
+                    echo "success";
+                }else if ($table=="author"){
+                    $author= new author($this);
+                    $author->id = $inputId ; 
+                    $author->delete();
                     echo "success";
                 }else{
                     echo "error";

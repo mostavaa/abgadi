@@ -15,6 +15,8 @@ class publisher
     public  $id, $publisherName 
     , $institute;
     
+    public $instituteId;
+    
     public $loadinstitute ; 
     
     private $validation ; 
@@ -39,7 +41,9 @@ class publisher
                 if($this->loadinstitute){
                     $institute = new institute($this->CI);
                     $institutes = $institute->findInstitute(array("id"=>$row->instituteId));
-                    $publishers[$i]->institute=$institutes[0];                     
+                    if($institutes && !empty($institutes)){
+                        $publishers[$i]->institute=$institutes[0];                                             
+                    }
                 }
                 $i++;
             }
@@ -75,5 +79,16 @@ class publisher
             "instituteId"=>$institute
             );
         return $this->CI->publishermodel->insert($inst);
+    }
+    public function delete(){
+        $this->CI->publishermodel->delete($this->id);
+    }
+    
+    public function update(){
+        $obj= array(
+            "publisherName"=>$this->publisherName,
+            "instituteId"=>$this->instituteId
+    );
+        $this->CI->publishermodel->update($obj , $this->id);
     }
 }

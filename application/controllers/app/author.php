@@ -43,7 +43,9 @@ class author
                 if ($this->loadinstitute){
                     $institute = new institute($this->CI);
                     $institutes = $institute->findInstitute(array("id"=>$row->instituteId));
-                    $authors[$i]->institute= $institutes[0];
+                    if($institutes && !empty($institutes)){
+                        $authors[$i]->institute= $institutes[0];
+                    }
                 }
                 
                 if ($this->loadjob){
@@ -148,5 +150,50 @@ class author
 
         return $this->CI->authormodel->insert($obj);
         
+    }
+    public function update(){
+        $authjob = 0;
+        if ($this->job && !empty($this->job)){
+            $authjob = $this->job->id;
+        }
+        
+        $authspecialization = 0;
+        if ($this->specialization && !empty($this->specialization)){
+            $authspecialization = $this->specialization->id;
+        }
+        
+        $authaccurateSpecialization = 0;
+        if ($this->accurateSpecialization && !empty($this->accurateSpecialization)){
+            $authaccurateSpecialization = $this->accurateSpecialization->id;
+        }
+        
+        $authcurrentScientificDegree = 0;
+        if ($this->currentScientificDegree && !empty($this->currentScientificDegree)){
+            $authcurrentScientificDegree = $this->currentScientificDegree->id;
+        }
+        
+        $authinstitute = 0;
+        if ($this->institute && !empty($this->institute)){
+            $authinstitute = $this->institute->id;
+        }
+        
+        
+        $obj= array(
+            "name"=>$this->name,
+            "job"=>$authjob,
+            "specialization"=>$authspecialization,
+            "accurateSpecialization"=>$authaccurateSpecialization,
+            "currentScientificDegree"=>$authcurrentScientificDegree,
+            "jobAddress"=>$this->jobAddress,
+            "jobPhone"=>$this->jobPhone,
+            "mobileNumber"=>$this->mobileNumber,
+            "mail"=>$this->mail,
+            "instituteId"=>$authinstitute,
+            
+            );
+        $this->CI->authormodel->update($obj , $this->id);
+    }
+    public function delete(){
+        $this->CI->authormodel->delete($this->id);
     }
 }
