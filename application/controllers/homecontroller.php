@@ -1122,7 +1122,33 @@ class homecontroller extends CI_Controller {
             echo "error";
         }
     }
-    
+    public function editpaper($researchId){
+        if (!permissions::Authorized("homecontroller/editpaper" , $this)){
+            return ;
+        }
+        $publisher = new publisher($this);
+        $author = new author($this);
+        $accurateSpecialization = new accurateSpecialization($this);
+        $specializaton = new specialization($this);
+        $researchtype = new researchtype($this);
+        $institute = new institute($this);
+        $job = new job($this);
+        $sc = new scientificdegree($this);
+        
+        $data["publishers"]= $publisher->findPublisher(array());
+        $data["authors"] = $author->findauthor(array());
+        $data["specializatons"] = $specializaton->findspecialization(array());
+        
+        $data["researchtypes"] = $researchtype->findresearchtype(array());
+        
+        $data["accurateSpecializations"] = $accurateSpecialization->findaccurateSpecialization(array());
+
+        $data["institutes"] = $institute->findInstitute(array());
+        $data["jobs"] = $job->findjob(array());
+        $data["scs"] = $sc->findscientificdegree(array());
+        
+        $this->load->view('home/uploadpaper' , $data);
+    }
     #endregion
     
 }

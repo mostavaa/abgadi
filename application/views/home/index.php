@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Home | <?php echo SITENAME?></title>
@@ -7,11 +7,35 @@
     <?php
     $this->load->view('shared/css');
     ?>
+    <style>
+        .sidebarlist{
+            list-style-image:url('./images/0all.png');
+            
+        }
+ 
+    </style>
 </head>
-<body>
+<body style="background-color:rgb(238,237,237)"> 
+    <div class="container">
+        <div class="row" style="border:2px solid rgb(181,181,181);background-color:white">
+
+        
+    
     <?php
     $this->load->view('shared/header');
     ?>
+
+        <div class="content">
+            <div class="sideBar" style="float:right;width:20%;height:350px;background-color:#eeeded;margin:0.5%;border-style:solid;border-width:thin;border-color:#919191">
+                <div class="row" style="background-color:#f6aa05;height:10px;"></div>
+                <ul dir="rtl" class="sidebarlist" style="margin-top:30px;">
+                    <li style="">1</li>
+                    <li style="">2</li>
+                    <li style="">3</li>
+                </ul>
+            </div>
+        </div>
+        <!--
     <div class="main_bg">
         <div class="wrap">
             <div class="main">
@@ -23,9 +47,12 @@
             </div>
         </div>
     </div>
+            -->
     <?php
-    $this->load->view('shared/footer');
+    //$this->load->view('shared/footer');
     ?>
+            </div>
+        </div>
     <?php
     $this->load->view('shared/scripts');
     ?>

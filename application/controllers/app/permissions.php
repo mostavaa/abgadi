@@ -37,7 +37,7 @@ class permissions
             "homecontroller/uploadpaperview",
             "homecontroller/upload",
             "homecontroller/doUpload",
-            
+            "homecontroller/editpaper",
             "usercontroller/registerview",
             "usercontroller/logout",
             //"usercontroller/login",

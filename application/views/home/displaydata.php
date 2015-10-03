@@ -53,10 +53,15 @@
                             echo"<div class='parentresearch'>"; 
                             
                             echo"<div class='row'>";
-                            
+                            echo "<div class=\"col-md-2\">";
+                            echo "<h6><a href='".site_url("homecontroller/editpaper")."/{$research->id}' class='btn'>تعديل</a></h6>";
+                            echo "</div>";
+
+                           
                             
                             echo "<div class=\"col-md-2\">";
                             echo "<h6><button data-researchid='".$research->id."' class='btn loadmore'>المزيد</button></h6>";
+
                             echo "</div>";
                             
                             
