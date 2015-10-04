@@ -1,4 +1,4 @@
-﻿<?php 
+<?php 
 $username = isset($username)&&!empty($username)?$username:"";
 $password = isset($password)&&!empty($password)?$password:"";
 $usernameErrors = $passwordErrors = array();
@@ -25,6 +25,9 @@ if (isset($errors) && !empty($errors)){
 </head>
 
 <body>
+        <?php 
+                    $this->load->view('shared/sidebar');
+?>
     <?php
     $this->load->view('shared/header');
     ?>

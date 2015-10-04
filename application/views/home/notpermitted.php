@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Home | <?php echo SITENAME?></title>
@@ -9,6 +9,9 @@
     ?>
 </head>
 <body>
+            <?php 
+                    $this->load->view('shared/sidebar');
+?>
     <?php
     $this->load->view('shared/header');
     ?>

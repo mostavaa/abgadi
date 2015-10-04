@@ -14935,3 +14935,47 @@ DEBUG - 2015-10-03 18:21:35 --> File loaded: application/views/shared/scripts.ph
 DEBUG - 2015-10-03 18:21:35 --> File loaded: application/views/home/index.php
 DEBUG - 2015-10-03 18:21:35 --> Final output sent to browser
 DEBUG - 2015-10-03 18:21:35 --> Total execution time: 3.5943
+DEBUG - 2015-10-03 18:24:44 --> Config Class Initialized
+DEBUG - 2015-10-03 18:24:44 --> Hooks Class Initialized
+DEBUG - 2015-10-03 18:24:44 --> Utf8 Class Initialized
+DEBUG - 2015-10-03 18:24:44 --> UTF-8 Support Enabled
+DEBUG - 2015-10-03 18:24:44 --> URI Class Initialized
+DEBUG - 2015-10-03 18:24:44 --> Router Class Initialized
+DEBUG - 2015-10-03 18:24:44 --> No URI present. Default controller set.
+DEBUG - 2015-10-03 18:24:44 --> Output Class Initialized
+DEBUG - 2015-10-03 18:24:44 --> Security Class Initialized
+DEBUG - 2015-10-03 18:24:44 --> Input Class Initialized
+DEBUG - 2015-10-03 18:24:44 --> XSS Filtering completed
+DEBUG - 2015-10-03 18:24:44 --> XSS Filtering completed
+DEBUG - 2015-10-03 18:24:44 --> XSS Filtering completed
+DEBUG - 2015-10-03 18:24:44 --> Global POST and COOKIE data sanitized
+DEBUG - 2015-10-03 18:24:44 --> Language Class Initialized
+DEBUG - 2015-10-03 18:24:44 --> Loader Class Initialized
+DEBUG - 2015-10-03 18:24:45 --> Helper loaded: url_helper
+DEBUG - 2015-10-03 18:24:45 --> Helper loaded: file_helper
+DEBUG - 2015-10-03 18:24:45 --> Helper loaded: form_helper
+DEBUG - 2015-10-03 18:24:45 --> Session Class Initialized
+DEBUG - 2015-10-03 18:24:45 --> Helper loaded: string_helper
+DEBUG - 2015-10-03 18:24:45 --> Session routines successfully run
+DEBUG - 2015-10-03 18:24:45 --> Upload Class Initialized
+DEBUG - 2015-10-03 18:24:45 --> Model Class Initialized
+DEBUG - 2015-10-03 18:24:45 --> Model Class Initialized
+DEBUG - 2015-10-03 18:24:45 --> Database Driver Class Initialized
+DEBUG - 2015-10-03 18:24:45 --> Model Class Initialized
+DEBUG - 2015-10-03 18:24:45 --> Model Class Initialized
+DEBUG - 2015-10-03 18:24:45 --> Model Class Initialized
+DEBUG - 2015-10-03 18:24:45 --> Model Class Initialized
+DEBUG - 2015-10-03 18:24:45 --> Model Class Initialized
+DEBUG - 2015-10-03 18:24:45 --> Model Class Initialized
+DEBUG - 2015-10-03 18:24:45 --> Model Class Initialized
+DEBUG - 2015-10-03 18:24:45 --> Model Class Initialized
+DEBUG - 2015-10-03 18:24:45 --> Model Class Initialized
+DEBUG - 2015-10-03 18:24:46 --> Model Class Initialized
+DEBUG - 2015-10-03 18:24:46 --> Model Class Initialized
+DEBUG - 2015-10-03 18:24:46 --> Controller Class Initialized
+DEBUG - 2015-10-03 18:24:46 --> File loaded: application/views/shared/css.php
+DEBUG - 2015-10-03 18:24:46 --> File loaded: application/views/shared/header.php
+DEBUG - 2015-10-03 18:24:46 --> File loaded: application/views/shared/scripts.php
+DEBUG - 2015-10-03 18:24:46 --> File loaded: application/views/home/index.php
+DEBUG - 2015-10-03 18:24:46 --> Final output sent to browser
+DEBUG - 2015-10-03 18:24:46 --> Total execution time: 2.0538

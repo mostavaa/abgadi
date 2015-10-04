@@ -47,21 +47,21 @@
 
 $active_group = 'default';
 $active_record = TRUE;
-/*
+
 $db['default']['hostname'] = 'wp114.webpack.hosteurope.de';
 $db['default']['username'] = 'db12406307-darsh';
 $db['default']['password'] = 'fcisgurus';
 $db['default']['database'] = 'db12406307-darsh';
 $db['default']['dbdriver'] = 'mysql';
-*/
 
 
+/*
 $db['default']['hostname'] = '';
 $db['default']['username'] = '';
 $db['default']['password'] = '';
 $db['default']['database'] = '';
 $db['default']['dbdriver'] = 'mysql';
-
+*/
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = TRUE;

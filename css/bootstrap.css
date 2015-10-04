@@ -1524,7 +1524,7 @@ h6,
 .h6 {
     font-family: inherit;
     /*font-weight: 500;*/
-    line-height: 0.5;
+    line-height: 0;
     color: inherit;
 }
 

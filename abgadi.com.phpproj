@@ -75,6 +75,7 @@
     <Compile Include="application\views\manipulate\manipulateone.php" />
     <Compile Include="application\views\shared\css.php" />
     <Compile Include="application\views\shared\footer.php" />
+    <Compile Include="application\views\shared\sidebar.php" />
     <Compile Include="application\views\shared\header - Copy.php" />
     <Compile Include="application\views\shared\header.php" />
     <Compile Include="application\views\shared\scripts.php" />
@@ -316,7 +317,9 @@
     <Content Include="images\1.png" />
     <Content Include="images\2.png" />
     <Content Include="images\3.png" />
+    <Content Include="images\3m.png" />
     <Content Include="images\5.png" />
+    <Content Include="images\5m.png" />
     <Content Include="images\6.png" />
     <Content Include="images\ajax-loader.gif" />
     <Content Include="images\arrow.png" />

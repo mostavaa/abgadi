@@ -27,6 +27,9 @@
     </style>
 </head>
 <body>
+            <?php 
+                    $this->load->view('shared/sidebar');
+?>
     <?php
     $this->load->view('shared/header');
     ?>

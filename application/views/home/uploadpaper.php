@@ -830,6 +830,9 @@ Hide the label if placeholder is supported
 </head>
 
 <body>
+            <?php 
+                    $this->load->view('shared/sidebar');
+?>
     <?php
     $this->load->view('shared/header');
     ?>
