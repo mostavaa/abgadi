@@ -134,7 +134,7 @@
       <publishTime>09/12/2015 23:11:42</publishTime>
     </File>
     <File Include="application/controllers/homecontroller.php">
-      <publishTime>09/29/2015 23:30:43</publishTime>
+      <publishTime>10/08/2015 13:28:58</publishTime>
     </File>
     <File Include="application/controllers/index.html">
       <publishTime>11/21/2014 01:31:46</publishTime>
@@ -233,7 +233,7 @@
       <publishTime>10/04/2015 14:53:27</publishTime>
     </File>
     <File Include="application/views/home/index.php">
-      <publishTime>10/04/2015 14:49:39</publishTime>
+      <publishTime>10/12/2015 13:29:19</publishTime>
     </File>
     <File Include="application/views/home/notpermitted.php">
       <publishTime>10/04/2015 14:53:19</publishTime>
@@ -241,8 +241,11 @@
     <File Include="application/views/home/search.php">
       <publishTime>08/09/2015 20:58:25</publishTime>
     </File>
+    <File Include="application/views/home/uploadpaper - Copy.php">
+      <publishTime>10/08/2015 10:23:33</publishTime>
+    </File>
     <File Include="application/views/home/uploadpaper.php">
-      <publishTime>10/04/2015 14:53:07</publishTime>
+      <publishTime>10/08/2015 10:30:06</publishTime>
     </File>
     <File Include="application/views/index.html">
       <publishTime>11/21/2014 01:31:46</publishTime>
@@ -260,13 +263,13 @@
       <publishTime>09/27/2015 14:08:43</publishTime>
     </File>
     <File Include="application/views/shared/header.php">
-      <publishTime>10/04/2015 14:55:10</publishTime>
+      <publishTime>10/12/2015 14:16:10</publishTime>
     </File>
     <File Include="application/views/shared/scripts.php">
-      <publishTime>10/04/2015 14:45:40</publishTime>
+      <publishTime>10/12/2015 14:00:43</publishTime>
     </File>
     <File Include="application/views/shared/sidebar.php">
-      <publishTime>10/04/2015 14:49:29</publishTime>
+      <publishTime>10/12/2015 14:08:42</publishTime>
     </File>
     <File Include="application/views/user/login.php">
       <publishTime>10/04/2015 14:51:49</publishTime>
@@ -275,13 +278,13 @@
       <publishTime>08/17/2015 19:56:53</publishTime>
     </File>
     <File Include="css/bootstrap.css">
-      <publishTime>10/04/2015 13:02:06</publishTime>
+      <publishTime>10/12/2015 12:45:30</publishTime>
     </File>
     <File Include="css/bootstrap.min.css">
       <publishTime>06/11/2015 19:02:17</publishTime>
     </File>
     <File Include="css/header.css">
-      <publishTime>10/04/2015 14:50:36</publishTime>
+      <publishTime>10/12/2015 14:15:40</publishTime>
     </File>
     <File Include="css/magnific-popup.css">
       <publishTime>03/05/2014 10:05:42</publishTime>
@@ -341,7 +344,7 @@
       <publishTime>10/03/2015 12:59:02</publishTime>
     </File>
     <File Include="images/1.png">
-      <publishTime>10/02/2015 15:28:53</publishTime>
+      <publishTime>10/12/2015 12:23:02</publishTime>
     </File>
     <File Include="images/2.png">
       <publishTime>10/04/2015 13:19:23</publishTime>
@@ -353,13 +356,13 @@
       <publishTime>10/04/2015 13:35:19</publishTime>
     </File>
     <File Include="images/5.png">
-      <publishTime>09/30/2015 20:02:09</publishTime>
+      <publishTime>10/12/2015 13:05:19</publishTime>
     </File>
     <File Include="images/5m.png">
       <publishTime>10/04/2015 13:25:55</publishTime>
     </File>
     <File Include="images/6.png">
-      <publishTime>09/30/2015 19:56:22</publishTime>
+      <publishTime>10/12/2015 12:35:00</publishTime>
     </File>
     <File Include="images/ajax-loader.gif">
       <publishTime>12/07/2010 15:24:34</publishTime>

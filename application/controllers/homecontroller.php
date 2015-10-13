@@ -238,26 +238,64 @@ class homecontroller extends CI_Controller {
         if (!permissions::Authorized("homecontroller/upload" , $this)){
             return ;
         }
-        $paper = new research($this);
-        $newName =$this->generateRandomName();
         $valid = true;
-        if(isset($_FILES["file"]['name']) && !empty($_FILES["file"]['name'])){
-            if($this->doUpload("./pdfs" ,$newName)){
-                $paper->originalFileName =  $_FILES["file"]['name'];
-                $paper->researchFileName = $newName.".".pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
-                
-                if (!$paper->uploadResearch()){
-                    $valid = false;
-                }
-                
-            }else{
-                $valid = false;
+        $edit = $this->input->post("edit");
+        if($edit == "edit"){
+           
+            $paper = new research($this);
+            $paper->id = $this->input->post("id");
+            $paper->id  = intval($paper->id);
+            if($paper->id ==null || empty($paper->id ) ){
+                return ; 
             }
-        }else{
+            $paper->mode = "edit";
+            
             if (!$paper->uploadResearch()){
                 $valid = false;
             }
+            if($valid){
+                $oldFileName = $this->input->post("oldFileName");
+                if($oldFileName == $paper->originalFileName){
+                    //no change
+                }else if ($oldFileName=="delete"){
+                    //delete file 
+                    if(file_exists("./pdfs/".$paper->researchFileName))
+                    unlink("./pdfs/".$paper->researchFileName);
+                    $paper->researchFileName="";
+                    $paper->originalFileName= "";
+                }else if(!empty($_FILES["file"]["name"])){
+                    //replace file
+                    $newName =$this->generateRandomName();
+                    if($this->doUpload("./pdfs" ,$newName)){
+                        $paper->researchFileName=$newName;
+                        $paper->originalFileName= $_FILES["file"]["name"];    
+                    }
+                }
+                $paper->changeFilesName();
+            }
+        }else{
+            //insert new one goes here
+            $paper = new research($this);
+            $newName =$this->generateRandomName();
+            if(isset($_FILES["file"]['name']) && !empty($_FILES["file"]['name'])){
+                if($this->doUpload("./pdfs" ,$newName)){
+                    $paper->originalFileName =  $_FILES["file"]['name'];
+                    $paper->researchFileName = $newName.".".pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
+                    
+                    if (!$paper->uploadResearch()){
+                        $valid = false;
+                    }
+                    
+                }else{
+                    $valid = false;
+                }
+            }else{
+                if (!$paper->uploadResearch()){
+                    $valid = false;
+                }
+            }
         }
+
         
         
         if(!$valid){
@@ -310,12 +348,37 @@ class homecontroller extends CI_Controller {
             $data["institutes"] = $institute->findInstitute(array());
             $data["jobs"] = $job->findjob(array());
             $data["scs"] = $sc->findscientificdegree(array());
-            $this->load->view('home/uploadpaper' , $data);
+            if($paper->mode=="edit"){    
+                $this->editpaper($paper->id ,$data );
+            }else{
+                $this->load->view('home/uploadpaper' , $data);                
+            }
         }else{
             $this->session->set_flashdata("success" , "true");
+
             redirect(base_url("index.php/homecontroller/uploadpaperview"));
         }
         
+    }
+
+    public function deletepaper($paperId){
+        $research = new research($this);
+        $papers = $research->findResearch(array("id"=>$paperId));
+        if(!empty($papers)){
+            $research = $papers[0];
+            if($research && !empty($research)){
+                
+                if(file_exists("./pdfs/".$research->researchFileName))
+                    unlink("./pdfs/".$research->researchFileName);
+                if($research->researchFileName!=""){
+                    $research->deletePaperFile();                    
+                }
+                $research->deleteAuthorResearch();
+                
+                $research->delete();
+                redirect(base_url("index.php/homecontroller/displaydata"));
+            }
+        }
     }
     public function getInstituteAuthors(){
         if (!permissions::Authorized("homecontroller/getInstituteAuthors" , $this)){
@@ -1122,9 +1185,23 @@ class homecontroller extends CI_Controller {
             echo "error";
         }
     }
-    public function editpaper($researchId){
+    public function editpaper($researchId , $data=null){
         if (!permissions::Authorized("homecontroller/editpaper" , $this)){
             return ;
+        }
+        
+        $researchId = intval($researchId);
+        if(!isset($researchId) || empty($researchId)){
+            return;
+        }
+        $research = new research($this);
+        $research->loadpublisher = $research->loadaccurateSpecialization = $research->loadresearchType
+        = $research->loadspecialization = true;
+        $res = $research->findResearch(array("id"=>$researchId));
+        if($res && !empty($res)){
+            $research =  $data["research"]  = $res[0];
+        }else{
+            return;
         }
         $publisher = new publisher($this);
         $author = new author($this);
@@ -1146,6 +1223,58 @@ class homecontroller extends CI_Controller {
         $data["institutes"] = $institute->findInstitute(array());
         $data["jobs"] = $job->findjob(array());
         $data["scs"] = $sc->findscientificdegree(array());
+        
+
+        
+        //<br> problem
+        
+        $data["arabicHeading"] = $research->arabicHeadingName;
+        $data["englishHeading"] = $research->englishHeadingName;
+        $data["arabicDescription"] = $research->arabicDescription;
+        $data["englishDescription"] = $research->englishDescription;
+        $data["keyword"] = $research->keyWords;//
+        $data["researchNumber"] = $research->researchNumber;
+        $data["publishDate"] = $research->publishDate;
+        $data["publishCountry"] = $research->publishCountry;
+        $data["researchType"] = $research->researchType->id;
+        $data["specialization"] = $research->specialization->id;
+        $data["accurateSpecialization"] = $research->accurateSpecialization->id;
+        $data["pagesCount"] = $research->pagesCount;
+        $data["pagesFrom"] = $research->pagesFrom;
+        $data["pagesTo"] = $research->pagesTo;
+        $data["publisher"] = $research->publisher->id;
+        
+        $research->getResearchAuthors();
+        
+        $authArr = array();
+        foreach($research->authorResearches as $authResearch){
+            if($authResearch->authorNumber==0){
+                $data["mainAuthorName"] = $authResearch->author->id;    
+            }else if ($authResearch->authorNumber==1){
+                $data["firstAuthorName"] = $authResearch->author->id;                    
+            }else if ($authResearch->authorNumber==2){
+                $data["secondAuthorName"] = $authResearch->author->id;                    
+            }else if ($authResearch->authorNumber==3){
+                $data["thirdAuthorName"] = $authResearch->author->id;                    
+            }else if ($authResearch->authorNumber==4){
+                $data["fourthAuthorName"] = $authResearch->author->id;                    
+            }else if ($authResearch->authorNumber==5){
+                $data["fifthAuthorName"] = $authResearch->author->id;                    
+            }else if ($authResearch->authorNumber==6){
+                $data["sixthAuthorName"] = $authResearch->author->id;                    
+            }else if ($authResearch->authorNumber==7){
+                $data["seventhAuthorName"] = $authResearch->author->id;                    
+            }else if ($authResearch->authorNumber==8){
+                $data["eighthAuthorName"] = $authResearch->author->id;                    
+            }else if ($authResearch->authorNumber==9){
+                $data["ninthAuthorName"] = $authResearch->author->id;                    
+            }else if ($authResearch->authorNumber==10){
+                $data["tenthAuthorName"] = $authResearch->author->id;                    
+            }
+            $author = $authResearch->author ;
+            $authArr[] = $author->name;
+            
+        } 
         
         $this->load->view('home/uploadpaper' , $data);
     }

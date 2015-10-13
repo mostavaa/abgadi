@@ -2,11 +2,12 @@
 <script src="<?php echo base_url()?>/js/bootstrap.js"></script>
     <script>
         $(document).ready(function () {
-            $("#closeMenu").click(function () {
-                $("#mobilesidebar").hide();
+            $("#mobilesidebarright").click(function () {
+                $("#mobilesidebarContainer").hide();
             });
             $("#mobileNavigationMenuBtn").click(function () {
-                $("#mobilesidebar").show();
+                $("#mobilesidebarContainer").show();
             });
+
         });
     </script>

@@ -70,6 +70,7 @@
     <Compile Include="application\views\home\bulkaddpapers.php" />
     <Compile Include="application\views\home\index.php" />
     <Compile Include="application\views\home\notpermitted.php" />
+    <Compile Include="application\views\home\uploadpaper - Copy.php" />
     <Compile Include="application\views\home\uploadpaper.php" />
     <Compile Include="application\views\home\search.php" />
     <Compile Include="application\views\manipulate\manipulateone.php" />
@@ -298,6 +299,7 @@
     <Content Include="css\magnific-popup.css" />
     <Content Include="css\style.css" />
     <Content Include="css\styles.css" />
+    <Content Include="deleted.txt" />
     <Content Include="fonts\.DS_Store" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

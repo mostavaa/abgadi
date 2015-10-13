@@ -7,17 +7,18 @@ $username = isset($this->session->userdata["username"]) && !empty($this->session
         <div class="newHeaderlogo">
             <!--logo-->
 
-            <img   src="<?php echo base_url()?>/images/6.png" alt="" />
+            <img id="pcLogo"  src="<?php echo base_url()?>/images/6.png" alt="" />
         </div>
         <div class="newHeaderWrapper">
             <div class="row searchContainer">
                 <!--search box-->
-                <div id="searchBtnContainer">
+
+                <div id="searchTextBoxContainer">
+                                    <div id="searchBtnContainer">
                     <input type="button" value="بحث" />
                 </div>
-                <div id="searchTextBoxContainer">
                     <!--input text-->
-                    <input type="text" />
+                    <input id="searchInputText" type="text" />
                 </div>
             </div>
             <div class="row blueAndOrangeBanners">

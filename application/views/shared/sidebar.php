@@ -1,18 +1,26 @@
 <style>
             #mobilesidebar {
+                float:left;
             position: fixed;
             height: 100%;
             width: 40%;
             background-color: #eeeded;
             z-index: 3;
             overflow:auto;
-            display:none;
         }
+            #mobilesidebarright{
+                   float:right;
+            height: 100%;
+            width: 60%;
+            z-index: 3;
+            overflow:auto;
+            }
 </style>
 <?php
 $username = isset($this->session->userdata["username"]) && !empty($this->session->userdata["username"])?$this->session->userdata["username"]:"";
 ?>   
- <div id="mobilesidebar" style="">
+<div id="mobilesidebarContainer" style="position:fixed;height:100%;width:100%;z-index:2;overflow:auto;display:none">
+<div id="mobilesidebar" style="">
         <div class="list-group">
 
             <div class="loginDiv">
@@ -50,12 +58,11 @@ $username = isset($this->session->userdata["username"]) && !empty($this->session
             <?php
             }
             ?>
-            <a class="list-group-item active" id="closeMenu" href="#">اغلاق</a>
 
         </div>
-
-
-
-
-
     </div>
+<div id="mobilesidebarright">
+
+</div>
+</div>
+ 

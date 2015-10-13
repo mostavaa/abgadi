@@ -56,7 +56,11 @@
                             echo"<div class='parentresearch'>"; 
                             
                             echo"<div class='row'>";
-                            echo "<div class=\"col-md-2\">";
+                            echo "<div class=\"col-md-1\">";
+                            echo "<h6><a class='deletepaper' href='".site_url("homecontroller/deletepaper")."/{$research->id}' class='btn'>حذف</a></h6>";
+                            echo "</div>";
+                            
+                            echo "<div class=\"col-md-1\">";
                             echo "<h6><a href='".site_url("homecontroller/editpaper")."/{$research->id}' class='btn'>تعديل</a></h6>";
                             echo "</div>";
 
@@ -293,6 +297,13 @@
                     $(loadmoregif).remove();
                     $(morediv).fadeIn();
                 });
+            });
+            $(".deletepaper").click(function (e) {
+                val = $(this).html();
+                res = confirm("هل انت متأكد من حذف " + val);
+                if (res == false) {
+                    e.preventDefault();
+                }
             });
         });
     </script>

@@ -321,11 +321,11 @@ th {
 }
 
 @font-face {
-    /*
+    
     font-family: 'Glyphicons Halflings';
     src: url('../fonts/glyphicons-halflings-regular.eot');
     src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
-    */
+    
     
     /*src: url('../fonts/ufonts.com_af_jizan_normal_traditional.eot');*/
     /*
@@ -1994,11 +1994,11 @@ pre {
 
 @media(min-width: 0px) {
     .newHeaderWrapper {
-        width: 85%;
+        width: 64%;
     }
 
     .newHeaderlogo {
-        width: 15%;
+        /*width: 15%;*/
     }
 
     .headerHeading {
@@ -2008,6 +2008,7 @@ pre {
                    font-size: 3px;
        }
 }
+
 @media(min-width:310px){
     .headerHeading {
         font-size: 10px;
@@ -2015,7 +2016,22 @@ pre {
         .headings{
                    font-size: 4px;
        }
+            .newHeaderWrapper {
+        width: 68%;
+    }
 }
+@media(min-width:390px){
+    .headerHeading {
+        font-size: 10px;
+    }
+        .headings{
+                   font-size: 4px;
+       }
+            .newHeaderWrapper {
+        width: 76%;
+    }
+}
+
 @media (min-width:468px){
     .headerHeading {
         font-size: 18px;
@@ -2023,6 +2039,15 @@ pre {
     .headings{
                    font-size: 6px;
        }
+                   .newHeaderWrapper {
+        width: 80%;
+    }
+}
+@media (min-width:650px){
+
+                   .newHeaderWrapper {
+        width: 86%;
+    }
 }
 
 @media (min-width: 768px) {
@@ -2035,6 +2060,9 @@ pre {
            .headings{
                    font-size: 10px;
        }
+               .newHeaderWrapper {
+        width: 88%;
+    }
 }
 
 @media (min-width: 992px) {
@@ -2043,7 +2071,7 @@ pre {
     }
 
     .newHeaderlogo {
-        width: 10%;
+        /*width: 10%;*/
     }
 
     .newHeaderWrapper {
@@ -2063,11 +2091,11 @@ pre {
     }
 
     .newHeaderlogo {
-        width: 10%;
+        /*width: 10%;*/
     }
 
     .newHeaderWrapper {
-        width: 90%;
+        width: 92%;
     }
 
     .headerHeading {

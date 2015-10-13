@@ -6,7 +6,10 @@ class researchmodel extends CI_Model{
 		$this->load->database();
 		
 	}
-    
+    public function delete($Research){
+        $this->db->where($Research); 
+        $this->db->delete('research'); 
+    }
     public function updateResearchByName( $data, $name){
 
         $this->db->where('originalFileName', $name);
@@ -14,6 +17,14 @@ class researchmodel extends CI_Model{
         
         
     }
+    public function updateResearchById( $data, $id){
+
+        $this->db->where('id', $id);
+        $this->db->update('research', $data);
+        
+        
+    }
+    
 
     public function getCountofResearchs(){
         return $this->db->count_all_results('research');
@@ -118,10 +129,7 @@ class researchmodel extends CI_Model{
 		return FALSE;
     }
 
-    public function delete( $newId ){
-        $this->db->where('id', $newId);
-        $this->db->delete('news'); 
-    }
+
     
 
     

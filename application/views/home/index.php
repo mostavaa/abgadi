@@ -16,10 +16,11 @@
         }
 
         .pageContent {
-            float: right;
+min-height:700px;            
         }
 
         .sideBar {
+            display:none;
             float: right;
             width: 20%;
             height: 350px;
@@ -59,7 +60,7 @@
                 $this->load->view('shared/header');
                 ?>
 
-                <div class="row">
+                <div class="row" style="text-align:center;">
                     <div class="sideBar">
                         <div class="row orangeBannerInSideBar"></div>
                         <ul dir="rtl" class="sidebarlist">
@@ -69,6 +70,7 @@
                         </ul>
                     </div>
                     <div class="pageContent">
+                        <h2>تحت الانشاء</h2>
                     </div>
                 </div>
                 <!--

@@ -265,17 +265,16 @@ class research
             }
         }
 
-        
-        $this->enterdTime = time();
-        
-        $usero = new user($this->CI);
-        $user = $usero->getLoggedUser();
-        if ($user){
-            $this->createdBy = $user ;
-        }else{
-            $this->createdBy = new user($this->CI);
+        if($this->mode!="edit"){
+            $this->enterdTime = time();            
+            $usero = new user($this->CI);
+            $user = $usero->getLoggedUser();
+            if ($user){
+                $this->createdBy = $user ;
+            }else{
+                $this->createdBy = new user($this->CI);
+            }
         }
-        
     }
     
 
@@ -554,18 +553,17 @@ class research
     public $mode = "insert";
     public function uploadResearch($bulk=false ){
 
-        if (!$this->isValid()){
-            
-            return false; 
-        }
-        
         if(!$bulk){
             $this->loadData();
+        }
+        
+        if (!$this->isValid()){
+            return false; 
         }
         if($this->mode=="insert"){
             $id =  $this->insertPaper();    
             $this->id=$id;            
-        }else if ($this->mode=="update"){
+        }else if ($this->mode=="update" || $this->mode=="edit"){
             $this->updataResearch();
             $this->deleteResearchAuthors();   
         }
@@ -691,6 +689,22 @@ public function deleteResearchAuthors(){
     $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>9));            
     $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>10));    
 }
+public function deleteAuthorResearch(){
+    $authorresearch = new authorresearch($this->CI);
+    $authorresearch->delete(array("researchId"=>$this->id ));            
+    
+}
+public function delete(){
+    $this->CI->researchmodel->delete(array("id"=>$this->id ));
+
+}
+public function deletePaperFile(){
+    $file = fopen("./deleted.txt", "a");
+    
+    fwrite($file, 'http://www.abgadi.net/pdfs/'.$this->researchFileName."\n"); 
+    
+    fclose($file);
+}
     private function writeToFile(){
         
         
@@ -713,9 +727,18 @@ public function deleteResearchAuthors(){
         
     }
     public function updataResearch(){
-            $res = $this->findResearch(array("originalFileName"=>$this->originalFileName));
+        if($this->mode=="update"){
+            $res = $this->findResearch(array("originalFileName"=>$this->originalFileName));            
+        }else if ($this->mode=="edit"){
+            $res = $this->findResearch(array("id"=>$this->id));  
+            
+        }
         $auth = $res[0];
         $this->id =$auth->id;
+        if ($this->mode=="edit"){
+            $this->originalFileName = $auth->originalFileName;
+            $this->researchFileName = $auth->researchFileName;
+        }
         $specialization = 0;
         if ($this->specialization && !empty($this->specialization)){
             $specialization = $this->specialization->id;
@@ -752,13 +775,28 @@ public function deleteResearchAuthors(){
             "pagesFrom"=>$this->pagesFrom,
             "pagesTo"=>$this->pagesTo,
             "researchFileName"=>$this->researchFileName,
-            
+            "originalFileName"=>$this->originalFileName,
             "publisherId"=>$publisher,
             "lastModifiedDate"=>time()
             );
         
-        
-        $this->CI->researchmodel->updateResearchByName($paper ,$this->originalFileName);
+        if ($this->mode=="update"){
+            $this->CI->researchmodel->updateResearchByName($paper ,$this->originalFileName);            
+        }else if ($this->mode=="edit"){
+            $this->CI->researchmodel->updateResearchById($paper ,$this->id);            
+        }
+    }
+    public function changeFilesName(){
+        $paper = array(
+            "researchFileName"=>$this->researchFileName,
+            "originalFileName"=>$this->originalFileName,
+            );
+        if ($this->mode=="edit"){
+            $this->CI->researchmodel->updateResearchById($paper ,$this->id);  
+            
+            if($this->originalFileName!="")
+                $this->writeToFile();
+        }
     }
     public function insertPaper(){
         

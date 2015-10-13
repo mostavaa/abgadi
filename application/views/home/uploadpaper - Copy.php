@@ -159,7 +159,109 @@ function renderInput($label , $inputValue , $id , $errors , $inputType , $requir
 <?php
 }
 $language = "arabic";
-if ($language=="arabic"){
+if ($language=="english"){
+    $others= "other";
+    
+    $formLabels = array(
+        "file"=>"Upload Paper*",
+        "arabicHeading"=>"Paper Arabic Heading*",
+        "englishHeading"=>"Paper English Heading",
+        "arabicDescription"=>"Paper Arabic Description",
+        "englishDescription"=>"Paper English Description",
+        "keyword"=>"Key Words*",
+        "researchNumber"=>"English Publish Number*",
+        
+        "publishDate"=>"Publish Year*",
+        "publishCountry"=>"Publish Country*",
+        "researchType"=>"Research Type*",
+        "specialization"=>"Specialization",
+        "accurateSpecialization"=>"Accurate Specialization",
+
+        "pagesCount"=>"Pages Count*",
+        "pagesFrom"=>"Pages From",
+        "pagesTo"=>"Pages To",
+        
+        "publisherInstitute"=>"Publisher Institute*",
+        "publisher"=>"Publisher*",
+        
+        "mainAuthorName"=>"Main Author Name*",
+        "AuthorscientificDegree"=>"Main Author Scientific Degree*",
+        "AuthorInstitute"=>"Main Author Institute*",
+        "AuthorJob"=>"Main Author Job*",
+        
+        "AuthorSpecialization"=>"Specialization",
+        "AuthorAccurateSpecialization"=>"Accurate Specialization",
+        "AuthorJobAddress"=>"Job Address",
+        "AuthorJobPhone"=>"Job Phone",
+        "AuthorMobileNumber"=>"Mobile Number",
+        "AuthorMail"=>"E-Mail",
+               
+
+        
+        "firstAuthorName"=>"first Author Name",
+        "firstAuthorscientificDegree"=>"first Author Scientific Degree",
+        "firstAuthorInstitute"=>"first Author Institute",
+        "firstAuthorJob"=>"first Author Job",
+        
+        "secondAuthorName"=>"second Author Name",
+        "secondAuthorscientificDegree"=>"second Author Scientific Degree",
+        "secondAuthorInstitute"=>"second Author Institute",
+        "secondAuthorJob"=>"second Author Job",
+        
+        
+        "thirdAuthorName"=>"third Author Name",
+        "thirdAuthorscientificDegree"=>"third Author Scientific Degree",
+        "thirdAuthorInstitute"=>"third Author Institute",
+        "thirdAuthorJob"=>"third Author Job",
+        
+        
+        "fourthAuthorName"=>"fourth Author Name",
+        "fourthAuthorscientificDegree"=>"fourth Author Scientific Degree",
+        "fourthAuthorInstitute"=>"fourth Author Institute",
+        "fourthAuthorJob"=>"fourth Author Job",
+        
+        
+        "fifthAuthorName"=>"fifth Author Name",
+        "fifthAuthorscientificDegree"=>"fifth Author Scientific Degree",
+        "fifthAuthorInstitute"=>"fifth Author Institute",
+        "fifthAuthorJob"=>"fifth Author Job",
+        
+        
+        "sixthAuthorName"=>"sixth Author Name",
+        "sixthAuthorscientificDegree"=>"sixth Author Scientific Degree",
+        "sixthAuthorInstitute"=>"sixth Author Institute",
+        "sixthAuthorJob"=>"sixth Author Job",
+        
+        
+        "seventhAuthorName"=>"seventh Author Name",
+        "seventhAuthorscientificDegree"=>"seventh Author Scientific Degree",
+        "seventhAuthorInstitute"=>"seventh Author Institute",
+        "seventhAuthorJob"=>"seventh Author Job",
+        
+        
+        "eighthAuthorName"=>"eighth Author Name",
+        "eighthAuthorscientificDegree"=>"eighth Author Scientific Degree",
+        "eighthAuthorInstitute"=>"eighth Author Institute",
+        "eighthAuthorJob"=>"eighth Author Job",
+        
+        
+        "ninthAuthorName"=>"ninth Author Name",
+        "ninthAuthorscientificDegree"=>"ninth Author Scientific Degree",
+        "ninthAuthorInstitute"=>"ninth Author Institute",
+        "ninthAuthorJob"=>"ninth Author Job",
+        
+                
+        "tenthAuthorName"=>"tenth Author Name",
+        "tenthAuthorscientificDegree"=>"tenth Author Scientific Degree",
+        "tenthAuthorInstitute"=>"tenth Author Institute",
+        "tenthAuthorJob"=>"tenth Author Job",
+        "submit"=>"Enter",
+        
+        );
+    
+    
+}
+else if ($language=="arabic"){
     $others= "اخرى";
     $formLabels = array(
         "file"=>"اختر البحث",
@@ -257,7 +359,6 @@ if ($language=="arabic"){
           ;
 }
 
-//keep the last values if validation error
 $file = isset($file)&&!empty($file)?$file:"";
 $arabicHeading = isset($arabicHeading)&&!empty($arabicHeading)?$arabicHeading:"";
 $englishHeading = isset($englishHeading)&&!empty($englishHeading)?$englishHeading:"";
@@ -326,22 +427,76 @@ $tenthAuthorscientificDegree= isset($tenthAuthorscientificDegree)&&!empty($tenth
 $tenthAuthorInstitute= isset($tenthAuthorInstitute)&&!empty($tenthAuthorInstitute)?$tenthAuthorInstitute:"";
 $tenthAuthorJob= isset($tenthAuthorJob)&&!empty($tenthAuthorJob)?$tenthAuthorJob:"";
 
-//initialize error to be empty
-$researchNumberErrors=$publishDateErrors=$publishCountryErrors=$researchTypeErrors=$specializationErrors=$accurateSpecializationErrors=
-$pagesCountErrors=$pagesFromErrors=$pagesToErrors=$publisherInstituteErrors=$publisherErrors=$mainAuthorNameErrors=$AuthorscientificDegreeErrors=
-$AuthorInstituteErrors=$AuthorJobErrors=$AuthorSpecializationErrors=$AuthorAccurateSpecializationErrors=$AuthorJobAddressErrors=
-$AuthorJobPhoneErrors=$AuthorMobileNumberErrors=$AuthorMailErrors=$firstAuthorNameErrors=$firstAuthorscientificDegreeErrors=$firstAuthorInstituteErrors=
-$firstAuthorJobErrors=$secondAuthorNameErrors=$secondAuthorscientificDegreeErrors=$secondAuthorInstituteErrors=$secondAuthorJobErrors=
-$thirdAuthorNameErrors=$thirdAuthorscientificDegreeErrors=$thirdAuthorInstituteErrors=$thirdAuthorJobErrors=$fourthAuthorNameErrors=$fourthAuthorscientificDegreeErrors=
-$fourthAuthorInstituteErrors=$fourthAuthorJobErrors=$fifthAuthorNameErrors=$fifthAuthorscientificDegreeErrors=$fifthAuthorInstituteErrors=$fifthAuthorJobErrors=
-$sixthAuthorNameErrors=$sixthAuthorscientificDegreeErrors=$sixthAuthorInstituteErrors=$sixthAuthorJobErrors=$seventhAuthorNameErrors=$seventhAuthorscientificDegreeErrors=
-$seventhAuthorInstituteErrors=$seventhAuthorJobErrors=$eighthAuthorNameErrors=$eighthAuthorscientificDegreeErrors=$eighthAuthorInstituteErrors=
-$eighthAuthorJobErrors=$ninthAuthorNameErrors=$ninthAuthorscientificDegreeErrors=$ninthAuthorInstituteErrors=$ninthAuthorJobErrors=$tenthAuthorNameErrors=
-$tenthAuthorscientificDegreeErrors=$tenthAuthorInstituteErrors=$tenthAuthorJobErrors=$englishDescriptionErrors = $arabicDescriptionErrors= $englishHeadingErrors = 
-$arabicHeadingErrors  = $keywordErrors=$fileErrors = array();
+$researchNumberErrors=
+$publishDateErrors=
+$publishCountryErrors=
+$researchTypeErrors=
+$specializationErrors=
+$accurateSpecializationErrors=
+$pagesCountErrors=
+$pagesFromErrors=
+$pagesToErrors=
+$publisherInstituteErrors=
+$publisherErrors=
+$mainAuthorNameErrors=
+$AuthorscientificDegreeErrors=
+$AuthorInstituteErrors=
+$AuthorJobErrors=
+$AuthorSpecializationErrors=
+$AuthorAccurateSpecializationErrors=
+$AuthorJobAddressErrors=
+$AuthorJobPhoneErrors=
+$AuthorMobileNumberErrors=
+$AuthorMailErrors=
+$firstAuthorNameErrors=
+$firstAuthorscientificDegreeErrors=
+$firstAuthorInstituteErrors=
+$firstAuthorJobErrors=
+$secondAuthorNameErrors=
+$secondAuthorscientificDegreeErrors=
+$secondAuthorInstituteErrors=
+$secondAuthorJobErrors=
+$thirdAuthorNameErrors=
+$thirdAuthorscientificDegreeErrors=
+$thirdAuthorInstituteErrors=
+$thirdAuthorJobErrors=
+$fourthAuthorNameErrors=
+$fourthAuthorscientificDegreeErrors=
+$fourthAuthorInstituteErrors=
+$fourthAuthorJobErrors=
+$fifthAuthorNameErrors=
+$fifthAuthorscientificDegreeErrors=
+$fifthAuthorInstituteErrors=
+$fifthAuthorJobErrors=
+$sixthAuthorNameErrors=
+$sixthAuthorscientificDegreeErrors=
+$sixthAuthorInstituteErrors=
+$sixthAuthorJobErrors=
+$seventhAuthorNameErrors=
+$seventhAuthorscientificDegreeErrors=
+$seventhAuthorInstituteErrors=
+$seventhAuthorJobErrors=
+$eighthAuthorNameErrors=
+$eighthAuthorscientificDegreeErrors=
+$eighthAuthorInstituteErrors=
+$eighthAuthorJobErrors=
+$ninthAuthorNameErrors=
+$ninthAuthorscientificDegreeErrors=
+$ninthAuthorInstituteErrors=
+$ninthAuthorJobErrors=
+$tenthAuthorNameErrors=
+$tenthAuthorscientificDegreeErrors=
+$tenthAuthorInstituteErrors=
+$tenthAuthorJobErrors=
+$englishDescriptionErrors = 
+$arabicDescriptionErrors= 
+$englishHeadingErrors = 
+$arabicHeadingErrors  = 
+$keywordErrors=
+$fileErrors = array();
 
 
-//if there are errors , set it ,,, if not , keep empty
+
 if (isset($errors) && !empty($errors)){
     $fileErrors = isset($errors["file"])&&!empty($errors["file"])?$errors["file"]:$fileErrors;
     $arabicHeadingErrors = isset($errors["arabicHeading"])&&!empty($errors["arabicHeading"])?$errors["arabicHeading"]:$arabicHeadingErrors;
@@ -411,7 +566,7 @@ if (isset($errors) && !empty($errors)){
     $tenthAuthorInstituteErrors=isset($errors["tenthAuthorInstitute"])&&!empty($errors["tenthAuthorInstitute"])?$errors["tenthAuthorInstitute"]:$tenthAuthorInstituteErrors;
     $tenthAuthorJobErrors=isset($errors["tenthAuthorJob"])&&!empty($errors["tenthAuthorJob"])?$errors["tenthAuthorJob"]:$tenthAuthorJobErrors;
 }
-//////////////////////////////// start render the page 
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -679,9 +834,9 @@ Hide the label if placeholder is supported
 </head>
 
 <body>
-    <?php 
-    $this->load->view('shared/sidebar');
-    ?>
+            <?php 
+                    $this->load->view('shared/sidebar');
+?>
     <?php
     $this->load->view('shared/header');
     ?>
@@ -695,39 +850,17 @@ Hide the label if placeholder is supported
                         <div class='fieldset'>
                             <form class="form form-inline"  method="post" action="<?php echo site_url("homecontroller/upload") ?>" enctype="multipart/form-data" id="myform">
 
-                                
+
                                 <div class="row formElement">
 
 
                                     <div class="col-md-12">
-                          
                                         <div class="col-md-9">
                                             <div class="uploadDiv btn btn-default" id="file">
-                                                <span>
-                                                    <?php 
-                                                    
-                                                    if($mode=="edit"){
-                                                        echo $research->originalFileName;
-                                                        echo  "<input type='hidden' name='oldFileName' id='oldFileName' value='{$research->originalFileName}'/>";
-                                                        
-                                                    }
-                                                    else{
-                                                        echo $formLabels["file"];  
-                                                    }
-                                                    ?>
-
-                                                </span>
-                                          
+                                                <span><?php echo $formLabels["file"]?></span>
                                                 <input type="file" class="upload" name="file" />
                                             </div>
-
-                                                  <?php 
-                                                if($mode=="edit"){
-                                                echo "<a class='btn btn-danger' id='deleteOldFile'>حذف</a>";
-                                                }
-                                                ?>
                                         </div>
-
                                         <div class="col-md-3">
                                             <h4 class="form-label"><?php echo $formLabels["file"]?></h4>
                                         </div>
@@ -735,15 +868,15 @@ Hide the label if placeholder is supported
                                     </div>
                                     <div class="row">
                                         <div class="col-md-3">
-
-                                            <span class="inputError">
-                                                <?php 
-                                                foreach($fileErrors as $fileError){
-                                                    echo "<h4>{$fileError}</h4>";
-                                                }
-                                                ?>
-                                            </span>
-                                        </div>
+                                        
+                                        <span class="inputError">
+                                            <?php 
+                                            foreach($fileErrors as $fileError){
+                                                echo "<h4>{$fileError}</h4>";
+                                            }
+                                            ?>
+                                        </span>
+                                            </div>
                                     </div>
                                 </div>
                                 <hr />
@@ -760,40 +893,40 @@ Hide the label if placeholder is supported
                                 <div class="row">
                                     <div class="col-md-6">
 
-
-                                        <?php
-                                        $pub = array();
-                                        if (isset($publishers) && !empty($publishers)){
-                                            foreach($publishers as $publisherr){
-                                                $pub[$publisherr->id] = $publisherr->publisherName;
-                                            }
-                                        }
-                                        
-                                        
-                                        //renderSelectOther($formLabels["publisherInstitute"] ,$others , $publisherInstitute, "publisherInstitute" ,$publisherInstituteErrors  , true);
-                                        renderSelect($formLabels["publisher"] , $publisher ,"publisher" , $publisherErrors , true ,$pub  );
-                                        
-                                        renderInput($formLabels["researchNumber"] ,$researchNumber , "researchNumber" , $researchNumberErrors ,"number" , false );
-                                        renderInput($formLabels["publishDate"] ,$publishDate , "publishDate" , $publishDateErrors ,"number" , true );
-                                        renderInput($formLabels["publishCountry"] ,$publishCountry , "publishCountry" , $publishCountryErrors ,"text" , true );
-                                        
-                                        $select = array();
-                                        if (isset($researchtypes) && !empty($researchtypes)){
-                                            
-                                            foreach($researchtypes as $type){
-                                                $select[$type->id] = $type->name;    
-                                            }
-                                        }
-                                        
-                                        renderSelectOther($formLabels["researchType"]   , $others, $researchType , "researchType" ,$researchTypeErrors ,true  , $select);
-                                        
-                                        
-                                        
-                                        ?>
+                                
+                                <?php
+                                $pub = array();
+                                if (isset($publishers) && !empty($publishers)){
+                                    foreach($publishers as $publisherr){
+                                        $pub[$publisherr->id] = $publisherr->publisherName;
+                                    }
+                                }
+                                
+                                
+                                //renderSelectOther($formLabels["publisherInstitute"] ,$others , $publisherInstitute, "publisherInstitute" ,$publisherInstituteErrors  , true);
+                                renderSelect($formLabels["publisher"] , $publisher ,"publisher" , $publisherErrors , true ,$pub  );
+                                
+                                renderInput($formLabels["researchNumber"] ,$researchNumber , "researchNumber" , $researchNumberErrors ,"number" , false );
+                                renderInput($formLabels["publishDate"] ,$publishDate , "publishDate" , $publishDateErrors ,"number" , true );
+                                renderInput($formLabels["publishCountry"] ,$publishCountry , "publishCountry" , $publishCountryErrors ,"text" , true );
+                             
+                                $select = array();
+                                if (isset($researchtypes) && !empty($researchtypes)){
+                                    
+                                    foreach($researchtypes as $type){
+                                        $select[$type->id] = $type->name;    
+                                    }
+                                }
+                                
+                                renderSelectOther($formLabels["researchType"]   , $others, $researchType , "researchType" ,$researchTypeErrors ,true  , $select);
+                                
+                                
+                         
+                                ?>
                                     </div>
                                     <div class="col-md-6">
                                         <?php 
-                                        
+                             
                                         $select = array();
                                         if (isset($specializatons) && !empty($specializatons)){
                                             
@@ -803,7 +936,7 @@ Hide the label if placeholder is supported
                                         }
                                         renderSelectOther($formLabels["specialization"] ,$others , $specialization , "specialization" ,$specializationErrors  ,false , $select);
                                         
-                                        
+                         
                                         $select = array();
                                         if (isset($accurateSpecializations) && !empty($accurateSpecializations)){
                                             
@@ -812,11 +945,11 @@ Hide the label if placeholder is supported
                                             }
                                         }
                                         
-                                        renderSelectOther($formLabels["accurateSpecialization"]  , $others,  $accurateSpecialization, "accurateSpecialization" ,$accurateSpecializationErrors ,false,$select );
-                                        
-                                        renderInput($formLabels["pagesCount"] ,$pagesCount , "pagesCount" , $pagesCountErrors ,"number" , true );
-                                        renderInput($formLabels["pagesFrom"] ,$pagesFrom , "pagesFrom" , $pagesFromErrors ,"number"  );
-                                        renderInput($formLabels["pagesTo"] ,$pagesTo , "pagesTo" , $pagesToErrors ,"number"  );
+                                renderSelectOther($formLabels["accurateSpecialization"]  , $others,  $accurateSpecialization, "accurateSpecialization" ,$accurateSpecializationErrors ,false,$select );
+                                
+                                renderInput($formLabels["pagesCount"] ,$pagesCount , "pagesCount" , $pagesCountErrors ,"number" , true );
+                                renderInput($formLabels["pagesFrom"] ,$pagesFrom , "pagesFrom" , $pagesFromErrors ,"number"  );
+                                renderInput($formLabels["pagesTo"] ,$pagesTo , "pagesTo" , $pagesToErrors ,"number"  );
                                         ?>
                                     </div>
                                 </div>
@@ -859,12 +992,8 @@ Hide the label if placeholder is supported
                                 </div>
                                 <?php 
                                 
-                                if($mode=="edit"){
-                                    echo "<input type='hidden' value='edit' name='edit' />";
-                                    echo "<input type='hidden' value='{$research->id}' name='id' />";
-                                }
+                             
                                 ?>
-
                                 <input type="submit" value="<?php echo $formLabels["submit"]?>" />
                             </form>
                             <hr />
@@ -970,7 +1099,7 @@ Hide the label if placeholder is supported
                                     renderSelectOther("*الدرجة الوظيفية" , $others , "" , "newJob" ,array() ,false ,$select );
                                     
                                     
-                                    $select = array();
+                                           $select = array();
                                     if (isset($specializatons) && !empty($specializatons)){
                                         
                                         foreach($specializatons as $spe){
@@ -979,18 +1108,18 @@ Hide the label if placeholder is supported
                                     }
                                     
                                     renderSelectOther("التخصص" , $others , "" , "newAuthSpecialization" ,array() ,false , $select);
-                                    
+                                
 
-                                    $select = array();
-                                    if (isset($accurateSpecializations) && !empty($accurateSpecializations)){
-                                        
-                                        foreach($accurateSpecializations as $spe){
-                                            $select[$spe->id] = $spe->name;    
+                                        $select = array();
+                                        if (isset($accurateSpecializations) && !empty($accurateSpecializations)){
+                                            
+                                            foreach($accurateSpecializations as $spe){
+                                                $select[$spe->id] = $spe->name;    
+                                            }
                                         }
-                                    }
                                     renderSelectOther("التخصص الدقيق" , $others , "" , "newAuthAccurateSpecialization" ,array() , false , $select );
                                     
-                                    
+                      
                                     
                                     $select = array();
                                     if (isset($scs) && !empty($scs)){
@@ -1202,20 +1331,20 @@ Hide the label if placeholder is supported
                                 }
                             });
                         }
-
+                        
                         /*
                         select = $(this).parents(".formElement").find(".select");
                         $(select).append($("<option selected='selected'></option>")
                         .attr("value", textVal)
                         .text(textVal));
                         */
+                     
 
 
+                    }
 
-    }
 
-
-}
+                }
 
             });
 
@@ -1229,18 +1358,18 @@ Hide the label if placeholder is supported
                     res = confirm("هل انت متأكد من اضاقة " + val);
                     if (res == true) {
                         $.post("<?php echo site_url("homecontroller/addInstitute") ?>", "val=" + val, function (res) {
-                            if (res.split(",")[0] == "success") {
-                                $(".institutes option:last").before("<option selected='selected' value='" + res.split(",")[1] + "'>" + val + "</option>");
-                                $(".otherInstitute").attr("type", "hidden");
+                    if (res.split(",")[0] == "success") {
+                        $(".institutes option:last").before("<option selected='selected' value='" + res.split(",")[1] + "'>" + val + "</option>");
+                        $(".otherInstitute").attr("type", "hidden");
 
-                                $('.pub').find('option').remove().end().append('<option value="-2222"></option>').append('<option value="-1">اخرى</option>').val("-2222");
-                                $('.auth').find('option').remove().end().append('<option value="-2222"></option>').append('<option value="-1">اخرى</option>').val("-2222");
+                        $('.pub').find('option').remove().end().append('<option value="-2222"></option>').append('<option value="-1">اخرى</option>').val("-2222");
+                        $('.auth').find('option').remove().end().append('<option value="-2222"></option>').append('<option value="-1">اخرى</option>').val("-2222");
 
-                                $(".addInstitute").hide();
-                            }
-                        });
+                        $(".addInstitute").hide();
                     }
-                }
+                });
+            }
+        }
             });
 
 
@@ -1451,20 +1580,10 @@ Hide the label if placeholder is supported
                     //var fileNameIndex = $(this).val().lastIndexOf("/") + 1;
                     var filename = $(this).val().substr(fileNameIndex);
                     $(".uploadDiv span").html(filename);
-                    $("#oldFileName").val(filename);
-                } else {
-                    $(".uploadDiv span").html("اختر البحث");
                 }
             });
 
-            $("#deleteOldFile").click(function () {
-                res = confirm(" هذا الملف سيتم حذفه ! , تأكيد ؟");
-                if (res == true) {
-                    $("#oldFileName").val("delete");
-                    $(".uploadDiv span").html("اختر البحث");
-                }
-                
-            });
+
         });
     </script>
 </body>
