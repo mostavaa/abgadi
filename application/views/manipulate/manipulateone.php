@@ -32,642 +32,641 @@
 </head>
 
 <body>
-            <?php 
-                    $this->load->view('shared/sidebar');
-?>
-    <?php
-    $this->load->view('shared/header');
+    <?php 
+    $this->load->view('shared/sidebar');
     ?>
-    <div class="main_bg">
-        <div class="wrap">
-            <div class="main">
-                <div class="content">
-                    <div class="row">
-                        <div class="menuuWrapper">
-                            <ul class="mainNav">
-                                <li class="btn edits" data-div="specializations">التخصصات</li>
-                                <li class="btn edits" data-div="accSpecializations">التخصصات الدقيقة</li>
-                                <li class="btn edits" data-div="scientificDegrees">الدرجات العلمية</li>
-                                <li class="btn edits" data-div="researchTypes">انواع الورقات البحثية</li>
-                                <li class="btn edits" data-div="institutes">الهيئات العلمية</li>
-                                <li class="btn edits" data-div="jobs">وظائف الباحث</li>
-                                <li class="btn edits" data-div="publishers">الناشرون</li>
-                                <li class="btn edits" data-div="authors">الباحثون</li>
-                            </ul>
+    <div class="container">
+        <div class="row page">
+            <?php
+            $this->load->view('shared/header');
+            ?>
+
+            <div class="content">
+                <div class="row">
+                    <div class="menuuWrapper">
+                        <ul class="mainNav">
+                            <li class="btn edits" data-div="specializations">التخصصات</li>
+                            <li class="btn edits" data-div="accSpecializations">التخصصات الدقيقة</li>
+                            <li class="btn edits" data-div="scientificDegrees">الدرجات العلمية</li>
+                            <li class="btn edits" data-div="researchTypes">انواع الورقات البحثية</li>
+                            <li class="btn edits" data-div="institutes">الهيئات العلمية</li>
+                            <li class="btn edits" data-div="jobs">وظائف الباحث</li>
+                            <li class="btn edits" data-div="publishers">الناشرون</li>
+                            <li class="btn edits" data-div="authors">الباحثون</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="allEdits" id="specializations">
+                    <div class="alert alert-success">
+                        <div class="row parent" data-type="specialization">
+                            <div class="col-md-3"></div>
+
+                            <div class="col-md-3"></div>
+
+                            <div class="col-md-3">
+                                <input type="button" class="btn addBtn" value="اضافة" />
+                            </div>
+
+                            <div class="col-md-3">
+                                <input type="text" class="form-control inputText" />
+                            </div>
                         </div>
                     </div>
-                    <div class="allEdits" id="specializations">
-                        <div class="alert alert-success">
+
+                    <div class="old">
+                        <?php 
+                        if(isset($specializations) && !empty($specializations)){
+                            foreach($specializations as $spec){
+                        ?>
+                        <div class="alert alert-info">
                             <div class="row parent" data-type="specialization">
                                 <div class="col-md-3"></div>
 
-                                <div class="col-md-3"></div>
-
                                 <div class="col-md-3">
-                                    <input type="button" class="btn addBtn" value="اضافة" />
+                                    <input type="button" class="btn deleteBtn" value="مسح" />
                                 </div>
 
                                 <div class="col-md-3">
-                                    <input type="text" class="form-control inputText" />
+                                    <input type="button" class="btn editBtn" value="تعديل" />
+                                    <input type="button" style="display: none" class="btn saveEditBtn" value="حفظ" />
+                                </div>
+
+                                <div class="col-md-3">
+                                    <input type="text" data-id="<?php echo $spec->id?>" readonly class="form-control inputText" value="<?php echo $spec->name ?>"/>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="old">
-                            <?php 
-                            if(isset($specializations) && !empty($specializations)){
-                                foreach($specializations as $spec){
-                            ?>
-                            <div class="alert alert-info">
-                                <div class="row parent" data-type="specialization">
-                                    <div class="col-md-3"></div>
+                        <?php
+                            }
+                        }
+                        ?>
+                    </div>
+                </div>
 
-                                    <div class="col-md-3">
-                                        <input type="button" class="btn deleteBtn" value="مسح" />
-                                    </div>
+                <div class="allEdits" id="accSpecializations">
+                    <div class="alert alert-success">
+                        <div class="row parent" data-type="accSpecialization">
+                            <div class="col-md-3"></div>
 
-                                    <div class="col-md-3">
-                                        <input type="button" class="btn editBtn" value="تعديل" />
-                                        <input type="button" style="display: none" class="btn saveEditBtn" value="حفظ" />
-                                    </div>
+                            <div class="col-md-3"></div>
 
-                                    <div class="col-md-3">
-                                        <input type="text" data-id="<?php echo $spec->id?>" readonly class="form-control inputText" value="<?php echo $spec->name ?>"/>
-                                    </div>
-                                </div>
+                            <div class="col-md-3">
+                                <input type="button" class="btn addBtn" value="اضافة" />
                             </div>
 
-                            <?php
-                                }
-                            }
-                            ?>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control inputText" />
+                            </div>
                         </div>
                     </div>
 
-                    <div class="allEdits" id="accSpecializations">
-                        <div class="alert alert-success">
+                    <div class="old">
+                        <?php 
+                        if(isset($accSpecializations) && !empty($accSpecializations)){
+                            foreach($accSpecializations as $obj){
+                        ?>
+                        <div class="alert alert-info">
                             <div class="row parent" data-type="accSpecialization">
                                 <div class="col-md-3"></div>
 
-                                <div class="col-md-3"></div>
-
                                 <div class="col-md-3">
-                                    <input type="button" class="btn addBtn" value="اضافة" />
+                                    <input type="button" class="btn deleteBtn" value="مسح" />
                                 </div>
 
                                 <div class="col-md-3">
-                                    <input type="text" class="form-control inputText" />
+                                    <input type="button" class="btn editBtn" value="تعديل" />
+                                    <input type="button" style="display: none" class="btn saveEditBtn" value="حفظ" />
+                                </div>
+
+                                <div class="col-md-3">
+                                    <input type="text" data-id="<?php echo $obj->id?>" readonly class="form-control inputText" value="<?php echo $obj->name ?>"/>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="old">
-                            <?php 
-                            if(isset($accSpecializations) && !empty($accSpecializations)){
-                                foreach($accSpecializations as $obj){
-                            ?>
-                            <div class="alert alert-info">
-                                <div class="row parent" data-type="accSpecialization">
-                                    <div class="col-md-3"></div>
+                        <?php
+                            }
+                        }
+                        ?>
+                    </div>
+                </div>
 
-                                    <div class="col-md-3">
-                                        <input type="button" class="btn deleteBtn" value="مسح" />
-                                    </div>
 
-                                    <div class="col-md-3">
-                                        <input type="button" class="btn editBtn" value="تعديل" />
-                                        <input type="button" style="display: none" class="btn saveEditBtn" value="حفظ" />
-                                    </div>
+                <div class="allEdits" id="scientificDegrees">
+                    <div class="alert alert-success">
+                        <div class="row parent" data-type="scientificDegree">
+                            <div class="col-md-3"></div>
 
-                                    <div class="col-md-3">
-                                        <input type="text" data-id="<?php echo $obj->id?>" readonly class="form-control inputText" value="<?php echo $obj->name ?>"/>
-                                    </div>
-                                </div>
+                            <div class="col-md-3"></div>
+
+                            <div class="col-md-3">
+                                <input type="button" class="btn addBtn" value="اضافة" />
                             </div>
 
-                            <?php
-                                }
-                            }
-                            ?>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control inputText" />
+                            </div>
                         </div>
                     </div>
 
-
-                    <div class="allEdits" id="scientificDegrees">
-                        <div class="alert alert-success">
+                    <div class="old">
+                        <?php 
+                        if(isset($scientificDegrees) && !empty($scientificDegrees)){
+                            foreach($scientificDegrees as $obj){
+                        ?>
+                        <div class="alert alert-info">
                             <div class="row parent" data-type="scientificDegree">
                                 <div class="col-md-3"></div>
 
-                                <div class="col-md-3"></div>
-
                                 <div class="col-md-3">
-                                    <input type="button" class="btn addBtn" value="اضافة" />
+                                    <input type="button" class="btn deleteBtn" value="مسح" />
                                 </div>
 
                                 <div class="col-md-3">
-                                    <input type="text" class="form-control inputText" />
+                                    <input type="button" class="btn editBtn" value="تعديل" />
+                                    <input type="button" style="display: none" class="btn saveEditBtn" value="حفظ" />
+                                </div>
+
+                                <div class="col-md-3">
+                                    <input type="text" data-id="<?php echo $obj->id?>" readonly class="form-control inputText" value="<?php echo $obj->name ?>"/>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="old">
-                            <?php 
-                            if(isset($scientificDegrees) && !empty($scientificDegrees)){
-                                foreach($scientificDegrees as $obj){
-                            ?>
-                            <div class="alert alert-info">
-                                <div class="row parent" data-type="scientificDegree">
-                                    <div class="col-md-3"></div>
+                        <?php
+                            }
+                        }
+                        ?>
+                    </div>
+                </div>
 
-                                    <div class="col-md-3">
-                                        <input type="button" class="btn deleteBtn" value="مسح" />
-                                    </div>
 
-                                    <div class="col-md-3">
-                                        <input type="button" class="btn editBtn" value="تعديل" />
-                                        <input type="button" style="display: none" class="btn saveEditBtn" value="حفظ" />
-                                    </div>
+                <div class="allEdits" id="researchTypes">
+                    <div class="alert alert-success">
+                        <div class="row parent" data-type="researchType">
+                            <div class="col-md-3"></div>
 
-                                    <div class="col-md-3">
-                                        <input type="text" data-id="<?php echo $obj->id?>" readonly class="form-control inputText" value="<?php echo $obj->name ?>"/>
-                                    </div>
-                                </div>
+                            <div class="col-md-3"></div>
+
+                            <div class="col-md-3">
+                                <input type="button" class="btn addBtn" value="اضافة" />
                             </div>
 
-                            <?php
-                                }
-                            }
-                            ?>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control inputText" />
+                            </div>
                         </div>
                     </div>
 
-
-                    <div class="allEdits" id="researchTypes">
-                        <div class="alert alert-success">
+                    <div class="old">
+                        <?php 
+                        if(isset($researchTypes) && !empty($researchTypes)){
+                            foreach($researchTypes as $obj){
+                        ?>
+                        <div class="alert alert-info">
                             <div class="row parent" data-type="researchType">
                                 <div class="col-md-3"></div>
 
-                                <div class="col-md-3"></div>
-
                                 <div class="col-md-3">
-                                    <input type="button" class="btn addBtn" value="اضافة" />
+                                    <input type="button" class="btn deleteBtn" value="مسح" />
                                 </div>
 
                                 <div class="col-md-3">
-                                    <input type="text" class="form-control inputText" />
+                                    <input type="button" class="btn editBtn" value="تعديل" />
+                                    <input type="button" style="display: none" class="btn saveEditBtn" value="حفظ" />
+                                </div>
+
+                                <div class="col-md-3">
+                                    <input type="text" data-id="<?php echo $obj->id?>" readonly class="form-control inputText" value="<?php echo $obj->name ?>"/>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="old">
-                            <?php 
-                            if(isset($researchTypes) && !empty($researchTypes)){
-                                foreach($researchTypes as $obj){
-                            ?>
-                            <div class="alert alert-info">
-                                <div class="row parent" data-type="researchType">
-                                    <div class="col-md-3"></div>
-
-                                    <div class="col-md-3">
-                                        <input type="button" class="btn deleteBtn" value="مسح" />
-                                    </div>
-
-                                    <div class="col-md-3">
-                                        <input type="button" class="btn editBtn" value="تعديل" />
-                                        <input type="button" style="display: none" class="btn saveEditBtn" value="حفظ" />
-                                    </div>
-
-                                    <div class="col-md-3">
-                                        <input type="text" data-id="<?php echo $obj->id?>" readonly class="form-control inputText" value="<?php echo $obj->name ?>"/>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <?php
-                                }
+                        <?php
                             }
-                            ?>
-                        </div>
-
+                        }
+                        ?>
                     </div>
 
-                    <div class="allEdits" id="institutes">
-                        <div class="alert alert-success">
+                </div>
+
+                <div class="allEdits" id="institutes">
+                    <div class="alert alert-success">
+                        <div class="row parent" data-type="institute">
+                            <div class="col-md-3"></div>
+
+                            <div class="col-md-3"></div>
+
+                            <div class="col-md-3">
+                                <input type="button" class="btn addBtn" value="اضافة" />
+                            </div>
+
+                            <div class="col-md-3">
+                                <input type="text" class="form-control inputText" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="old">
+
+                        <?php 
+                        if(isset($institutes) && !empty($institutes)){
+                            foreach($institutes as $obj){
+                        ?>
+                        <div class="alert alert-info">
                             <div class="row parent" data-type="institute">
                                 <div class="col-md-3"></div>
 
-                                <div class="col-md-3"></div>
-
                                 <div class="col-md-3">
-                                    <input type="button" class="btn addBtn" value="اضافة" />
+                                    <input type="button" class="btn deleteBtn" value="مسح" />
                                 </div>
 
                                 <div class="col-md-3">
-                                    <input type="text" class="form-control inputText" />
+                                    <input type="button" class="btn editBtn" value="تعديل" />
+                                    <input type="button" style="display: none" class="btn saveEditBtn" value="حفظ" />
+                                </div>
+
+                                <div class="col-md-3">
+                                    <input type="text" data-id="<?php echo $obj->id?>" readonly class="form-control inputText" value="<?php echo $obj->instituteName ?>"/>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="old">
+                        <?php
+                            }
+                        }
+                        ?>
+                    </div>
+                </div>
 
-                            <?php 
-                            if(isset($institutes) && !empty($institutes)){
-                                foreach($institutes as $obj){
-                            ?>
-                            <div class="alert alert-info">
-                                <div class="row parent" data-type="institute">
-                                    <div class="col-md-3"></div>
 
-                                    <div class="col-md-3">
-                                        <input type="button" class="btn deleteBtn" value="مسح" />
-                                    </div>
 
-                                    <div class="col-md-3">
-                                        <input type="button" class="btn editBtn" value="تعديل" />
-                                        <input type="button" style="display: none" class="btn saveEditBtn" value="حفظ" />
-                                    </div>
+                <div class="allEdits" id="jobs">
+                    <div class="alert alert-success">
+                        <div class="row parent" data-type="job">
+                            <div class="col-md-3"></div>
 
-                                    <div class="col-md-3">
-                                        <input type="text" data-id="<?php echo $obj->id?>" readonly class="form-control inputText" value="<?php echo $obj->instituteName ?>"/>
-                                    </div>
-                                </div>
+                            <div class="col-md-3"></div>
+
+                            <div class="col-md-3">
+                                <input type="button" class="btn addBtn" value="اضافة" />
                             </div>
 
-                            <?php
-                                }
-                            }
-                            ?>
+                            <div class="col-md-3">
+                                <input type="text" class="form-control inputText" />
+                            </div>
                         </div>
                     </div>
 
-
-
-                    <div class="allEdits" id="jobs">
-                        <div class="alert alert-success">
+                    <div class="old">
+                        <?php 
+                        if(isset($jobs) && !empty($jobs)){
+                            foreach($jobs as $obj){
+                        ?>
+                        <div class="alert alert-info">
                             <div class="row parent" data-type="job">
                                 <div class="col-md-3"></div>
 
-                                <div class="col-md-3"></div>
-
                                 <div class="col-md-3">
-                                    <input type="button" class="btn addBtn" value="اضافة" />
+                                    <input type="button" class="btn deleteBtn" value="مسح" />
                                 </div>
 
                                 <div class="col-md-3">
-                                    <input type="text" class="form-control inputText" />
+                                    <input type="button" class="btn editBtn" value="تعديل" />
+                                    <input type="button" style="display: none" class="btn saveEditBtn" value="حفظ" />
+                                </div>
+
+                                <div class="col-md-3">
+                                    <input type="text" data-id="<?php echo $obj->id?>" readonly class="form-control inputText" value="<?php echo $obj->name ?>"/>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="old">
-                            <?php 
-                            if(isset($jobs) && !empty($jobs)){
-                                foreach($jobs as $obj){
-                            ?>
-                            <div class="alert alert-info">
-                                <div class="row parent" data-type="job">
-                                    <div class="col-md-3"></div>
-
-                                    <div class="col-md-3">
-                                        <input type="button" class="btn deleteBtn" value="مسح" />
-                                    </div>
-
-                                    <div class="col-md-3">
-                                        <input type="button" class="btn editBtn" value="تعديل" />
-                                        <input type="button" style="display: none" class="btn saveEditBtn" value="حفظ" />
-                                    </div>
-
-                                    <div class="col-md-3">
-                                        <input type="text" data-id="<?php echo $obj->id?>" readonly class="form-control inputText" value="<?php echo $obj->name ?>"/>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <?php
-                                }
+                        <?php
                             }
-                            ?>
+                        }
+                        ?>
 
-                        </div>
                     </div>
+                </div>
 
 
-                    <div class="allEdits" id="publishers">
-                        <div class="alert alert-success">
-                            <div class="row parent" data-type="publisher">
-                                <div class="col-md-3"></div>
+                <div class="allEdits" id="publishers">
+                    <div class="alert alert-success">
+                        <div class="row parent" data-type="publisher">
+                            <div class="col-md-3"></div>
 
-                                <div class="col-md-3">
-                                    <input type="button" class="btn addBtn" value="اضافة" />
-                                </div>
-
-                                <div class="col-md-3">
-                                    <select class="form-control institute">
-                                        <option value="0">الهيئة العلمية</option>
-
-                                        <?php 
-                                        if(isset($institutes) && !empty($institutes)){
-                                            foreach($institutes as $institute){ 
-                                                echo "<option value='{$institute->id}'>{$institute->instituteName}</option>";                                                                                        
-                                            }
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <input type="text" placeholder="اسم الناشر" class="form-control inputText" />
-                                </div>
+                            <div class="col-md-3">
+                                <input type="button" class="btn addBtn" value="اضافة" />
                             </div>
-                        </div>
 
-                        <div class="old">
-                            <?php
-                            if(isset($publishers) && !empty($publishers)){
-                                foreach($publishers as $obj){
-                            ?>
-                            <div class="alert alert-info">
-                                <div class="row parent" data-type="publisher">
-                                    <div class="col-md-3">
-                                        <input type="button" class="btn deleteBtn" value="مسح" />
-                                    </div>
+                            <div class="col-md-3">
+                                <select class="form-control institute">
+                                    <option value="0">الهيئة العلمية</option>
 
-                                    <div class="col-md-3">
-                                        <input type="button" class="btn editBtn" value="تعديل" />
-                                        <input type="button" style="display: none" class="btn saveEditBtn" value="حفظ" />
-                                    </div>
-
-                                    <div class="col-md-3">
-                                        <select disabled="disabled" class="form-control institute">
-                                            <option value="0">الهيئة العلمية</option>
-
-                                            <?php 
+                                    <?php 
                                     if(isset($institutes) && !empty($institutes)){
                                         foreach($institutes as $institute){ 
-                                            if(isset($obj->institute) && !empty($obj->institute)){
-                                                if($institute->id == $obj->institute->id){ 
-                                                    echo "<option selected='selected' value='{$institute->id}'>{$institute->instituteName}</option>";                                          
-                                                }else{
-                                                    echo "<option value='{$institute->id}'>{$institute->instituteName}</option>";                                                                                        
-                                                }
-                                            }else{
-                                                echo "<option value='{$institute->id}'>{$institute->instituteName}</option>";                                          
-                                            }
+                                            echo "<option value='{$institute->id}'>{$institute->instituteName}</option>";                                                                                        
                                         }
                                     }
-                                            ?>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-md-3">
-                                        <input type="text" data-id="<?php echo $obj->id?>" readonly class="form-control inputText" value="<?php echo $obj->publisherName ?>"/>
-                                    </div>
-                                </div>
+                                    ?>
+                                </select>
                             </div>
-                            <?php 
-                                }
-                            }
-                            ?>
+
+                            <div class="col-md-3">
+                                <input type="text" placeholder="اسم الناشر" class="form-control inputText" />
+                            </div>
                         </div>
                     </div>
 
-                    <div class="allEdits" id="authors">
-                        <div class="alert alert-success">
-                            <div class="row parent" data-type="author">
-                                <div class="col-md-3"></div>
-
+                    <div class="old">
+                        <?php
+                        if(isset($publishers) && !empty($publishers)){
+                            foreach($publishers as $obj){
+                        ?>
+                        <div class="alert alert-info">
+                            <div class="row parent" data-type="publisher">
                                 <div class="col-md-3">
-                                    <input type="button" class="btn addBtn" value="اضافة" />
+                                    <input type="button" class="btn deleteBtn" value="مسح" />
                                 </div>
 
                                 <div class="col-md-3">
-                                    <select class="form-control institute">
+                                    <input type="button" class="btn editBtn" value="تعديل" />
+                                    <input type="button" style="display: none" class="btn saveEditBtn" value="حفظ" />
+                                </div>
+
+                                <div class="col-md-3">
+                                    <select disabled="disabled" class="form-control institute">
                                         <option value="0">الهيئة العلمية</option>
 
                                         <?php 
-                                        if(isset($institutes) && !empty($institutes)){
-                                            foreach($institutes as $institute){ 
-                                                echo "<option value='{$institute->id}'>{$institute->instituteName}</option>";
+                                if(isset($institutes) && !empty($institutes)){
+                                    foreach($institutes as $institute){ 
+                                        if(isset($obj->institute) && !empty($obj->institute)){
+                                            if($institute->id == $obj->institute->id){ 
+                                                echo "<option selected='selected' value='{$institute->id}'>{$institute->instituteName}</option>";                                          
+                                            }else{
+                                                echo "<option value='{$institute->id}'>{$institute->instituteName}</option>";                                                                                        
                                             }
+                                        }else{
+                                            echo "<option value='{$institute->id}'>{$institute->instituteName}</option>";                                          
                                         }
+                                    }
+                                }
+                                        ?>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <input type="text" data-id="<?php echo $obj->id?>" readonly class="form-control inputText" value="<?php echo $obj->publisherName ?>"/>
+                                </div>
+                            </div>
+                        </div>
+                        <?php 
+                            }
+                        }
+                        ?>
+                    </div>
+                </div>
+
+                <div class="allEdits" id="authors">
+                    <div class="alert alert-success">
+                        <div class="row parent" data-type="author">
+                            <div class="col-md-3"></div>
+
+                            <div class="col-md-3">
+                                <input type="button" class="btn addBtn" value="اضافة" />
+                            </div>
+
+                            <div class="col-md-3">
+                                <select class="form-control institute">
+                                    <option value="0">الهيئة العلمية</option>
+
+                                    <?php 
+                                    if(isset($institutes) && !empty($institutes)){
+                                        foreach($institutes as $institute){ 
+                                            echo "<option value='{$institute->id}'>{$institute->instituteName}</option>";
+                                        }
+                                    }
+                                    ?>
+                                </select>
+
+                                <select class="form-control currentScientificDegree">
+                                    <option value="0">الدرجة العلمية</option>
+
+                                    <?php 
+
+                                    if(isset($scientificDegrees) && !empty($scientificDegrees)){
+                                        foreach($scientificDegrees as $scs){ 
+                                            echo "<option value='{$scs->id}'>{$scs->name}</option>";                                          
+
+                                        }
+                                    }
+                                    
+                                    ?>
+                                </select>
+
+
+                                <select class="form-control specialization">
+                                    <option value="0">التخصص</option>
+
+                                    <?php 
+
+                                    if(isset($specializations) && !empty($specializations)){
+                                        foreach($specializations as $ob){ 
+                                            echo "<option value='{$ob->id}'>{$ob->name}</option>";                                          
+
+                                        }
+                                    }
+                                    
+                                    ?>
+                                </select>
+                                <select class="form-control accurateSpecialization">
+                                    <option value="0">التخصص الدقيق</option>
+
+                                    <?php 
+
+                                    if(isset($accSpecializations) && !empty($accSpecializations)){
+                                        foreach($accSpecializations as $ob){ 
+                                            echo "<option value='{$ob->id}'>{$ob->name}</option>";                                          
+
+                                        }
+                                    }
+                                    
+                                    ?>
+                                </select>
+
+
+                                <select class="form-control job">
+                                    <option value="0">الوظيفة الحالية</option>
+
+                                    <?php 
+
+                                    if(isset($jobs) && !empty($jobs)){
+                                        foreach($jobs as $ob){ 
+                                            echo "<option value='{$ob->id}'>{$ob->name}</option>";                                          
+                                        }
+                                    }
+                                    
+                                    ?>
+                                </select>
+                            </div>
+
+                            <div class="col-md-3">
+                                <input type="text" placeholder="اسم الناشر" class="form-control inputText" />
+                                <input type="text" placeholder="البريد الالكتروني" class="form-control mail" />
+                                <input type="text" placeholder="الهاتف الشخصي" class="form-control mobileNumber" />
+                                <input type="text" placeholder="هاتف العمل" class="form-control jobPhone" />
+                                <input type="text" placeholder="عنوان العمل" class="form-control jobAddress" />
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="old">
+                        <?php
+                        if(isset($authors) && !empty($authors)){
+                            foreach($authors as $obj){
+                        ?>
+                        <div class="alert alert-info">
+                            <div class="row parent" data-type="author">
+                                <div class="col-md-3">
+                                    <input type="button" class="btn deleteBtn" value="مسح" />
+                                </div>
+
+                                <div class="col-md-3">
+                                    <input type="button" class="btn editBtn" value="تعديل" />
+                                    <input type="button" style="display: none" class="btn saveEditBtn" value="حفظ" />
+                                </div>
+
+                                <div class="col-md-3">
+                                    <select disabled="disabled" class="form-control institute">
+                                        <option value="0">الهيئة العلمية</option>
+
+                                        <?php 
+                                if(isset($institutes) && !empty($institutes)){
+                                    foreach($institutes as $institute){ 
+                                        if(isset($obj->institute) && !empty($obj->institute)){
+                                            if($institute->id == $obj->institute->id){ 
+                                                echo "<option selected='selected' value='{$institute->id}'>{$institute->instituteName}</option>";                                          
+                                            }else{
+                                                echo "<option value='{$institute->id}'>{$institute->instituteName}</option>";                                                                                        
+                                            }
+                                        }else{
+                                            echo "<option value='{$institute->id}'>{$institute->instituteName}</option>";                                          
+                                        }
+                                    }
+                                }
                                         ?>
                                     </select>
 
-                                    <select class="form-control currentScientificDegree">
+                                    <select disabled="disabled" class="form-control currentScientificDegree">
                                         <option value="0">الدرجة العلمية</option>
 
                                         <?php 
 
-                                        if(isset($scientificDegrees) && !empty($scientificDegrees)){
-                                            foreach($scientificDegrees as $scs){ 
-                                                echo "<option value='{$scs->id}'>{$scs->name}</option>";                                          
-
+                                if(isset($scientificDegrees) && !empty($scientificDegrees)){
+                                    foreach($scientificDegrees as $scs){ 
+                                        if(isset($obj->currentScientificDegree) && !empty($obj->currentScientificDegree)){
+                                            if($scs->id == $obj->currentScientificDegree->id){ 
+                                                echo "<option selected='selected' value='{$scs->id}'>{$scs->name}</option>";                                          
+                                            }else{
+                                                echo "<option value='{$scs->id}'>{$scs->name}</option>";                                                                                        
                                             }
+                                        }else{
+                                            echo "<option value='{$scs->id}'>{$scs->name}</option>";                                          
                                         }
-                                        
+                                    }
+                                }
+                                
                                         ?>
                                     </select>
 
-                                   
-                                    <select class="form-control specialization">
+
+                                    <select disabled="disabled" class="form-control specialization">
                                         <option value="0">التخصص</option>
 
                                         <?php 
 
-                                        if(isset($specializations) && !empty($specializations)){
-                                            foreach($specializations as $ob){ 
-                                                echo "<option value='{$ob->id}'>{$ob->name}</option>";                                          
-
+                                if(isset($specializations) && !empty($specializations)){
+                                    foreach($specializations as $ob){ 
+                                        if(isset($obj->specialization) && !empty($obj->specialization)){
+                                            if($ob->id == $obj->specialization->id){ 
+                                                echo "<option selected='selected' value='{$ob->id}'>{$ob->name}</option>";                                          
+                                            }else{
+                                                echo "<option value='{$ob->id}'>{$ob->name}</option>";                                                                                        
                                             }
+                                        }else{
+                                            echo "<option value='{$ob->id}'>{$ob->name}</option>";                                          
                                         }
-                                        
+                                    }
+                                }
+                                
                                         ?>
                                     </select>
-                                    <select class="form-control accurateSpecialization">
-                                        <option value="0">التخصص الدقيق</option>
+
+                                    <select disabled="disabled" class="form-control accurateSpecialization">
+                                        <option value="0">التخصص الدفيق</option>
 
                                         <?php 
 
-                                        if(isset($accSpecializations) && !empty($accSpecializations)){
-                                            foreach($accSpecializations as $ob){ 
-                                                echo "<option value='{$ob->id}'>{$ob->name}</option>";                                          
-
+                                if(isset($accSpecializations) && !empty($accSpecializations)){
+                                    foreach($accSpecializations as $ob){ 
+                                        if(isset($obj->accurateSpecialization) && !empty($obj->accurateSpecialization)){
+                                            if($ob->id == $obj->accurateSpecialization->id){ 
+                                                echo "<option selected='selected' value='{$ob->id}'>{$ob->name}</option>";                                          
+                                            }else{
+                                                echo "<option value='{$ob->id}'>{$ob->name}</option>";                                                                                        
                                             }
+                                        }else{
+                                            echo "<option value='{$ob->id}'>{$ob->name}</option>";                                          
                                         }
-                                        
+                                    }
+                                }
+                                
                                         ?>
                                     </select>
-                                                                         
 
-                                    <select class="form-control job">
+
+                                    <select disabled="disabled" class="form-control job">
                                         <option value="0">الوظيفة الحالية</option>
 
                                         <?php 
 
-                                        if(isset($jobs) && !empty($jobs)){
-                                            foreach($jobs as $ob){ 
-                                                echo "<option value='{$ob->id}'>{$ob->name}</option>";                                          
+                                if(isset($jobs) && !empty($jobs)){
+                                    foreach($jobs as $ob){ 
+                                        if(isset($obj->job) && !empty($obj->job)){
+                                            if($ob->id == $obj->job->id){ 
+                                                echo "<option selected='selected' value='{$ob->id}'>{$ob->name}</option>";                                          
+                                            }else{
+                                                echo "<option value='{$ob->id}'>{$ob->name}</option>";                                                                                        
                                             }
+                                        }else{
+                                            echo "<option value='{$ob->id}'>{$ob->name}</option>";                                          
                                         }
-                                        
+                                    }
+                                }
+                                
                                         ?>
                                     </select>
                                 </div>
 
                                 <div class="col-md-3">
-                                    <input type="text" placeholder="اسم الناشر" class="form-control inputText" />
-                                    <input type="text" placeholder="البريد الالكتروني" class="form-control mail" />
-                                    <input type="text" placeholder="الهاتف الشخصي" class="form-control mobileNumber" />
-                                    <input type="text" placeholder="هاتف العمل" class="form-control jobPhone" />
-                                    <input type="text" placeholder="عنوان العمل" class="form-control jobAddress" />
+                                    <input type="text" data-id="<?php echo $obj->id?>" readonly class="form-control inputText" value="<?php echo $obj->name ?>"/>
+                                    <input type="text" readonly placeholder="البريد الالكتروني" class="form-control mail" value="<?php echo $obj->mail?>" />
+                                    <input type="text" readonly placeholder="الهاتف الشخصي" class="form-control mobileNumber" value="<?php echo $obj->mobileNumber?>" />
+                                    <input type="text" readonly placeholder="هاتف العمل" class="form-control jobPhone" value="<?php echo $obj->jobPhone?>" />
+                                    <input type="text" readonly placeholder="عنوان العمل" class="form-control jobAddress" value="<?php echo $obj->jobAddress?>" />
 
                                 </div>
                             </div>
                         </div>
-
-                        <div class="old">
-                            <?php
-                            if(isset($authors) && !empty($authors)){
-                                foreach($authors as $obj){
-                            ?>
-                            <div class="alert alert-info">
-                                <div class="row parent" data-type="author">
-                                    <div class="col-md-3">
-                                        <input type="button" class="btn deleteBtn" value="مسح" />
-                                    </div>
-
-                                    <div class="col-md-3">
-                                        <input type="button" class="btn editBtn" value="تعديل" />
-                                        <input type="button" style="display: none" class="btn saveEditBtn" value="حفظ" />
-                                    </div>
-
-                                    <div class="col-md-3">
-                                        <select disabled="disabled" class="form-control institute">
-                                            <option value="0">الهيئة العلمية</option>
-
-                                            <?php 
-                                    if(isset($institutes) && !empty($institutes)){
-                                        foreach($institutes as $institute){ 
-                                            if(isset($obj->institute) && !empty($obj->institute)){
-                                                if($institute->id == $obj->institute->id){ 
-                                                    echo "<option selected='selected' value='{$institute->id}'>{$institute->instituteName}</option>";                                          
-                                                }else{
-                                                    echo "<option value='{$institute->id}'>{$institute->instituteName}</option>";                                                                                        
-                                                }
-                                            }else{
-                                                echo "<option value='{$institute->id}'>{$institute->instituteName}</option>";                                          
-                                            }
-                                        }
-                                    }
-                                            ?>
-                                        </select>
-
-                                        <select disabled="disabled" class="form-control currentScientificDegree">
-                                            <option value="0">الدرجة العلمية</option>
-
-                                            <?php 
-
-                                    if(isset($scientificDegrees) && !empty($scientificDegrees)){
-                                        foreach($scientificDegrees as $scs){ 
-                                            if(isset($obj->currentScientificDegree) && !empty($obj->currentScientificDegree)){
-                                                if($scs->id == $obj->currentScientificDegree->id){ 
-                                                    echo "<option selected='selected' value='{$scs->id}'>{$scs->name}</option>";                                          
-                                                }else{
-                                                    echo "<option value='{$scs->id}'>{$scs->name}</option>";                                                                                        
-                                                }
-                                            }else{
-                                                echo "<option value='{$scs->id}'>{$scs->name}</option>";                                          
-                                            }
-                                        }
-                                    }
-                                    
-                                            ?>
-                                        </select>
-
-
-                                        <select disabled="disabled" class="form-control specialization">
-                                            <option value="0">التخصص</option>
-
-                                            <?php 
-
-                                    if(isset($specializations) && !empty($specializations)){
-                                        foreach($specializations as $ob){ 
-                                            if(isset($obj->specialization) && !empty($obj->specialization)){
-                                                if($ob->id == $obj->specialization->id){ 
-                                                    echo "<option selected='selected' value='{$ob->id}'>{$ob->name}</option>";                                          
-                                                }else{
-                                                    echo "<option value='{$ob->id}'>{$ob->name}</option>";                                                                                        
-                                                }
-                                            }else{
-                                                echo "<option value='{$ob->id}'>{$ob->name}</option>";                                          
-                                            }
-                                        }
-                                    }
-                                    
-                                            ?>
-                                        </select>
-
-                                        <select disabled="disabled" class="form-control accurateSpecialization">
-                                            <option value="0">التخصص الدفيق</option>
-
-                                            <?php 
-
-                                    if(isset($accSpecializations) && !empty($accSpecializations)){
-                                        foreach($accSpecializations as $ob){ 
-                                            if(isset($obj->accurateSpecialization) && !empty($obj->accurateSpecialization)){
-                                                if($ob->id == $obj->accurateSpecialization->id){ 
-                                                    echo "<option selected='selected' value='{$ob->id}'>{$ob->name}</option>";                                          
-                                                }else{
-                                                    echo "<option value='{$ob->id}'>{$ob->name}</option>";                                                                                        
-                                                }
-                                            }else{
-                                                echo "<option value='{$ob->id}'>{$ob->name}</option>";                                          
-                                            }
-                                        }
-                                    }
-                                    
-                                            ?>
-                                        </select>
-
-
-                                        <select disabled="disabled" class="form-control job">
-                                            <option value="0">الوظيفة الحالية</option>
-
-                                            <?php 
-
-                                    if(isset($jobs) && !empty($jobs)){
-                                        foreach($jobs as $ob){ 
-                                            if(isset($obj->job) && !empty($obj->job)){
-                                                if($ob->id == $obj->job->id){ 
-                                                    echo "<option selected='selected' value='{$ob->id}'>{$ob->name}</option>";                                          
-                                                }else{
-                                                    echo "<option value='{$ob->id}'>{$ob->name}</option>";                                                                                        
-                                                }
-                                            }else{
-                                                echo "<option value='{$ob->id}'>{$ob->name}</option>";                                          
-                                            }
-                                        }
-                                    }
-                                    
-                                            ?>
-                                        </select>
-                                    </div>
-
-                                    <div class="col-md-3">
-                                        <input type="text" data-id="<?php echo $obj->id?>" readonly class="form-control inputText" value="<?php echo $obj->name ?>"/>
-                                        <input type="text" readonly placeholder="البريد الالكتروني" class="form-control mail" value="<?php echo $obj->mail?>" />
-                                        <input type="text" readonly placeholder="الهاتف الشخصي" class="form-control mobileNumber" value="<?php echo $obj->mobileNumber?>" />
-                                        <input type="text" readonly placeholder="هاتف العمل" class="form-control jobPhone" value="<?php echo $obj->jobPhone?>" />
-                                        <input type="text" readonly placeholder="عنوان العمل" class="form-control jobAddress" value="<?php echo $obj->jobAddress?>" />
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            <?php 
-                                }
+                        <?php 
                             }
-                            ?>
-                        </div>
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -675,7 +674,7 @@
     </div>
 
     <?php
-    $this->load->view('shared/footer');
+    //$this->load->view('shared/footer');
     ?>
 
 
@@ -704,7 +703,7 @@
                 $(parent).find(".mobileNumber").removeAttr("readonly");
                 $(parent).find(".jobPhone").removeAttr("readonly");
                 $(parent).find(".jobAddress").removeAttr("readonly");
-                
+
             });
 
             $(".saveEditBtn").click(function () {
@@ -758,7 +757,7 @@
                     mail = 0;
                 }
 
-                var tables = ["specialization", "accSpecialization", "scientificDegree", "researchType", "institute", "job", "publisher" , "author"];
+                var tables = ["specialization", "accSpecialization", "scientificDegree", "researchType", "institute", "job", "publisher", "author"];
                 if (table == "" || table == null || tables.indexOf(table) == -1) {
                     alert("error");
                 } else {

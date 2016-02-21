@@ -4,7 +4,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize 
 html {
     font-family: 'JF Flat Regular',Sans-Serif;
     -webkit-text-size-adjust: 100%;
@@ -227,6 +227,7 @@ td,
 th {
     padding: 0;
 }
+    */
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
     *,
@@ -1524,7 +1525,7 @@ h6,
 .h6 {
     font-family: inherit;
     /*font-weight: 500;*/
-    line-height: 0;
+    line-height: 1;
     color: inherit;
 }
 
@@ -1637,6 +1638,9 @@ h6,
     font-size: 12px;
 }
 
+.h7 {
+    font-size: 10px;
+}
 p {
     margin: 0 0 10px;
 }

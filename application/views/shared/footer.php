@@ -1,4 +1,5 @@
-﻿<div class="footer_bg">
+<!-- not in use
+<div class="footer_bg">
     <div class="wrap">
         <div class="footer">
             <div class="footer_top">
@@ -11,3 +12,4 @@
         </div>
     </div>
 </div>
+-->

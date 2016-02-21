@@ -127,9 +127,13 @@
     width: 13%;
     margin-left: 3px;
     
+       
     color: white;
     background-color: #dd7403;
     height: 27px;
+}
+.headings{
+    margin-top:5px;
 }
 
 #lastHeading {
@@ -191,7 +195,7 @@
     float: right;
     color: white;
     margin-right: 10px;
-    line-height:36px;
+
 }
 
 .newHeader {

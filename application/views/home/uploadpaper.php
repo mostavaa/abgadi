@@ -156,8 +156,10 @@ function renderInput($label , $inputValue , $id , $errors , $inputType , $requir
         </div>
     </div>
 </div>
+
 <?php
 }
+//form labels
 $language = "arabic";
 if ($language=="arabic"){
     $others= "اخرى";
@@ -427,12 +429,7 @@ if (isset($errors) && !empty($errors)){
         .error {
             border-color: red !important;
         }
-        /* BTW alt-shift will pop a color picker 
-  example color: followed  by alt shift will pop it
-*/
-        /*
-Hide the label if placeholder is supported
-*/
+
 
         .inputError {
             color: red;
@@ -470,26 +467,6 @@ Hide the label if placeholder is supported
             margin: 0 auto;
             display: block;
             width: 100%;
-            /*
-            padding: 30px 20px;
-            
-            box-sizing: border-box;
-            border-radius: 3px;
-            border: 1px solid silver;
-            
-            -webkit-box-shadow: inset 0 1px 5px rgba(0,0,0,0.2);
-            box-shadow: inset 0 1px 5px rgba(0,0,0,0.2), 0 1px rgba(255,255,255,.8);
-            width: 100%;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            -ms-box-sizing: border-box;
-            box-sizing: border-box;
-            -webkit-transition: background-color .5s ease;
-            -moz-transition: background-color .5s ease;
-            -o-transition: background-color .5s ease;
-            -ms-transition: background-color .5s ease;
-            transition: background-color .5s ease;
-                */
         }
 
         .placeholder #registration-form label {
@@ -554,27 +531,6 @@ Hide the label if placeholder is supported
             -ms-transition: background-color .5s ease;
             transition: background-color .5s ease;
         }
-        /*
-        {
-            padding: 15px 20px;
-            border-radius: 1px;
-            margin: 5px auto;
-            background-color: #f7f7f7;
-            border: 1px solid silver;
-            -webkit-box-shadow: inset 0 1px 5px rgba(0,0,0,0.2);
-            box-shadow: inset 0 1px 5px rgba(0,0,0,0.2), 0 1px rgba(255,255,255,.8);
-            width: 100%;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            -ms-box-sizing: border-box;
-            box-sizing: border-box;
-            -webkit-transition: background-color .5s ease;
-            -moz-transition: background-color .5s ease;
-            -o-transition: background-color .5s ease;
-            -ms-transition: background-color .5s ease;
-            transition: background-color .5s ease;
-        }
-        */
 
         #registration-form input[type=text], #registration-form select, #registration-form textarea, #registration-form input[type=number], input[type=email] {
             padding: 10px 15px;
@@ -682,293 +638,119 @@ Hide the label if placeholder is supported
     <?php 
     $this->load->view('shared/sidebar');
     ?>
-    <?php
-    $this->load->view('shared/header');
-    ?>
-    <div class="main_bg">
-        <div class="wrap">
-            <div class="main">
-                <div class="content">
+    <div class="container">
+        <div class="row page">
+            <?php
+            $this->load->view('shared/header');
+            ?>
+            <div class="content">
+                <div id="registration-form">
+                    <div class='fieldset'>
+                        <form class="form form-inline"  method="post" action="<?php echo site_url("homecontroller/upload") ?>" enctype="multipart/form-data" id="myform">
 
 
-                    <div id="registration-form">
-                        <div class='fieldset'>
-                            <form class="form form-inline"  method="post" action="<?php echo site_url("homecontroller/upload") ?>" enctype="multipart/form-data" id="myform">
-
-                                
-                                <div class="row formElement">
+                            <div class="row formElement">
 
 
-                                    <div class="col-md-12">
-                          
-                                        <div class="col-md-9">
-                                            <div class="uploadDiv btn btn-default" id="file">
-                                                <span>
-                                                    <?php 
-                                                    
-                                                    if($mode=="edit"){
-                                                        echo $research->originalFileName;
-                                                        echo  "<input type='hidden' name='oldFileName' id='oldFileName' value='{$research->originalFileName}'/>";
-                                                        
-                                                    }
-                                                    else{
-                                                        echo $formLabels["file"];  
-                                                    }
-                                                    ?>
+                                <div class="col-md-12">
 
-                                                </span>
-                                          
-                                                <input type="file" class="upload" name="file" />
-                                            </div>
-
-                                                  <?php 
-                                                if($mode=="edit"){
-                                                echo "<a class='btn btn-danger' id='deleteOldFile'>حذف</a>";
-                                                }
-                                                ?>
-                                        </div>
-
-                                        <div class="col-md-3">
-                                            <h4 class="form-label"><?php echo $formLabels["file"]?></h4>
-                                        </div>
-
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-3">
-
-                                            <span class="inputError">
+                                    <div class="col-md-9">
+                                        <div class="uploadDiv btn btn-default" id="file">
+                                            <span>
                                                 <?php 
-                                                foreach($fileErrors as $fileError){
-                                                    echo "<h4>{$fileError}</h4>";
+                                                
+                                                if($mode=="edit"){
+                                                    if($research->originalFileName!="")
+                                                        echo $research->originalFileName;
+                                                    else{
+                                                        echo $formLabels["file"];                                                              
+                                                    }
+                                                    
+                                                }
+                                                else{
+                                                    echo $formLabels["file"];  
                                                 }
                                                 ?>
+
                                             </span>
+
+                                            <input type="file"  class="upload" name="file" />
                                         </div>
-                                    </div>
-                                </div>
-                                <hr />
 
-                                <?php 
-                                renderInput($formLabels["arabicHeading"] ,$arabicHeading , "arabicHeading" , $arabicHeadingErrors ,"text" , true );
-                                renderInput($formLabels["englishHeading"] ,$englishHeading , "englishHeading" , $englishHeadingErrors ,"text" , true );
-                                renderTextArea($formLabels["arabicDescription"] , $arabicDescription ,"arabicDescription" ,$arabicDescriptionErrors );
-                                renderTextArea($formLabels["englishDescription"] , $englishDescription ,"englishDescription" ,$englishDescriptionErrors );
-                                renderTextArea($formLabels["keyword"] , $keyword,"keyword" ,$keywordErrors  , true);
-                                
-                                ?>
-                                <hr />
+                                        <?php 
+                                        if($mode=="edit"){
+                                            echo  "<input type='hidden' name='oldFileName' id='oldFileName' value='{$research->originalFileName}'/>";
+                                            echo "<a class='btn btn-danger' id='deleteOldFile'>حذف</a>";
+                                        }
+                                        ?>
+                                    </div>
+
+                                    <div class="col-md-3">
+                                        <h4 class="form-label"><?php echo $formLabels["file"]?></h4>
+                                    </div>
+
+                                </div>
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-3">
 
-
-                                        <?php
-                                        $pub = array();
-                                        if (isset($publishers) && !empty($publishers)){
-                                            foreach($publishers as $publisherr){
-                                                $pub[$publisherr->id] = $publisherr->publisherName;
+                                        <span class="inputError">
+                                            <?php 
+                                            foreach($fileErrors as $fileError){
+                                                echo "<h4>{$fileError}</h4>";
                                             }
-                                        }
-                                        
-                                        
-                                        //renderSelectOther($formLabels["publisherInstitute"] ,$others , $publisherInstitute, "publisherInstitute" ,$publisherInstituteErrors  , true);
-                                        renderSelect($formLabels["publisher"] , $publisher ,"publisher" , $publisherErrors , true ,$pub  );
-                                        
-                                        renderInput($formLabels["researchNumber"] ,$researchNumber , "researchNumber" , $researchNumberErrors ,"number" , false );
-                                        renderInput($formLabels["publishDate"] ,$publishDate , "publishDate" , $publishDateErrors ,"number" , true );
-                                        renderInput($formLabels["publishCountry"] ,$publishCountry , "publishCountry" , $publishCountryErrors ,"text" , true );
-                                        
-                                        $select = array();
-                                        if (isset($researchtypes) && !empty($researchtypes)){
-                                            
-                                            foreach($researchtypes as $type){
-                                                $select[$type->id] = $type->name;    
-                                            }
-                                        }
-                                        
-                                        renderSelectOther($formLabels["researchType"]   , $others, $researchType , "researchType" ,$researchTypeErrors ,true  , $select);
-                                        
-                                        
-                                        
-                                        ?>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <?php 
-                                        
-                                        $select = array();
-                                        if (isset($specializatons) && !empty($specializatons)){
-                                            
-                                            foreach($specializatons as $spe){
-                                                $select[$spe->id] = $spe->name;    
-                                            }
-                                        }
-                                        renderSelectOther($formLabels["specialization"] ,$others , $specialization , "specialization" ,$specializationErrors  ,false , $select);
-                                        
-                                        
-                                        $select = array();
-                                        if (isset($accurateSpecializations) && !empty($accurateSpecializations)){
-                                            
-                                            foreach($accurateSpecializations as $spe){
-                                                $select[$spe->id] = $spe->name;    
-                                            }
-                                        }
-                                        
-                                        renderSelectOther($formLabels["accurateSpecialization"]  , $others,  $accurateSpecialization, "accurateSpecialization" ,$accurateSpecializationErrors ,false,$select );
-                                        
-                                        renderInput($formLabels["pagesCount"] ,$pagesCount , "pagesCount" , $pagesCountErrors ,"number" , true );
-                                        renderInput($formLabels["pagesFrom"] ,$pagesFrom , "pagesFrom" , $pagesFromErrors ,"number"  );
-                                        renderInput($formLabels["pagesTo"] ,$pagesTo , "pagesTo" , $pagesToErrors ,"number"  );
-                                        ?>
+                                            ?>
+                                        </span>
                                     </div>
                                 </div>
-                                <hr />
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <?php 
-                                        
-                                        $auth= array();
-                                        if (isset($authors) && !empty($authors)){
-                                            foreach($authors as $authorr){
-                                                $auth[$authorr->id] = $authorr->name;
-                                            }
-                                        }
-                                        renderSelect($formLabels["sixthAuthorName"]  , $sixthAuthorName, "sixthAuthorName" ,$sixthAuthorNameErrors  ,false,$auth );
-                                        renderSelect($formLabels["seventhAuthorName"]  , $seventhAuthorName, "seventhAuthorName" ,$seventhAuthorNameErrors,false,$auth   );
-                                        renderSelect($formLabels["eighthAuthorName"]  , $eighthAuthorName, "eighthAuthorName" ,$eighthAuthorNameErrors ,false ,$auth );
-                                        renderSelect($formLabels["ninthAuthorName"]  , $ninthAuthorName, "ninthAuthorName" ,$ninthAuthorNameErrors ,false,$auth  );
-                                        renderSelect($formLabels["tenthAuthorName"]  , $tenthAuthorName, "tenthAuthorName" ,$tenthAuthorNameErrors  ,false,$auth );
-                                        
-                                        
-                                        /*
-                                        renderSelectOther($formLabels["AuthorscientificDegree"] ,$others , $AuthorscientificDegree, "AuthorscientificDegree" ,$AuthorscientificDegreeErrors , true  );
-                                        renderSelectOther($formLabels["AuthorInstitute"] ,$others , $AuthorInstitute, "AuthorInstitute" ,$AuthorInstituteErrors  , true);
-                                        renderSelectOther($formLabels["AuthorJob"] ,$others , $AuthorJob, "AuthorJob" ,$AuthorJobErrors ,true );
-                                         */
-                                        ?>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <?php 
-                                        renderSelect($formLabels["mainAuthorName"]  , $mainAuthorName, "mainAuthorName" ,$mainAuthorNameErrors , true ,$auth );
-                                        renderSelect($formLabels["firstAuthorName"]  , $firstAuthorName, "firstAuthorName" ,$firstAuthorNameErrors  ,false ,$auth);            
-                                        renderSelect($formLabels["secondAuthorName"]  , $secondAuthorName, "secondAuthorName" ,$secondAuthorNameErrors ,false,$auth  );
-                                        renderSelect($formLabels["thirdAuthorName"]  , $thirdAuthorName, "thirdAuthorName" ,$thirdAuthorNameErrors ,false,$auth  );
-                                        renderSelect($formLabels["fourthAuthorName"]  , $fourthAuthorName, "fourthAuthorName" ,$fourthAuthorNameErrors ,false  ,$auth);
-                                        renderSelect($formLabels["fifthAuthorName"]  , $fifthAuthorName, "fifthAuthorName" ,$fifthAuthorNameErrors ,false,$auth  );
-                                        
-                                        ?>
-                                    </div>
-                                </div>
-                                <?php 
-                                
-                                if($mode=="edit"){
-                                    echo "<input type='hidden' value='edit' name='edit' />";
-                                    echo "<input type='hidden' value='{$research->id}' name='id' />";
-                                }
-                                ?>
-
-                                <input type="submit" value="<?php echo $formLabels["submit"]?>" />
-                            </form>
+                            </div>
                             <hr />
-                            <div>
 
-                                <div class="row">
-                                    <div class="col-md-3 col-md-offset-8">
-                                        <input type="button" class="btn btn-default" value="اضافة باحث او ناشر" id="institutes" />
-                                    </div>
-
-                                </div>
-                                <div class="row">
-
-                                    <div class="col-md-3">
-                                        <div class="row formElement">
-
-                                            <div class="col-md-12">
-                                                <div class="col-md-9">
-
-                                                    <select class="pub">
-                                                        <option value="-2222"></option>
-                                                        <option value="-1"><?php echo $others?></option>
-                                                    </select>
-
-                                                    <input type="hidden" value="" class="otherPub" />
-                                                    <a style="display: none; width: 100%" class="btn btn-default addPub">اضافة</a>
-
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <h4 class="form-label">ناشر</h4>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-3">
-                                        <div class="row formElement">
-
-                                            <div class="col-md-12">
-                                                <div class="col-md-9">
-
-                                                    <select class="auth">
-                                                        <option value="-2222"></option>
-                                                        <option value="-1"><?php echo $others?></option>
-                                                    </select>
+                            <?php 
+                            //function in the top of the page , this function draw input element
+                            renderInput($formLabels["arabicHeading"] ,$arabicHeading , "arabicHeading" , $arabicHeadingErrors ,"text" , true );
+                            renderInput($formLabels["englishHeading"] ,$englishHeading , "englishHeading" , $englishHeadingErrors ,"text" , true );
+                            renderTextArea($formLabels["arabicDescription"] , $arabicDescription ,"arabicDescription" ,$arabicDescriptionErrors );
+                            renderTextArea($formLabels["englishDescription"] , $englishDescription ,"englishDescription" ,$englishDescriptionErrors );
+                            renderTextArea($formLabels["keyword"] , $keyword,"keyword" ,$keywordErrors  , true);
+                            
+                            ?>
+                            <hr />
+                            <div class="row">
+                                <div class="col-md-6">
 
 
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <h4 class="form-label">باحث</h4>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-3">
-                                        <div class="row formElement">
-
-                                            <div class="col-md-12">
-                                                <div class="col-md-9">
-
-                                                    <select  class="institutes" name="<?php echo $publisherInstitute?>" id="<?php echo $publisherInstitute?>">
-                                                        <option value="-2222"></option>
-                                                        <?php 
-                                                        foreach($institutes as $instit ){
-                                                            echo "<option value='{$instit->id}'>{$instit->instituteName}</option>";
-                                                        }
-                                                        ?>
-                                                        <option value="-1"><?php echo $others?></option>
-                                                    </select>
-
-                                                    <input type="hidden" value="" class="otherInstitute" name="<?php echo $publisherInstitute?>" />
-                                                    <a style="display: none; width: 100%" class="btn btn-default addInstitute">اضافة</a>
-
-                                                </div>
-                                                <div class="col-md-3">
-                                                    <h4 class="form-label">الهيئة</h4>
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                                <div class="row addNewAuthor" style="display: none">
                                     <?php
-                                    
-                                    renderInput("اسم الباحث*" , "" , "newAuthName" , array() , "text" );
-                                    
-                                    $select = array();
-                                    if (isset($jobs) && !empty($jobs)){
-                                        
-                                        foreach($jobs as $spe){
-                                            $select[$spe->id] = $spe->name;    
+                                    $pub = array();
+                                    if (isset($publishers) && !empty($publishers)){
+                                        foreach($publishers as $publisherr){
+                                            $pub[$publisherr->id] = $publisherr->publisherName;
                                         }
                                     }
-                                    renderSelectOther("*الدرجة الوظيفية" , $others , "" , "newJob" ,array() ,false ,$select );
                                     
+                                    
+                                    //renderSelectOther($formLabels["publisherInstitute"] ,$others , $publisherInstitute, "publisherInstitute" ,$publisherInstituteErrors  , true);
+                                    renderSelect($formLabels["publisher"] , $publisher ,"publisher" , $publisherErrors , true ,$pub  );
+                                    
+                                    renderInput($formLabels["researchNumber"] ,$researchNumber , "researchNumber" , $researchNumberErrors ,"number" , false );
+                                    renderInput($formLabels["publishDate"] ,$publishDate , "publishDate" , $publishDateErrors ,"number" , true );
+                                    renderInput($formLabels["publishCountry"] ,$publishCountry , "publishCountry" , $publishCountryErrors ,"text" , true );
+                                    
+                                    $select = array();
+                                    if (isset($researchtypes) && !empty($researchtypes)){
+                                        
+                                        foreach($researchtypes as $type){
+                                            $select[$type->id] = $type->name;    
+                                        }
+                                    }
+                                    
+                                    renderSelectOther($formLabels["researchType"]   , $others, $researchType , "researchType" ,$researchTypeErrors ,true  , $select);
+                                    
+                                    
+                                    
+                                    ?>
+                                </div>
+                                <div class="col-md-6">
+                                    <?php 
                                     
                                     $select = array();
                                     if (isset($specializatons) && !empty($specializatons)){
@@ -977,10 +759,9 @@ Hide the label if placeholder is supported
                                             $select[$spe->id] = $spe->name;    
                                         }
                                     }
+                                    renderSelectOther($formLabels["specialization"] ,$others , $specialization , "specialization" ,$specializationErrors  ,false , $select);
                                     
-                                    renderSelectOther("التخصص" , $others , "" , "newAuthSpecialization" ,array() ,false , $select);
                                     
-
                                     $select = array();
                                     if (isset($accurateSpecializations) && !empty($accurateSpecializations)){
                                         
@@ -988,65 +769,244 @@ Hide the label if placeholder is supported
                                             $select[$spe->id] = $spe->name;    
                                         }
                                     }
-                                    renderSelectOther("التخصص الدقيق" , $others , "" , "newAuthAccurateSpecialization" ,array() , false , $select );
                                     
+                                    renderSelectOther($formLabels["accurateSpecialization"]  , $others,  $accurateSpecialization, "accurateSpecialization" ,$accurateSpecializationErrors ,false,$select );
                                     
-                                    
-                                    $select = array();
-                                    if (isset($scs) && !empty($scs)){
-                                        
-                                        foreach($scs as $spe){
-                                            $select[$spe->id] = $spe->name;    
-                                        }
-                                    }
-                                    renderSelectOther("الدرجة العلمية*" , $others , "" , "sientificDegree" ,array() , false , $select );
-                                    renderTextArea("عنوان العمل" , "" , "AuthJobAddress" , array() );
-                                    renderInput("هاتف العمل" , "" , "AuthJobPhone" , array() , "text" );
-                                    renderInput("الهاتف الشخصي" , "" , "AuthMobile" , array() , "text" );
-                                    renderInput("البريد الالكتروني" , "" , "AuthMail" , array() , "email" );
-                                    
+                                    renderInput($formLabels["pagesCount"] ,$pagesCount , "pagesCount" , $pagesCountErrors ,"number" , true );
+                                    renderInput($formLabels["pagesFrom"] ,$pagesFrom , "pagesFrom" , $pagesFromErrors ,"number"  );
+                                    renderInput($formLabels["pagesTo"] ,$pagesTo , "pagesTo" , $pagesToErrors ,"number"  );
                                     ?>
-                                    <div class="col-md-4 col-md-offset-4">
-
-                                        <input type="button" value="اضافة" class="btn btn-default addAuth" style="" />
-                                    </div>
                                 </div>
                             </div>
-                        </div>
+                            <hr />
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <?php 
+                                    
+                                    $auth= array();
+                                    if (isset($authors) && !empty($authors)){
+                                        foreach($authors as $authorr){
+                                            $auth[$authorr->id] = $authorr->name;
+                                        }
+                                    }
+                                    renderSelect($formLabels["sixthAuthorName"]  , $sixthAuthorName, "sixthAuthorName" ,$sixthAuthorNameErrors  ,false,$auth );
+                                    renderSelect($formLabels["seventhAuthorName"]  , $seventhAuthorName, "seventhAuthorName" ,$seventhAuthorNameErrors,false,$auth   );
+                                    renderSelect($formLabels["eighthAuthorName"]  , $eighthAuthorName, "eighthAuthorName" ,$eighthAuthorNameErrors ,false ,$auth );
+                                    renderSelect($formLabels["ninthAuthorName"]  , $ninthAuthorName, "ninthAuthorName" ,$ninthAuthorNameErrors ,false,$auth  );
+                                    renderSelect($formLabels["tenthAuthorName"]  , $tenthAuthorName, "tenthAuthorName" ,$tenthAuthorNameErrors  ,false,$auth );
+                                    
+                                    
+                                    /*
+                                    renderSelectOther($formLabels["AuthorscientificDegree"] ,$others , $AuthorscientificDegree, "AuthorscientificDegree" ,$AuthorscientificDegreeErrors , true  );
+                                    renderSelectOther($formLabels["AuthorInstitute"] ,$others , $AuthorInstitute, "AuthorInstitute" ,$AuthorInstituteErrors  , true);
+                                    renderSelectOther($formLabels["AuthorJob"] ,$others , $AuthorJob, "AuthorJob" ,$AuthorJobErrors ,true );
+                                     */
+                                    ?>
+                                </div>
+                                <div class="col-md-6">
+                                    <?php 
+                                    renderSelect($formLabels["mainAuthorName"]  , $mainAuthorName, "mainAuthorName" ,$mainAuthorNameErrors , true ,$auth );
+                                    renderSelect($formLabels["firstAuthorName"]  , $firstAuthorName, "firstAuthorName" ,$firstAuthorNameErrors  ,false ,$auth);            
+                                    renderSelect($formLabels["secondAuthorName"]  , $secondAuthorName, "secondAuthorName" ,$secondAuthorNameErrors ,false,$auth  );
+                                    renderSelect($formLabels["thirdAuthorName"]  , $thirdAuthorName, "thirdAuthorName" ,$thirdAuthorNameErrors ,false,$auth  );
+                                    renderSelect($formLabels["fourthAuthorName"]  , $fourthAuthorName, "fourthAuthorName" ,$fourthAuthorNameErrors ,false  ,$auth);
+                                    renderSelect($formLabels["fifthAuthorName"]  , $fifthAuthorName, "fifthAuthorName" ,$fifthAuthorNameErrors ,false,$auth  );
+                                    
+                                    ?>
+                                </div>
+                            </div>
+                            <?php 
+                            
+                            if($mode=="edit"){
+                                echo "<input type='hidden' value='edit' name='edit' />";
+                                echo "<input type='hidden' value='{$research->id}' name='id' />";
+                            }
+                            ?>
 
+                            <input type="submit" value="<?php echo $formLabels["submit"]?>" />
+                        </form>
+                        <hr />
+                        <div>
 
+                            <div class="row">
+                                <div class="col-md-3 col-md-offset-8">
+                                    <input type="button" class="btn btn-default" value="اضافة باحث او ناشر" id="institutes" />
+                                </div>
 
-                        <!-- Modal -->
-                        <div class="modal fade" id="myModal" role="dialog">
-                            <div class="modal-dialog">
+                            </div>
+                            <div class="row">
 
-                                <!-- Modal content-->
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                        <div class="modal-title">
+                                <div class="col-md-3">
+                                    <div class="row formElement">
+
+                                        <div class="col-md-12">
+                                            <div class="col-md-9">
+
+                                                <select class="pub">
+                                                    <option value="-2222"></option>
+                                                    <option value="-1"><?php echo $others?></option>
+                                                </select>
+
+                                                <input type="hidden" value="" class="otherPub" />
+                                                <a style="display: none; width: 100%" class="btn btn-default addPub">اضافة</a>
+
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h4 class="form-label">ناشر</h4>
+                                            </div>
+
                                         </div>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>Some text in the modal.</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <div class="modal-foot">
-                                        </div>
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
                                     </div>
                                 </div>
 
+                                <div class="col-md-3">
+                                    <div class="row formElement">
+
+                                        <div class="col-md-12">
+                                            <div class="col-md-9">
+
+                                                <select class="auth">
+                                                    <option value="-2222"></option>
+                                                    <option value="-1"><?php echo $others?></option>
+                                                </select>
+
+
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h4 class="form-label">باحث</h4>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <div class="row formElement">
+
+                                        <div class="col-md-12">
+                                            <div class="col-md-9">
+
+                                                <select  class="institutes" name="<?php echo $publisherInstitute?>" id="<?php echo $publisherInstitute?>">
+                                                    <option value="-2222"></option>
+                                                    <?php 
+                                                    foreach($institutes as $instit ){
+                                                        echo "<option value='{$instit->id}'>{$instit->instituteName}</option>";
+                                                    }
+                                                    ?>
+                                                    <option value="-1"><?php echo $others?></option>
+                                                </select>
+
+                                                <input type="hidden" value="" class="otherInstitute" name="<?php echo $publisherInstitute?>" />
+                                                <a style="display: none; width: 100%" class="btn btn-default addInstitute">اضافة</a>
+
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h4 class="form-label">الهيئة</h4>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="row addNewAuthor" style="display: none">
+                                <?php
+                                
+                                renderInput("اسم الباحث*" , "" , "newAuthName" , array() , "text" );
+                                
+                                $select = array();
+                                if (isset($jobs) && !empty($jobs)){
+                                    
+                                    foreach($jobs as $spe){
+                                        $select[$spe->id] = $spe->name;    
+                                    }
+                                }
+                                renderSelectOther("*الدرجة الوظيفية" , $others , "" , "newJob" ,array() ,false ,$select );
+                                
+                                
+                                $select = array();
+                                if (isset($specializatons) && !empty($specializatons)){
+                                    
+                                    foreach($specializatons as $spe){
+                                        $select[$spe->id] = $spe->name;    
+                                    }
+                                }
+                                
+                                renderSelectOther("التخصص" , $others , "" , "newAuthSpecialization" ,array() ,false , $select);
+                                
+
+                                $select = array();
+                                if (isset($accurateSpecializations) && !empty($accurateSpecializations)){
+                                    
+                                    foreach($accurateSpecializations as $spe){
+                                        $select[$spe->id] = $spe->name;    
+                                    }
+                                }
+                                renderSelectOther("التخصص الدقيق" , $others , "" , "newAuthAccurateSpecialization" ,array() , false , $select );
+                                
+                                
+                                
+                                $select = array();
+                                if (isset($scs) && !empty($scs)){
+                                    
+                                    foreach($scs as $spe){
+                                        $select[$spe->id] = $spe->name;    
+                                    }
+                                }
+                                renderSelectOther("الدرجة العلمية*" , $others , "" , "sientificDegree" ,array() , false , $select );
+                                renderTextArea("عنوان العمل" , "" , "AuthJobAddress" , array() );
+                                renderInput("هاتف العمل" , "" , "AuthJobPhone" , array() , "text" );
+                                renderInput("الهاتف الشخصي" , "" , "AuthMobile" , array() , "text" );
+                                renderInput("البريد الالكتروني" , "" , "AuthMail" , array() , "email" );
+                                
+                                ?>
+                                <div class="col-md-4 col-md-offset-4">
+
+                                    <input type="button" value="اضافة" class="btn btn-default addAuth" style="" />
+                                </div>
                             </div>
                         </div>
                     </div>
+
+
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <div class="modal-title">
+                                    </div>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Some text in the modal.</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="modal-foot">
+                                    </div>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
 
+
+
     <?php
-    $this->load->view('shared/footer');
+    //$this->load->view('shared/footer');
     ?>
     <?php 
 
@@ -1463,7 +1423,7 @@ Hide the label if placeholder is supported
                     $("#oldFileName").val("delete");
                     $(".uploadDiv span").html("اختر البحث");
                 }
-                
+
             });
         });
     </script>

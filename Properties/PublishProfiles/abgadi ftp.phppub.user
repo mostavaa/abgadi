@@ -71,7 +71,7 @@
       <publishTime>11/21/2014 01:31:46</publishTime>
     </File>
     <File Include="application/config/routes.php">
-      <publishTime>08/02/2015 20:19:13</publishTime>
+      <publishTime>10/21/2015 13:36:19</publishTime>
     </File>
     <File Include="application/config/smileys.php">
       <publishTime>11/21/2014 01:31:46</publishTime>
@@ -83,16 +83,16 @@
       <publishTime>09/27/2015 13:49:27</publishTime>
     </File>
     <File Include="application/controllers/app/author.php">
-      <publishTime>09/29/2015 19:07:10</publishTime>
+      <publishTime>10/14/2015 12:05:59</publishTime>
     </File>
     <File Include="application/controllers/app/authorresearch.php">
-      <publishTime>09/19/2015 13:27:03</publishTime>
+      <publishTime>10/14/2015 12:06:32</publishTime>
     </File>
     <File Include="application/controllers/app/FileUpload.php">
       <publishTime>09/26/2015 13:20:43</publishTime>
     </File>
     <File Include="application/controllers/app/institute.php">
-      <publishTime>09/27/2015 12:52:36</publishTime>
+      <publishTime>10/13/2015 17:35:13</publishTime>
     </File>
     <File Include="application/controllers/app/job.php">
       <publishTime>09/27/2015 12:54:15</publishTime>
@@ -101,13 +101,13 @@
       <publishTime>09/08/2015 01:52:44</publishTime>
     </File>
     <File Include="application/controllers/app/permissions.php">
-      <publishTime>09/29/2015 23:30:38</publishTime>
+      <publishTime>10/22/2015 12:18:13</publishTime>
     </File>
     <File Include="application/controllers/app/publisher.php">
-      <publishTime>09/29/2015 13:25:48</publishTime>
+      <publishTime>10/14/2015 13:09:02</publishTime>
     </File>
     <File Include="application/controllers/app/research.php">
-      <publishTime>09/26/2015 13:25:18</publishTime>
+      <publishTime>10/22/2015 12:39:56</publishTime>
     </File>
     <File Include="application/controllers/app/researchtype.php">
       <publishTime>09/27/2015 12:51:42</publishTime>
@@ -115,14 +115,11 @@
     <File Include="application/controllers/app/scientificdegree.php">
       <publishTime>09/27/2015 12:50:35</publishTime>
     </File>
-    <File Include="application/controllers/app/session.php">
-      <publishTime>09/17/2015 11:35:57</publishTime>
-    </File>
     <File Include="application/controllers/app/specialization.php">
       <publishTime>09/27/2015 12:48:08</publishTime>
     </File>
     <File Include="application/controllers/app/tools.php">
-      <publishTime>08/21/2015 23:25:19</publishTime>
+      <publishTime>10/13/2015 15:40:31</publishTime>
     </File>
     <File Include="application/controllers/app/user.php">
       <publishTime>09/17/2015 11:57:45</publishTime>
@@ -131,22 +128,22 @@
       <publishTime>09/13/2015 20:22:14</publishTime>
     </File>
     <File Include="application/controllers/core.php">
-      <publishTime>09/12/2015 23:11:42</publishTime>
+      <publishTime>10/22/2015 12:15:48</publishTime>
     </File>
     <File Include="application/controllers/homecontroller.php">
-      <publishTime>10/08/2015 13:28:58</publishTime>
+      <publishTime>10/22/2015 12:17:30</publishTime>
     </File>
     <File Include="application/controllers/index.html">
       <publishTime>11/21/2014 01:31:46</publishTime>
     </File>
     <File Include="application/controllers/usercontroller.php">
-      <publishTime>09/18/2015 14:31:58</publishTime>
+      <publishTime>10/22/2015 12:17:23</publishTime>
     </File>
     <File Include="application/core/index.html">
       <publishTime>11/21/2014 01:31:46</publishTime>
     </File>
     <File Include="application/errors/error_404.php">
-      <publishTime>11/21/2014 01:31:46</publishTime>
+      <publishTime>10/21/2015 13:33:58</publishTime>
     </File>
     <File Include="application/errors/error_db.php">
       <publishTime>11/21/2014 01:31:46</publishTime>
@@ -179,112 +176,121 @@
       <publishTime>11/21/2014 01:31:46</publishTime>
     </File>
     <File Include="application/models/accuratespecializationmodel.php">
-      <publishTime>09/27/2015 12:49:43</publishTime>
+      <publishTime>10/25/2015 21:40:59</publishTime>
     </File>
     <File Include="application/models/authormodel.php">
-      <publishTime>09/29/2015 19:04:33</publishTime>
+      <publishTime>10/25/2015 21:50:45</publishTime>
     </File>
     <File Include="application/models/authorresearchmodel.php">
-      <publishTime>09/19/2015 13:40:58</publishTime>
+      <publishTime>10/25/2015 21:51:23</publishTime>
     </File>
     <File Include="application/models/homemodel.php">
-      <publishTime>08/21/2015 12:43:14</publishTime>
+      <publishTime>10/25/2015 21:51:21</publishTime>
     </File>
     <File Include="application/models/index.html">
       <publishTime>11/21/2014 01:31:46</publishTime>
     </File>
     <File Include="application/models/institutemodel.php">
-      <publishTime>09/27/2015 12:52:34</publishTime>
+      <publishTime>10/25/2015 21:51:31</publishTime>
     </File>
     <File Include="application/models/jobmodel.php">
-      <publishTime>09/27/2015 12:54:13</publishTime>
+      <publishTime>10/25/2015 21:51:41</publishTime>
     </File>
     <File Include="application/models/logs/index.html">
       <publishTime>11/21/2014 01:31:46</publishTime>
     </File>
     <File Include="application/models/publishermodel.php">
-      <publishTime>09/29/2015 13:26:20</publishTime>
+      <publishTime>10/25/2015 21:51:49</publishTime>
     </File>
     <File Include="application/models/researchmodel.php">
-      <publishTime>09/19/2015 00:30:03</publishTime>
+      <publishTime>10/25/2015 21:52:00</publishTime>
     </File>
     <File Include="application/models/researchtypemodel.php">
-      <publishTime>09/27/2015 12:51:40</publishTime>
+      <publishTime>10/25/2015 21:52:08</publishTime>
     </File>
     <File Include="application/models/scientificdegreemodel.php">
-      <publishTime>09/27/2015 12:50:31</publishTime>
+      <publishTime>10/25/2015 21:52:17</publishTime>
     </File>
     <File Include="application/models/specializationmodel.php">
-      <publishTime>09/27/2015 12:48:49</publishTime>
+      <publishTime>10/25/2015 21:52:26</publishTime>
     </File>
     <File Include="application/models/usermodel.php">
-      <publishTime>08/21/2015 08:25:18</publishTime>
+      <publishTime>10/25/2015 21:52:44</publishTime>
     </File>
     <File Include="application/third_party/index.html">
       <publishTime>11/21/2014 01:31:46</publishTime>
     </File>
     <File Include="application/views/home/bulkaddpapers.php">
-      <publishTime>10/04/2015 14:53:40</publishTime>
+      <publishTime>10/21/2015 12:42:47</publishTime>
     </File>
     <File Include="application/views/home/content.php">
-      <publishTime>10/04/2015 14:53:33</publishTime>
+      <publishTime>10/21/2015 12:41:46</publishTime>
     </File>
     <File Include="application/views/home/displaydata.php">
-      <publishTime>10/04/2015 14:53:27</publishTime>
+      <publishTime>10/21/2015 12:30:32</publishTime>
     </File>
     <File Include="application/views/home/index.php">
-      <publishTime>10/12/2015 13:29:19</publishTime>
+      <publishTime>10/21/2015 13:10:44</publishTime>
+    </File>
+    <File Include="application/views/home/listAllResearches.php">
+      <publishTime>10/21/2015 12:44:21</publishTime>
+    </File>
+    <File Include="application/views/home/listoneauth.php">
+      <publishTime>10/22/2015 11:49:45</publishTime>
+    </File>
+    <File Include="application/views/home/listoneinst.php">
+      <publishTime>10/22/2015 11:48:36</publishTime>
+    </File>
+    <File Include="application/views/home/listonepub.php">
+      <publishTime>10/22/2015 11:47:38</publishTime>
+    </File>
+    <File Include="application/views/home/listoneresearch.php">
+      <publishTime>10/22/2015 11:29:16</publishTime>
     </File>
     <File Include="application/views/home/notpermitted.php">
-      <publishTime>10/04/2015 14:53:19</publishTime>
+      <publishTime>10/21/2015 13:00:55</publishTime>
     </File>
     <File Include="application/views/home/search.php">
-      <publishTime>08/09/2015 20:58:25</publishTime>
-    </File>
-    <File Include="application/views/home/uploadpaper - Copy.php">
-      <publishTime>10/08/2015 10:23:33</publishTime>
+      <publishTime>10/21/2015 12:46:53</publishTime>
     </File>
     <File Include="application/views/home/uploadpaper.php">
-      <publishTime>10/08/2015 10:30:06</publishTime>
+      <publishTime>10/22/2015 11:42:41</publishTime>
     </File>
     <File Include="application/views/index.html">
       <publishTime>11/21/2014 01:31:46</publishTime>
     </File>
     <File Include="application/views/manipulate/manipulateone.php">
-      <publishTime>10/04/2015 14:52:33</publishTime>
+      <publishTime>10/21/2015 12:55:10</publishTime>
     </File>
     <File Include="application/views/shared/css.php">
-      <publishTime>10/02/2015 21:06:29</publishTime>
+      <publishTime>10/22/2015 12:37:38</publishTime>
     </File>
     <File Include="application/views/shared/footer.php">
-      <publishTime>08/24/2015 21:49:13</publishTime>
-    </File>
-    <File Include="application/views/shared/header - Copy.php">
-      <publishTime>09/27/2015 14:08:43</publishTime>
+      <publishTime>10/25/2015 21:56:20</publishTime>
     </File>
     <File Include="application/views/shared/header.php">
-      <publishTime>10/12/2015 14:16:10</publishTime>
+      <publishTime>10/25/2015 21:57:01</publishTime>
     </File>
     <File Include="application/views/shared/scripts.php">
-      <publishTime>10/12/2015 14:00:43</publishTime>
+      <publishTime>10/19/2015 12:23:16</publishTime>
     </File>
     <File Include="application/views/shared/sidebar.php">
       <publishTime>10/12/2015 14:08:42</publishTime>
     </File>
     <File Include="application/views/user/login.php">
-      <publishTime>10/04/2015 14:51:49</publishTime>
+      <publishTime>10/21/2015 12:59:23</publishTime>
     </File>
     <File Include="application/views/user/register.php">
-      <publishTime>08/17/2015 19:56:53</publishTime>
+      <publishTime>10/21/2015 12:57:36</publishTime>
     </File>
     <File Include="css/bootstrap.css">
-      <publishTime>10/12/2015 12:45:30</publishTime>
+      <publishTime>10/22/2015 12:37:09</publishTime>
     </File>
     <File Include="css/bootstrap.min.css">
       <publishTime>06/11/2015 19:02:17</publishTime>
     </File>
     <File Include="css/header.css">
-      <publishTime>10/12/2015 14:15:40</publishTime>
+      <publishTime>10/21/2015 13:44:54</publishTime>
     </File>
     <File Include="css/magnific-popup.css">
       <publishTime>03/05/2014 10:05:42</publishTime>
@@ -294,6 +300,9 @@
     </File>
     <File Include="css/styles.css">
       <publishTime>08/02/2015 20:59:11</publishTime>
+    </File>
+    <File Include="deleted.txt">
+      <publishTime>10/14/2015 17:47:11</publishTime>
     </File>
     <File Include="fonts/.DS_Store">
       <publishTime>02/16/2014 22:52:12</publishTime>
@@ -364,6 +373,9 @@
     <File Include="images/6.png">
       <publishTime>10/12/2015 12:35:00</publishTime>
     </File>
+    <File Include="images/6_Rxi_icon.ico">
+      <publishTime>10/21/2015 13:06:08</publishTime>
+    </File>
     <File Include="images/ajax-loader.gif">
       <publishTime>12/07/2010 15:24:34</publishTime>
     </File>
@@ -375,6 +387,9 @@
     </File>
     <File Include="images/buttons.png">
       <publishTime>08/02/2015 20:32:07</publishTime>
+    </File>
+    <File Include="images/down.png">
+      <publishTime>10/22/2015 11:23:11</publishTime>
     </File>
     <File Include="images/heading.png">
       <publishTime>08/02/2015 20:32:07</publishTime>
@@ -410,7 +425,7 @@
       <publishTime>08/17/2015 19:56:57</publishTime>
     </File>
     <File Include="sitemap.xml">
-      <publishTime>09/19/2015 10:26:30</publishTime>
+      <publishTime>10/14/2015 17:44:51</publishTime>
     </File>
     <File Include="system/.htaccess">
       <publishTime>11/21/2014 01:31:46</publishTime>

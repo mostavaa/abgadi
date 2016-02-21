@@ -37,6 +37,7 @@ class publisher
                 $publishers[$i] = new publisher($this->CI);
                 $publishers[$i]->id=$row->id ; 
                 $publishers[$i]->publisherName=$row->publisherName ;
+                $publishers[$i]->instituteId=$row->instituteId ;
                 
                 if($this->loadinstitute){
                     $institute = new institute($this->CI);
@@ -50,7 +51,22 @@ class publisher
         }
         return $publishers;
     }
-    
+    public function findMyInstitute(){
+        $institute = new institute($this->CI);
+        $institutes = $institute->findInstitute(array("id"=>$this->instituteId));
+        if($institutes && !empty($institutes)){
+            $this->institute=$institutes[0];                                             
+        }
+    }
+    public function findMyResearches(){
+        $research = new research($this->CI);
+        $research->loadpublisher = true;
+        $res = $research->findResearch(array("publisherId"=>$this->id));
+        if($res && !empty($res)){
+            return $res;
+        }
+        return null;
+    }
     public function findPublisherByName( $name, $mode=""){
         if(!isset($name) || $name==null || empty($name)){
             return null; 

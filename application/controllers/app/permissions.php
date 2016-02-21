@@ -1,9 +1,7 @@
 <?php
 
 /**
- * permissions short summary.
- *
- * permissions description.
+ * this file for permissions of main pages
  *
  * @version 1.0
  * @author mostafa

@@ -38,6 +38,15 @@ class institute
         return $institutes;
     }
     
+    public function findMyPublishers(){
+        $publisher = new publisher($this->CI);
+        $res = $publisher->findPublisher(array("instituteId"=>$this->id));
+        if($res && !empty($res)){
+            return $res;
+        }
+        return null;
+    }
+    
     public function insert(){
         $inst = array(
             "instituteName"=>$this->instituteName);

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Home | <?php echo SITENAME?></title>
+    <title>Permission | <?php echo SITENAME?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <?php
@@ -12,6 +12,9 @@
             <?php 
                     $this->load->view('shared/sidebar');
 ?>
+    <div class="container">
+        <div class="row page">
+            
     <?php
     $this->load->view('shared/header');
     ?>
@@ -26,8 +29,11 @@
             </div>
         </div>
     </div>
+        </div>
+    </div>
+
     <?php
-    $this->load->view('shared/footer');
+    //$this->load->view('shared/footer');
     ?>
     <?php
     $this->load->view('shared/scripts');

@@ -53,7 +53,10 @@ class tools
 		}
 		return $randomString;
 	}
-    
+    public static function removeFileExtension($file){
+        $name = substr($file, 0, (strlen($file))-(strlen(strrchr($file, '.'))));
+        return $name;
+    }
     public static function sendMail($from , $fromName , $To , $subject,$msg , $controlInstance ){
         $controlInstance->email->from ( $from, $fromName );
         $controlInstance->email->to ( "" . $To );

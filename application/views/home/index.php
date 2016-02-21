@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,11 +15,11 @@
         }
 
         .pageContent {
-min-height:700px;            
+            min-height: 700px;
         }
 
         .sideBar {
-            display:none;
+            display: none;
             float: right;
             width: 20%;
             height: 350px;
@@ -36,62 +35,58 @@ min-height:700px;
             height: 10px;
         }
 
-        .page {
-            border: 2px solid rgb(181,181,181);
-            background-color: white;
-        }
-
-        body {
-            background-color: rgb(238,237,237);
-        }
-
-
     </style>
 </head>
 <body>
 
-    <?php 
-                    $this->load->view('shared/sidebar');
-?>
+    <?php
+    $this->load->view('shared/sidebar');
+    ?>
 
-        <div class="container">
-            <div class="row page">
-                <?php
-                $this->load->view('shared/header');
-                ?>
-
-                <div class="row" style="text-align:center;">
-                    <div class="sideBar">
-                        <div class="row orangeBannerInSideBar"></div>
-                        <ul dir="rtl" class="sidebarlist">
-                            <li style="">1</li>
-                            <li style="">2</li>
-                            <li style="">3</li>
-                        </ul>
-                    </div>
-                    <div class="pageContent">
-                        <h2>تحت الانشاء</h2>
-                    </div>
+    <div class="container">
+        <div class="row page">
+            <?php
+            $this->load->view('shared/header');
+            ?>
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4"><h2 style="text-align:center" class="alert alert-danger" > الموقع تحت الانشاء</h2></div>
+                 
+            </div>
+            <div class="row" style="text-align: center;">
+                <div class="sideBar">
+                    <div class="row orangeBannerInSideBar"></div>
+                    <ul dir="rtl" class="sidebarlist">
+                        <li style="">1</li>
+                        <li style="">2</li>
+                        <li style="">3</li>
+                    </ul>
                 </div>
-                <!--
-    <div class="main_bg">
-        <div class="wrap">
-            <div class="main">
-                <div class="content">
 
-                    <h1 style="text-align:center">تحت الانشاء</h1>
+                <div class="col-md-3 alert alert-warning" >
+                    واحد
+                </div>
+                <div class="col-md-1" >
+                    
+                </div>
 
+                <div class="col-md-4 alert alert-warning" >
+                    اثنان
+                </div>
+                <div class="col-md-1 " >
+                   
+                </div>
+
+                <div class="col-md-3 alert alert-warning" >
+                    ثلاثة
                 </div>
             </div>
+            <?php
+            //$this->load->view('shared/footer');
+            ?>
         </div>
     </div>
-            -->
-                <?php
-                //$this->load->view('shared/footer');
-                ?>
-            </div>
-        </div>
-    
+
     <?php
     $this->load->view('shared/scripts');
     ?>

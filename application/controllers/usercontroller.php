@@ -1,6 +1,10 @@
 <?php
+/**
+ * this file for login and register only
+ */
 header("Content-Type: text/html; charset=utf-8");
 include_once("core.php");
+
 class usercontroller extends CI_Controller {
     private $validation ;
 	public function __construct() {
@@ -52,7 +56,7 @@ class usercontroller extends CI_Controller {
         $user = new user($this);
         if ($user->register()){
                 if($user->login()){
-                    redirect(base_url());
+                    redirect(base_url("index.php/homecontroller/content"));
                     return;
                 }else{
                     

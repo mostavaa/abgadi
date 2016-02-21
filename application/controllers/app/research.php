@@ -100,15 +100,24 @@ class research
 
         return $arr;
     }
+    //load form data
     private function loadData(){
         $this->arabicHeadingName = $this->CI->input->post("arabicHeading");
 
         $this->englishHeadingName = $this->CI->input->post("englishHeading");
         
         
-        $this->arabicDescription =$this->validation->careAboutNewLine( $this->CI->input->post("arabicDescription"));
-        $this->englishDescription = $this->validation->careAboutNewLine( $this->CI->input->post("englishDescription"));
-        $this->keyWords = $this->validation->careAboutNewLine( $this->CI->input->post("keyword"));
+        $this->arabicDescription =$this->CI->input->post("arabicDescription");
+        $this->englishDescription = $this->CI->input->post("englishDescription");
+        $this->keyWords =  $this->validation->careAboutNewLine( $this->CI->input->post("keyword"));
+        
+        $keyword = str_replace("*" ,"" ,$this->keyWords );        
+        $keyword = str_replace("br" ,"*" ,$keyword);
+        $keyword = str_replace("<" ,"" ,$keyword );
+        $keyword = str_replace(">" ,"" ,$keyword );
+        $keyword = str_replace("/" ,"" ,$keyword );
+        $keyword = str_replace("  " ," " ,$keyword );
+        $this->keyWords =$keyword;
         
         $this->researchNumber  = $this->CI->input->post("researchNumber");
         $this->publishDate = $this->CI->input->post("publishDate");
@@ -700,17 +709,17 @@ public function delete(){
 }
 public function deletePaperFile(){
     $file = fopen("./deleted.txt", "a");
-    
+    if($this->researchFileName!="")
     fwrite($file, 'http://www.abgadi.net/pdfs/'.$this->researchFileName."\n"); 
     
     fclose($file);
 }
-    private function writeToFile(){
+    public function writeToFile(){
         
         
         
         $file = fopen("./uploaded.txt", "a");
-        
+        if($this->researchFileName!="")
         fwrite($file, 'http://www.abgadi.net/pdfs/'.$this->researchFileName."\n"); 
         
         fclose($file);
@@ -718,13 +727,10 @@ public function deletePaperFile(){
         $xml = simplexml_load_file("./sitemap.xml");
         
         $xml->addChild('url')->addChild('loc', 'http://www.abgadi.net/pdfs/'.$this->researchFileName);
-        
+        if($this->researchFileName!="")
         file_put_contents('sitemap.xml', $xml->asXML());
         
-        $xml = simplexml_load_file("./sitemap2.xml");
-        $xml->addChild('url')->addChild('loc', 'http://www.abgadi.net/pdfs/'.$this->researchFileName);
-        file_put_contents('sitemap2.xml', $xml->asXML());
-        
+
     }
     public function updataResearch(){
         if($this->mode=="update"){
@@ -793,10 +799,10 @@ public function deletePaperFile(){
             );
         if ($this->mode=="edit"){
             $this->CI->researchmodel->updateResearchById($paper ,$this->id);  
-            
-            if($this->originalFileName!="")
-                $this->writeToFile();
         }
+        
+
+        
     }
     public function insertPaper(){
         
@@ -852,7 +858,23 @@ public function deletePaperFile(){
     }
     
 
-    
+    public function findResearchesByFileNames($researches){
+        $researchs = array();
+        foreach($researches as $fileName){
+            $research = $this->findResearchesByFileName($fileName);
+            if($research){
+                $researchs[] = $research;
+            }
+        }
+        return $researchs;
+    }
+    private function findResearchesByFileName($researchFileName){
+     $res =   $this->findResearch(array("researchFileName"=>$researchFileName));
+     if(isset($res) && !empty($res)){
+         return $res[0];
+     }
+     return null;
+    }
     public function findResearch($research){
         $researchs = array();
         $res = $this->CI->researchmodel->findResearch($research);
@@ -920,7 +942,7 @@ public function deletePaperFile(){
     public function getCountofResearchs(){
        return $this->CI->researchmodel->getCountofResearchs();
     }
-
+#region Sort content page
     public function getAllResearchesOrderdByPublishDateDesc(){
         $researchs = array();
         if($this->pagination->is_valid_page()){
@@ -1266,7 +1288,7 @@ public function deletePaperFile(){
         return $researchs;
     }
     
-    
+    #endregion sort content page
     public function getResearchAuthors(){
         $researchAuth = new authorresearch($this->CI);
         $researchAuth->loadauthor = true;

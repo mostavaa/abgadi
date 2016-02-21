@@ -87,7 +87,23 @@ class author
         }
         return $authors;
     }
-    
+    public function findMyResearches(){
+        
+        $authResearch = new authorresearch($this->CI);
+        $authResearch->loadresearch = true;
+       $res= $authResearch->findauthorresearch(array("authorId"=>$this->id));
+        
+        if($res && !empty($res)){
+            $researchs = array();
+            foreach ($res as $authRes)
+            {
+            	$researchs[] = $authRes->research;
+            }
+
+            return $researchs;
+        }
+        return null;
+    }
     public function findAuthorByName($name , $mode=""){
         if(!isset($name) || $name==null || empty($name)){
             return null; 

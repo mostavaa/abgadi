@@ -1,7 +1,11 @@
 <?php
+/**
+ * this file is the main controller , it has all requests , except login and register
+ */
 header("Content-Type: text/html; charset=utf-8");
 
 include_once("core.php");
+
 class homecontroller extends CI_Controller {
     private $old_fileName  ; 
 	public function __construct() {
@@ -18,6 +22,8 @@ class homecontroller extends CI_Controller {
         $this->load->view('home/search');
         
     }
+
+    
     public function content(){
         if (!permissions::Authorized("homecontroller/content" , $this)){
             return ;
@@ -159,7 +165,7 @@ class homecontroller extends CI_Controller {
         $config = array();
         $config['upload_path'] = $path;
         $config['allowed_types'] = 'pdf|doc|docx';
-        $config ['max_size'] = '4096';
+        $config ['max_size'] = '8096';
         $config['file_name'] = $fileName;
 
         $config['overwrite']     = TRUE;
@@ -197,7 +203,7 @@ class homecontroller extends CI_Controller {
         $config = array();
         $config['upload_path'] = "./images/home/";
         $config['allowed_types'] = 'gif|jpg|png|jpeg';
-        $config ['max_size'] = '2048';
+        $config ['max_size'] = '8048';
         $config['overwrite']     = TRUE;
 
 
@@ -261,14 +267,23 @@ class homecontroller extends CI_Controller {
                     //delete file 
                     if(file_exists("./pdfs/".$paper->researchFileName))
                     unlink("./pdfs/".$paper->researchFileName);
+                    $paper->deletePaperFile();
                     $paper->researchFileName="";
                     $paper->originalFileName= "";
                 }else if(!empty($_FILES["file"]["name"])){
                     //replace file
                     $newName =$this->generateRandomName();
                     if($this->doUpload("./pdfs" ,$newName)){
-                        $paper->researchFileName=$newName;
+                        if($paper->researchFileName!=""){
+                            if(file_exists("./pdfs/".$paper->researchFileName))
+                                unlink("./pdfs/".$paper->researchFileName);                        
+                        }
+
+                        $paper->deletePaperFile();
+                        $paper->researchFileName=$newName.".".pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
                         $paper->originalFileName= $_FILES["file"]["name"];    
+                        if($paper->originalFileName!="")
+                            $paper->writeToFile();
                     }
                 }
                 $paper->changeFilesName();
@@ -367,10 +382,9 @@ class homecontroller extends CI_Controller {
         if(!empty($papers)){
             $research = $papers[0];
             if($research && !empty($research)){
-                
-                if(file_exists("./pdfs/".$research->researchFileName))
-                    unlink("./pdfs/".$research->researchFileName);
                 if($research->researchFileName!=""){
+                    if(file_exists("./pdfs/".$research->researchFileName))
+                        unlink("./pdfs/".$research->researchFileName);
                     $research->deletePaperFile();                    
                 }
                 $research->deleteAuthorResearch();
@@ -705,7 +719,7 @@ class homecontroller extends CI_Controller {
         $config = array();
         $config['upload_path'] = "./csvs/";
         $config['allowed_types'] = 'csv';
-        $config['max_size'] = '4096';
+        $config['max_size'] = '8096';
 
         $this->upload->initialize($config);
         if (!$this->upload->do_upload("file"))
@@ -761,6 +775,7 @@ class homecontroller extends CI_Controller {
             
             $myCsv->reportEntry = $report;
             /*
+             for debug
             ini_set('xdebug.var_display_max_depth', 10);
             ini_set('xdebug.var_display_max_children', 256);
             ini_set('xdebug.var_display_max_data', 1024);
@@ -776,46 +791,7 @@ class homecontroller extends CI_Controller {
         }
     }
     
-    public function replacesinglefile(){
-        $oldfilename= $this->input->post("oldfile");
-        $mycsv = $this->session->userdata('mycsv');
-        if(isset($mycsv) && !empty($mycsv)){
-            $mycsv = unserialize($mycsv);
-        }
 
-
-        $myfile = &$mycsv->findFileByName($oldfilename);
-        if($myfile){
-            if($myfile->research->originalFileName== $_FILES['file']['name']){
-                
-                $config = array();
-                $config['upload_path'] = "./tmp/";
-                $config['allowed_types'] = 'pdf|doc|docx';
-                $config ['max_size'] = '4096';
-                
-                $newName =$this->generateRandomName();
-                $config['file_name'] = $newName;
-                $myfile->research->researchFileName = $newName.".".pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
-                
-                $this->upload->initialize($config);
-                if (!$this->upload->do_upload("file"))
-                {
-                    $errors = $this->upload->display_errors();
-                    $status="error";
-                    $myfile->status = $status;
-                    $myfile->error = $errors;
-                }else{
-                    $myfile->status = "ok";
-                }
-                $serialized =  serialize($mycsv);
-                $this->session->set_userdata("mycsv" , $serialized);
-                redirect(base_url("index.php/homecontroller/bulkaddpapers"));
-            }
-        }
-        redirect(base_url("index.php/homecontroller/bulkaddpapers"));
-        
-    }
-    
     private function readCsv($filepath){
         $file = fopen($filepath,"r");
         
@@ -1226,7 +1202,7 @@ class homecontroller extends CI_Controller {
         
 
         
-        //<br> problem
+
         
         $data["arabicHeading"] = $research->arabicHeadingName;
         $data["englishHeading"] = $research->englishHeadingName;
@@ -1237,7 +1213,9 @@ class homecontroller extends CI_Controller {
         $data["publishDate"] = $research->publishDate;
         $data["publishCountry"] = $research->publishCountry;
         $data["researchType"] = $research->researchType->id;
+        if(isset($research->specialization) && !empty($research->specialization))
         $data["specialization"] = $research->specialization->id;
+        if(isset($research->accurateSpecialization) && !empty($research->accurateSpecialization))            
         $data["accurateSpecialization"] = $research->accurateSpecialization->id;
         $data["pagesCount"] = $research->pagesCount;
         $data["pagesFrom"] = $research->pagesFrom;
@@ -1278,10 +1256,139 @@ class homecontroller extends CI_Controller {
         
         $this->load->view('home/uploadpaper' , $data);
     }
-    #endregion
+    #endregion db manipulation
     
-}
+    #region search Module
+    #in header.php form action="<?=site_url("homecontroller/submitsearch")?"
+    
+    public function submitsearch(){
+        $query = $this->input->post("query");
+        $query = str_replace(" ","+",$query);
+        $query = str_replace("++","+",$query);
+        if(strlen($query)>3){
+            $xml  = $this->getXML($query);
+            $this->writeSearchResults($xml);
+            /*
+            ini_set('xdebug.var_display_max_depth', 5);
+            ini_set('xdebug.var_display_max_children', 256);
+            ini_set('xdebug.var_display_max_data', 1024);
+			echo "<pre>";
+			var_dump($xml);
+			echo "</pre>";
+             */
+        }
+    }
+    function writeSearchResults($xml)
+    {
+        $filenames= array();
+        $output="";
+        foreach ($xml->RES->R as $key)
+        {
+            $filenames[] =basename($key->U); 
+            $output .= '<p class="search-result"><a href="'.$key->U.'">'.$key->T.'</a>';
+            $output .= $key->S.'<br />';
+            $output .= '<span>'.basename($key->U).'</span></p>';
+            $output .= '</p>';
+        }
+        $this->listallresearches($filenames);
+        //echo $output;
+    }
+    
+    //"did you mean..."
+    function writeSuggestion($xml)
+    {
+        $searchterm = $xml->Q;
+        $suggestion = $xml->Spelling->Suggestion;
+        
+        if($suggestion != "")
+            echo '<p>You searched for <strong>'.$searchterm.'</strong>, did you mean <strong><a href="?q='.strip_tags($suggestion).'">'.$suggestion.'</a></strong>?</p>';
+    }
+    function getXML($searchterms)
+    {
+        
+        $cseNumber = '002985550128484699679:x-hkqojmcyi'; 
+        
+        $xmlfile = 'http://www.google.com/search?cx='.$cseNumber.'&client=google-csbe&output=xml_no_dtd&q='.$searchterms;
+        //var_dump(file_get_contents($xmlfile));
+        $xml = $this->file_get_contents_curl($xmlfile);
+        
+        $xml = new SimpleXMLElement($xml);
+        return $xml;
+    }
+    
+    function file_get_contents_curl($url) {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //Set curl to return the data instead of printing it to the browser.
+        curl_setopt($ch, CURLOPT_URL, $url);
+        $data = curl_exec($ch);
+        curl_close($ch);
+        return $data;
+    }
+    
+    public function listallresearches($filenames=array()){
+        
+        $research = new research($this);
+        $research->loadpublisher = true;
+        $res = $research->findResearchesByFileNames($filenames);
+        //$res =  $research->findResearch(array());
+        $data=null;
+        if($res && !empty($res)){
+            $data['researches'] = $res;
+        }
+        $this->load->view("home/listAllResearches" , $data);
+    }
+    public function listoneresearch($id=""){
+        $research = new research($this);
+        $research->loadaccurateSpecialization = $research->loadpublisher
+        =$research->loadresearchType = $research->loadspecialization = true;
+        $res = $research->findResearch(array("id"=>$id));
+        $data=null;
+        if($res && !empty($res)){
+            $data['research'] = $res[0];
+        }
+        $this->load->view("home/listoneresearch" , $data);
 
+    }
+    public function listoneinst($instituteId=0){
+        $institute = new institute($this);
+        $res = $institute->findInstitute(array("id"=>$instituteId));
+        $data=null;        
+        if($res && !empty($res)){
+            $data['institute'] = $res[0];
+        }
+        $this->load->view("home/listoneinst" , $data);
+        
+    }
+    
+    public function listonepub($pubId=0){
+        $publisher = new publisher($this);
+        $publisher->loadinstitute = true;
+        $res = $publisher->findPublisher(array("id"=>$pubId));
+        $data=null;        
+        if($res && !empty($res)){
+            $data['publisher'] = $res[0];
+        }
+        $this->load->view("home/listonepub" , $data);
+        
+    }
+    
+    public function listoneauth($authId=0){
+        $author = new author($this);
+        $author->loadaccurateSpecialization = $author->loadinstitute = 
+            $author->loadcurrentScientificDegree = $author->loadjob 
+            = $author->loadspecialization = true;
+        $res = $author->findauthor(array("id"=>$authId));
+        $data=null;        
+        if($res && !empty($res)){
+            $data['author'] = $res[0];
+        }
+        $this->load->view("home/listoneauth" , $data);
+        
+    }
+    #endregion search Module
+}
+//for csv file
 class reportEntry{
     public
     
@@ -1372,5 +1479,7 @@ class myCSV {
         }
         return true;
     }
+    
+
 }
 

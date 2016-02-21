@@ -12,7 +12,7 @@ if(isset($mycsv) && !empty($mycsv)){
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Home | <?php echo SITENAME?></title>
+    <title>Bulk Load | <?php echo SITENAME?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <?php
@@ -53,6 +53,9 @@ if(isset($mycsv) && !empty($mycsv)){
             <?php 
                     $this->load->view('shared/sidebar');
 ?>
+    <div class="container">
+        <div class="row page">
+            
     <?php
     $this->load->view('shared/header');
     ?>
@@ -322,8 +325,11 @@ if(isset($mycsv) && !empty($mycsv)){
             </div>
         </div>
     </div>
+        </div>
+    </div>
+
     <?php
-    $this->load->view('shared/footer');
+    //$this->load->view('shared/footer');
     ?>
     <?php
     $this->load->view('shared/scripts');

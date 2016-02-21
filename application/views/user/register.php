@@ -30,98 +30,103 @@ if (isset($errors) && !empty($errors)){
 
 <body>
     <div class="container">
-        <form class="form form-inline" method="post" action="<?php echo site_url("usercontroller/register") ?>" id="myform">
-            <div class="row formElement">
+        <div class="row page">
+            <?php
+            $this->load->view('shared/header');
+            ?>
+            <form class="form form-inline" method="post" action="<?php echo site_url("usercontroller/register") ?>" id="myform">
+                <div class="row formElement">
 
-                <div class="col-md-6">
                     <div class="col-md-6">
-                        <label class="form-label">User Name</label>
+                        <div class="col-md-6">
+                            <label class="form-label">User Name</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" required="required" value="<?php echo $username?>" class="form-control" name="username" id="username" />
+                        </div>
                     </div>
                     <div class="col-md-6">
-                        <input type="text" required="required" value="<?php echo $username?>" class="form-control" name="username" id="username" />
+                        <p class="inputError">
+                            <?php 
+                            foreach($usernameErrors as $usernameError){
+                                echo "<h6>{$usernameError}</h6>";
+                            }
+                            ?>
+                        </p>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <p class="inputError">
-                        <?php 
-                        foreach($usernameErrors as $usernameError){
-                            echo "<h6>{$usernameError}</h6>";
-                        }
-                        ?>
-                    </p>
-                </div>
-            </div>
-            <hr />
-            <div class="row formElement">
-                <div class="col-md-6">
+                <hr />
+                <div class="row formElement">
                     <div class="col-md-6">
-                        <label class="form-label">E-mail</label>
-                    </div>
-                    <div class="col-md-6">
-                        <input type="email" required="required" value="<?php echo $mail?>" class="form-control" name="mail" id="mail" />
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <p class="inputError">
-                        <?php 
-                        foreach($mailErrors as $mailError){
-                            echo "<h6>{$mailError}</h6>";
-                        }
-                        ?>
-                    </p>
-                </div>
-            </div>
-            <hr />
-            <div class="row formElement">
-                <div class="col-md-6">
-                    <div class="col-md-6">
-                        <label class="form-label">Password</label>
+                        <div class="col-md-6">
+                            <label class="form-label">E-mail</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" required="required" value="<?php echo $mail?>" class="form-control" name="mail" id="mail" />
+                        </div>
                     </div>
                     <div class="col-md-6">
-                        <input type="password" required="required" value="<?php echo $password?>"  class="form-control" name="password" id="password" />
+                        <p class="inputError">
+                            <?php 
+                            foreach($mailErrors as $mailError){
+                                echo "<h6>{$mailError}</h6>";
+                            }
+                            ?>
+                        </p>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <p class="inputError">
-                        <?php 
-                        foreach($passwordErrors as $passwordError){
-                            echo "<h6>{$passwordError}</h6>";
-                        }
-                        ?>
-                    </p>
+                <hr />
+                <div class="row formElement">
+                    <div class="col-md-6">
+                        <div class="col-md-6">
+                            <label class="form-label">Password</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="password" required="required" value="<?php echo $password?>"  class="form-control" name="password" id="password" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="inputError">
+                            <?php 
+                            foreach($passwordErrors as $passwordError){
+                                echo "<h6>{$passwordError}</h6>";
+                            }
+                            ?>
+                        </p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="row formElement">
-                <div class="col-md-6">
+                <div class="row formElement">
                     <div class="col-md-6">
-                        <label class="form-label">Confirm Password</label>
+                        <div class="col-md-6">
+                            <label class="form-label">Confirm Password</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="password" required="required" value="<?php echo $confirmPassword?>"  class="form-control" name="confirmPassword" id="confirmPassword" />
+                        </div>
                     </div>
                     <div class="col-md-6">
-                        <input type="password" required="required" value="<?php echo $confirmPassword?>"  class="form-control" name="confirmPassword" id="confirmPassword" />
+                        <p class="inputError">
+                            <?php 
+                            foreach($confirmPasswordErrors as $confirmPasswordError){
+                                echo "<h6>{$confirmPasswordError}</h6>";
+                            }
+                            ?>
+                        </p>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <p class="inputError">
-                        <?php 
-                        foreach($confirmPasswordErrors as $confirmPasswordError){
-                            echo "<h6>{$confirmPasswordError}</h6>";
-                        }
-                        ?>
-                    </p>
-                </div>
-            </div>
-            <hr />
-            <div class="row formElement">
-                <div class="col-md-6">
+                <hr />
+                <div class="row formElement">
                     <div class="col-md-6">
-                        <input type="submit" value="Register" class="btn btn-default" />
+                        <div class="col-md-6">
+                            <input type="submit" value="Register" class="btn btn-default" />
+                        </div>
                     </div>
                 </div>
-            </div>
 
-        </form>
+            </form>
 
+        </div>
 
 
     </div>

@@ -1,0 +1,891 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/mtJa8TXwUu1phmlL6rMggAAAAACAAAAAAAQZgAAAAEAACAAAABZcBVeXGPJUvXtqFWfy/WnWG/LAErl4TIgsRYop7S6lwAAAAAOgAAAAAIAACAAAAB3DRCS2JEcyZzfVnV1f3/bW3uklOuDCLLqhmW3gLsLfSAAAADotHws7Uir8tqhCagneD08PCP3VJ9pTKhiMpsdGImoCkAAAACYKMhFAmeSXVwZL0TQ0foY5vgPAsZvnx3kAHEEhxCJISOgnPA9Fzum1FcACcyK6YzXPKW0gd1WHUOhK4DcjsK4</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include=".buildpath">
+      <publishTime>01/22/2015 20:43:02</publishTime>
+    </File>
+    <File Include=".project">
+      <publishTime>02/05/2015 16:03:29</publishTime>
+    </File>
+    <File Include=".settings/.jsdtscope">
+      <publishTime>02/05/2015 16:03:29</publishTime>
+    </File>
+    <File Include=".settings/org.eclipse.php.core.prefs">
+      <publishTime>01/22/2015 20:43:02</publishTime>
+    </File>
+    <File Include=".settings/org.eclipse.wst.common.project.facet.core.xml">
+      <publishTime>01/22/2015 20:43:01</publishTime>
+    </File>
+    <File Include=".settings/org.eclipse.wst.jsdt.ui.superType.container">
+      <publishTime>02/05/2015 16:03:29</publishTime>
+    </File>
+    <File Include=".settings/org.eclipse.wst.jsdt.ui.superType.name">
+      <publishTime>02/05/2015 16:03:29</publishTime>
+    </File>
+    <File Include=".travis.yml">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="application/.htaccess">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="application/cache/.htaccess">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="application/cache/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="application/config/autoload.php">
+      <publishTime>09/07/2015 23:25:45</publishTime>
+    </File>
+    <File Include="application/config/config.php">
+      <publishTime>10/03/2015 16:27:22</publishTime>
+    </File>
+    <File Include="application/config/constants.php">
+      <publishTime>08/03/2015 21:30:45</publishTime>
+    </File>
+    <File Include="application/config/database.php">
+      <publishTime>10/03/2015 16:27:36</publishTime>
+    </File>
+    <File Include="application/config/doctypes.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="application/config/foreign_chars.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="application/config/hooks.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="application/config/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="application/config/migration.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="application/config/mimes.php">
+      <publishTime>09/15/2015 07:35:35</publishTime>
+    </File>
+    <File Include="application/config/profiler.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="application/config/routes.php">
+      <publishTime>10/21/2015 13:36:19</publishTime>
+    </File>
+    <File Include="application/config/smileys.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="application/config/user_agents.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="application/controllers/app/accurateSpecialization.php">
+      <publishTime>09/27/2015 13:49:27</publishTime>
+    </File>
+    <File Include="application/controllers/app/author.php">
+      <publishTime>10/14/2015 12:05:59</publishTime>
+    </File>
+    <File Include="application/controllers/app/authorresearch.php">
+      <publishTime>10/14/2015 12:06:32</publishTime>
+    </File>
+    <File Include="application/controllers/app/FileUpload.php">
+      <publishTime>09/26/2015 13:20:43</publishTime>
+    </File>
+    <File Include="application/controllers/app/institute.php">
+      <publishTime>10/13/2015 17:35:13</publishTime>
+    </File>
+    <File Include="application/controllers/app/job.php">
+      <publishTime>09/27/2015 12:54:15</publishTime>
+    </File>
+    <File Include="application/controllers/app/pagination.php">
+      <publishTime>09/08/2015 01:52:44</publishTime>
+    </File>
+    <File Include="application/controllers/app/permissions.php">
+      <publishTime>10/22/2015 12:18:13</publishTime>
+    </File>
+    <File Include="application/controllers/app/publisher.php">
+      <publishTime>10/14/2015 13:09:02</publishTime>
+    </File>
+    <File Include="application/controllers/app/research.php">
+      <publishTime>10/22/2015 12:39:56</publishTime>
+    </File>
+    <File Include="application/controllers/app/researchtype.php">
+      <publishTime>09/27/2015 12:51:42</publishTime>
+    </File>
+    <File Include="application/controllers/app/scientificdegree.php">
+      <publishTime>09/27/2015 12:50:35</publishTime>
+    </File>
+    <File Include="application/controllers/app/specialization.php">
+      <publishTime>09/27/2015 12:48:08</publishTime>
+    </File>
+    <File Include="application/controllers/app/tools.php">
+      <publishTime>10/13/2015 15:40:31</publishTime>
+    </File>
+    <File Include="application/controllers/app/user.php">
+      <publishTime>09/17/2015 11:57:45</publishTime>
+    </File>
+    <File Include="application/controllers/app/validation.php">
+      <publishTime>09/13/2015 20:22:14</publishTime>
+    </File>
+    <File Include="application/controllers/core.php">
+      <publishTime>10/22/2015 12:15:48</publishTime>
+    </File>
+    <File Include="application/controllers/homecontroller.php">
+      <publishTime>10/29/2015 13:43:49</publishTime>
+    </File>
+    <File Include="application/controllers/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="application/controllers/usercontroller.php">
+      <publishTime>10/22/2015 12:17:23</publishTime>
+    </File>
+    <File Include="application/core/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="application/errors/error_404.php">
+      <publishTime>10/21/2015 13:33:58</publishTime>
+    </File>
+    <File Include="application/errors/error_db.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="application/errors/error_general.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="application/errors/error_php.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="application/errors/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="application/helpers/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="application/hooks/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="application/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="application/language/english/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="application/language/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="application/libraries/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="application/models/accuratespecializationmodel.php">
+      <publishTime>10/25/2015 21:40:59</publishTime>
+    </File>
+    <File Include="application/models/authormodel.php">
+      <publishTime>10/25/2015 21:50:45</publishTime>
+    </File>
+    <File Include="application/models/authorresearchmodel.php">
+      <publishTime>10/25/2015 21:51:23</publishTime>
+    </File>
+    <File Include="application/models/homemodel.php">
+      <publishTime>10/25/2015 21:51:21</publishTime>
+    </File>
+    <File Include="application/models/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="application/models/institutemodel.php">
+      <publishTime>10/25/2015 21:51:31</publishTime>
+    </File>
+    <File Include="application/models/jobmodel.php">
+      <publishTime>10/25/2015 21:51:41</publishTime>
+    </File>
+    <File Include="application/models/logs/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="application/models/publishermodel.php">
+      <publishTime>10/25/2015 21:51:49</publishTime>
+    </File>
+    <File Include="application/models/researchmodel.php">
+      <publishTime>10/25/2015 21:52:00</publishTime>
+    </File>
+    <File Include="application/models/researchtypemodel.php">
+      <publishTime>10/25/2015 21:52:08</publishTime>
+    </File>
+    <File Include="application/models/scientificdegreemodel.php">
+      <publishTime>10/25/2015 21:52:17</publishTime>
+    </File>
+    <File Include="application/models/specializationmodel.php">
+      <publishTime>10/25/2015 21:52:26</publishTime>
+    </File>
+    <File Include="application/models/usermodel.php">
+      <publishTime>10/25/2015 21:52:44</publishTime>
+    </File>
+    <File Include="application/third_party/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="application/views/home/bulkaddpapers.php">
+      <publishTime>10/21/2015 12:42:47</publishTime>
+    </File>
+    <File Include="application/views/home/content.php">
+      <publishTime>10/21/2015 12:41:46</publishTime>
+    </File>
+    <File Include="application/views/home/displaydata.php">
+      <publishTime>10/21/2015 12:30:32</publishTime>
+    </File>
+    <File Include="application/views/home/index.php">
+      <publishTime>10/21/2015 13:10:44</publishTime>
+    </File>
+    <File Include="application/views/home/listAllResearches.php">
+      <publishTime>10/21/2015 12:44:21</publishTime>
+    </File>
+    <File Include="application/views/home/listoneauth.php">
+      <publishTime>10/22/2015 11:49:45</publishTime>
+    </File>
+    <File Include="application/views/home/listoneinst.php">
+      <publishTime>10/22/2015 11:48:36</publishTime>
+    </File>
+    <File Include="application/views/home/listonepub.php">
+      <publishTime>10/22/2015 11:47:38</publishTime>
+    </File>
+    <File Include="application/views/home/listoneresearch.php">
+      <publishTime>10/22/2015 11:29:16</publishTime>
+    </File>
+    <File Include="application/views/home/notpermitted.php">
+      <publishTime>10/21/2015 13:00:55</publishTime>
+    </File>
+    <File Include="application/views/home/search.php">
+      <publishTime>10/21/2015 12:46:53</publishTime>
+    </File>
+    <File Include="application/views/home/uploadpaper.php">
+      <publishTime>10/22/2015 11:42:41</publishTime>
+    </File>
+    <File Include="application/views/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="application/views/manipulate/manipulateone.php">
+      <publishTime>10/21/2015 12:55:10</publishTime>
+    </File>
+    <File Include="application/views/shared/css.php">
+      <publishTime>10/22/2015 12:37:38</publishTime>
+    </File>
+    <File Include="application/views/shared/footer.php">
+      <publishTime>10/25/2015 21:56:20</publishTime>
+    </File>
+    <File Include="application/views/shared/header.php">
+      <publishTime>10/25/2015 21:57:01</publishTime>
+    </File>
+    <File Include="application/views/shared/scripts.php">
+      <publishTime>10/19/2015 12:23:16</publishTime>
+    </File>
+    <File Include="application/views/shared/sidebar.php">
+      <publishTime>10/12/2015 14:08:42</publishTime>
+    </File>
+    <File Include="application/views/user/login.php">
+      <publishTime>10/21/2015 12:59:23</publishTime>
+    </File>
+    <File Include="application/views/user/register.php">
+      <publishTime>10/21/2015 12:57:36</publishTime>
+    </File>
+    <File Include="css/bootstrap.css">
+      <publishTime>10/22/2015 12:37:09</publishTime>
+    </File>
+    <File Include="css/bootstrap.min.css">
+      <publishTime>06/11/2015 19:02:17</publishTime>
+    </File>
+    <File Include="css/header.css">
+      <publishTime>10/21/2015 13:44:54</publishTime>
+    </File>
+    <File Include="css/magnific-popup.css">
+      <publishTime>03/05/2014 10:05:42</publishTime>
+    </File>
+    <File Include="css/style.css">
+      <publishTime>09/06/2015 19:04:28</publishTime>
+    </File>
+    <File Include="css/styles.css">
+      <publishTime>08/02/2015 20:59:11</publishTime>
+    </File>
+    <File Include="deleted.txt">
+      <publishTime>10/14/2015 17:47:11</publishTime>
+    </File>
+    <File Include="fonts/.DS_Store">
+      <publishTime>02/16/2014 22:52:12</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>01/19/2015 21:48:06</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>01/19/2015 21:48:06</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>01/19/2015 21:48:06</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>01/19/2015 21:48:06</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>01/19/2015 21:48:06</publishTime>
+    </File>
+    <File Include="fonts/JF-Flat-regular.eot">
+      <publishTime>02/16/2014 20:43:48</publishTime>
+    </File>
+    <File Include="fonts/JF-Flat-regular.svg">
+      <publishTime>02/16/2014 20:43:48</publishTime>
+    </File>
+    <File Include="fonts/JF-Flat-regular.ttf">
+      <publishTime>02/16/2014 20:43:48</publishTime>
+    </File>
+    <File Include="fonts/JF-Flat-regular.woff">
+      <publishTime>02/16/2014 20:43:48</publishTime>
+    </File>
+    <File Include="images/.settings/.jsdtscope">
+      <publishTime>02/05/2015 16:03:29</publishTime>
+    </File>
+    <File Include="images/.settings/org.eclipse.php.core.prefs">
+      <publishTime>01/22/2015 20:43:02</publishTime>
+    </File>
+    <File Include="images/.settings/org.eclipse.wst.common.project.facet.core.xml">
+      <publishTime>01/22/2015 20:43:01</publishTime>
+    </File>
+    <File Include="images/.settings/org.eclipse.wst.jsdt.ui.superType.container">
+      <publishTime>02/05/2015 16:03:29</publishTime>
+    </File>
+    <File Include="images/.settings/org.eclipse.wst.jsdt.ui.superType.name">
+      <publishTime>02/05/2015 16:03:29</publishTime>
+    </File>
+    <File Include="images/0all.png">
+      <publishTime>10/03/2015 12:59:02</publishTime>
+    </File>
+    <File Include="images/1.png">
+      <publishTime>10/12/2015 12:23:02</publishTime>
+    </File>
+    <File Include="images/2.png">
+      <publishTime>10/04/2015 13:19:23</publishTime>
+    </File>
+    <File Include="images/3.png">
+      <publishTime>10/02/2015 21:03:28</publishTime>
+    </File>
+    <File Include="images/3m.png">
+      <publishTime>10/04/2015 13:35:19</publishTime>
+    </File>
+    <File Include="images/5.png">
+      <publishTime>10/12/2015 13:05:19</publishTime>
+    </File>
+    <File Include="images/5m.png">
+      <publishTime>10/04/2015 13:25:55</publishTime>
+    </File>
+    <File Include="images/6.png">
+      <publishTime>10/12/2015 12:35:00</publishTime>
+    </File>
+    <File Include="images/6_Rxi_icon.ico">
+      <publishTime>10/21/2015 13:06:08</publishTime>
+    </File>
+    <File Include="images/ajax-loader.gif">
+      <publishTime>12/07/2010 15:24:34</publishTime>
+    </File>
+    <File Include="images/arrow.png">
+      <publishTime>08/02/2015 20:32:08</publishTime>
+    </File>
+    <File Include="images/bg.jpg">
+      <publishTime>08/02/2015 20:32:07</publishTime>
+    </File>
+    <File Include="images/buttons.png">
+      <publishTime>08/02/2015 20:32:07</publishTime>
+    </File>
+    <File Include="images/down.png">
+      <publishTime>10/22/2015 11:23:11</publishTime>
+    </File>
+    <File Include="images/heading.png">
+      <publishTime>08/02/2015 20:32:07</publishTime>
+    </File>
+    <File Include="images/icons.png">
+      <publishTime>08/02/2015 20:32:07</publishTime>
+    </File>
+    <File Include="images/more.png">
+      <publishTime>08/02/2015 20:32:05</publishTime>
+    </File>
+    <File Include="images/searchBox.png">
+      <publishTime>08/02/2015 20:32:05</publishTime>
+    </File>
+    <File Include="index.php">
+      <publishTime>09/07/2015 22:58:45</publishTime>
+    </File>
+    <File Include="js/bootstrap.js">
+      <publishTime>01/19/2015 21:48:06</publishTime>
+    </File>
+    <File Include="js/bootstrap.min.js">
+      <publishTime>01/19/2015 21:48:06</publishTime>
+    </File>
+    <File Include="js/jquery.js">
+      <publishTime>03/12/2015 09:37:19</publishTime>
+    </File>
+    <File Include="js/jquery.min.js">
+      <publishTime>05/06/2011 13:49:58</publishTime>
+    </File>
+    <File Include="js/script.js">
+      <publishTime>08/02/2015 20:32:09</publishTime>
+    </File>
+    <File Include="js/siteScript.js">
+      <publishTime>08/17/2015 19:56:57</publishTime>
+    </File>
+    <File Include="sitemap.xml">
+      <publishTime>10/14/2015 17:44:51</publishTime>
+    </File>
+    <File Include="system/.htaccess">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/core/Benchmark.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/core/CodeIgniter.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/core/Common.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/core/Config.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/core/Controller.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/core/Exceptions.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/core/Hooks.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/core/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/core/Input.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/core/Lang.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/core/Loader.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/core/Model.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/core/Output.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/core/Router.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/core/Security.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/core/URI.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/core/Utf8.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/DB.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/DB_active_rec.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/DB_cache.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/DB_driver.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/DB_forge.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/DB_result.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/DB_utility.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/cubrid/cubrid_driver.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/cubrid/cubrid_forge.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/cubrid/cubrid_result.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/cubrid/cubrid_utility.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/cubrid/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/mssql/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/mssql/mssql_driver.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/mssql/mssql_forge.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/mssql/mssql_result.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/mssql/mssql_utility.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/mysql/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/mysql/mysql_driver.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/mysql/mysql_forge.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/mysql/mysql_result.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/mysql/mysql_utility.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/mysqli/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/mysqli/mysqli_driver.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/mysqli/mysqli_forge.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/mysqli/mysqli_result.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/mysqli/mysqli_utility.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/oci8/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/oci8/oci8_driver.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/oci8/oci8_forge.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/oci8/oci8_result.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/oci8/oci8_utility.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/odbc/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/odbc/odbc_driver.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/odbc/odbc_forge.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/odbc/odbc_result.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/odbc/odbc_utility.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/pdo/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/pdo/pdo_driver.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/pdo/pdo_forge.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/pdo/pdo_result.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/pdo/pdo_utility.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/postgre/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/postgre/postgre_driver.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/postgre/postgre_forge.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/postgre/postgre_result.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/postgre/postgre_utility.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/sqlite/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/sqlite/sqlite_driver.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/sqlite/sqlite_forge.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/sqlite/sqlite_result.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/sqlite/sqlite_utility.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/sqlsrv/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/sqlsrv/sqlsrv_driver.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/sqlsrv/sqlsrv_forge.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/sqlsrv/sqlsrv_result.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/drivers/sqlsrv/sqlsrv_utility.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/database/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/helpers/array_helper.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/helpers/captcha_helper.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/helpers/cookie_helper.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/helpers/date_helper.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/helpers/directory_helper.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/helpers/download_helper.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/helpers/email_helper.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/helpers/file_helper.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/helpers/form_helper.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/helpers/html_helper.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/helpers/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/helpers/inflector_helper.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/helpers/language_helper.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/helpers/number_helper.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/helpers/path_helper.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/helpers/security_helper.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/helpers/smiley_helper.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/helpers/string_helper.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/helpers/text_helper.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/helpers/typography_helper.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/helpers/url_helper.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/helpers/xml_helper.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/language/english/calendar_lang.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/language/english/date_lang.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/language/english/db_lang.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/language/english/email_lang.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/language/english/form_validation_lang.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/language/english/ftp_lang.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/language/english/imglib_lang.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/language/english/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/language/english/migration_lang.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/language/english/number_lang.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/language/english/profiler_lang.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/language/english/unit_test_lang.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/language/english/upload_lang.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/language/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/Cache/Cache.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/Cache/drivers/Cache_apc.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/Cache/drivers/Cache_dummy.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/Cache/drivers/Cache_file.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/Cache/drivers/Cache_memcached.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/Cache/drivers/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/Cache/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/Calendar.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/Cart.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/Driver.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/Email.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/Encrypt.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/Form_validation.php">
+      <publishTime>01/25/2015 10:34:28</publishTime>
+    </File>
+    <File Include="system/libraries/Ftp.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/Image_lib.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/Javascript.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/javascript/index.html">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/javascript/Jquery.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/Log.php">
+      <publishTime>09/07/2015 22:45:00</publishTime>
+    </File>
+    <File Include="system/libraries/Migration.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/Pagination.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/Parser.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/Profiler.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/Session.php">
+      <publishTime>09/17/2015 13:00:01</publishTime>
+    </File>
+    <File Include="system/libraries/Sha1.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/Table.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/Trackback.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/Typography.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/Unit_test.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/Upload.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/User_agent.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/Xmlrpc.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/Xmlrpcs.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="system/libraries/Zip.php">
+      <publishTime>11/21/2014 01:31:46</publishTime>
+    </File>
+    <File Include="systemFiles/tmpuploadfiles.txt">
+      <publishTime>09/04/2014 22:44:34</publishTime>
+    </File>
+    <File Include="test.php">
+      <publishTime>08/21/2015 19:09:58</publishTime>
+    </File>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="application/logs" />
+    <Folder Include="csvs" />
+    <Folder Include="pdfs" />
+    <Folder Include="tmp" />
+    <Folder Include="uploads" />
+  </ItemGroup>
+</Project>

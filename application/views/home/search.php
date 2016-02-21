@@ -1,3 +1,4 @@
+<!--test page , for google custom search api - auto generated code from google -->
 <!DOCTYPE html>
 <html>
 <head>

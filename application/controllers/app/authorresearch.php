@@ -54,7 +54,10 @@ class authorresearch
                 
                 if($this->loadresearch){
                     $research = new research($this->CI);
-                    $authorresearchs[$i]->research = $research->findResearch(array("id"=>$row->researchId));
+                    $research->loadpublisher=true;
+                    
+                    $res= $research->findResearch(array("id"=>$row->researchId));
+                    $authorresearchs[$i]->research  = $res[0];
                 }
                 
                 $i++;
