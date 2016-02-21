@@ -64,7 +64,7 @@
                 </div>
 
                 <div class="col-md-3 alert alert-warning" >
-                    واحد
+                    واحدس
                 </div>
                 <div class="col-md-1" >
                     
