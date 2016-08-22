@@ -20,6 +20,8 @@ class permissions
                     "homecontroller/index" , 
             "homecontroller/search" , 
             "homecontroller/content",
+            "homecontroller/backup",
+            "homecontroller/backuppapers",
             "homecontroller/bulkaddpapers",
             "homecontroller/getInstituteAuthors",
             "homecontroller/displaydata",
@@ -43,6 +45,11 @@ class permissions
             "usercontroller/isuserexist",
             //"usercontroller/loginview",
             "homecontroller/manipulateone",
+            "homecontroller/data",
+            "homecontroller/allauthors",
+            "homecontroller/allpublishers",
+            "homecontroller/allinstitutes"
+            
         )
         );
     

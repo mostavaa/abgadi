@@ -80,7 +80,8 @@ if(isset($mycsv) && !empty($mycsv)){
 
                             <div class="col-md-2">
                                 <?php 
-                                    if( $onefile->status!="ok" && $onefile->isNew){
+
+                                    if( $onefile->status!="ok" && !$onefile->isNew){
                                 ?>
                                 <form action="<?php echo site_url("homecontroller/replacesinglefile") ?>" method="post" enctype="multipart/form-data">
                                     <label class="myLabel">

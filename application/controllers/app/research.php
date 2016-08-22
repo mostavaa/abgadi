@@ -46,7 +46,7 @@ class research
     }
     
     public function toArray(){
-            
+        
         $researchPublisher = "";
         if ($this->loadpublisher){
             if(is_object($this->publisher)){
@@ -184,7 +184,7 @@ class research
             }
         }
 
-                
+        
         $secondAuthorName = $this->CI->input->post("secondAuthorName");
         
         if (!$this->isEmpty($secondAuthorName)){
@@ -681,46 +681,46 @@ class research
         
         
     }
-          
-public function deleteResearchAuthors(){
     
-    $authorresearch = new authorresearch($this->CI);
-    $authorresearch->research = $this;
-    $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>0));            
-    $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>1));            
-    $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>2));            
-    $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>3));            
-    $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>4));            
-    $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>5));            
-    $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>6));            
-    $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>7));            
-    $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>8));            
-    $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>9));            
-    $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>10));    
-}
-public function deleteAuthorResearch(){
-    $authorresearch = new authorresearch($this->CI);
-    $authorresearch->delete(array("researchId"=>$this->id ));            
-    
-}
-public function delete(){
-    $this->CI->researchmodel->delete(array("id"=>$this->id ));
+    public function deleteResearchAuthors(){
+        
+        $authorresearch = new authorresearch($this->CI);
+        $authorresearch->research = $this;
+        $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>0));            
+        $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>1));            
+        $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>2));            
+        $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>3));            
+        $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>4));            
+        $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>5));            
+        $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>6));            
+        $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>7));            
+        $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>8));            
+        $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>9));            
+        $authorresearch->delete(array("researchId"=>$authorresearch->research->id ,"authorNumber"=>10));    
+    }
+    public function deleteAuthorResearch(){
+        $authorresearch = new authorresearch($this->CI);
+        $authorresearch->delete(array("researchId"=>$this->id ));            
+        
+    }
+    public function delete(){
+        $this->CI->researchmodel->delete(array("id"=>$this->id ));
 
-}
-public function deletePaperFile(){
-    $file = fopen("./deleted.txt", "a");
-    if($this->researchFileName!="")
-    fwrite($file, 'http://www.abgadi.net/pdfs/'.$this->researchFileName."\n"); 
-    
-    fclose($file);
-}
+    }
+    public function deletePaperFile(){
+        $file = fopen("./deleted.txt", "a");
+        if($this->researchFileName!="")
+            fwrite($file, 'http://www.abgadi.net/pdfs/'.$this->researchFileName."\n"); 
+        
+        fclose($file);
+    }
     public function writeToFile(){
         
         
         
         $file = fopen("./uploaded.txt", "a");
         if($this->researchFileName!="")
-        fwrite($file, 'http://www.abgadi.net/pdfs/'.$this->researchFileName."\n"); 
+            fwrite($file, 'http://www.abgadi.net/pdfs/'.$this->researchFileName."\n"); 
         
         fclose($file);
         
@@ -728,7 +728,7 @@ public function deletePaperFile(){
         
         $xml->addChild('url')->addChild('loc', 'http://www.abgadi.net/pdfs/'.$this->researchFileName);
         if($this->researchFileName!="")
-        file_put_contents('sitemap.xml', $xml->asXML());
+            file_put_contents('sitemap.xml', $xml->asXML());
         
 
     }
@@ -869,11 +869,11 @@ public function deletePaperFile(){
         return $researchs;
     }
     private function findResearchesByFileName($researchFileName){
-     $res =   $this->findResearch(array("researchFileName"=>$researchFileName));
-     if(isset($res) && !empty($res)){
-         return $res[0];
-     }
-     return null;
+        $res =   $this->findResearch(array("researchFileName"=>$researchFileName));
+        if(isset($res) && !empty($res)){
+            return $res[0];
+        }
+        return null;
     }
     public function findResearch($research){
         $researchs = array();
@@ -940,9 +940,9 @@ public function deletePaperFile(){
         return $researchs;
     }
     public function getCountofResearchs(){
-       return $this->CI->researchmodel->getCountofResearchs();
+        return $this->CI->researchmodel->getCountofResearchs();
     }
-#region Sort content page
+    #region Sort content page
     public function getAllResearchesOrderdByPublishDateDesc(){
         $researchs = array();
         if($this->pagination->is_valid_page()){
@@ -1288,19 +1288,177 @@ public function deletePaperFile(){
         return $researchs;
     }
     
+    public function getResearchAuthorByNumber($number = 0){
+        $researchAuth = new authorresearch($this->CI);
+        $researchAuth->loadauthor = true;
+        $authorResearches = $researchAuth->findauthorresearch(array("researchId"=>$this->id , "authorNumber"=>$number));        
+        if (!empty($authorResearches) ){
+            $authorResearch = $authorResearches[0];
+            return $authorResearch;
+        }
+        return false;
+    }
     #endregion sort content page
     public function getResearchAuthors(){
         $researchAuth = new authorresearch($this->CI);
         $researchAuth->loadauthor = true;
-        $this->authorResearches = $researchAuth->findauthorresearch(array("researchId"=>$this->id));
+        return $this->authorResearches = $researchAuth->findauthorresearch(array("researchId"=>$this->id));
     }
+    
     public function getMainAuthor(){
         $researchAuth = new authorresearch($this->CI);
         $researchAuth->loadauthor = true;
-         $authorResearches = $researchAuth->findauthorresearch(array("researchId"=>$this->id , "authorNumber"=>0));        
-         $authorResearch = $authorResearches[0];
-         $this->mainAuthor =$authorResearch->author;
+        $authorResearches = $researchAuth->findauthorresearch(array("researchId"=>$this->id , "authorNumber"=>0));        
+        $authorResearch = $authorResearches[0];
+        $this->mainAuthor =$authorResearch->author;
     }
+    
+    #region countInfo
+    
+    public function visitCount($researchId){
+        $obj = array( "counttype"=>"visit" ,"reasearchId"=>$researchId );        
+       $res= $this->CI->researchcountmodel->find($obj);
+        if ($res && !empty($res)){
+            $CountryCount = array();// key is the country , and value is array , first index is all counts , second index is one count per ip
+            foreach ($res as $row)
+            {
+            	if (array_key_exists($row->country , $CountryCount)){
+                    $OneIpVisitCount =  $CountryCount[$row->country][0];
+                    $OneIpVisitCount+=$row->usercount;
+                    $CountryCount[$row->country][0]=$OneIpVisitCount;
+                    
+                    $CountryCount[$row->country][1]++;
+                }else{
+                    $CountryCount[$row->country] = array($row->usercount , 1);
+                }
+            }
+            return $CountryCount;
+            
+        }else{
+            return false;
+        }
+    }
+    
+    public function downloadCount($researchId){
+        $obj = array( "counttype"=>"download" ,"reasearchId"=>$researchId );        
+        $res= $this->CI->researchcountmodel->find($obj);
+        if ($res && !empty($res)){
+            $CountryCount = array();// key is the country , and value is array , first index is all counts , second index is one count per ip
+            foreach ($res as $row)
+            {
+            	if (array_key_exists($row->country , $CountryCount)){
+                    $OneIpDownloadCount =  $CountryCount[$row->country][0];
+                    $OneIpDownloadCount+=$row->usercount;
+                    $CountryCount[$row->country][0]=$OneIpDownloadCount;
+                    $CountryCount[$row->country][1]++;
+                }else{
+                    $CountryCount[$row->country] = array($row->usercount , 1);
+                }
+            }
+            return $CountryCount;
+            
+        }else{
+            return false;
+        }
+    }
+    
+    public function isFirstTimeVisit($ip , $reasearchId){
+        $obj = array("userip"=>$ip , "counttype"=>"visit" ,"reasearchId"=>$reasearchId );
+        $res = $this->CI->researchcountmodel->find($obj);
+        
+        if ($res && !empty($res)){
+            return false;
+        }else{
+            return true;
+        }
+    }
+    
+    public function isFirstTimeDownload($ip, $reasearchId){
+        $obj = array("userip"=>$ip , "counttype"=>"download","reasearchId"=>$reasearchId);
+        $res = $this->CI->researchcountmodel->find($obj);
+        if ($res){
+            return false;
+        }else{
+            return true;
+        }
+    }
+    public function getUserByIpVisit($ip,$reasearchId){
+        $obj = array("userip"=>$ip , "counttype"=>"visit","reasearchId"=>$reasearchId);
+        $res = $this->CI->researchcountmodel->find($obj);
+        if ($res){
+            return $res;
+        }else{
+            return false;
+        }
+    }
+    
+    public function getUserByIpDownload($ip,$reasearchId){
+        $obj = array("userip"=>$ip , "counttype"=>"download","reasearchId"=>$reasearchId);
+        $res = $this->CI->researchcountmodel->find($obj);
+        if ($res){
+            return $res;
+        }else{
+            return false;
+        }
+    }
+    
+    public function Visit($ip , $country ,$reasearchId ){
+        if ($this->isFirstTimeVisit($ip , $reasearchId)){
+            $this->insertNewVisit($ip , $country,$reasearchId);
+        }else{
+            $this->increaseVisitorDownloadCount($ip,"visit" , $reasearchId);
+        }
+    }
+    
+    public function Download($ip , $country , $reasearchId){
+        if ($this->isFirstTimeDownload($ip, $reasearchId)){
+            $this->insertNewDownload($ip , $country, $reasearchId);
+        }else{
+            $this->increaseVisitorDownloadCount($ip , "download", $reasearchId);
+        }
+    }
+    
+    public function insertNewDownload($ip, $country, $reasearchId){
+        $obj = array("userip"=>$ip
+            ,"country"=>$country
+            ,"usercount"=>1
+            ,"counttype"=>"download"
+            ,"lastvisit"=>time()
+                        ,"reasearchId"=>$reasearchId
+
+            );
+        $this->CI->researchcountmodel->insert($obj);
+    }    
+    public function insertNewVisit($ip, $country,$reasearchId){
+        $obj = array("userip"=>$ip
+            ,"country"=>$country
+            ,"usercount"=>1
+            ,"counttype"=>"visit"
+            ,"lastvisit"=>time()
+            ,"reasearchId"=>$reasearchId
+            );
+        $this->CI->researchcountmodel->insert($obj);
+    }
+    public function increaseVisitorDownloadCount($ip ,$counttype,$reasearchId){
+        if ($counttype=="download"){
+            $res = $this->getUserByIpDownload($ip,$reasearchId);    
+        }else if ($counttype=="visit"){
+
+            $res = $this->getUserByIpVisit($ip,$reasearchId);
+        }
+        
+        foreach($res as $row){
+            $counttype = $row->usercount;
+            $userId = $row->id;
+        }
+        
+        $counttype++;
+        
+        $obj = array("usercount"=>$counttype , "lastvisit"=>time() );
+        $this->CI->researchcountmodel->update($obj ,$userId );
+    }
+    
+    #endregion 
 
 
 }

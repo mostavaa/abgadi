@@ -4,8 +4,18 @@
     <title>Paper | <?php echo SITENAME?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php 
+    $pageURL = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    if(isset($research) && !empty($research)){
+    ?>
+    <meta property="og:url" content="<?=$pageURL?>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="<?=tools::removeFileExtension($research->arabicHeadingName)?>" />
+    <meta property="og:description" content="<?=$research->arabicDescription?>" />
+    <!--<meta property="og:image" content="https://www.facebook.com/photo.php?fbid=10204581220964189&set=a.1313277525718.36757.1644064516&type=3&theater" />-->
 
     <?php
+    }
     $this->load->view('shared/css');
     ?>
     <style>
@@ -44,6 +54,58 @@
             background-color: rgb(238,237,237);
         }
     </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['bar'] });
+        google.charts.setOnLoadCallback(drawStuff);
+
+            <?php 
+            $allCount = 0;
+            $allCountIpReg = 0;
+            if (isset($visitCount)&&!empty($visitCount)){
+                
+            ?>
+        function drawStuff() {
+            var data = new google.visualization.arrayToDataTable([
+              ['البلاد', 'عدد المشاهدة'],
+                                                               <?php 
+                
+                foreach ($visitCount as $country=>$Count)
+                {
+                    $allCount++;
+                    //echo "<tr><td>{$country}</td><td>{$Count[1]}</td></tr>";
+                    //echo "<tr><td>{$country}</td><td>{$Count[1]}</td></tr>";
+                    echo "['{$country}', {$Count[1]}],";
+                }
+                                                               ?>
+            ]);
+
+
+            var options = {
+
+                chart: {
+                },
+                series: {
+                    0: { axis: 'البلاد' } // Bind series 0 to an axis named 'distance'.
+                },
+                axes: {
+                    y: {
+                        distance: { label: '' }, // Left y-axis.
+                    }
+                }
+
+
+            };
+
+            var chart = new google.charts.Bar(document.getElementById('dual_y_div'));
+            chart.draw(data, options);
+        };
+        <?php 
+                
+            }
+        ?>
+
+    </script>
 </head>
 <body>
 
@@ -80,9 +142,9 @@
                                 <a class="" href="<?= base_url("index.php/homecontroller/listonepub/{$research->publisher->id}")?>">
                                     <h4><?= $research->publisher->publisherName?></h4>
                                 </a>
-                                                            <div class="panel-heading">
-                                <h4><?=tools::removeFileExtension($research->arabicHeadingName)?></h4>
-                            </div>
+                                <div class="panel-heading">
+                                    <h4><?=tools::removeFileExtension($research->arabicHeadingName)?></h4>
+                                </div>
                                 <br />
                                 <?php 
                         $research->getMainAuthor();
@@ -146,9 +208,27 @@
                                 <div style="clear: both"></div>
                                 <h6 dir="rtl"><?= $research->pagesCount ?> صفحة</h6>
                                 <br />
-                                <a href="<?=base_url()."pdfs/{$research->researchFileName}"?>" class="btn btn-primary">
-                                    <div style=""><h4 style="float:right">تحميل</h4><img style="float:right; height:40px;width:40px" src="<?=base_url()?>/images/down.png"/></div>
+                                <a id="download" href="<?=base_url()."pdfs/{$research->researchFileName}"?>" class="btn btn-primary <?=$research->id?>" data-id="<?=$research->id?>">
+                                    <div style="">
+                                        <h4 style="float: right">تحميل</h4>
+                                        <img style="float:right; height:40px;width:40px" src="<?=base_url()?>/images/down.png"/>
+                                    </div>
                                 </a>
+                                <br />
+                                <p>
+                                    <?php 
+                        if (isset($downloadCount)&&!empty($downloadCount)){
+                            $allDownloadCount = 0;
+                            $allDownloadCountIpReg = 0;
+                            foreach ($downloadCount as $country=>$downCount)
+                            {
+                                $allDownloadCount+=$downCount[1];//one down foreach ip
+                                $allDownloadCountIpReg+=$downCount[0];//one down foreach ip
+                            }
+                            echo $allDownloadCount;
+                        }
+                                    ?>
+                                </p>
                                 <div style="clear: both"></div>
 
                                 <h4 dir="rtl" style="margin: 15px;"><?=$research->arabicDescription?></h4>
@@ -179,6 +259,42 @@
                         }
                                 ?>
                                 <div style="clear: both"></div>
+                                <br />
+
+                                <div class="fb-share-button" data-href="<?=$pageURL?>" data-layout="button"></div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <!--
+                                                                             <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <td>البلد</td>
+                                                    <td>عدد مرات المشاهدة</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php 
+                        if (isset($visitCount)&&!empty($visitCount)){
+                            //$allCount = 0;
+                            $allCountIpReg = 0;
+                            foreach ($visitCount as $country=>$Count)
+                            {
+                                echo "<tr><td>{$country}</td><td>{$Count[1]}</td></tr>";
+                                //echo "<tr><td>{$country}</td><td>{$Count[1]}</td></tr>";
+                            }
+                            
+                        }
+                                                ?>
+                                            </tbody>
+
+                                        </table>
+       -->
+                                        <div id="dual_y_div" style="width: 100%; height: 500px;"></div>
+
+                                    </div>
+
+                                </div>
+
 
                             </div>
 
@@ -186,6 +302,26 @@
                         </div>
                     </div>
 
+
+                    <!--add rich card-->
+                    <script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Product",
+  "name": "<?=tools::removeFileExtension($research->arabicHeadingName)?>",
+  "description": "<?=$research->arabicDescription?>",
+  
+  "brand": {
+    "@type": "Thing",
+    "name": "Abgadi"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.4",
+    "reviewCount": "<?= $allCount?>"
+  }
+}
+                    </script>
                     <?php  
                         
                     }
@@ -204,6 +340,26 @@
     <?php
     $this->load->view('shared/scripts');
     ?>
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1561619487489118";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
 
+        var fbxhr = new XMLHttpRequest();
+        fbxhr.open("POST", "https://graph.facebook.com", true);
+        fbxhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        fbxhr.send("id=<?=$pageURL?>&scrape=true");
+        $(document).ready(function () {
+            $("#download").click(function () {
+                id = $("#download").attr("data-id");
+                $.post("<?php echo site_url("homecontroller/downloadResearch")?>", "id=" + id);
+        });
+    });
+    </script>
 </body>
 </html>

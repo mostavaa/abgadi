@@ -79,12 +79,12 @@
 
                         
                         echo "<div class=\"col-md-1\">";
-                        echo "<h6>".$research->mainAuthor->name."</h6>";                            
+                        echo "<h6><a href='".base_url()."index.php/homecontroller/listoneauth/{$research->mainAuthor->id}'>".$research->mainAuthor->name."</a></h6>";                            
                         
                         echo "</div>";
                         
                         echo "<div class=\"col-md-1\">";
-                        echo "<h6>{$research->publisher->publisherName}</h6>";
+                        echo "<h6><a href='".base_url()."index.php/homecontroller/listonepub/{$research->publisher->id}'>{$research->publisher->publisherName}</a></h6>";
                         echo "</div>";
                         
                         echo "<div class=\"col-md-1\">";
@@ -92,7 +92,7 @@
                         echo "</div>";
                         
                         echo "<div class=\"col-md-3\">";
-                        echo "<h6><a href='".base_url()."pdfs/{$research->researchFileName}'>{$research->originalFileName}</a></h6>";
+                        echo "<h6><a href='".base_url()."index.php/homecontroller/listoneresearch/{$research->id}'>{$research->arabicHeadingName}</a></h6>";
                         echo "</div>";
                         
                         echo "</div>";//row

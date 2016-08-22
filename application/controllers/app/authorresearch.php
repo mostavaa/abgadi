@@ -57,7 +57,9 @@ class authorresearch
                     $research->loadpublisher=true;
                     
                     $res= $research->findResearch(array("id"=>$row->researchId));
-                    $authorresearchs[$i]->research  = $res[0];
+                    if($res){
+                        $authorresearchs[$i]->research  = $res[0];                        
+                    }
                 }
                 
                 $i++;

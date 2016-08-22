@@ -69,7 +69,7 @@
                 <div class="pageContent">
 
                     <?php 
-                    if(isset($publisher) && !empty($publisher)){
+                    if(isset($publisher) && !empty($publisher)) {
                         
 
                     ?>
@@ -117,11 +117,11 @@
                             }
                             ?>
                             <div class="row">
-                                <a href="<?= base_url("index.php/homecontroller/listoneresearch/{$research->researchFileName}")?>">
+                                <a href="<?= base_url("index.php/homecontroller/listoneresearch/{$research->id}")?>">
                                     <div class="alert <?=$classname?>" style="text-align: right ; margin:5px;">
                                         <div class="smallResearchCard">
 
-                                            <h4><?= tools::removeFileExtension($research->originalFileName)?></h4>
+                                            <h4><?= tools::removeFileExtension($research->arabicHeadingName)?></h4>
                                             <?php 
                             $research->getMainAuthor();
                             
@@ -150,11 +150,11 @@
                                 }
                             ?>
                             <div class="row">
-                                <a href="<?= base_url("index.php/homecontroller/listoneresearch/{$research->researchFileName}")?>">
+                                <a href="<?= base_url("index.php/homecontroller/listoneresearch/{$research->id}")?>">
                                     <div class="alert <?=$classname?>" style="text-align: right ; margin:5px;">
                                         <div class="smallResearchCard">
 
-                                            <h4><?= tools::removeFileExtension($research->originalFileName)?></h4>
+                                            <h4><?= tools::removeFileExtension($research->arabicHeadingName)?></h4>
                                             <?php 
                                 $research->getMainAuthor();
                                 
@@ -180,7 +180,20 @@
 
 
                     </div>
-
+                                                                                <!--add rich card-->
+                    <script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Product",
+  "name": "<?=$publisher->publisherName?>",
+  "description": "<?=$publisher->publisherName?>",
+  
+  "brand": {
+    "@type": "Thing",
+    "name": "Abgadi"
+  }
+}
+                    </script>
 
                     <?php  
                         

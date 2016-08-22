@@ -121,7 +121,8 @@ $autoload['model'] = array(
     'specializationmodel',
     'scientificdegreemodel',
     'jobmodel',
-    'researchtypemodel'
+    'researchtypemodel',
+    'researchcountmodel'
     );
 
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Manage | <?php echo SITENAME?></title>
+    <title>Backup | <?php echo SITENAME?></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <?php
@@ -32,15 +32,19 @@
             ?>
 
             <div class="content">
-
                 <div class="contentList">
                     <ul>
-                        <li class="btn btn-default"><a  href="<?php echo site_url("homecontroller/uploadpaperview")?>">اضافة محتوى</a></li>
-                        <li class="btn btn-default"><a class=""href="<?php echo site_url("homecontroller/bulkaddpapers")?>" >اضافة قائمة ابحاث</a></li>
-                        <li class="btn btn-default"><a class="" href="<?php echo site_url("homecontroller/data")?>">عرض قاعدة البيانات</a></li>
-                        <li class="btn btn-default"><a class="" href="<?php echo site_url("homecontroller/manipulateone")?>">تعديل البيانات</a></li>
-                        <li class="btn btn-default"><a class="" href="<?php echo site_url("homecontroller/backuppapers")?>">انشاء نقطة استرجاع</a></li>
-                        <li class="btn btn-default"><a class="" href="<?php echo site_url("homecontroller/backup")?>">نقاط الاسترجاع</a></li>
+                        <?php 
+                        $files = glob('./backup/*');
+                        foreach($files as $file) {
+                            $url = base_url("".substr($file , strpos($file ,-1)));
+                        ?>
+
+                        <li class="btn btn-default"><a  href="<?php echo $url?>"><?=substr($file , strpos($file ,-1))?></a></li>
+                        <?php
+                        }
+                        ?>
+
                     </ul>
                 </div>
 

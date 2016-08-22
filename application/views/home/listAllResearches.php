@@ -83,7 +83,7 @@
                             <div class="alert <?=$classname?>" style="text-align: right ; margin:5px;">
                                 <div class="smallResearchCard">
 
-                                    <h4><?= tools::removeFileExtension($research->originalFileName)?></h4>
+                                    <h4><?= tools::removeFileExtension($research->arabicHeadingName)?></h4>
                                     <?php 
                             $research->getMainAuthor();
                             

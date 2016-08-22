@@ -9,10 +9,11 @@ $username = isset($this->session->userdata["username"]) && !empty($this->session
 
             <img id="pcLogo"  src="<?php echo base_url()?>/images/6.png" alt="" />
         </div>
+
         <div class="newHeaderWrapper">
             <div class="row searchContainer">
                 <!--search box-->
-                <form method="post" action="">
+                <form method="post" action="<?=site_url("homecontroller/submitsearch");?>">
                 <div id="searchTextBoxContainer">
                                     <div id="searchBtnContainer">
                     <input id="searchBtn" type="submit" value="بحث" />

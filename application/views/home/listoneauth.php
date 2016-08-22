@@ -126,7 +126,7 @@
                             echo "<h6 class=\"btn btn-default\" style='float:right;margin-right:2px;'>{$author->jobAddress}</h6>";                             
                         }
                         echo "<div style=\"clear: both\"></div>";
-                        $researchs =  $author->findMyResearches();
+                        $researchs =  $author->findMyMainResearches();
                         if(isset($researchs) && !empty($researchs)){
                             //sort by date
                             $sortedResearches = array();
@@ -156,11 +156,11 @@
                                 }
                             ?>
                             <div class="row">
-                                <a href="<?=base_url("index.php/homecontroller/listoneresearch/{$research->researchFileName}")?>">
+                                <a href="<?=base_url("index.php/homecontroller/listoneresearch/{$research->id}")?>">
                                     <div class="alert <?=$classname?>" style="text-align: right ; margin:5px;">
                                         <div class="smallResearchCard">
 
-                                            <h4><?= tools::removeFileExtension($research->originalFileName)?></h4>
+                                            <h4><?= tools::removeFileExtension($research->arabicHeadingName)?></h4>
                                             <?php 
                                 $research->getMainAuthor();
                                 
@@ -189,11 +189,11 @@
                                     }
                             ?>
                             <div class="row">
-                                <a href="<?= base_url("index.php/homecontroller/listoneresearch/{$research->researchFileName}")?>">
+                                <a href="<?= base_url("index.php/homecontroller/listoneresearch/{$research->id}")?>">
                                     <div class="alert <?=$classname?>" style="text-align: right ; margin:5px;">
                                         <div class="smallResearchCard">
 
-                                            <h4><?= tools::removeFileExtension($research->originalFileName)?></h4>
+                                            <h4><?= tools::removeFileExtension($research->arabicHeadingName)?></h4>
                                             <?php 
                                     $research->getMainAuthor();
                                     
@@ -220,7 +220,20 @@
 
                     </div>
 
-
+                                        <!--add rich card-->
+                    <script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Product",
+  "name": "<?=$author->name?>",
+  "description": "<?=$author->name?>",
+  
+  "brand": {
+    "@type": "Thing",
+    "name": "Abgadi"
+  }
+}
+                    </script>
                     <?php  
                         
                     }

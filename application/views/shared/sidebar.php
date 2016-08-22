@@ -50,10 +50,7 @@ $username = isset($this->session->userdata["username"]) && !empty($this->session
             <?php
             if ($username!=""){
             ?>
-            <a class="list-group-item" href="<?php echo site_url("homecontroller/uploadpaperview")?>">اضافة محتوى</a>
-            <a class="list-group-item"href="<?php echo site_url("homecontroller/bulkaddpapers")?>" >اضافة قائمة ابحاث</a>
-            <a class="list-group-item" href="<?php echo site_url("homecontroller/displaydata")?>">عرض قاعدة البيانات</a>
-            <a class="list-group-item" href="<?php echo site_url("homecontroller/manipulateone")?>">تعديل البيانات</a>
+            <a class="list-group-item" href="<?php echo site_url("homecontroller/content")?>">التحكم</a>
 
             <?php
             }

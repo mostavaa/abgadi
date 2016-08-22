@@ -38,8 +38,7 @@ if (isset($errors) && !empty($errors)){
 
                 <div class="">
                     <form class="form form-inline" method="post" action="<?php echo site_url("usercontroller/login") ?>" id="myform">
-
-                          <div class="row formElement">
+                        <div class="row formElement">
                             <div class="col-md-6">
                                 <p class="inputError">
                                     <?php 

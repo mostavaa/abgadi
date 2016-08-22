@@ -11,9 +11,50 @@ class homecontroller extends CI_Controller {
 	public function __construct() {
 		parent::__construct ();
 	}
+    public function getUserIp(){
+        if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+            $ip = $_SERVER['HTTP_CLIENT_IP'];
+        } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        } else {
+            $ip = $_SERVER['REMOTE_ADDR'];
+        }
+        return $ip;
+    }
+    public function getIpCountry($ip){
+        //echo $json = $this->file_get_contents_curl("http://ipinfo.io/{$ip}/json");
+        $s = $this->file_get_contents_curl("http://ip2c.org/{$ip}");
+        /*1;EG;EGY;Egypt*/
+        //156.194.18.16
+        switch($s[0])
+        {
+            case '0':
+                //echo 'Something wrong';
+                break;
+            case '1':
+                
+                $reply = explode(';',$s);
+                
+                /*
+                echo '<br>Two-letter: '.$reply[1];
+                echo '<br>Three-letter: '.$reply[2];
+                echo '<br>Full name: '.$reply[3];*/
+                return $reply[3];
+            case '2':
+                //echo 'Not found in database';
+                break;
+        }
+        return false;
+    }
 	public function index() {
+        //echo phpinfo();
         $this->load->view('home/index');
     } 
+    
+	public function team() {
+        //echo phpinfo();
+        $this->load->view('home/team');
+    }
     
     public function search() {
         if (!permissions::Authorized("homecontroller/search" , $this)){
@@ -23,7 +64,45 @@ class homecontroller extends CI_Controller {
         
     }
 
-    
+	public function replacesinglefile(){
+        $oldfilename= $this->input->post("oldfile");
+        $mycsv = $this->session->userdata('mycsv');
+        if(isset($mycsv) && !empty($mycsv)){
+            $mycsv = unserialize($mycsv);
+        }
+        $myfile = &$mycsv->findFileByName($oldfilename);
+        if($myfile){
+            if($myfile->research->originalFileName== $_FILES['file']['name']){
+                
+                $config = array();
+                $config['upload_path'] = "./tmp/";
+                $config['allowed_types'] = 'pdf|doc|docx';
+                $config ['max_size'] = '4096';
+                
+                $newName =$this->generateRandomName();
+                $config['file_name'] = $newName;
+                $myfile->research->researchFileName = $newName.".".pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
+                
+                $this->upload->initialize($config);
+                if (!$this->upload->do_upload("file"))
+                {
+                    $errors = $this->upload->display_errors();
+                    $status="error";
+                    $myfile->status = $status;
+                    $myfile->error = $errors;
+                }else{
+                    $myfile->status = "ok";
+                }
+                $serialized =  serialize($mycsv);
+                $this->session->set_userdata("mycsv" , $serialized);
+                redirect(base_url("index.php/homecontroller/bulkaddpapers"));
+            }
+        }
+        redirect(base_url("index.php/homecontroller/bulkaddpapers"));
+        
+    }
+
+
     public function content(){
         if (!permissions::Authorized("homecontroller/content" , $this)){
             return ;
@@ -36,6 +115,33 @@ class homecontroller extends CI_Controller {
         }
         $this->load->view('home/bulkaddpapers');        
     }
+    public function data(){
+        if (!permissions::Authorized("homecontroller/data" , $this)){
+            return ;
+        }
+        $this->load->view('home/data');
+    }
+    public function allauthors(){
+                if (!permissions::Authorized("homecontroller/allauthors" , $this)){
+            return ;
+        }
+                $author = new author($this);
+                $authors = $author->findauthor(array());
+                $data["authors"] = $authors;
+        $this->load->view('home/allauthors' , $data);
+    }
+    
+    public function allpublishers(){
+        if (!permissions::Authorized("homecontroller/allpublishers" , $this)){
+            return ;
+        }
+        $pub = new publisher($this);
+        $pubs = $pub->findPublisher(array());
+        $data["pubs"] = $pubs;
+        $this->load->view('home/allpublishers' , $data);
+    }
+
+    
     public function displaydata($page=1){
         if (!permissions::Authorized("homecontroller/displaydata" , $this)){
             return ;
@@ -247,7 +353,7 @@ class homecontroller extends CI_Controller {
         $valid = true;
         $edit = $this->input->post("edit");
         if($edit == "edit"){
-           
+            
             $paper = new research($this);
             $paper->id = $this->input->post("id");
             $paper->id  = intval($paper->id);
@@ -266,7 +372,7 @@ class homecontroller extends CI_Controller {
                 }else if ($oldFileName=="delete"){
                     //delete file 
                     if(file_exists("./pdfs/".$paper->researchFileName))
-                    unlink("./pdfs/".$paper->researchFileName);
+                        unlink("./pdfs/".$paper->researchFileName);
                     $paper->deletePaperFile();
                     $paper->researchFileName="";
                     $paper->originalFileName= "";
@@ -714,6 +820,105 @@ class homecontroller extends CI_Controller {
                 unlink($file); // delete file
         }
     }
+    
+    public function backuppapers(){
+        if (!permissions::Authorized("homecontroller/backuppapers" , $this)){
+            return ;
+        }
+        
+        $filename = date("Y-m-d h-i-s",time());
+        $filepath = "./backup/".$filename.".csv";
+        $file = fopen($filepath,"w");
+        
+        $research = new research($this);
+        $research->loadspecialization  = $research->loadaccurateSpecialization = $research->loadresearchType = 
+        $research->loadpublisher= true;
+        $researches = $research->findResearch(array());
+        $csv = array();   
+        $header =  "اسم البحث*,عنوان البحث باللغة العربية*,عنوان البحث باللغة الانجليزية,ملخص البحث باللغة العربية,ملخص البحث باللغة الانجليزية,الكلمات المفتاحية* (فصل بعلامة&),التخصص,التخصص الدقيق,عدد الصفحات*,الصفحات من,الصفحات الى,العدد المنشور به البحث*,سنة النشر*,بلد النشر*,نوع البحث*,الناشر*,اسم الباحث الرئيسي*,اسم الباحث الاول,اسم الباحث الثاني,اسم الباحث الثالث,اسم الباحث الرابع,اسم الباحث الخامس,اسم الباحث السادس,اسم الباحث السابع,اسم الباحث الثامن,اسم الباحث التاسع,اسم الباحث العاشر" ;
+        
+        $header =  iconv(mb_detect_encoding($header, mb_detect_order(), true) , 'UTF-8' ,$header);
+        $files_to_zip = array();
+        foreach ($researches as $oneResearch)
+        {
+            //load authors
+            $researchAuthors = $oneResearch->getResearchAuthorByNumber(0);
+            $researchAuthorsString = $researchAuthors?$researchAuthors->author->name.",":",";
+            
+            $researchAuthors = $oneResearch->getResearchAuthorByNumber(1);
+            $researchAuthorsString .= $researchAuthors?$researchAuthors->author->name.",":",";
+            
+            $researchAuthors = $oneResearch->getResearchAuthorByNumber(2);
+            $researchAuthorsString .= $researchAuthors?$researchAuthors->author->name.",":",";
+            
+            $researchAuthors = $oneResearch->getResearchAuthorByNumber(3);
+            $researchAuthorsString .= $researchAuthors?$researchAuthors->author->name.",":",";
+            
+            $researchAuthors = $oneResearch->getResearchAuthorByNumber(4);
+            $researchAuthorsString .= $researchAuthors?$researchAuthors->author->name.",":",";
+            
+            $researchAuthors = $oneResearch->getResearchAuthorByNumber(5);
+            $researchAuthorsString .= $researchAuthors?$researchAuthors->author->name.",":",";
+            
+            $researchAuthors = $oneResearch->getResearchAuthorByNumber(6);
+            $researchAuthorsString .= $researchAuthors?$researchAuthors->author->name.",":",";
+            
+            $researchAuthors = $oneResearch->getResearchAuthorByNumber(7);
+            $researchAuthorsString .= $researchAuthors?$researchAuthors->author->name.",":",";
+            
+            $researchAuthors = $oneResearch->getResearchAuthorByNumber(8);
+            $researchAuthorsString .= $researchAuthors?$researchAuthors->author->name.",":",";
+            
+            $researchAuthors = $oneResearch->getResearchAuthorByNumber(9);
+            $researchAuthorsString .= $researchAuthors?$researchAuthors->author->name.",":",";
+            
+            $researchAuthors = $oneResearch->getResearchAuthorByNumber(10);
+            $researchAuthorsString .= $researchAuthors?$researchAuthors->author->name:"";
+            
+            $specialization = "";
+            if(isset($oneResearch->specialization) && !empty($oneResearch->specialization)){
+                $specialization = $oneResearch->specialization->name; 
+            }
+            $accurateSpecialization = "";
+            if(isset($oneResearch->accurateSpecialization) && !empty($oneResearch->accurateSpecialization)){
+                $accurateSpecialization = $oneResearch->accurateSpecialization->name; 
+            }
+        	$csv[] = "{$oneResearch->researchFileName},{$oneResearch->arabicHeadingName},{$oneResearch->englishHeadingName},{$oneResearch->arabicDescription},{$oneResearch->englishDescription},".str_replace("*","&",$oneResearch->keyWords).",{$specialization},{$accurateSpecialization},{$oneResearch->pagesCount},{$oneResearch->pagesFrom},{$oneResearch->pagesTo},{$oneResearch->researchNumber},{$oneResearch->publishDate},{$oneResearch->publishCountry},{$oneResearch->researchType->name},{$oneResearch->publisher->publisherName},{$researchAuthorsString}";
+            
+            copy( "./pdfs/".$oneResearch->researchFileName ,"./backup/".$oneResearch->researchFileName);
+            $files_to_zip[]="./backup/".$oneResearch->researchFileName;
+        }
+        
+        fprintf($file, chr(0xEF).chr(0xBB).chr(0xBF));
+        fputcsv($file,explode(',',$header));
+
+        foreach ($csv as $line)
+        {
+            fputcsv($file,explode(',',$line));
+        }
+        fclose($file);
+        
+        $zip = new ZipArchive();
+        
+        $zip->open("./backup/{$filename}.zip" , ZipArchive::CREATE);
+        $zip->addFile($filepath);
+        foreach($files_to_zip as $oneFile){
+            $zip->addFile($oneFile);
+        }
+        $zip->close();
+        unlink($filepath);
+        foreach($files_to_zip as $oneFile){
+            unlink($oneFile);
+        }
+        redirect(base_url("index.php/homecontroller/backup"));
+    }
+    public function backup(){
+        if (!permissions::Authorized("homecontroller/backup" , $this)){
+            return ;
+        }
+        
+        $this->load->view("home/backup");
+    }
     public function uploadcsv(){
 
         $config = array();
@@ -774,8 +979,9 @@ class homecontroller extends CI_Controller {
             }
             
             $myCsv->reportEntry = $report;
+            
+            //for debug
             /*
-             for debug
             ini_set('xdebug.var_display_max_depth', 10);
             ini_set('xdebug.var_display_max_children', 256);
             ini_set('xdebug.var_display_max_data', 1024);
@@ -785,8 +991,12 @@ class homecontroller extends CI_Controller {
             die();
              */
             //$this->session->set_flashdata("myCsv" , $myCsv);
-            $serialized =  serialize($myCsv);
+            
+             $serialized =  serialize($myCsv);
+         
             $this->session->set_userdata("mycsv" , $serialized);
+           
+          
             redirect(base_url("index.php/homecontroller/bulkaddpapers"));
         }
     }
@@ -1214,9 +1424,9 @@ class homecontroller extends CI_Controller {
         $data["publishCountry"] = $research->publishCountry;
         $data["researchType"] = $research->researchType->id;
         if(isset($research->specialization) && !empty($research->specialization))
-        $data["specialization"] = $research->specialization->id;
+            $data["specialization"] = $research->specialization->id;
         if(isset($research->accurateSpecialization) && !empty($research->accurateSpecialization))            
-        $data["accurateSpecialization"] = $research->accurateSpecialization->id;
+            $data["accurateSpecialization"] = $research->accurateSpecialization->id;
         $data["pagesCount"] = $research->pagesCount;
         $data["pagesFrom"] = $research->pagesFrom;
         $data["pagesTo"] = $research->pagesTo;
@@ -1338,6 +1548,30 @@ class homecontroller extends CI_Controller {
         }
         $this->load->view("home/listAllResearches" , $data);
     }
+    public function downloadResearch(){
+        $id = $this->input->post("id");
+        if ($id != "" && $id!=null && !empty($id)){
+            $id=intval($id);
+            if (is_int($id)){
+                $research = new research($this);
+                $ip = $this->getUserIp();
+                $country = $this->getIpCountry($ip);
+                if ($this->getIpCountry($ip)){
+                    try
+                    {
+                        $research->Download($ip , $country , $id);
+                    }
+                    catch (Exception $exception)
+                    {
+                        return;
+                    }
+                }
+
+            }
+        }
+        
+
+    }
     public function listoneresearch($id=""){
         $research = new research($this);
         $research->loadaccurateSpecialization = $research->loadpublisher
@@ -1345,10 +1579,29 @@ class homecontroller extends CI_Controller {
         $res = $research->findResearch(array("id"=>$id));
         $data=null;
         if($res && !empty($res)){
+            $data['visitCount'] = $research->visitCount($id);
+            $data['downloadCount'] = $research->downloadCount($id);
             $data['research'] = $res[0];
         }
+        
         $this->load->view("home/listoneresearch" , $data);
+        $ip = $this->getUserIp();
+        $country = $this->getIpCountry($ip);
+        
+        if ( $this->getIpCountry($ip)){
 
+            try
+            {
+                $research->Visit($ip , $country , $id);
+            }
+            catch (Exception $exception)
+            {
+                return;
+            }
+        }
+       
+        
+        
     }
     public function listoneinst($instituteId=0){
         $institute = new institute($this);

@@ -97,6 +97,7 @@ class researchmodel extends CI_Model{
     
 
     public function findResearch($research = array()){
+        
         $query_string = "select *
 			from research";
         if (!empty($research)){
