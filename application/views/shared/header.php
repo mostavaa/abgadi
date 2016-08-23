@@ -54,19 +54,23 @@ $username = isset($this->session->userdata["username"]) && !empty($this->session
             <a href="<?php echo base_url()?>" class="heading">
                 <h4 class="headings">الصفحة الرئيسية</h4>
             </a>
-            <a class="heading">
+            <a href="<?= base_url()?>index.php/homecontroller/allinstitues" class="heading">
                 <h4 class="headings">دوريات وأبحاث</h4>
             </a>
-            <a class="heading">
-                <h4 class="headings">أضف الى المكتبة</h4>
+            <a style="margin-left:0px!important" href="<?= base_url()?>index.php/homecontroller/addtolibrary" class="heading">
+                <h4 class="headings" >أضف الى المكتبة</h4>
             </a>
-            <a class="heading">
-                <h4 class="headings">أحداث</h4>
-            </a>
+                        <div id="blanck" style="
+    float: right;
+    width: 40%;
+    border-top-style: solid;
+    border-top-color: #f6aa05;
+    border-top-width: thin;
+    background-color: #dd7403;
+    height: 27px;
+                            ">
 
-            <a id="lastHeading">
-                <h4 class="headings">أبجدي</h4>
-            </a>
+            </div>
             <div id="leftBanner">
                 <div id="orangeBanner"></div>
                 <div id="orangeBannerImageContainer">

@@ -50,282 +50,283 @@ if(isset($mycsv) && !empty($mycsv)){
     </style>
 </head>
 <body>
-            <?php 
-                    $this->load->view('shared/sidebar');
-?>
+    <?php 
+    $this->load->view('shared/sidebar');
+    ?>
     <div class="container">
         <div class="row page">
-            
-    <?php
-    $this->load->view('shared/header');
-    ?>
-    <div class="main_bg">
-        <div class="wrap">
-            <div class="main">
-                <div class="content">
+
+            <?php
+            $this->load->view('shared/header');
+            ?>
+            <div class="main_bg">
+                <div class="wrap">
+                    <div class="main">
+                        <div class="content">
 
 
-                    <?php
-                    if(isset($mycsv) && !empty($mycsv)){
-                        if($mycsv->didUploadCsv){
-                            if($mycsv->didUploadFiles){
-                                foreach($mycsv->files as $onefile){
-                                    //file 4, upload status(ok , error=>upload again ) 2, error  3, is new 2
-                    ?>
-                    <div class="alert alert-dismissible alert-info" style="text-align: right">
-                        <div class="row">
+                            <?php
+                            if(isset($mycsv) && !empty($mycsv)){
+                                if($mycsv->didUploadCsv){
+                                    if($mycsv->didUploadFiles){
+                                        foreach($mycsv->files as $onefile){
+                                            //file 4, upload status(ok , error=>upload again ) 2, error  3, is new 2
+                            ?>
+                            <div class="alert alert-dismissible alert-info" style="text-align: right">
+                                <div class="row">
 
 
 
 
-                            <div class="col-md-2">
-                                <?php 
+                                    <div class="col-md-2">
+                                        <?php
+                                            if( $onefile->status!="ok" || !$onefile->isNew){
+                                                
+                                        ?>
+                                        <form action="<?php echo site_url("homecontroller/replacesinglefile") ?>" method="post" enctype="multipart/form-data">
+                                            <label class="myLabel">
+                                                <input type="file" class="replacesinglefile" required name="file" />
+                                                <span>اعادة تحميل الملف</span>
+                                            </label>
+                                            <input type="hidden" name="oldfile" value="<?php  echo $onefile->research->originalFileName?>" />
+                                        </form>
+                                        <?php
+                                            }
+                                            
+                                        ?>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <h1>
+                                            <?php 
+                                            if( $onefile->isNew){
+                                                echo "جديد";
+                                            }else{
+                                                echo "موجود مسبقآ";
+                                            }
+                                            ?>
+                                        </h1>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <?php 
+                                            if( $onefile->status=="error" ){
+                                                if(!empty($onefile->error)){
+                                                    echo $onefile->error."<br>";                                            
+                                                }
+                                            }
+                                            if( !$onefile->validationStatus){
+                                                echo "Some Fields Are Required !";
+                                            }
+                                        ?>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <h1>
+                                            <?php 
+                                            if( $onefile->status=="ok"){
+                                                echo "تم التحميل";
+                                            }else{
+                                                if($onefile->isNew){
+                                                    echo "فشل التحميل";                                            
+                                                }
+                                            }
+                                            ?>
+                                        </h1>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <h1><?php echo $onefile->research->originalFileName ?></h1>
+                                    </div>
+                                </div>
+                            </div>
 
-                                    if( $onefile->status!="ok" && !$onefile->isNew){
-                                ?>
-                                <form action="<?php echo site_url("homecontroller/replacesinglefile") ?>" method="post" enctype="multipart/form-data">
-                                    <label class="myLabel">
-                                        <input type="file" class="replacesinglefile" required name="file" />
-                                        <span>اعادة تحميل الملف</span>
+                            <?php
+                                                  
+                                        }//foreach file
+                                        if($mycsv->areAllNewFilesUploadedOk()){
+                                            echo "<a href='".site_url("homecontroller/dobulkupload")."' class='btn btn-default'>Proceed</a>";
+                                        }else{
+                            ?>
+
+                            <div class="alert alert-dismissible alert-danger" style="text-align: center">
+                                <!--<button type="button" class="close" data-dismiss="alert">×</button>-->
+                                <strong>please fix these errors first</strong><br />
+                                you may need to fix it in your CSV and upload it again
+                            </div>
+                            <?php
+                                        }
+                                        
+                                    }//uploaded files
+                                    else{//uploaded csv
+                            ?>
+
+
+                            <div class="alert alert-dismissible alert-success" style="text-align: center">
+                                <!--<button type="button" class="close" data-dismiss="alert">×</button>-->
+                                <strong>تم اضافة ملف قائمة الابحاث بنجاح</strong>
+                            </div>
+
+
+                            <?php
+                                        
+                                        /*
+                                        foreach($mycsv->getAllNewFileNames() as $file){
+                                        echo $file."<br>";
+                                        }
+                                         */
+                            ?>
+
+                            <form method="post" action="<?php echo site_url("homecontroller/bulkloadfiles") ?>" enctype="multipart/form-data">
+
+                                <div class="form-group" style="float: right">
+                                    <label class="myLabel upload uploadmultfile">
+                                        <input type="file" class="uploadfile" required name="file[]" multiple />
+                                        <span>اختر الملفات الجديدة</span>
                                     </label>
-                                    <input type="hidden" name="oldfile" value="<?php  echo $onefile->research->originalFileName?>" />
-                                </form>
-                                <?php
-                                    }
-                                    
-                                ?>
-                            </div>
-                            <div class="col-md-2">
-                                <h1>
-                                    <?php 
-                                    if( $onefile->isNew){
-                                        echo "جديد";
-                                    }else{
-                                        echo "موجود مسبقآ";
-                                    }
-                                    ?>
-                                </h1>
-                            </div>
-                            <div class="col-md-3">
-                                <?php 
-                                    if( $onefile->status=="error" ){
-                                        if(!empty($onefile->error)){
-                                            echo $onefile->error."<br>";                                            
-                                        }
-                                    }
-                                    if( !$onefile->validationStatus){
-                                        echo "Some Fields Are Required !";
-                                    }
-                                ?>
-                            </div>
-                            <div class="col-md-2">
-                                <h1>
-                                    <?php 
-                                    if( $onefile->status=="ok"){
-                                        echo "تم التحميل";
-                                    }else{
-                                        if($onefile->isNew){
-                                            echo "فشل التحميل";                                            
-                                        }
-                                    }
-                                    ?>
-                                </h1>
-                            </div>
-                            <div class="col-md-3">
-                                <h1><?php echo $onefile->research->originalFileName ?></h1>
-                            </div>
-                        </div>
-                    </div>
+                                </div>
+                                <div class="clear"></div>
+                                <input type="submit" class="btn btn-primary" value="ادخال" style="display: block; float: right;" />
+                                <div class="clear"></div>
 
-                    <?php
-                                          
-                                }//foreach file
-                                if($mycsv->areAllNewFilesUploadedOk()){
-                                    echo "<a href='".site_url("homecontroller/dobulkupload")."' class='btn btn-default'>Proceed</a>";
-                                }else{
-                                    ?>
+                            </form>
+
+                            <br />
+                            <div class="alert alert-dismissible alert-info" style="text-align: right">
+                                <h1>اضغط على العدد للمزيد من المعلومات</h1>
+                                <br />
+                                <div class="block">
+                                    <button class="blockHead btn">بحث جديد  <?php echo $mycsv->reportEntry->numberOfNewFiles ?></button>
+                                    <div class="content" style="display: none">
+                                        <?php 
+                                        foreach($mycsv->getAllNewFileNames() as $file){
+                                            echo "<p>".$file."</p>";
+                                        }
+                                        ?>
+                                    </div>
+                                </div>
+
+                                <br />
+                                <div class="block">
+                                    <button class="blockHead btn">بحث قديم  <?php echo $mycsv->reportEntry->numberOfOldFiles ?></button>
+                                    <div class="content" style="display: none">
+                                        <?php 
+                                        foreach($mycsv->getAllOldFileNames() as $file){
+                                            echo "<p>".$file."</p>";
+                                        }
+                                        ?>
+                                    </div>
+                                </div>
+
+                                <br />
+                                <div class="block">
+                                    <button class="blockHead btn">باحثون جدد  <?php echo $mycsv->reportEntry->numberOfNewAuthors ?></button>
+                                    <div class="content" style="display: none">
+                                        <?php 
+                                        foreach($mycsv->reportEntry->newAuthors as $file){
+                                            echo "<p>".$file."</p>";
+                                        }
+                                        ?>
+                                    </div>
+                                </div>
+
+                                <br />
+                                <div class="block">
+                                    <button class="blockHead btn">باحثون قدامى  <?php echo $mycsv->reportEntry->numberOfOldAuthors ?></button>
+                                    <div class="content" style="display: none">
+                                        <?php 
+                                        foreach($mycsv->reportEntry->oldAuthors as $file){
+                                            echo "<p>".$file."</p>";
+                                        }
+                                        ?>
+                                    </div>
+                                </div>
+
+                                <br />
+                                <div class="block">
+                                    <button class="blockHead btn">ناشرون جدد  <?php echo $mycsv->reportEntry->numberOfNewPublishers ?></button>
+                                    <div class="content" style="display: none">
+                                        <?php 
+                                        foreach($mycsv->reportEntry->newPublishers as $file){
+                                            echo "<p>".$file."</p>";
+                                        }
+                                        ?>
+                                    </div>
+                                </div>
+
+                                <br />
+                                <div class="block">
+                                    <button class="blockHead btn">ناشرون قدامى  <?php echo $mycsv->reportEntry->numberOfOldPublishers ?></button>
+                                    <div class="content" style="display: none">
+                                        <?php 
+                                        foreach($mycsv->reportEntry->oldPublishers as $file){
+                                            echo "<p>".$file."</p>";
+                                        }
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <?php
+                                    }     
+                                }//uploaded csv
+                                else {// not upload csv
                                     
-                    <div class="alert alert-dismissible alert-danger" style="text-align: center">
-                        <!--<button type="button" class="close" data-dismiss="alert">×</button>-->
-                        <strong>please fix these errors first</strong><br />you may need to fix it in your CSV and upload it again
-                    </div>
+                                }
+                            ?>
+                            <div class="block">
+                                <a href="<?php echo site_url("homecontroller/cancelcsv"); ?>" class='btn btn-default'>الغاء</a>
+                            </div>
+                            <?php
+                                               
+                            }//end exist csv 
+                            else{// form upload csv
+                                if($success && !empty($success)){
+                                    
+                            ?>
+
+                            <div class="alert alert-dismissible alert-success" style="text-align: center">
+                                <!--<button type="button" class="close" data-dismiss="alert">×</button>-->
+                                <strong>تم اضافة قائمة الابحاث بنجاح</strong>
+                            </div>
+                            <?php
+                                }
+                                
+                            ?>
+                            <form method="post" action="<?php echo site_url("homecontroller/uploadcsv") ?>" enctype="multipart/form-data">
+
+                                <div class="form-group" style="float: right">
+                                    <label class="myLabel upload uploadonefile">
+                                        <input type="file" class="uploadfile" required name="file" accept=".csv" />
+                                        <span>اختر  ملف قائمة الابحاث</span>
+                                    </label>
+                                </div>
+                                <div class="clear"></div>
+                                <input type="submit" class="btn btn-primary" value="ادخال" style="display: block; float: right;" />
+                                <div class="clear"></div>
+                                <div style="">
+                                    <?php 
+                                if(isset($errors) && !empty($errors)){
+                                    
+                                    
+                                    ?>
+                                    <br />
+                                    <div class="alert alert-dismissible alert-danger" style="text-align: center">
+                                        <strong><?php  echo $errors ?></strong>
+                                    </div>
+                                    <br />
                                     <?php
                                 }
-             
-                            }//uploaded files
-                            else{//uploaded csv
-                    ?>
-
-
-                    <div class="alert alert-dismissible alert-success" style="text-align: center">
-                        <!--<button type="button" class="close" data-dismiss="alert">×</button>-->
-                        <strong>تم اضافة ملف قائمة الابحاث بنجاح</strong>
-                    </div>
-
-                    
-                    <?php
                                 
-                    /*
-                                foreach($mycsv->getAllNewFileNames() as $file){
-                                echo $file."<br>";
-                                }
-                                 */
-                    ?>
-
-                    <form method="post" action="<?php echo site_url("homecontroller/bulkloadfiles") ?>" enctype="multipart/form-data">
-
-                        <div class="form-group" style="float: right">
-                            <label class="myLabel upload uploadmultfile">
-                                <input type="file" class="uploadfile" required name="file[]" multiple />
-                                <span>اختر الملفات الجديدة</span>
-                            </label>
-                        </div>
-                        <div class="clear"></div>
-                        <input type="submit" class="btn btn-primary" value="ادخال" style="display: block; float: right;" />
-                        <div class="clear"></div>
-
-                    </form>
-                    
-                    <br />
-                    <div class="alert alert-dismissible alert-info" style="text-align: right">
-                        <h1>اضغط على العدد للمزيد من المعلومات</h1>
-                        <br />
-                        <div class="block">
-                            <button class="blockHead btn">بحث جديد  <?php echo $mycsv->reportEntry->numberOfNewFiles ?></button>
-                            <div class="content" style="display: none">
-                                <?php 
-                                foreach($mycsv->getAllNewFileNames() as $file){
-                                    echo "<p>".$file."</p>";
-                                }
-                                ?>
-                            </div>
-                        </div>
-
-                        <br />
-                        <div class="block">
-                            <button class="blockHead btn">بحث قديم  <?php echo $mycsv->reportEntry->numberOfOldFiles ?></button>
-                            <div class="content" style="display: none">
-                                <?php 
-                                foreach($mycsv->getAllOldFileNames() as $file){
-                                    echo "<p>".$file."</p>";
-                                }
-                                ?>
-                            </div>
-                        </div>
-
-                        <br />
-                        <div class="block">
-                            <button class="blockHead btn">باحثون جدد  <?php echo $mycsv->reportEntry->numberOfNewAuthors ?></button>
-                            <div class="content" style="display: none">
-                                <?php 
-                                foreach($mycsv->reportEntry->newAuthors as $file){
-                                    echo "<p>".$file."</p>";
-                                }
-                                ?>
-                            </div>
-                        </div>
-
-                        <br />
-                        <div class="block">
-                            <button class="blockHead btn">باحثون قدامى  <?php echo $mycsv->reportEntry->numberOfOldAuthors ?></button>
-                            <div class="content" style="display: none">
-                                <?php 
-                                foreach($mycsv->reportEntry->oldAuthors as $file){
-                                    echo "<p>".$file."</p>";
-                                }
-                                ?>
-                            </div>
-                        </div>
-
-                        <br />
-                        <div class="block">
-                            <button class="blockHead btn">ناشرون جدد  <?php echo $mycsv->reportEntry->numberOfNewPublishers ?></button>
-                            <div class="content" style="display: none">
-                                <?php 
-                                foreach($mycsv->reportEntry->newPublishers as $file){
-                                    echo "<p>".$file."</p>";
-                                }
-                                ?>
-                            </div>
-                        </div>
-
-                        <br />
-                        <div class="block">
-                            <button class="blockHead btn">ناشرون قدامى  <?php echo $mycsv->reportEntry->numberOfOldPublishers ?></button>
-                            <div class="content" style="display: none">
-                                <?php 
-                                foreach($mycsv->reportEntry->oldPublishers as $file){
-                                    echo "<p>".$file."</p>";
-                                }
-                                ?>
-                            </div>
-                        </div>
-                    </div>
-
-                    <?php
-                            }     
-                        }//uploaded csv
-                        else {// not upload csv
-                            
-                        }
-?>
-                                        <div class="block">
-                        <a href="<?php echo site_url("homecontroller/cancelcsv"); ?>" class='btn btn-default'>الغاء</a>
-                    </div>
-                    <?php
-                        
-                    }//end exist csv 
-                    else{// form upload csv
-                        if($success && !empty($success)){
-                            
-                    ?>
-
-                    <div class="alert alert-dismissible alert-success" style="text-align: center">
-                        <!--<button type="button" class="close" data-dismiss="alert">×</button>-->
-                        <strong>تم اضافة قائمة الابحاث بنجاح</strong>
-                    </div>
-                    <?php
-                        }
-                        
-                    ?>
-                    <form method="post" action="<?php echo site_url("homecontroller/uploadcsv") ?>" enctype="multipart/form-data">
-
-                        <div class="form-group" style="float: right">
-                            <label class="myLabel upload uploadonefile">
-                                <input type="file" class="uploadfile" required name="file" accept=".csv" />
-                                <span>اختر  ملف قائمة الابحاث</span>
-                            </label>
-                        </div>
-                        <div class="clear"></div>
-                        <input type="submit" class="btn btn-primary" value="ادخال" style="display: block; float: right;" />
-                        <div class="clear"></div>
-                        <div style="">
+                                
+                                    ?>
+                                </div>
+                            </form>
                             <?php 
-                        if(isset($errors) && !empty($errors)){
-                            
-                            
+                                
+                            }
                             ?>
-                            <br />
-                            <div class="alert alert-dismissible alert-danger" style="text-align: center">
-                                <strong><?php  echo $errors ?></strong>
-                            </div>
-                            <br />
-                            <?php
-                        }
-                        
-                        
-                            ?>
-                        </div>
-                    </form>
-                    <?php 
-                        
-                    }
-                    ?>
 
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
         </div>
     </div>
 

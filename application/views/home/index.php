@@ -28,7 +28,9 @@
         .pageContent {
             min-height: 700px;
         }
-
+        .cleaner{
+            margin-top:100px;
+        }
         .sideBar {
             display: none;
             float: right;
@@ -85,9 +87,25 @@
             <?php
             $this->load->view('shared/header');
             ?>
-            <div class="row">
+            <div class="row" style="min-height:300px;">
+                <div class="cleaner"></div>
                 <div class="col-md-4"></div>
-                <div class="col-md-4"><h2 style="text-align:center" class="alert alert-danger" > الموقع تحت الانشاء</h2></div>
+                <div class="col-md-4">
+                    <!--<h2 style="text-align:center" class="alert alert-danger" > الموقع تحت الانشاء</h2>-->
+                                    <form method="post" action="<?=site_url("homecontroller/submitsearch");?>">
+                <div id="">
+                                    <div id="searchBtnContainer">
+                    <input id="searchBtn" type="submit" value="بحث" />
+                </div>
+                    <!--input text-->
+                    <input id="searchInputText" name="query" dir="rtl" type="text" style="width:100%" />
+
+                </div>
+                    </form>
+                    <div align="center" style="text-align:center" >
+                    <h4>تشغيل تجريبي</h4>
+                    </div>
+                </div>
                  
             </div>
             <div class="row" style="text-align: center;">
@@ -129,14 +147,7 @@
                     
                 </div>
 
-                <div class="col-md-2 alert alert-warning" >
-           لإنشاء صفحتك على أبجدي
-<br><a href="mailto:database@abgadi.com">database@abgadi.com</a><br>
-للاستفسارات والمقترحات
-<br><a href="mailto:info@abgadi.com">info@abgadi.com</a><br>
-
-هاتف
-00201012890605
+                <div class="col-md-2 " >
          
                 </div>
                 <div class="col-md-1 " >

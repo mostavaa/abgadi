@@ -64,9 +64,15 @@
     <Compile Include="application\models\publishermodel.php" />
     <Compile Include="application\models\usermodel.php" />
     <Compile Include="application\models\homemodel.php" />
+    <Compile Include="application\views\home\allauthors.php" />
+    <Compile Include="application\views\home\allinstitues.php" />
+    <Compile Include="application\views\home\allpublishers.php" />
+    <Compile Include="application\views\home\backup.php" />
+    <Compile Include="application\views\home\data.php" />
     <Compile Include="application\views\home\displaydata.php" />
     <Compile Include="application\views\home\content.php" />
     <Compile Include="application\views\home\bulkaddpapers.php" />
+    <Compile Include="application\views\home\addToLibrary.php" />
     <Compile Include="application\views\home\listAllResearches.php" />
     <Compile Include="application\views\home\listoneauth.php" />
     <Compile Include="application\views\home\listonepub.php" />
@@ -74,6 +80,8 @@
     <Compile Include="application\views\home\listoneresearch.php" />
     <Compile Include="application\views\home\index.php" />
     <Compile Include="application\views\home\notpermitted.php" />
+    <Compile Include="application\views\home\team.php" />
+    <Compile Include="application\views\home\uploadpaper - Copy.php" />
     <Compile Include="application\views\home\uploadpaper.php" />
     <Compile Include="application\views\home\search.php" />
     <Compile Include="application\views\manipulate\manipulateone.php" />

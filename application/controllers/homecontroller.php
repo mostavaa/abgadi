@@ -51,6 +51,10 @@ class homecontroller extends CI_Controller {
         $this->load->view('home/index');
     } 
     
+    public function addtolibrary() {
+        //echo phpinfo();
+        $this->load->view('home/addToLibrary');
+    } 
 	public function team() {
         //echo phpinfo();
         $this->load->view('home/team');
@@ -139,6 +143,18 @@ class homecontroller extends CI_Controller {
         $pubs = $pub->findPublisher(array());
         $data["pubs"] = $pubs;
         $this->load->view('home/allpublishers' , $data);
+    }
+    
+    public function allinstitues(){
+
+        $inst = new institute($this);
+        $institutes =  $inst->findInstitute(array());
+        $data["institutes"] = $institutes;
+        
+        $pub = new publisher($this);
+        $pubs = $pub->findPublisher(array("instituteId"=>0));
+        $data["pubs"] = $pubs;
+        $this->load->view('home/allinstitues' , $data);
     }
 
     
