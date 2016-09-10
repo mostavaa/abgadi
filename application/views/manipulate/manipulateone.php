@@ -769,7 +769,7 @@
                         } else {
                             res = confirm("هل انت متأكد من التعديل ؟");
                             if (res == true) {
-                                $.post("<?php echo site_url("homecontroller/editonetable") ?>", "table=" + table
+                                $.post("<?php echo site_url("admin/editonetable") ?>", "table=" + table
                                     + "&inputId=" + inputId
                                     + "&inputText=" + inputText
                             + "&instituteId=" + instituteId
@@ -822,7 +822,7 @@
 
                         res = confirm("هل انت متأكد من مسح " + inputText + " ? ");
                         if (res == true) {
-                            $.post("<?php echo site_url("homecontroller/deleteontable") ?>", "table=" + table
+                            $.post("<?php echo site_url("admin/deleteontable") ?>", "table=" + table
                                     + "&inputId=" + inputId
                                     , function (res) {
                                         if (res == "success") {
@@ -895,7 +895,7 @@
                     } else {
                         res = confirm("هل انت متأكد من اضاقة " + inputText + " ؟");
                         if (res == true) {
-                            $.post("<?php echo site_url("homecontroller/addonetable") ?>", "table=" + table
+                            $.post("<?php echo site_url("admin/addonetable") ?>", "table=" + table
                                     + "&inputText=" + inputText
                                     + "&instituteId=" + instituteId
                                     + "&currentScientificDegree=" + currentScientificDegree

@@ -646,7 +646,7 @@ if (isset($errors) && !empty($errors)){
             <div class="content">
                 <div id="registration-form">
                     <div class='fieldset'>
-                        <form class="form form-inline"  method="post" action="<?php echo site_url("homecontroller/upload") ?>" enctype="multipart/form-data" id="myform">
+                        <form class="form form-inline"  method="post" action="<?php echo site_url("admin/formupload") ?>" enctype="multipart/form-data" id="myform">
 
 
                             <div class="row formElement">
@@ -1022,7 +1022,7 @@ if (isset($errors) && !empty($errors)){
             $(".modal-body").html("تمت الاضافة بنجاح");
 
             $("#myModal").modal();
-            window.location.href = "<?php echo site_url("homecontroller/displaydata") ?>"
+            window.location.href = "<?php echo site_url("admin/data/researches") ?>"
         <?php
             }
         ?>
@@ -1108,7 +1108,7 @@ if (isset($errors) && !empty($errors)){
 
 
                         if (type == "sientificDegree") {
-                            $.post("<?php echo site_url("homecontroller/addsientificDegree")?>", "val=" + textVal, function (res) {
+                            $.post("<?php echo site_url("admin/addsientificdegree")?>", "val=" + textVal, function (res) {
                                 if (res.split(",")[0] == "success") {
                                     $("#sientificDegree option:last").before("<option selected='selected' value='" + res.split(",")[1] + "'>" + textVal + "</option>");
                                     //$(".sientificDegree").attr("value", res.split(",")[1]).text(textVal);
@@ -1118,7 +1118,7 @@ if (isset($errors) && !empty($errors)){
                                 }
                             });
                         } else if (type == "newAuthAccurateSpecialization" || type == "accurateSpecialization") {
-                            $.post("<?php echo site_url("homecontroller/addaccurateSpecialization")?>", "val=" + textVal, function (res) {
+                            $.post("<?php echo site_url("admin/addaccurateSpecialization")?>", "val=" + textVal, function (res) {
                                 if (res.split(",")[0] == "success") {
                                     $("#accurateSpecialization option:last").before("<option selected='selected' value='" + res.split(",")[1] + "'>" + textVal + "</option>");
                                     //$(".accurateSpecialization").attr("value", res.split(",")[1]).text(textVal);
@@ -1130,7 +1130,7 @@ if (isset($errors) && !empty($errors)){
                                 }
                             });
                         } else if (type == "newAuthSpecialization" || type == "specialization") {
-                            $.post("<?php echo site_url("homecontroller/addspecialization")?>", "val=" + textVal, function (res) {
+                            $.post("<?php echo site_url("admin/addspecialization")?>", "val=" + textVal, function (res) {
                                 if (res.split(",")[0] == "success") {
                                     $("#specialization option:last").before("<option selected='selected' value='" + res.split(",")[1] + "'>" + textVal + "</option>");
                                     $("#newAuthSpecialization option:last").before("<option selected='selected' value='" + res.split(",")[1] + "'>" + textVal + "</option>");
@@ -1142,7 +1142,7 @@ if (isset($errors) && !empty($errors)){
                                 }
                             });
                         } else if (type == "newJob") {
-                            $.post("<?php echo site_url("homecontroller/addnewJob")?>", "val=" + textVal, function (res) {
+                            $.post("<?php echo site_url("admin/addnewJob")?>", "val=" + textVal, function (res) {
                                 if (res.split(",")[0] == "success") {
                                     $("#newJob option:last").before("<option selected='selected' value='" + res.split(",")[1] + "'>" + textVal + "</option>");
                                     //$(".newJob").attr("value", res.split(",")[1]).text(textVal);
@@ -1152,7 +1152,7 @@ if (isset($errors) && !empty($errors)){
                                 }
                             });
                         } else if (type == "researchType") {
-                            $.post("<?php echo site_url("homecontroller/addresearchType")?>", "val=" + textVal, function (res) {
+                            $.post("<?php echo site_url("admin/addresearchType")?>", "val=" + textVal, function (res) {
                                 if (res.split(",")[0] == "success") {
                                     $("#researchType option:last").before("<option selected='selected' value='" + res.split(",")[1] + "'>" + textVal + "</option>");
                                     //$(".researchType").attr("value", res.split(",")[1]).text(textVal);
@@ -1188,7 +1188,7 @@ if (isset($errors) && !empty($errors)){
                 if (val != null && val != "") {
                     res = confirm("هل انت متأكد من اضاقة " + val);
                     if (res == true) {
-                        $.post("<?php echo site_url("homecontroller/addInstitute") ?>", "val=" + val, function (res) {
+                        $.post("<?php echo site_url("admin/addinstitute") ?>", "val=" + val, function (res) {
                             if (res.split(",")[0] == "success") {
                                 $(".institutes option:last").before("<option selected='selected' value='" + res.split(",")[1] + "'>" + val + "</option>");
                                 $(".otherInstitute").attr("type", "hidden");
@@ -1226,7 +1226,7 @@ if (isset($errors) && !empty($errors)){
                     return;
                 }
                 if (id != null && id != "" && id != "-1" && id != "-2222") {
-                    $.post("<?php echo site_url("homecontroller/addAuthor") ?>",
+                    $.post("<?php echo site_url("admin/addauthor") ?>",
                         "newAuthName=" + name
                         + "&newJob=" + job
                         + "&newAuthSpecialization=" + specification
@@ -1272,7 +1272,7 @@ if (isset($errors) && !empty($errors)){
                     if (id != null && id != "" && id != "-1" && id != "-2222") {
                         res = confirm("هل انت متأكد من اضاقة " + val);
                         if (res == true) {
-                            $.post("<?php echo site_url("homecontroller/addPublisher") ?>", "val=" + val + "&id=" + id, function (res) {
+                            $.post("<?php echo site_url("admin/addpublisher") ?>", "val=" + val + "&id=" + id, function (res) {
                                 if (res.split(",")[0] == "success") {
                                     $(".pub option:last").before("<option selected='selected' value='" + res.split(",")[1] + "'>" + val + "</option>");
 
@@ -1308,7 +1308,7 @@ if (isset($errors) && !empty($errors)){
                 } else {
                     if (val != "-2222") {
 
-                        $.post("<?php echo site_url("homecontroller/getInstituteAuthors") ?>", "id=" + val, function (res) {
+                        $.post("<?php echo site_url("admin/getinstituteauthors") ?>", "id=" + val, function (res) {
                             authors = res.split("&");
                             for (var i = 0; i < authors.length - 1; i++) {
                                 author = authors[i].split(",");
@@ -1318,7 +1318,7 @@ if (isset($errors) && !empty($errors)){
                             }
                         });
 
-                        $.post("<?php echo site_url("homecontroller/getInstitutePublishers") ?>", "id=" + val, function (res) {
+                        $.post("<?php echo site_url("admin/getinstitutepublishers") ?>", "id=" + val, function (res) {
                             publishers = res.split("&");
                             for (var i = 0; i < publishers.length - 1; i++) {
                                 publiser = publishers[i].split(",");

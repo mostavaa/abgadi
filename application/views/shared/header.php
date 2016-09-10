@@ -13,7 +13,7 @@ $username = isset($this->session->userdata["username"]) && !empty($this->session
         <div class="newHeaderWrapper">
             <div class="row searchContainer">
                 <!--search box-->
-                <form method="post" action="<?=site_url("homecontroller/submitsearch");?>">
+                <form method="post" action="<?=site_url("search");?>">
                 <div id="searchTextBoxContainer">
                                     <div id="searchBtnContainer">
                     <input id="searchBtn" type="submit" value="بحث" />
@@ -54,10 +54,10 @@ $username = isset($this->session->userdata["username"]) && !empty($this->session
             <a href="<?php echo base_url()?>" class="heading">
                 <h4 class="headings">الصفحة الرئيسية</h4>
             </a>
-            <a href="<?= base_url()?>index.php/homecontroller/allinstitues" class="heading">
+            <a href="<?= base_url()?>index.php/institutes" class="heading">
                 <h4 class="headings">دوريات وأبحاث</h4>
             </a>
-            <a style="margin-left:0px!important" href="<?= base_url()?>index.php/homecontroller/addtolibrary" class="heading">
+            <a style="margin-left:0px!important" href="<?= base_url()?>index.php/add" class="heading">
                 <h4 class="headings" >أضف الى المكتبة</h4>
             </a>
                         <div id="blanck" style="

@@ -81,7 +81,7 @@
                             <?php 
                         if(isset($author->institute) && !empty($author->institute)){
                             ?>
-                            <a class="" href="<?= base_url("index.php/homecontroller/listoneinst/{$author->institute->id}")?>">
+                            <a class="" href="<?= base_url("index.php/institute/{$author->institute->id}")?>">
                                 <h4><?= $author->institute->instituteName?></h4>
                             </a>
                             <br />
@@ -156,7 +156,7 @@
                                 }
                             ?>
                             <div class="row">
-                                <a href="<?=base_url("index.php/homecontroller/listoneresearch/{$research->id}")?>">
+                                <a href="<?=base_url("index.php/research/{$research->id}")?>">
                                     <div class="alert <?=$classname?>" style="text-align: right ; margin:5px;">
                                         <div class="smallResearchCard">
 
@@ -189,7 +189,7 @@
                                     }
                             ?>
                             <div class="row">
-                                <a href="<?= base_url("index.php/homecontroller/listoneresearch/{$research->id}")?>">
+                                <a href="<?= base_url("index.php/research/{$research->id}")?>">
                                     <div class="alert <?=$classname?>" style="text-align: right ; margin:5px;">
                                         <div class="smallResearchCard">
 

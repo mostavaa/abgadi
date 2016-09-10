@@ -42,13 +42,13 @@
                             if(isset($pubs) && !empty($pubs)){
                                 foreach($pubs as $pub){
                                     $pubResearches = $pub->findMyResearches();
-                                    echo "<tr><td><a href='".base_url("index.php/homecontroller/listonepub/{$pub->id}")."'>{$pub->publisherName}</a></td>";
+                                    echo "<tr><td><a href='".base_url("index.php/publisher/{$pub->id}")."'>{$pub->publisherName}</a></td>";
                                     echo "<td>";
                                     if (!empty($pubResearches)){
                                         
                                         echo "<ul class='list-group'>";
                                         foreach($pubResearches  as $pubResearch){
-                                            echo "<li class='list-group-item'><a href='".base_url("index.php/homecontroller/listoneresearch/{$pubResearch->id}")."'>".$pubResearch->arabicHeadingName."</a></li>";
+                                            echo "<li class='list-group-item'><a href='".base_url("index.php/research/{$pubResearch->id}")."'>".$pubResearch->arabicHeadingName."</a></li>";
                                             
                                         }
                                         echo "</ul>";

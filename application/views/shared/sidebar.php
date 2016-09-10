@@ -28,14 +28,14 @@ $username = isset($this->session->userdata["username"]) && !empty($this->session
                 <?php
                 if ($username==""){
                 ?>
-                <a class="list-group-item active" href="<?php echo site_url("usercontroller/loginview") ?>">تسجيل الدخول</a>
+                <a class="list-group-item active" href="<?php echo site_url("login") ?>">تسجيل الدخول</a>
                 <?php
                 }else{
                 ?>
                 <div class="">
                     <p class="list-group-item active"><?php echo $username?></p>
                 </div>
-                <a class="list-group-item" href="<?php echo site_url("usercontroller/logout") ?>">تسجيل الخروج</a>
+                <a class="list-group-item" href="<?php echo site_url("logout") ?>">تسجيل الخروج</a>
                 <?php
                 }
                 ?>
@@ -43,14 +43,13 @@ $username = isset($this->session->userdata["username"]) && !empty($this->session
             </div>
 
             <a class="list-group-item" href="<?php echo base_url()?>">الصفحة الرئيسية</a>
-            <a class="list-group-item" href="#">دوريات وأبحاث</a>
-            <a class="list-group-item" href="#">أضف إلي المكتبة</a>
-            <a class="list-group-item" href="#">أحداث</a>
-            <a class="list-group-item" href="#">أبجدي</a>
+            <a class="list-group-item" href="<?= base_url()?>index.php/institutes">دوريات وأبحاث</a>
+            <a class="list-group-item" href="<?= base_url()?>index.php/add">أضف إلي المكتبة</a>
+            
             <?php
             if ($username!=""){
             ?>
-            <a class="list-group-item" href="<?php echo site_url("homecontroller/content")?>">التحكم</a>
+            <a class="list-group-item" href="<?php echo site_url("admin/manage")?>">التحكم</a>
 
             <?php
             }

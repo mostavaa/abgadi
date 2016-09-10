@@ -43,7 +43,7 @@
                                         $pubResearches = $publisher->findMyResearches();
                                         if($pubResearches && !empty($pubResearches)){
                                             foreach($pubResearches as $re){
-                                                echo "<a class='list-group-item' href='".base_url("index.php/homecontroller/listoneresearch/{$re->id}")."'>".$re->arabicHeadingName."</a>";
+                                                echo "<a class='list-group-item' href='".base_url("index.php/research/{$re->id}")."'>".$re->arabicHeadingName."</a>";
                                             }
                                         }
                                     }
@@ -63,7 +63,7 @@
                                 if (!empty($pubResearches)){
                                     echo "<div class='researches' style='display:none'>";                                                                        
                                     foreach($pubResearches  as $pubResearch){
-                                        echo "<a  class='list-group-item' href='".base_url("index.php/homecontroller/listoneresearch/{$pubResearch->id}")."'>".$pubResearch->arabicHeadingName."</a>";
+                                        echo "<a  class='list-group-item' href='".base_url("index.php/research/{$pubResearch->id}")."'>".$pubResearch->arabicHeadingName."</a>";
                                         
                                     }
                                     echo "</div>";                                    

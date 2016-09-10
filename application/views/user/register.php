@@ -34,7 +34,7 @@ if (isset($errors) && !empty($errors)){
             <?php
             $this->load->view('shared/header');
             ?>
-            <form class="form form-inline" method="post" action="<?php echo site_url("usercontroller/register") ?>" id="myform">
+            <form class="form form-inline" method="post" action="<?php echo site_url("userregister") ?>" id="myform">
                 <div class="row formElement">
 
                     <div class="col-md-6">

@@ -65,7 +65,7 @@ class permissions
             $type = "visitor";
         }
         if (!in_array($action, permissions::$perms[$type])){
-            redirect(base_url("index.php/homecontroller/notPermitted"));
+            redirect(base_url("index.php/nopermission"));
             return false;
         }else{
             return true;            

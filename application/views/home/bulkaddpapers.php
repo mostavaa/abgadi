@@ -83,7 +83,7 @@ if(isset($mycsv) && !empty($mycsv)){
                                             if( $onefile->status!="ok" || !$onefile->isNew){
                                                 
                                         ?>
-                                        <form action="<?php echo site_url("homecontroller/replacesinglefile") ?>" method="post" enctype="multipart/form-data">
+                                        <form action="<?php echo site_url("admin/replace") ?>" method="post" enctype="multipart/form-data">
                                             <label class="myLabel">
                                                 <input type="file" class="replacesinglefile" required name="file" />
                                                 <span>اعادة تحميل الملف</span>
@@ -141,7 +141,7 @@ if(isset($mycsv) && !empty($mycsv)){
                                                   
                                         }//foreach file
                                         if($mycsv->areAllNewFilesUploadedOk()){
-                                            echo "<a href='".site_url("homecontroller/dobulkupload")."' class='btn btn-default'>Proceed</a>";
+                                            echo "<a href='".site_url("admin/dobulk")."' class='btn btn-default'>Proceed</a>";
                                         }else{
                             ?>
 
@@ -173,7 +173,7 @@ if(isset($mycsv) && !empty($mycsv)){
                                          */
                             ?>
 
-                            <form method="post" action="<?php echo site_url("homecontroller/bulkloadfiles") ?>" enctype="multipart/form-data">
+                            <form method="post" action="<?php echo site_url("admin/loadbulkfiles") ?>" enctype="multipart/form-data">
 
                                 <div class="form-group" style="float: right">
                                     <label class="myLabel upload uploadmultfile">
@@ -271,7 +271,7 @@ if(isset($mycsv) && !empty($mycsv)){
                                 }
                             ?>
                             <div class="block">
-                                <a href="<?php echo site_url("homecontroller/cancelcsv"); ?>" class='btn btn-default'>الغاء</a>
+                                <a href="<?php echo site_url("admin/cancel"); ?>" class='btn btn-default'>الغاء</a>
                             </div>
                             <?php
                                                
@@ -289,7 +289,7 @@ if(isset($mycsv) && !empty($mycsv)){
                                 }
                                 
                             ?>
-                            <form method="post" action="<?php echo site_url("homecontroller/uploadcsv") ?>" enctype="multipart/form-data">
+                            <form method="post" action="<?php echo site_url("admin/uploadcsv") ?>" enctype="multipart/form-data">
 
                                 <div class="form-group" style="float: right">
                                     <label class="myLabel upload uploadonefile">

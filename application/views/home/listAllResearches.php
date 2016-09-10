@@ -79,7 +79,7 @@
                             }
                     ?>
                     <div class="row">
-                        <a href="<?= base_url("index.php/homecontroller/listoneresearch/{$research->id}")?>">
+                        <a href="<?= base_url("index.php/research/{$research->id}")?>">
                             <div class="alert <?=$classname?>" style="text-align: right ; margin:5px;">
                                 <div class="smallResearchCard">
 

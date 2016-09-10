@@ -41,7 +41,7 @@ class usercontroller extends CI_Controller {
         }
         $user = new user($this);
         if($user->login()){
-            redirect(base_url("index.php/homecontroller/content"));
+            redirect(base_url("index.php/admin/manage"));
             return;
         }
         $data["username"] = $this->input->post("username");
@@ -56,7 +56,7 @@ class usercontroller extends CI_Controller {
         $user = new user($this);
         if ($user->register()){
                 if($user->login()){
-                    redirect(base_url("index.php/homecontroller/content"));
+                    redirect(base_url("index.php/admin/manage"));
                     return;
                 }else{
                     

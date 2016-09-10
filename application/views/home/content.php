@@ -35,12 +35,12 @@
 
                 <div class="contentList">
                     <ul>
-                        <li class="btn btn-default"><a  href="<?php echo site_url("homecontroller/uploadpaperview")?>">اضافة محتوى</a></li>
-                        <li class="btn btn-default"><a class=""href="<?php echo site_url("homecontroller/bulkaddpapers")?>" >اضافة قائمة ابحاث</a></li>
-                        <li class="btn btn-default"><a class="" href="<?php echo site_url("homecontroller/data")?>">عرض قاعدة البيانات</a></li>
-                        <li class="btn btn-default"><a class="" href="<?php echo site_url("homecontroller/manipulateone")?>">تعديل البيانات</a></li>
-                        <li class="btn btn-default"><a class="" href="<?php echo site_url("homecontroller/backuppapers")?>">انشاء نقطة استرجاع</a></li>
-                        <li class="btn btn-default"><a class="" href="<?php echo site_url("homecontroller/backup")?>">نقاط الاسترجاع</a></li>
+                        <li class="btn btn-default"><a  href="<?php echo site_url("admin/upload")?>">اضافة محتوى</a></li>
+                        <li class="btn btn-default"><a class=""href="<?php echo site_url("admin/bulk")?>" >اضافة قائمة ابحاث</a></li>
+                        <li class="btn btn-default"><a class="" href="<?php echo site_url("admin/data")?>">عرض قاعدة البيانات</a></li>
+                        <li class="btn btn-default"><a class="" href="<?php echo site_url("admin/edit")?>">تعديل البيانات</a></li>
+                        <li class="btn btn-default"><a class="" href="<?php echo site_url("admin/backuppapers")?>">انشاء نقطة استرجاع</a></li>
+                        <li class="btn btn-default"><a class="" href="<?php echo site_url("admin/backup")?>">نقاط الاسترجاع</a></li>
                     </ul>
                 </div>
 

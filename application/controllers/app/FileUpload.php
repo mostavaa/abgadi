@@ -94,7 +94,7 @@ class FileUpload
                 $mycsv->didUploadFiles = true;
                 $serialized =  serialize($mycsv);
                 $this->CI->session->set_userdata("mycsv" , $serialized);
-                redirect(base_url("index.php/homecontroller/bulkaddpapers"));
+                redirect(base_url("index.php/admin/bulk"));
             }
 
         }

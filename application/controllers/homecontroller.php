@@ -46,6 +46,12 @@ class homecontroller extends CI_Controller {
         }
         return false;
     }
+    /*
+    public function product_lookup_by_id($par , $par2){
+        echo $par.$par2;
+    }
+    */
+    #region pages
 	public function index() {
         //echo phpinfo();
         $this->load->view('home/index');
@@ -65,44 +71,6 @@ class homecontroller extends CI_Controller {
             return ;
         }
         $this->load->view('home/search');
-        
-    }
-
-	public function replacesinglefile(){
-        $oldfilename= $this->input->post("oldfile");
-        $mycsv = $this->session->userdata('mycsv');
-        if(isset($mycsv) && !empty($mycsv)){
-            $mycsv = unserialize($mycsv);
-        }
-        $myfile = &$mycsv->findFileByName($oldfilename);
-        if($myfile){
-            if($myfile->research->originalFileName== $_FILES['file']['name']){
-                
-                $config = array();
-                $config['upload_path'] = "./tmp/";
-                $config['allowed_types'] = 'pdf|doc|docx';
-                $config ['max_size'] = '4096';
-                
-                $newName =$this->generateRandomName();
-                $config['file_name'] = $newName;
-                $myfile->research->researchFileName = $newName.".".pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
-                
-                $this->upload->initialize($config);
-                if (!$this->upload->do_upload("file"))
-                {
-                    $errors = $this->upload->display_errors();
-                    $status="error";
-                    $myfile->status = $status;
-                    $myfile->error = $errors;
-                }else{
-                    $myfile->status = "ok";
-                }
-                $serialized =  serialize($mycsv);
-                $this->session->set_userdata("mycsv" , $serialized);
-                redirect(base_url("index.php/homecontroller/bulkaddpapers"));
-            }
-        }
-        redirect(base_url("index.php/homecontroller/bulkaddpapers"));
         
     }
 
@@ -158,209 +126,35 @@ class homecontroller extends CI_Controller {
     }
 
     
-    public function displaydata($page=1){
-        if (!permissions::Authorized("homecontroller/displaydata" , $this)){
+    
+    public function manipulateone(){
+        if (!permissions::Authorized("homecontroller/manipulateone" , $this)){
             return ;
         }
-        
-        
-        $research = new research($this);
-        
-        $data["page"]=$page;
-        $perpage = 10;
-        $totalCount =$research->getCountofResearchs();
-        $research->pagination = new Pagination($page , $perpage , $totalCount);
-        $data["totalPages"]= $research->pagination->total_pages();
-        $research->loadpublisher = true;
-        $researchs =  $research->getAllResearchesOrderdByEnterTimeDesc();
-        $data["researchs"] = $researchs;
-        $this->load->view('home/displaydata' , $data);
-    }
-    
-    public function displaydatapublishdate($page=1){
-        if (!permissions::Authorized("homecontroller/displaydata" , $this)){
-            return ;
-        }
-        
-        
-        $research = new research($this);
-        
-        $data["page"]=$page;
-        $perpage = 10;
-        $totalCount =$research->getCountofResearchs();
-        $research->pagination = new Pagination($page , $perpage , $totalCount);
-        $data["totalPages"]= $research->pagination->total_pages();
-        $research->loadpublisher = true;
-        $researchs =  $research->getAllResearchesOrderdByPublishDateDesc();
-        $data["researchs"] = $researchs;
-        $this->load->view('home/displaydata' , $data);
-    }
-    
-    public function displaydataresearch($page=1){
-        if (!permissions::Authorized("homecontroller/displaydata" , $this)){
-            return ;
-        }
-        
-        
-        $research = new research($this);
-        
-        $data["page"]=$page;
-        $perpage = 10;
-        $totalCount =$research->getCountofResearchs();
-        $research->pagination = new Pagination($page , $perpage , $totalCount);
-        $data["totalPages"]= $research->pagination->total_pages();
-        $research->loadpublisher = true;
-        $researchs =  $research->getAllResearchesOrderdByResearchDesc();
-        $data["researchs"] = $researchs;
-        $this->load->view('home/displaydata' , $data);
-    }
-    
-    
-    
-    
-    
-    
-    public function displaydatapublisher($page=1){
-        if (!permissions::Authorized("homecontroller/displaydata" , $this)){
-            return ;
-        }
-        
-        
-        $research = new research($this);
-        
-        $data["page"]=$page;
-        $perpage = 10;
-        $totalCount =$research->getCountofResearchs();
-        $research->pagination = new Pagination($page , $perpage , $totalCount);
-        $data["totalPages"]= $research->pagination->total_pages();
-        $research->loadpublisher = true;
-        $researchs =  $research->getAllResearchesOrderdByPublisherDesc();
-        $data["researchs"] = $researchs;
-        $this->load->view('home/displaydata' , $data);
-    }
-    
-    public function displaydataauthor($page=1){
-        if (!permissions::Authorized("homecontroller/displaydata" , $this)){
-            return ;
-        }
-        
-        
-        $research = new research($this);
-        
-        $data["page"]=$page;
-        $perpage = 10;
-        $totalCount =$research->getCountofResearchs();
-        $research->pagination = new Pagination($page , $perpage , $totalCount);
-        $data["totalPages"]= $research->pagination->total_pages();
-        $research->loadpublisher = true;
-        $researchs =  $research->getAllResearchesOrderdByAuthorDesc();
-        $data["researchs"] = $researchs;
-        $this->load->view('home/displaydata' , $data);
-    }
-    
-
-    
-    
-    
-    
-    private function generateRandomName(){
-        //get new file name
-        while(true){
-            $newName = tools::generateRandomWord(8);
-            $research = array("researchFileName"=>$newName);
-            
-            $research  = $this->researchmodel->findResearch($research);
-            if(!$research){
-                break;
-            }
-        }
-        
-        return $newName;
-        
-        
-    }
-    function doUpload($path="./pdfs" , $fileName = "1")
-    {
-        if (!permissions::Authorized("homecontroller/doUpload" , $this)){
-            return false;
-        }
-        $config = array();
-        $config['upload_path'] = $path;
-        $config['allowed_types'] = 'pdf|doc|docx';
-        $config ['max_size'] = '8096';
-        $config['file_name'] = $fileName;
-
-        $config['overwrite']     = TRUE;
-        $this->upload->initialize($config);
-        if (!$this->upload->do_upload("file"))
-        {
-            $errors = $this->upload->display_errors();
-            
-            // echo "<pre>";
-            
-            // print_r($errors);
-            // echo "</pre>";
-            
-        }
-        else
-        {
-            
-            
-            return true;
-            // Code After Files Upload Success GOES HERE
-            //echo "<pre>";
-            //print_r($this->upload->data());
-            //echo "</pre>";
-            //fwrite($file, $this->upload->data()['file_name']."\n"); 
-            //rename($this->upload->data()['full_path'], $i.$this->upload->data()['file_ext']);
-            
-        }
-
-
-        return false;
-    }
-    private function set_upload_options()
-    {   
-        //  upload an image options
-        $config = array();
-        $config['upload_path'] = "./images/home/";
-        $config['allowed_types'] = 'gif|jpg|png|jpeg';
-        $config ['max_size'] = '8048';
-        $config['overwrite']     = TRUE;
-
-
-        return $config;
-    }
-    
-    
-    public function uploadpaperview(){
-        
-        if (!permissions::Authorized("homecontroller/uploadpaperview" , $this)){
-            return ;
-        }
-        $publisher = new publisher($this);
-        $author = new author($this);
-        $accurateSpecialization = new accurateSpecialization($this);
-        $specializaton = new specialization($this);
-        $researchtype = new researchtype($this);
+        $specialization = new specialization($this);
+        $accSpecialization = new accurateSpecialization($this);
+        $secientificDegree = new scientificdegree($this);
+        $reserchType = new researchtype($this);
         $institute = new institute($this);
         $job = new job($this);
-        $sc = new scientificdegree($this);
         
-        $data["publishers"]= $publisher->findPublisher(array());
-        $data["authors"] = $author->findauthor(array());
-        $data["specializatons"] = $specializaton->findspecialization(array());
-        
-        $data["researchtypes"] = $researchtype->findresearchtype(array());
-        
-        $data["accurateSpecializations"] = $accurateSpecialization->findaccurateSpecialization(array());
-
+        $data["specializations"] = $specialization->findspecialization(array());
+        $data["accSpecializations"] = $accSpecialization->findaccurateSpecialization(array());
+        $data["scientificDegrees"] = $secientificDegree->findscientificdegree(array());
+        $data["researchTypes"] = $reserchType->findresearchtype(array());
         $data["institutes"] = $institute->findInstitute(array());
         $data["jobs"] = $job->findjob(array());
-        $data["scs"] = $sc->findscientificdegree(array());
         
-        $this->load->view('home/uploadpaper' , $data);
+        $author = new author($this);
+        $author->loadaccurateSpecialization = $author->loadcurrentScientificDegree
+        = $author->loadinstitute = $author->loadjob = $author->loadspecialization = true;
+        $data["authors"] = $author->findauthor(array());
         
+        $publisher = new publisher($this);
+        $publisher->loadinstitute = true;
+        $data["publishers"] = $publisher->findPublisher(array());
+        
+        $this->load->view("manipulate/manipulateone" , $data);
     }
     public function upload(){
         if (!permissions::Authorized("homecontroller/upload" , $this)){
@@ -493,10 +287,437 @@ class homecontroller extends CI_Controller {
         }else{
             $this->session->set_flashdata("success" , "true");
 
-            redirect(base_url("index.php/homecontroller/uploadpaperview"));
+            redirect(base_url("index.php/admin/upload"));
         }
         
     }
+    
+    public function uploadpaperview(){
+        
+        if (!permissions::Authorized("homecontroller/uploadpaperview" , $this)){
+            return ;
+        }
+        $publisher = new publisher($this);
+        $author = new author($this);
+        $accurateSpecialization = new accurateSpecialization($this);
+        $specializaton = new specialization($this);
+        $researchtype = new researchtype($this);
+        $institute = new institute($this);
+        $job = new job($this);
+        $sc = new scientificdegree($this);
+        
+        $data["publishers"]= $publisher->findPublisher(array());
+        $data["authors"] = $author->findauthor(array());
+        $data["specializatons"] = $specializaton->findspecialization(array());
+        
+        $data["researchtypes"] = $researchtype->findresearchtype(array());
+        
+        $data["accurateSpecializations"] = $accurateSpecialization->findaccurateSpecialization(array());
+
+        $data["institutes"] = $institute->findInstitute(array());
+        $data["jobs"] = $job->findjob(array());
+        $data["scs"] = $sc->findscientificdegree(array());
+        
+        $this->load->view('home/uploadpaper' , $data);
+        
+    }
+    public function backup(){
+        if (!permissions::Authorized("homecontroller/backup" , $this)){
+            return ;
+        }
+        
+        $this->load->view("home/backup");
+    }
+    public function notPermitted(){
+        $this->load->view("home/notpermitted");
+    }
+    
+    public function displaydata($page=1){
+        if (!permissions::Authorized("homecontroller/displaydata" , $this)){
+            return ;
+        }
+        
+        
+        $research = new research($this);
+        
+        $data["page"]=$page;
+        $perpage = 10;
+        $totalCount =$research->getCountofResearchs();
+        $research->pagination = new Pagination($page , $perpage , $totalCount);
+        $data["totalPages"]= $research->pagination->total_pages();
+        $research->loadpublisher = true;
+        $researchs =  $research->getAllResearchesOrderdByEnterTimeDesc();
+        $data["researchs"] = $researchs;
+        $this->load->view('home/displaydata' , $data);
+    }
+    
+    public function displaydatapublishdate($page=1){
+        if (!permissions::Authorized("homecontroller/displaydata" , $this)){
+            return ;
+        }
+        
+        
+        $research = new research($this);
+        
+        $data["page"]=$page;
+        $perpage = 10;
+        $totalCount =$research->getCountofResearchs();
+        $research->pagination = new Pagination($page , $perpage , $totalCount);
+        $data["totalPages"]= $research->pagination->total_pages();
+        $research->loadpublisher = true;
+        $researchs =  $research->getAllResearchesOrderdByPublishDateDesc();
+        $data["researchs"] = $researchs;
+        $this->load->view('home/displaydata' , $data);
+    }
+    
+    public function displaydataresearch($page=1){
+        if (!permissions::Authorized("homecontroller/displaydata" , $this)){
+            return ;
+        }
+        
+        
+        $research = new research($this);
+        
+        $data["page"]=$page;
+        $perpage = 10;
+        $totalCount =$research->getCountofResearchs();
+        $research->pagination = new Pagination($page , $perpage , $totalCount);
+        $data["totalPages"]= $research->pagination->total_pages();
+        $research->loadpublisher = true;
+        $researchs =  $research->getAllResearchesOrderdByResearchDesc();
+        $data["researchs"] = $researchs;
+        $this->load->view('home/displaydata' , $data);
+    }
+    
+    public function editpaper($researchId , $data=null){
+        if (!permissions::Authorized("homecontroller/editpaper" , $this)){
+            return ;
+        }
+        
+        $researchId = intval($researchId);
+        if(!isset($researchId) || empty($researchId)){
+            return;
+        }
+        $research = new research($this);
+        $research->loadpublisher = $research->loadaccurateSpecialization = $research->loadresearchType
+        = $research->loadspecialization = true;
+        $res = $research->findResearch(array("id"=>$researchId));
+        if($res && !empty($res)){
+            $research =  $data["research"]  = $res[0];
+        }else{
+            return;
+        }
+        $publisher = new publisher($this);
+        $author = new author($this);
+        $accurateSpecialization = new accurateSpecialization($this);
+        $specializaton = new specialization($this);
+        $researchtype = new researchtype($this);
+        $institute = new institute($this);
+        $job = new job($this);
+        $sc = new scientificdegree($this);
+        
+        $data["publishers"]= $publisher->findPublisher(array());
+        $data["authors"] = $author->findauthor(array());
+        $data["specializatons"] = $specializaton->findspecialization(array());
+        
+        $data["researchtypes"] = $researchtype->findresearchtype(array());
+        
+        $data["accurateSpecializations"] = $accurateSpecialization->findaccurateSpecialization(array());
+
+        $data["institutes"] = $institute->findInstitute(array());
+        $data["jobs"] = $job->findjob(array());
+        $data["scs"] = $sc->findscientificdegree(array());
+        
+
+        
+
+        
+        $data["arabicHeading"] = $research->arabicHeadingName;
+        $data["englishHeading"] = $research->englishHeadingName;
+        $data["arabicDescription"] = $research->arabicDescription;
+        $data["englishDescription"] = $research->englishDescription;
+        $data["keyword"] = $research->keyWords;//
+        $data["researchNumber"] = $research->researchNumber;
+        $data["publishDate"] = $research->publishDate;
+        $data["publishCountry"] = $research->publishCountry;
+        $data["researchType"] = $research->researchType->id;
+        if(isset($research->specialization) && !empty($research->specialization))
+            $data["specialization"] = $research->specialization->id;
+        if(isset($research->accurateSpecialization) && !empty($research->accurateSpecialization))            
+            $data["accurateSpecialization"] = $research->accurateSpecialization->id;
+        $data["pagesCount"] = $research->pagesCount;
+        $data["pagesFrom"] = $research->pagesFrom;
+        $data["pagesTo"] = $research->pagesTo;
+        $data["publisher"] = $research->publisher->id;
+        
+        $research->getResearchAuthors();
+        
+        $authArr = array();
+        foreach($research->authorResearches as $authResearch){
+            if($authResearch->authorNumber==0){
+                $data["mainAuthorName"] = $authResearch->author->id;    
+            }else if ($authResearch->authorNumber==1){
+                $data["firstAuthorName"] = $authResearch->author->id;                    
+            }else if ($authResearch->authorNumber==2){
+                $data["secondAuthorName"] = $authResearch->author->id;                    
+            }else if ($authResearch->authorNumber==3){
+                $data["thirdAuthorName"] = $authResearch->author->id;                    
+            }else if ($authResearch->authorNumber==4){
+                $data["fourthAuthorName"] = $authResearch->author->id;                    
+            }else if ($authResearch->authorNumber==5){
+                $data["fifthAuthorName"] = $authResearch->author->id;                    
+            }else if ($authResearch->authorNumber==6){
+                $data["sixthAuthorName"] = $authResearch->author->id;                    
+            }else if ($authResearch->authorNumber==7){
+                $data["seventhAuthorName"] = $authResearch->author->id;                    
+            }else if ($authResearch->authorNumber==8){
+                $data["eighthAuthorName"] = $authResearch->author->id;                    
+            }else if ($authResearch->authorNumber==9){
+                $data["ninthAuthorName"] = $authResearch->author->id;                    
+            }else if ($authResearch->authorNumber==10){
+                $data["tenthAuthorName"] = $authResearch->author->id;                    
+            }
+            $author = $authResearch->author ;
+            $authArr[] = $author->name;
+            
+        } 
+        
+        $this->load->view('home/uploadpaper' , $data);
+    }
+    
+    public function listallresearches($filenames=array()){
+        
+        $research = new research($this);
+        $research->loadpublisher = true;
+        $res = $research->findResearchesByFileNames($filenames);
+        //$res =  $research->findResearch(array());
+        $data=null;
+        if($res && !empty($res)){
+            $data['researches'] = $res;
+        }
+        $this->load->view("home/listAllResearches" , $data);
+    }
+    
+    public function listoneresearch($id=""){
+        $research = new research($this);
+        $research->loadaccurateSpecialization = $research->loadpublisher
+        =$research->loadresearchType = $research->loadspecialization = true;
+        $res = $research->findResearch(array("id"=>$id));
+        $data=null;
+        if($res && !empty($res)){
+            $data['visitCount'] = $research->visitCount($id);
+            $data['downloadCount'] = $research->downloadCount($id);
+            $data['research'] = $res[0];
+        }
+        
+        $this->load->view("home/listoneresearch" , $data);
+        $ip = $this->getUserIp();
+        $country = $this->getIpCountry($ip);
+        
+        if ( $this->getIpCountry($ip)){
+
+            try
+            {
+                $research->Visit($ip , $country , $id);
+            }
+            catch (Exception $exception)
+            {
+                return;
+            }
+        }
+        
+        
+        
+    }
+    public function listoneinst($instituteId=0){
+        $institute = new institute($this);
+        $res = $institute->findInstitute(array("id"=>$instituteId));
+        $data=null;        
+        if($res && !empty($res)){
+            $data['institute'] = $res[0];
+        }
+        $this->load->view("home/listoneinst" , $data);
+        
+    }
+    
+    public function listonepub($pubId=0){
+        $publisher = new publisher($this);
+        $publisher->loadinstitute = true;
+        $res = $publisher->findPublisher(array("id"=>$pubId));
+        $data=null;        
+        if($res && !empty($res)){
+            $data['publisher'] = $res[0];
+        }
+        $this->load->view("home/listonepub" , $data);
+        
+    }
+    
+    public function listoneauth($authId=0){
+        $author = new author($this);
+        $author->loadaccurateSpecialization = $author->loadinstitute = 
+            $author->loadcurrentScientificDegree = $author->loadjob 
+            = $author->loadspecialization = true;
+        $res = $author->findauthor(array("id"=>$authId));
+        $data=null;        
+        if($res && !empty($res)){
+            $data['author'] = $res[0];
+        }
+        $this->load->view("home/listoneauth" , $data);
+        
+    }
+    public function displaydatapublisher($page=1){
+        if (!permissions::Authorized("homecontroller/displaydata" , $this)){
+            return ;
+        }
+        
+        
+        $research = new research($this);
+        
+        $data["page"]=$page;
+        $perpage = 10;
+        $totalCount =$research->getCountofResearchs();
+        $research->pagination = new Pagination($page , $perpage , $totalCount);
+        $data["totalPages"]= $research->pagination->total_pages();
+        $research->loadpublisher = true;
+        $researchs =  $research->getAllResearchesOrderdByPublisherDesc();
+        $data["researchs"] = $researchs;
+        $this->load->view('home/displaydata' , $data);
+    }
+    
+    public function displaydataauthor($page=1){
+        if (!permissions::Authorized("homecontroller/displaydata" , $this)){
+            return ;
+        }
+        
+        
+        $research = new research($this);
+        
+        $data["page"]=$page;
+        $perpage = 10;
+        $totalCount =$research->getCountofResearchs();
+        $research->pagination = new Pagination($page , $perpage , $totalCount);
+        $data["totalPages"]= $research->pagination->total_pages();
+        $research->loadpublisher = true;
+        $researchs =  $research->getAllResearchesOrderdByAuthorDesc();
+        $data["researchs"] = $researchs;
+        $this->load->view('home/displaydata' , $data);
+    }
+    
+
+    
+    
+    #endregion
+	
+    public function replacesinglefile(){
+        $oldfilename= $this->input->post("oldfile");
+        $mycsv = $this->session->userdata('mycsv');
+        if(isset($mycsv) && !empty($mycsv)){
+            $mycsv = unserialize($mycsv);
+        }
+        $myfile = &$mycsv->findFileByName($oldfilename);
+        if($myfile){
+            if($myfile->research->originalFileName== $_FILES['file']['name']){
+                
+                $config = array();
+                $config['upload_path'] = "./tmp/";
+                $config['allowed_types'] = 'pdf|doc|docx';
+                $config ['max_size'] = '4096';
+                
+                $newName =$this->generateRandomName();
+                $config['file_name'] = $newName;
+                $myfile->research->researchFileName = $newName.".".pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
+                
+                $this->upload->initialize($config);
+                if (!$this->upload->do_upload("file"))
+                {
+                    $errors = $this->upload->display_errors();
+                    $status="error";
+                    $myfile->status = $status;
+                    $myfile->error = $errors;
+                }else{
+                    $myfile->status = "ok";
+                }
+                $serialized =  serialize($mycsv);
+                $this->session->set_userdata("mycsv" , $serialized);
+                redirect(base_url("index.php/admin/bulk"));
+            }
+        }
+        redirect(base_url("index.php/admin/bulk"));
+        
+    }
+
+    
+    
+    private function generateRandomName(){
+        //get new file name
+        while(true){
+            $newName = tools::generateRandomWord(8);
+            $research = array("researchFileName"=>$newName);
+            
+            $research  = $this->researchmodel->findResearch($research);
+            if(!$research){
+                break;
+            }
+        }
+        
+        return $newName;
+        
+        
+    }
+    function doUpload($path="./pdfs" , $fileName = "1")
+    {
+        if (!permissions::Authorized("homecontroller/doUpload" , $this)){
+            return false;
+        }
+        $config = array();
+        $config['upload_path'] = $path;
+        $config['allowed_types'] = 'pdf|doc|docx';
+        $config ['max_size'] = '8096';
+        $config['file_name'] = $fileName;
+
+        $config['overwrite']     = TRUE;
+        $this->upload->initialize($config);
+        if (!$this->upload->do_upload("file"))
+        {
+            $errors = $this->upload->display_errors();
+            
+            // echo "<pre>";
+            
+            // print_r($errors);
+            // echo "</pre>";
+            
+        }
+        else
+        {
+            
+            
+            return true;
+            // Code After Files Upload Success GOES HERE
+            //echo "<pre>";
+            //print_r($this->upload->data());
+            //echo "</pre>";
+            //fwrite($file, $this->upload->data()['file_name']."\n"); 
+            //rename($this->upload->data()['full_path'], $i.$this->upload->data()['file_ext']);
+            
+        }
+
+
+        return false;
+    }
+    private function set_upload_options()
+    {   
+        //  upload an image options
+        $config = array();
+        $config['upload_path'] = "./images/home/";
+        $config['allowed_types'] = 'gif|jpg|png|jpeg';
+        $config ['max_size'] = '8048';
+        $config['overwrite']     = TRUE;
+
+
+        return $config;
+    }
+    
+    
 
     public function deletepaper($paperId){
         $research = new research($this);
@@ -512,11 +733,11 @@ class homecontroller extends CI_Controller {
                 $research->deleteAuthorResearch();
                 
                 $research->delete();
-                redirect(base_url("index.php/homecontroller/displaydata"));
+                redirect(base_url("index.php/admin/data/researches"));
             }
         }
     }
-    public function getInstituteAuthors(){
+    public function getinstituteauthors(){
         if (!permissions::Authorized("homecontroller/getInstituteAuthors" , $this)){
             return ;
         }
@@ -533,14 +754,11 @@ class homecontroller extends CI_Controller {
             }
         }
     }
-    public function notPermitted(){
-        $this->load->view("home/notpermitted");
-    }
 
     
     
     //fine
-    public function addAuthor(){
+    public function addauthor(){
         if (!permissions::Authorized("homecontroller/addAuthor" , $this)){
             return ;
         }
@@ -600,7 +818,7 @@ class homecontroller extends CI_Controller {
         }
     }
 
-    public function addresearchType(){
+    public function addresearchtype(){
         if (!permissions::Authorized("homecontroller/addresearchType" , $this)){
             return ;
         }
@@ -613,7 +831,7 @@ class homecontroller extends CI_Controller {
         }
     }
     
-    public function addnewJob(){
+    public function addnewjob(){
         if (!permissions::Authorized("homecontroller/addnewJob" , $this)){
             return ;
         }
@@ -638,7 +856,7 @@ class homecontroller extends CI_Controller {
             echo "success,".$id;
         }
     }
-    public function addaccurateSpecialization(){
+    public function addaccuratespecialization(){
         if (!permissions::Authorized("homecontroller/addaccurateSpecialization" , $this)){
             return ;
         }
@@ -650,7 +868,7 @@ class homecontroller extends CI_Controller {
             echo "success,".$id;
         }
     }
-    public function addsientificDegree(){
+    public function addsientificdegree(){
         if (!permissions::Authorized("homecontroller/addsientificDegree" , $this)){
             return ;
         }
@@ -664,7 +882,7 @@ class homecontroller extends CI_Controller {
     }
     
     //fine
-    public function addPublisher(){
+    public function addpublisher(){
         if (!permissions::Authorized("homecontroller/addPublisher" , $this)){
             return ;
         }
@@ -687,7 +905,7 @@ class homecontroller extends CI_Controller {
     }
     
     //fine
-    public function addInstitute(){
+    public function addinstitute(){
         if (!permissions::Authorized("homecontroller/addInstitute" , $this)){
             return ;
         }
@@ -701,7 +919,7 @@ class homecontroller extends CI_Controller {
     }
     //fine
     
-    public function getInstitutePublishers(){
+    public function getinstitutepublishers(){
         if (!permissions::Authorized("homecontroller/getInstitutePublishers" , $this)){
             return ;
         }
@@ -803,7 +1021,7 @@ class homecontroller extends CI_Controller {
             
             $this->session->set_userdata("mycsv" , array());
             $this->session->set_flashdata("success" , "success");
-            redirect(base_url("index.php/homecontroller/bulkaddpapers"));
+            redirect(base_url("index.php/admin/bulk"));
         }
     }
     
@@ -827,7 +1045,7 @@ class homecontroller extends CI_Controller {
             unlink("./csvs/".$mycsv->csvName);
             $this->session->set_userdata("mycsv" , array());   
         }
-        redirect(base_url("index.php/homecontroller/bulkaddpapers"));
+        redirect(base_url("index.php/admin/bulk"));
     }
     private function deleteAllFilesinDir($path){
         $files = glob($path); // get all file names
@@ -926,15 +1144,9 @@ class homecontroller extends CI_Controller {
         foreach($files_to_zip as $oneFile){
             unlink($oneFile);
         }
-        redirect(base_url("index.php/homecontroller/backup"));
+        redirect(base_url("index.php/admin/backup"));
     }
-    public function backup(){
-        if (!permissions::Authorized("homecontroller/backup" , $this)){
-            return ;
-        }
-        
-        $this->load->view("home/backup");
-    }
+   
     public function uploadcsv(){
 
         $config = array();
@@ -947,7 +1159,7 @@ class homecontroller extends CI_Controller {
         {
             $errors = $this->upload->display_errors();
             $this->session->set_flashdata("errors" , $errors);
-            redirect(base_url("index.php/homecontroller/bulkaddpapers"));
+            redirect(base_url("index.php/admin/bulk"));
         }
         else
         {
@@ -959,7 +1171,7 @@ class homecontroller extends CI_Controller {
             if (!$this->isUTF8File("./csvs/".$filename)) {
                 $this->session->set_flashdata("errors" , "Please Make Sure That File Encoding in UTF-8");
                 unlink("./csvs/".$filename);
-                redirect(base_url("index.php/homecontroller/bulkaddpapers")); 
+                redirect(base_url("index.php/admin/bulk")); 
             }
             
             $csv =  $this->readCsv("./csvs/".$filename);
@@ -1013,7 +1225,7 @@ class homecontroller extends CI_Controller {
             $this->session->set_userdata("mycsv" , $serialized);
            
           
-            redirect(base_url("index.php/homecontroller/bulkaddpapers"));
+            redirect(base_url("index.php/admin/bulk"));
         }
     }
     
@@ -1043,35 +1255,7 @@ class homecontroller extends CI_Controller {
     
     #region db manipulation
     
-    public function manipulateone(){
-        if (!permissions::Authorized("homecontroller/manipulateone" , $this)){
-            return ;
-        }
-        $specialization = new specialization($this);
-        $accSpecialization = new accurateSpecialization($this);
-        $secientificDegree = new scientificdegree($this);
-        $reserchType = new researchtype($this);
-        $institute = new institute($this);
-        $job = new job($this);
-        
-        $data["specializations"] = $specialization->findspecialization(array());
-        $data["accSpecializations"] = $accSpecialization->findaccurateSpecialization(array());
-        $data["scientificDegrees"] = $secientificDegree->findscientificdegree(array());
-        $data["researchTypes"] = $reserchType->findresearchtype(array());
-        $data["institutes"] = $institute->findInstitute(array());
-        $data["jobs"] = $job->findjob(array());
-        
-        $author = new author($this);
-        $author->loadaccurateSpecialization = $author->loadcurrentScientificDegree
-        = $author->loadinstitute = $author->loadjob = $author->loadspecialization = true;
-        $data["authors"] = $author->findauthor(array());
-        
-        $publisher = new publisher($this);
-        $publisher->loadinstitute = true;
-        $data["publishers"] = $publisher->findPublisher(array());
-        
-        $this->load->view("manipulate/manipulateone" , $data);
-    }
+    
     
     private $tables = array("specialization", "accSpecialization", "scientificDegree", "researchType", "institute", "job" , "publisher" , "author");
     public function editonetable(){
@@ -1387,105 +1571,10 @@ class homecontroller extends CI_Controller {
             echo "error";
         }
     }
-    public function editpaper($researchId , $data=null){
-        if (!permissions::Authorized("homecontroller/editpaper" , $this)){
-            return ;
-        }
-        
-        $researchId = intval($researchId);
-        if(!isset($researchId) || empty($researchId)){
-            return;
-        }
-        $research = new research($this);
-        $research->loadpublisher = $research->loadaccurateSpecialization = $research->loadresearchType
-        = $research->loadspecialization = true;
-        $res = $research->findResearch(array("id"=>$researchId));
-        if($res && !empty($res)){
-            $research =  $data["research"]  = $res[0];
-        }else{
-            return;
-        }
-        $publisher = new publisher($this);
-        $author = new author($this);
-        $accurateSpecialization = new accurateSpecialization($this);
-        $specializaton = new specialization($this);
-        $researchtype = new researchtype($this);
-        $institute = new institute($this);
-        $job = new job($this);
-        $sc = new scientificdegree($this);
-        
-        $data["publishers"]= $publisher->findPublisher(array());
-        $data["authors"] = $author->findauthor(array());
-        $data["specializatons"] = $specializaton->findspecialization(array());
-        
-        $data["researchtypes"] = $researchtype->findresearchtype(array());
-        
-        $data["accurateSpecializations"] = $accurateSpecialization->findaccurateSpecialization(array());
-
-        $data["institutes"] = $institute->findInstitute(array());
-        $data["jobs"] = $job->findjob(array());
-        $data["scs"] = $sc->findscientificdegree(array());
-        
-
-        
-
-        
-        $data["arabicHeading"] = $research->arabicHeadingName;
-        $data["englishHeading"] = $research->englishHeadingName;
-        $data["arabicDescription"] = $research->arabicDescription;
-        $data["englishDescription"] = $research->englishDescription;
-        $data["keyword"] = $research->keyWords;//
-        $data["researchNumber"] = $research->researchNumber;
-        $data["publishDate"] = $research->publishDate;
-        $data["publishCountry"] = $research->publishCountry;
-        $data["researchType"] = $research->researchType->id;
-        if(isset($research->specialization) && !empty($research->specialization))
-            $data["specialization"] = $research->specialization->id;
-        if(isset($research->accurateSpecialization) && !empty($research->accurateSpecialization))            
-            $data["accurateSpecialization"] = $research->accurateSpecialization->id;
-        $data["pagesCount"] = $research->pagesCount;
-        $data["pagesFrom"] = $research->pagesFrom;
-        $data["pagesTo"] = $research->pagesTo;
-        $data["publisher"] = $research->publisher->id;
-        
-        $research->getResearchAuthors();
-        
-        $authArr = array();
-        foreach($research->authorResearches as $authResearch){
-            if($authResearch->authorNumber==0){
-                $data["mainAuthorName"] = $authResearch->author->id;    
-            }else if ($authResearch->authorNumber==1){
-                $data["firstAuthorName"] = $authResearch->author->id;                    
-            }else if ($authResearch->authorNumber==2){
-                $data["secondAuthorName"] = $authResearch->author->id;                    
-            }else if ($authResearch->authorNumber==3){
-                $data["thirdAuthorName"] = $authResearch->author->id;                    
-            }else if ($authResearch->authorNumber==4){
-                $data["fourthAuthorName"] = $authResearch->author->id;                    
-            }else if ($authResearch->authorNumber==5){
-                $data["fifthAuthorName"] = $authResearch->author->id;                    
-            }else if ($authResearch->authorNumber==6){
-                $data["sixthAuthorName"] = $authResearch->author->id;                    
-            }else if ($authResearch->authorNumber==7){
-                $data["seventhAuthorName"] = $authResearch->author->id;                    
-            }else if ($authResearch->authorNumber==8){
-                $data["eighthAuthorName"] = $authResearch->author->id;                    
-            }else if ($authResearch->authorNumber==9){
-                $data["ninthAuthorName"] = $authResearch->author->id;                    
-            }else if ($authResearch->authorNumber==10){
-                $data["tenthAuthorName"] = $authResearch->author->id;                    
-            }
-            $author = $authResearch->author ;
-            $authArr[] = $author->name;
-            
-        } 
-        
-        $this->load->view('home/uploadpaper' , $data);
-    }
+   
     #endregion db manipulation
     
     #region search Module
-    #in header.php form action="<?=site_url("homecontroller/submitsearch")?"
     
     public function submitsearch(){
         $query = $this->input->post("query");
@@ -1552,18 +1641,7 @@ class homecontroller extends CI_Controller {
         return $data;
     }
     
-    public function listallresearches($filenames=array()){
-        
-        $research = new research($this);
-        $research->loadpublisher = true;
-        $res = $research->findResearchesByFileNames($filenames);
-        //$res =  $research->findResearch(array());
-        $data=null;
-        if($res && !empty($res)){
-            $data['researches'] = $res;
-        }
-        $this->load->view("home/listAllResearches" , $data);
-    }
+  
     public function downloadResearch(){
         $id = $this->input->post("id");
         if ($id != "" && $id!=null && !empty($id)){
@@ -1587,73 +1665,6 @@ class homecontroller extends CI_Controller {
         }
         
 
-    }
-    public function listoneresearch($id=""){
-        $research = new research($this);
-        $research->loadaccurateSpecialization = $research->loadpublisher
-        =$research->loadresearchType = $research->loadspecialization = true;
-        $res = $research->findResearch(array("id"=>$id));
-        $data=null;
-        if($res && !empty($res)){
-            $data['visitCount'] = $research->visitCount($id);
-            $data['downloadCount'] = $research->downloadCount($id);
-            $data['research'] = $res[0];
-        }
-        
-        $this->load->view("home/listoneresearch" , $data);
-        $ip = $this->getUserIp();
-        $country = $this->getIpCountry($ip);
-        
-        if ( $this->getIpCountry($ip)){
-
-            try
-            {
-                $research->Visit($ip , $country , $id);
-            }
-            catch (Exception $exception)
-            {
-                return;
-            }
-        }
-       
-        
-        
-    }
-    public function listoneinst($instituteId=0){
-        $institute = new institute($this);
-        $res = $institute->findInstitute(array("id"=>$instituteId));
-        $data=null;        
-        if($res && !empty($res)){
-            $data['institute'] = $res[0];
-        }
-        $this->load->view("home/listoneinst" , $data);
-        
-    }
-    
-    public function listonepub($pubId=0){
-        $publisher = new publisher($this);
-        $publisher->loadinstitute = true;
-        $res = $publisher->findPublisher(array("id"=>$pubId));
-        $data=null;        
-        if($res && !empty($res)){
-            $data['publisher'] = $res[0];
-        }
-        $this->load->view("home/listonepub" , $data);
-        
-    }
-    
-    public function listoneauth($authId=0){
-        $author = new author($this);
-        $author->loadaccurateSpecialization = $author->loadinstitute = 
-            $author->loadcurrentScientificDegree = $author->loadjob 
-            = $author->loadspecialization = true;
-        $res = $author->findauthor(array("id"=>$authId));
-        $data=null;        
-        if($res && !empty($res)){
-            $data['author'] = $res[0];
-        }
-        $this->load->view("home/listoneauth" , $data);
-        
     }
     #endregion search Module
 }

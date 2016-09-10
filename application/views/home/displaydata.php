@@ -39,11 +39,11 @@
                     <div class="col-md-1"></div>
                     <div class="col-md-1"></div>
                     <div class="col-md-2"></div>
-                    <div class="col-md-2"><a href="<?php echo site_url("homecontroller/displaydata") ?>">تاريخ الادخال</a></div>
-                    <div class="col-md-1"><a href="<?php echo site_url("homecontroller/displaydataauthor") ?>">الباحثون</a></div>
-                    <div class="col-md-1"><a href="<?php echo site_url("homecontroller/displaydatapublisher") ?>">الناشر</a></div>
-                    <div class="col-md-1"><a href="<?php echo site_url("homecontroller/displaydatapublishdate") ?>">سنة النشر</a></div>
-                    <div class="col-md-3"><a href="<?php echo site_url("homecontroller/displaydataresearch") ?>">البحث</a></div>
+                    <div class="col-md-2"><a href="<?php echo site_url("admin/data/researches") ?>">تاريخ الادخال</a></div>
+                    <div class="col-md-1"><a href="<?php echo site_url("admin/data/researches/author") ?>">الباحثون</a></div>
+                    <div class="col-md-1"><a href="<?php echo site_url("admin/data/researches/publisher") ?>">الناشر</a></div>
+                    <div class="col-md-1"><a href="<?php echo site_url("admin/data/researches/date") ?>">سنة النشر</a></div>
+                    <div class="col-md-3"><a href="<?php echo site_url("admin/data/researches/name") ?>">البحث</a></div>
                 </div>
                 <hr />
                 <?php 
@@ -56,11 +56,11 @@
                         
                         echo"<div class='row'>";
                         echo "<div class=\"col-md-1\">";
-                        echo "<h6><a class='deletepaper btn' href='".site_url("homecontroller/deletepaper")."/{$research->id}'>حذف</a></h6>";
+                        echo "<h6><a class='deletepaper btn' href='".site_url("admin/deletepaper")."/{$research->id}'>حذف</a></h6>";
                         echo "</div>";
                         
                         echo "<div class=\"col-md-1\">";
-                        echo "<h6><a href='".site_url("homecontroller/editpaper")."/{$research->id}' class='btn'>تعديل</a></h6>";
+                        echo "<h6><a href='".site_url("admin/editpaper")."/{$research->id}' class='btn'>تعديل</a></h6>";
                         echo "</div>";
 
                         
@@ -79,12 +79,12 @@
 
                         
                         echo "<div class=\"col-md-1\">";
-                        echo "<h6><a href='".base_url()."index.php/homecontroller/listoneauth/{$research->mainAuthor->id}'>".$research->mainAuthor->name."</a></h6>";                            
+                        echo "<h6><a href='".base_url()."index.php/author/{$research->mainAuthor->id}'>".$research->mainAuthor->name."</a></h6>";                            
                         
                         echo "</div>";
                         
                         echo "<div class=\"col-md-1\">";
-                        echo "<h6><a href='".base_url()."index.php/homecontroller/listonepub/{$research->publisher->id}'>{$research->publisher->publisherName}</a></h6>";
+                        echo "<h6><a href='".base_url()."index.php/publisher/{$research->publisher->id}'>{$research->publisher->publisherName}</a></h6>";
                         echo "</div>";
                         
                         echo "<div class=\"col-md-1\">";
@@ -92,7 +92,7 @@
                         echo "</div>";
                         
                         echo "<div class=\"col-md-3\">";
-                        echo "<h6><a href='".base_url()."index.php/homecontroller/listoneresearch/{$research->id}'>{$research->arabicHeadingName}</a></h6>";
+                        echo "<h6><a href='".base_url()."index.php/research/{$research->id}'>{$research->arabicHeadingName}</a></h6>";
                         echo "</div>";
                         
                         echo "</div>";//row
@@ -229,11 +229,12 @@
                 <br />
                 <ul class="pagination">
                     <?php
+                    
                     for($i=1;$i<$totalPages;$i++){
                         if($page==$i){
-                            echo "<li class='active'><a href=\"".site_url($this->uri->segment(1)."/".$this->uri->segment(2))."/{$i}\">{$i}</a></li>";                                
+                            echo "<li class='active'><a href=\"".site_url(uri_string())."/{$i}\">{$i}</a></li>";                                
                         }else{
-                            echo "<li><a href=\"".site_url($this->uri->segment(1)."/".$this->uri->segment(2))."/{$i}\">{$i}</a></li>";
+                            echo "<li><a href=\"".site_url(uri_string())."/{$i}\">{$i}</a></li>";
                         }
                     }
                     ?>
@@ -255,7 +256,7 @@
                 parent = $(this).parents(".parentresearch");
                 $(this).replaceWith("<img id='loadmoregif' src='<?php echo base_url()?>/images/ajax-loader.gif'>");
                 id = $(this).attr("data-researchid");
-                $.post("<?php echo site_url("homecontroller/getResearchById")?>", "id=" + id, function (res) {
+                $.post("<?php echo site_url("admin/findresearchbyid")?>", "id=" + id, function (res) {
                     // alert(res);
 
                     res = JSON.parse(res);

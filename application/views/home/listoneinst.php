@@ -83,7 +83,7 @@
                         $researchs = array();
                         foreach($publishers as $publisher){
                             ?>
-                            <a class="" href="<?= base_url("index.php/homecontroller/listonepub/{$publisher->id}")?>">
+                            <a class="" href="<?= base_url("index.php/publisher/{$publisher->id}")?>">
                                 <h4><?= $publisher->publisherName?></h4>
                             </a>
                             <?php
@@ -124,7 +124,7 @@
                                 }
                             ?>
                             <div class="row">
-                                <a href="<?= base_url("index.php/homecontroller/listoneresearch/{$research->id}")?>">
+                                <a href="<?= base_url("index.php/research/{$research->id}")?>">
                                     <div class="alert <?=$classname?>" style="text-align: right ; margin:5px;">
                                         <div class="smallResearchCard">
 
@@ -157,7 +157,7 @@
                                 }
                             ?>
                             <div class="row">
-                                <a href="<?= base_url("index.php/homecontroller/listoneresearch/{$research->id}")?>">
+                                <a href="<?= base_url("index.php/research/{$research->id}")?>">
                                     <div class="alert <?=$classname?>" style="text-align: right ; margin:5px;">
                                         <div class="smallResearchCard">
 

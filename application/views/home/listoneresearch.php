@@ -139,7 +139,7 @@
                         <div class="" style="text-align: right; margin: 10px;">
 
                             <div class="panel-body">
-                                <a class="" href="<?= base_url("index.php/homecontroller/listonepub/{$research->publisher->id}")?>">
+                                <a class="" href="<?= base_url("index.php/publisher/{$research->publisher->id}")?>">
                                     <h4><?= $research->publisher->publisherName?></h4>
                                 </a>
                                 <div class="panel-heading">
@@ -154,7 +154,7 @@
                         $authArr = array();
                         foreach($research->authorResearches as $authResearch){
                             
-                            echo "<a class='' style='float:right;margin-right:2px;' href='".base_url("index.php/homecontroller/listoneauth/{$authResearch->author->id}")."'><h5>{$authResearch->author->name}</h5></a> , ";
+                            echo "<a class='' style='float:right;margin-right:2px;' href='".base_url("index.php/author/{$authResearch->author->id}")."'><h5>{$authResearch->author->name}</h5></a> , ";
                             
                             
                         }
@@ -174,7 +174,7 @@
                             if($pub->institute && !empty($pub->institute)){
                                 $institute = $pub->institute;
                                 ?>
-                                <a class="" href="<?= base_url("index.php/homecontroller/listoneinst/{$institute->id}")?>">
+                                <a class="" href="<?= base_url("index.php/institute/{$institute->id}")?>">
                                     <h4><?= $institute->instituteName?></h4>
                                 </a>
                                 <?php
@@ -357,7 +357,7 @@
         $(document).ready(function () {
             $("#download").click(function () {
                 id = $("#download").attr("data-id");
-                $.post("<?php echo site_url("homecontroller/downloadResearch")?>", "id=" + id);
+                $.post("<?php echo site_url("download")?>", "id=" + id);
         });
     });
     </script>

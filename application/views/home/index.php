@@ -92,7 +92,7 @@
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
                     <!--<h2 style="text-align:center" class="alert alert-danger" > الموقع تحت الانشاء</h2>-->
-                                    <form method="post" action="<?=site_url("homecontroller/submitsearch");?>">
+                                    <form method="post" action="<?=site_url("search");?>">
                 <div id="">
                                     <div id="searchBtnContainer">
                     <input id="searchBtn" type="submit" value="بحث" />

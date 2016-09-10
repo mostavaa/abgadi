@@ -81,7 +81,6 @@
     <Compile Include="application\views\home\index.php" />
     <Compile Include="application\views\home\notpermitted.php" />
     <Compile Include="application\views\home\team.php" />
-    <Compile Include="application\views\home\uploadpaper - Copy.php" />
     <Compile Include="application\views\home\uploadpaper.php" />
     <Compile Include="application\views\home\search.php" />
     <Compile Include="application\views\manipulate\manipulateone.php" />

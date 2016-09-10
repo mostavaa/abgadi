@@ -31,9 +31,9 @@
                 <br />
                 <div >
                     <ul class="">
-                        <li class="btn btn-default"><a  href="<?php echo site_url("homecontroller/allauthors")?>">الباحثون</a></li>
-                        <li class="btn btn-default"><a class=""href="<?php echo site_url("homecontroller/allpublishers")?>" >الناشرون</a></li>
-                        <li class="btn btn-default"><a class="" href="<?php echo site_url("homecontroller/displaydata")?>">الابحاث</a></li>
+                        <li class="btn btn-default"><a  href="<?php echo site_url("admin/authors")?>">الباحثون</a></li>
+                        <li class="btn btn-default"><a class=""href="<?php echo site_url("admin/publishers")?>" >الناشرون</a></li>
+                        <li class="btn btn-default"><a class="" href="<?php echo site_url("admin/data/researches")?>">الابحاث</a></li>
                     </ul>
                 </div>
             </div>

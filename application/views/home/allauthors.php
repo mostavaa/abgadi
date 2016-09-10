@@ -48,13 +48,13 @@
                             if(isset($authors) && !empty($authors)){
                                 foreach($authors as $author){
                                     $authorResearches = $author->findMyMainResearches();
-                                    echo "<tr><td><a href='".base_url("index.php/homecontroller/listoneauth/{$author->id}")."'>{$author->name}</a></td>";
+                                    echo "<tr><td><a href='".base_url("index.php/author/{$author->id}")."'>{$author->name}</a></td>";
                                     echo "<td>";
                                     if (!empty($authorResearches)){
                                         
                                         echo "<ul class='list-group'>";
                                         foreach($authorResearches  as $authorResearch){
-                                            echo "<li class='list-group-item'><a href='".base_url("index.php/homecontroller/listoneresearch/{$authorResearch->id}")."'>".$authorResearch->arabicHeadingName."</a></li>";
+                                            echo "<li class='list-group-item'><a href='".base_url("index.php/research/{$authorResearch->id}")."'>".$authorResearch->arabicHeadingName."</a></li>";
                                             
                                         }
                                         echo "</ul>";
